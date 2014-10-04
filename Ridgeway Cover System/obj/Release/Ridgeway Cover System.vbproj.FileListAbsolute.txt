@@ -1,0 +1,21 @@
+C:\Users\George\Google Drive\Computing\Ridgeway Cover System\Ridgeway Cover System\bin\Release\Ridgeway Cover System.exe.config
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\bin\Release\Ridgeway Cover System.exe.config
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\bin\Release\Ridgeway Cover System.exe
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\bin\Release\Ridgeway Cover System.pdb
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\bin\Release\Ridgeway Cover System.xml
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_admin.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_background.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_facultyarea.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_myrequests.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_notify.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_roomchange.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_splash.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_start.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_requestcover.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_login.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.Resources.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway_Cover_System.frm_signup.resources
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway Cover System.vbproj.GenerateResource.Cache
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway Cover System.exe
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway Cover System.xml
+C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway Cover System.pdb
