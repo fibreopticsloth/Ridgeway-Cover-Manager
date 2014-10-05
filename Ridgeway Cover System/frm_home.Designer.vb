@@ -24,7 +24,7 @@ Partial Class frm_home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_home))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_roomchange = New System.Windows.Forms.Button()
         Me.btn_facultyarea = New System.Windows.Forms.Button()
@@ -149,11 +149,11 @@ Partial Class frm_home
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Open Sans Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(7, 105)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 15)
+        Me.Label1.Size = New System.Drawing.Size(32, 14)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "NEW"
         '
@@ -165,7 +165,7 @@ Partial Class frm_home
         Me.btn_roomchange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_roomchange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_roomchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_roomchange.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_roomchange.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_roomchange.ForeColor = System.Drawing.Color.White
         Me.btn_roomchange.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.roomchange
         Me.btn_roomchange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -174,7 +174,7 @@ Partial Class frm_home
         Me.btn_roomchange.Size = New System.Drawing.Size(125, 35)
         Me.btn_roomchange.TabIndex = 4
         Me.btn_roomchange.TabStop = False
-        Me.btn_roomchange.Text = "      Room Change"
+        Me.btn_roomchange.Text = "       Room Change"
         Me.btn_roomchange.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_roomchange.UseVisualStyleBackColor = True
         '
@@ -186,7 +186,7 @@ Partial Class frm_home
         Me.btn_facultyarea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_facultyarea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_facultyarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_facultyarea.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_facultyarea.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_facultyarea.ForeColor = System.Drawing.Color.White
         Me.btn_facultyarea.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.facultyarea
         Me.btn_facultyarea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -195,7 +195,7 @@ Partial Class frm_home
         Me.btn_facultyarea.Size = New System.Drawing.Size(125, 35)
         Me.btn_facultyarea.TabIndex = 10
         Me.btn_facultyarea.TabStop = False
-        Me.btn_facultyarea.Text = "      Faculty Area"
+        Me.btn_facultyarea.Text = "       Faculty Area"
         Me.btn_facultyarea.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_facultyarea.UseVisualStyleBackColor = True
         '
@@ -207,7 +207,7 @@ Partial Class frm_home
         Me.btn_myrequests.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_myrequests.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_myrequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_myrequests.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_myrequests.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_myrequests.ForeColor = System.Drawing.Color.White
         Me.btn_myrequests.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.myrequests
         Me.btn_myrequests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -216,7 +216,7 @@ Partial Class frm_home
         Me.btn_myrequests.Size = New System.Drawing.Size(125, 35)
         Me.btn_myrequests.TabIndex = 9
         Me.btn_myrequests.TabStop = False
-        Me.btn_myrequests.Text = "      My Requests"
+        Me.btn_myrequests.Text = "       My Requests"
         Me.btn_myrequests.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_myrequests.UseVisualStyleBackColor = True
         '
@@ -431,7 +431,7 @@ Partial Class frm_home
         Me.btn_requestcover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_requestcover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_requestcover.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_requestcover.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_requestcover.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_requestcover.ForeColor = System.Drawing.Color.White
         Me.btn_requestcover.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.coverrequest
         Me.btn_requestcover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -440,18 +440,18 @@ Partial Class frm_home
         Me.btn_requestcover.Size = New System.Drawing.Size(125, 35)
         Me.btn_requestcover.TabIndex = 12
         Me.btn_requestcover.TabStop = False
-        Me.btn_requestcover.Text = "      Cover Request"
+        Me.btn_requestcover.Text = "       Cover Request"
         Me.btn_requestcover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_requestcover.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Open Sans Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(7, 203)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(111, 15)
+        Me.Label5.Size = New System.Drawing.Size(110, 14)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "MANAGE REQUESTS"
         '
@@ -469,11 +469,11 @@ Partial Class frm_home
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Open Sans Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(7, 339)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 15)
+        Me.Label2.Size = New System.Drawing.Size(53, 14)
         Me.Label2.TabIndex = 16
         Me.Label2.Text = "OPTIONS"
         '
@@ -485,7 +485,7 @@ Partial Class frm_home
         Me.btn_userinterface.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_userinterface.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_userinterface.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_userinterface.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_userinterface.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_userinterface.ForeColor = System.Drawing.Color.White
         Me.btn_userinterface.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.userinterface
         Me.btn_userinterface.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -494,7 +494,7 @@ Partial Class frm_home
         Me.btn_userinterface.Size = New System.Drawing.Size(125, 35)
         Me.btn_userinterface.TabIndex = 15
         Me.btn_userinterface.TabStop = False
-        Me.btn_userinterface.Text = "      User Interface"
+        Me.btn_userinterface.Text = "       User Interface"
         Me.btn_userinterface.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_userinterface.UseVisualStyleBackColor = True
         '
@@ -506,7 +506,7 @@ Partial Class frm_home
         Me.btn_accountdetails.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_accountdetails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_accountdetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_accountdetails.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_accountdetails.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_accountdetails.ForeColor = System.Drawing.Color.White
         Me.btn_accountdetails.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.userdetails
         Me.btn_accountdetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -515,7 +515,7 @@ Partial Class frm_home
         Me.btn_accountdetails.Size = New System.Drawing.Size(125, 35)
         Me.btn_accountdetails.TabIndex = 14
         Me.btn_accountdetails.TabStop = False
-        Me.btn_accountdetails.Text = "      Account Details"
+        Me.btn_accountdetails.Text = "       Account Details"
         Me.btn_accountdetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_accountdetails.UseVisualStyleBackColor = True
         '
@@ -535,10 +535,10 @@ Partial Class frm_home
         'panel_start
         '
         Me.panel_start.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.panel_start.Controls.Add(Me.lbl_connectionstate)
         Me.panel_start.Controls.Add(Me.txt_logout)
         Me.panel_start.Controls.Add(Me.lbl_currentuser)
         Me.panel_start.Controls.Add(Me.lbl_welcome)
+        Me.panel_start.Controls.Add(Me.lbl_connectionstate)
         Me.panel_start.Location = New System.Drawing.Point(131, 65)
         Me.panel_start.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_start.Name = "panel_start"
@@ -560,20 +560,20 @@ Partial Class frm_home
         '
         Me.txt_logout.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.txt_logout.AutoSize = True
-        Me.txt_logout.Font = New System.Drawing.Font("Open Sans Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_logout.Font = New System.Drawing.Font("Microsoft JhengHei UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_logout.LinkColor = System.Drawing.Color.White
-        Me.txt_logout.Location = New System.Drawing.Point(213, 210)
+        Me.txt_logout.Location = New System.Drawing.Point(213, 201)
         Me.txt_logout.Name = "txt_logout"
-        Me.txt_logout.Size = New System.Drawing.Size(72, 22)
+        Me.txt_logout.Size = New System.Drawing.Size(72, 19)
         Me.txt_logout.TabIndex = 3
         Me.txt_logout.TabStop = True
         Me.txt_logout.Text = "Not you?"
         '
         'lbl_currentuser
         '
-        Me.lbl_currentuser.Font = New System.Drawing.Font("Open Sans Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_currentuser.Font = New System.Drawing.Font("Microsoft JhengHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_currentuser.ForeColor = System.Drawing.Color.White
-        Me.lbl_currentuser.Location = New System.Drawing.Point(0, 175)
+        Me.lbl_currentuser.Location = New System.Drawing.Point(0, 169)
         Me.lbl_currentuser.Name = "lbl_currentuser"
         Me.lbl_currentuser.Size = New System.Drawing.Size(499, 37)
         Me.lbl_currentuser.TabIndex = 1
@@ -583,11 +583,11 @@ Partial Class frm_home
         'lbl_welcome
         '
         Me.lbl_welcome.AutoSize = True
-        Me.lbl_welcome.Font = New System.Drawing.Font("Open Sans Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_welcome.Font = New System.Drawing.Font("Microsoft JhengHei UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_welcome.ForeColor = System.Drawing.Color.White
-        Me.lbl_welcome.Location = New System.Drawing.Point(197, 150)
+        Me.lbl_welcome.Location = New System.Drawing.Point(202, 150)
         Me.lbl_welcome.Name = "lbl_welcome"
-        Me.lbl_welcome.Size = New System.Drawing.Size(105, 28)
+        Me.lbl_welcome.Size = New System.Drawing.Size(95, 24)
         Me.lbl_welcome.TabIndex = 0
         Me.lbl_welcome.Text = "Welcome"
         Me.lbl_welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -862,14 +862,14 @@ Partial Class frm_home
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dg_mycovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_mycovers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dg_mycovers.Location = New System.Drawing.Point(3, 3)
@@ -1304,7 +1304,7 @@ Partial Class frm_home
         Me.btn_notifications.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_notifications.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_notifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_notifications.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_notifications.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_notifications.ForeColor = System.Drawing.Color.White
         Me.btn_notifications.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.notifications
         Me.btn_notifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1313,7 +1313,7 @@ Partial Class frm_home
         Me.btn_notifications.Size = New System.Drawing.Size(125, 35)
         Me.btn_notifications.TabIndex = 65
         Me.btn_notifications.TabStop = False
-        Me.btn_notifications.Text = "      Notifications"
+        Me.btn_notifications.Text = "       Notifications"
         Me.btn_notifications.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_notifications.UseVisualStyleBackColor = True
         '
