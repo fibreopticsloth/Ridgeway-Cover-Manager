@@ -24,7 +24,7 @@ Partial Class frm_home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_home))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_roomchange = New System.Windows.Forms.Button()
         Me.btn_facultyarea = New System.Windows.Forms.Button()
@@ -227,7 +227,6 @@ Partial Class frm_home
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_facultyhead)
         Me.panel_requestcover.Controls.Add(Me.Label11)
         Me.panel_requestcover.Controls.Add(Me.Label10)
-        Me.panel_requestcover.Controls.Add(Me.panel_roomchange)
         Me.panel_requestcover.Controls.Add(Me.Label9)
         Me.panel_requestcover.Controls.Add(Me.Label4)
         Me.panel_requestcover.Controls.Add(Me.Label8)
@@ -249,7 +248,7 @@ Partial Class frm_home
         '
         'requestcover_txt_reason
         '
-        Me.requestcover_txt_reason.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_reason.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.requestcover_txt_reason.Location = New System.Drawing.Point(249, 142)
         Me.requestcover_txt_reason.Margin = New System.Windows.Forms.Padding(6)
         Me.requestcover_txt_reason.Multiline = True
@@ -260,7 +259,7 @@ Partial Class frm_home
         '
         'requestcover_txt_facultyhead
         '
-        Me.requestcover_txt_facultyhead.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_facultyhead.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.requestcover_txt_facultyhead.FormattingEnabled = True
         Me.requestcover_txt_facultyhead.Location = New System.Drawing.Point(249, 84)
         Me.requestcover_txt_facultyhead.Name = "requestcover_txt_facultyhead"
@@ -336,7 +335,7 @@ Partial Class frm_home
         'requestcover_dp_startdate
         '
         Me.requestcover_dp_startdate.CustomFormat = "dd'-'MM'-'yy"
-        Me.requestcover_dp_startdate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_dp_startdate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.requestcover_dp_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.requestcover_dp_startdate.Location = New System.Drawing.Point(115, 84)
         Me.requestcover_dp_startdate.Name = "requestcover_dp_startdate"
@@ -347,7 +346,7 @@ Partial Class frm_home
         'requestcover_dp_enddate
         '
         Me.requestcover_dp_enddate.CustomFormat = "dd'-'MM'-'yy"
-        Me.requestcover_dp_enddate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_dp_enddate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.requestcover_dp_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.requestcover_dp_enddate.Location = New System.Drawing.Point(115, 196)
         Me.requestcover_dp_enddate.Name = "requestcover_dp_enddate"
@@ -357,7 +356,7 @@ Partial Class frm_home
         '
         'requestcover_txt_endperiod
         '
-        Me.requestcover_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.requestcover_txt_endperiod.FormattingEnabled = True
         Me.requestcover_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.requestcover_txt_endperiod.Location = New System.Drawing.Point(115, 225)
@@ -394,11 +393,11 @@ Partial Class frm_home
         'requestcover_chk_thislessononly
         '
         Me.requestcover_chk_thislessononly.AutoSize = True
-        Me.requestcover_chk_thislessononly.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.requestcover_chk_thislessononly.ForeColor = System.Drawing.Color.White
         Me.requestcover_chk_thislessononly.Location = New System.Drawing.Point(115, 142)
         Me.requestcover_chk_thislessononly.Name = "requestcover_chk_thislessononly"
-        Me.requestcover_chk_thislessononly.Size = New System.Drawing.Size(100, 19)
+        Me.requestcover_chk_thislessononly.Size = New System.Drawing.Size(97, 17)
         Me.requestcover_chk_thislessononly.TabIndex = 30
         Me.requestcover_chk_thislessononly.Text = "This lesson only"
         Me.requestcover_chk_thislessononly.UseVisualStyleBackColor = True
@@ -416,7 +415,7 @@ Partial Class frm_home
         '
         'requestcover_txt_startperiod
         '
-        Me.requestcover_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.requestcover_txt_startperiod.FormattingEnabled = True
         Me.requestcover_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.requestcover_txt_startperiod.Location = New System.Drawing.Point(115, 113)
@@ -526,7 +525,7 @@ Partial Class frm_home
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label3.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(30, 432)
+        Me.Label3.Location = New System.Drawing.Point(30, 428)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 15)
@@ -548,7 +547,7 @@ Partial Class frm_home
         '
         'lbl_connectionstate
         '
-        Me.lbl_connectionstate.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_connectionstate.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_connectionstate.ForeColor = System.Drawing.Color.LimeGreen
         Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
         Me.lbl_connectionstate.Name = "lbl_connectionstate"
@@ -607,13 +606,12 @@ Partial Class frm_home
         Me.panel_roomchange.Controls.Add(Me.roomchange_dp_startdate)
         Me.panel_roomchange.Controls.Add(Me.roomchange_dp_enddate)
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_endperiod)
-        Me.panel_roomchange.Controls.Add(Me.panel_myrequests)
         Me.panel_roomchange.Controls.Add(Me.Label18)
         Me.panel_roomchange.Controls.Add(Me.roomchange_btn_submit)
         Me.panel_roomchange.Controls.Add(Me.roomchange_chk_thislessononly)
         Me.panel_roomchange.Controls.Add(Me.Label19)
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_startperiod)
-        Me.panel_roomchange.Location = New System.Drawing.Point(0, 0)
+        Me.panel_roomchange.Location = New System.Drawing.Point(131, 65)
         Me.panel_roomchange.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_roomchange.Name = "panel_roomchange"
         Me.panel_roomchange.Size = New System.Drawing.Size(499, 382)
@@ -708,7 +706,7 @@ Partial Class frm_home
         'roomchange_dp_startdate
         '
         Me.roomchange_dp_startdate.CustomFormat = "dd'-'MM'-'yy"
-        Me.roomchange_dp_startdate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_dp_startdate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.roomchange_dp_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.roomchange_dp_startdate.Location = New System.Drawing.Point(115, 84)
         Me.roomchange_dp_startdate.Name = "roomchange_dp_startdate"
@@ -719,7 +717,7 @@ Partial Class frm_home
         'roomchange_dp_enddate
         '
         Me.roomchange_dp_enddate.CustomFormat = "dd'-'MM'-'yy"
-        Me.roomchange_dp_enddate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_dp_enddate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.roomchange_dp_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.roomchange_dp_enddate.Location = New System.Drawing.Point(115, 196)
         Me.roomchange_dp_enddate.Name = "roomchange_dp_enddate"
@@ -729,7 +727,7 @@ Partial Class frm_home
         '
         'roomchange_txt_endperiod
         '
-        Me.roomchange_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.roomchange_txt_endperiod.FormattingEnabled = True
         Me.roomchange_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.roomchange_txt_endperiod.Location = New System.Drawing.Point(115, 225)
@@ -766,7 +764,7 @@ Partial Class frm_home
         'roomchange_chk_thislessononly
         '
         Me.roomchange_chk_thislessononly.AutoSize = True
-        Me.roomchange_chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Semilight", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.roomchange_chk_thislessononly.ForeColor = System.Drawing.Color.White
         Me.roomchange_chk_thislessononly.Location = New System.Drawing.Point(115, 142)
         Me.roomchange_chk_thislessononly.Name = "roomchange_chk_thislessononly"
@@ -788,7 +786,7 @@ Partial Class frm_home
         '
         'roomchange_txt_startperiod
         '
-        Me.roomchange_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.roomchange_txt_startperiod.FormattingEnabled = True
         Me.roomchange_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.roomchange_txt_startperiod.Location = New System.Drawing.Point(115, 113)
@@ -802,7 +800,7 @@ Partial Class frm_home
         Me.panel_myrequests.Controls.Add(Me.Label20)
         Me.panel_myrequests.Controls.Add(Me.myrequests_btn_cancel)
         Me.panel_myrequests.Controls.Add(Me.myrequests_tc_myrequests)
-        Me.panel_myrequests.Location = New System.Drawing.Point(0, 0)
+        Me.panel_myrequests.Location = New System.Drawing.Point(131, 65)
         Me.panel_myrequests.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_myrequests.Name = "panel_myrequests"
         Me.panel_myrequests.Size = New System.Drawing.Size(499, 382)
@@ -812,11 +810,11 @@ Partial Class frm_home
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
         Me.Label20.Location = New System.Drawing.Point(297, 20)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(154, 17)
+        Me.Label20.Size = New System.Drawing.Size(153, 17)
         Me.Label20.TabIndex = 64
         Me.Label20.Text = "Cancel selected request(s)"
         '
@@ -835,7 +833,7 @@ Partial Class frm_home
         '
         Me.myrequests_tc_myrequests.Controls.Add(Me.TabPage1)
         Me.myrequests_tc_myrequests.Controls.Add(Me.TabPage2)
-        Me.myrequests_tc_myrequests.Font = New System.Drawing.Font("Segoe UI Semilight", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.myrequests_tc_myrequests.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.myrequests_tc_myrequests.HotTrack = True
         Me.myrequests_tc_myrequests.Location = New System.Drawing.Point(6, 33)
         Me.myrequests_tc_myrequests.Multiline = True
@@ -864,14 +862,14 @@ Partial Class frm_home
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semilight", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_mycovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_mycovers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dg_mycovers.Location = New System.Drawing.Point(3, 3)
@@ -981,7 +979,7 @@ Partial Class frm_home
         'facultyarea_txt_reason
         '
         Me.facultyarea_txt_reason.BackColor = System.Drawing.Color.White
-        Me.facultyarea_txt_reason.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_txt_reason.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.facultyarea_txt_reason.Location = New System.Drawing.Point(362, 84)
         Me.facultyarea_txt_reason.Margin = New System.Windows.Forms.Padding(6)
         Me.facultyarea_txt_reason.Multiline = True
@@ -1039,7 +1037,7 @@ Partial Class frm_home
         'facultyarea_dp_enddate
         '
         Me.facultyarea_dp_enddate.CustomFormat = "dd'-'MM'-'yy"
-        Me.facultyarea_dp_enddate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_dp_enddate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.facultyarea_dp_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.facultyarea_dp_enddate.Location = New System.Drawing.Point(251, 195)
         Me.facultyarea_dp_enddate.Name = "facultyarea_dp_enddate"
@@ -1050,7 +1048,7 @@ Partial Class frm_home
         'facultyarea_txt_endperiod
         '
         Me.facultyarea_txt_endperiod.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.facultyarea_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.facultyarea_txt_endperiod.FormattingEnabled = True
         Me.facultyarea_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.facultyarea_txt_endperiod.Location = New System.Drawing.Point(251, 224)
@@ -1061,7 +1059,7 @@ Partial Class frm_home
         'facultyarea_dp_startdate
         '
         Me.facultyarea_dp_startdate.CustomFormat = "dd'-'MM'-'yy"
-        Me.facultyarea_dp_startdate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_dp_startdate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.facultyarea_dp_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.facultyarea_dp_startdate.Location = New System.Drawing.Point(251, 84)
         Me.facultyarea_dp_startdate.Name = "facultyarea_dp_startdate"
@@ -1084,7 +1082,7 @@ Partial Class frm_home
         'chk_thislessononly
         '
         Me.chk_thislessononly.AutoSize = True
-        Me.chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Semilight", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chk_thislessononly.ForeColor = System.Drawing.Color.White
         Me.chk_thislessononly.Location = New System.Drawing.Point(251, 142)
         Me.chk_thislessononly.Name = "chk_thislessononly"
@@ -1120,7 +1118,7 @@ Partial Class frm_home
         'facultyarea_txt_startperiod
         '
         Me.facultyarea_txt_startperiod.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.facultyarea_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.facultyarea_txt_startperiod.FormattingEnabled = True
         Me.facultyarea_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.facultyarea_txt_startperiod.Location = New System.Drawing.Point(251, 113)
@@ -1337,7 +1335,7 @@ Partial Class frm_home
         '
         Me.lbl_notify.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.lbl_notify.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lbl_notify.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_notify.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_notify.ForeColor = System.Drawing.Color.White
         Me.lbl_notify.Location = New System.Drawing.Point(13, 14)
         Me.lbl_notify.Multiline = True
@@ -1389,6 +1387,7 @@ Partial Class frm_home
         Me.Controls.Add(Me.lbl_start)
         Me.Controls.Add(Me.panel_start)
         Me.Controls.Add(Me.panel_notifications)
+        Me.Controls.Add(Me.panel_roomchange)
         Me.Controls.Add(Me.btn_notifications)
         Me.Controls.Add(Me.btn_sync)
         Me.Controls.Add(Me.lbl_requestcover)
@@ -1396,6 +1395,7 @@ Partial Class frm_home
         Me.Controls.Add(Me.lbl_myrequests)
         Me.Controls.Add(Me.panel_facultyarea)
         Me.Controls.Add(Me.lbl_facultyarea)
+        Me.Controls.Add(Me.panel_myrequests)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.pic_logo)

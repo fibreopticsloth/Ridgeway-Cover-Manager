@@ -42,7 +42,7 @@ Partial Class frm_login
         Me.btn_signup.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
         Me.btn_signup.FlatAppearance.BorderSize = 0
         Me.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_signup.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_signup.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_signup.ForeColor = System.Drawing.Color.White
         Me.btn_signup.Location = New System.Drawing.Point(44, 329)
         Me.btn_signup.Name = "btn_signup"
@@ -56,7 +56,7 @@ Partial Class frm_login
         Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
         Me.btn_login.FlatAppearance.BorderSize = 0
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_login.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
         Me.btn_login.Location = New System.Drawing.Point(44, 293)
         Me.btn_login.Name = "btn_login"
@@ -87,31 +87,31 @@ Partial Class frm_login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(41, 145)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 17)
+        Me.Label1.Size = New System.Drawing.Size(66, 17)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Username:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(41, 201)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 17)
+        Me.Label2.Size = New System.Drawing.Size(61, 17)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Password:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Candara", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(31, 88)
+        Me.Label3.Location = New System.Drawing.Point(25, 85)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(183, 38)
+        Me.Label3.Size = New System.Drawing.Size(194, 42)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Log In to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ridgeway Cover Manager"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -119,7 +119,7 @@ Partial Class frm_login
         'remember
         '
         Me.remember.AutoSize = True
-        Me.remember.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.remember.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.remember.Location = New System.Drawing.Point(44, 259)
         Me.remember.Name = "remember"
         Me.remember.Size = New System.Drawing.Size(110, 21)
