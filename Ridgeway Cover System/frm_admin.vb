@@ -134,7 +134,7 @@
     End Sub
 
     'BACK BUTTON
-    Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
+    Private Sub btn_back_Click(sender As Object, e As EventArgs)
         Me.Hide()
         frm_home.Show()
         frm_home.BringToFront()

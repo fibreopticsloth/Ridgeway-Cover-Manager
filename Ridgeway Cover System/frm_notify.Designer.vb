@@ -84,7 +84,7 @@ Partial Class frm_notify
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.schoollogo
+        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
         Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(50, 28)

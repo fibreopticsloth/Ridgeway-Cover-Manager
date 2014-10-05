@@ -43,11 +43,11 @@ Partial Class frm_splash
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Open Sans Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(142, 50)
+        Me.Label1.Location = New System.Drawing.Point(149, 50)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(295, 33)
+        Me.Label1.Size = New System.Drawing.Size(285, 33)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Ridgeway Cover Scheduler"
+        Me.Label1.Text = "Ridgeway Cover Manager"
         '
         'lbl_loading
         '
@@ -70,7 +70,7 @@ Partial Class frm_splash
         '
         Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.schoollogo
+        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
         Me.PictureBox2.Location = New System.Drawing.Point(40, 50)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(91, 75)
@@ -87,7 +87,7 @@ Partial Class frm_splash
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 15)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Alpha 0.1"
+        Me.Label2.Text = "Alpha 0.4"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'frm_splash

@@ -109,11 +109,11 @@ Partial Class frm_login
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Open Sans Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(22, 82)
+        Me.Label3.Location = New System.Drawing.Point(28, 82)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(200, 44)
+        Me.Label3.Size = New System.Drawing.Size(189, 44)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Log In to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ridgeway Cover Scheduler"
+        Me.Label3.Text = "Log In to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ridgeway Cover Manager"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'remember
@@ -142,7 +142,7 @@ Partial Class frm_login
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.schoollogo
+        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
         Me.PictureBox1.Location = New System.Drawing.Point(7, 7)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(230, 49)

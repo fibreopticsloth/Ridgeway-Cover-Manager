@@ -28,7 +28,8 @@ Public Class frm_login
                 'IF PASSWORD CORRECT
                 If rd.HasRows Then
                     rememberlogin()
-                    My.Settings.currentuser = txt_username.Text
+                My.Settings.currentuser = txt_username.Text
+                My.Settings.Save()
                     While rd.Read
                         My.Settings.usertype = rd.GetString(2)
                     End While

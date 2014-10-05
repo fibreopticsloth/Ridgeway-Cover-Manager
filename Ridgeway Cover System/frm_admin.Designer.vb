@@ -23,7 +23,6 @@ Partial Class frm_admin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.panel_sidebar = New System.Windows.Forms.Panel()
-        Me.btn_back = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dg_users = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -55,7 +54,6 @@ Partial Class frm_admin
         Me.txt_password2 = New System.Windows.Forms.TextBox()
         Me.btn_submit = New System.Windows.Forms.Button()
         Me.panel_sidebar.SuspendLayout()
-        CType(Me.btn_back, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg_users, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -70,7 +68,6 @@ Partial Class frm_admin
         'panel_sidebar
         '
         Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.panel_sidebar.Controls.Add(Me.btn_back)
         Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel_sidebar.Location = New System.Drawing.Point(0, 0)
@@ -79,17 +76,6 @@ Partial Class frm_admin
         Me.panel_sidebar.Padding = New System.Windows.Forms.Padding(7)
         Me.panel_sidebar.Size = New System.Drawing.Size(511, 63)
         Me.panel_sidebar.TabIndex = 60
-        '
-        'btn_back
-        '
-        Me.btn_back.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_back.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.back_v1
-        Me.btn_back.Location = New System.Drawing.Point(11, 16)
-        Me.btn_back.Name = "btn_back"
-        Me.btn_back.Size = New System.Drawing.Size(55, 30)
-        Me.btn_back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btn_back.TabIndex = 56
-        Me.btn_back.TabStop = False
         '
         'Label3
         '
@@ -441,7 +427,6 @@ Partial Class frm_admin
         Me.Text = "frm_admin"
         Me.panel_sidebar.ResumeLayout(False)
         Me.panel_sidebar.PerformLayout()
-        CType(Me.btn_back, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dg_users, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -460,7 +445,6 @@ Partial Class frm_admin
 
     End Sub
     Friend WithEvents panel_sidebar As System.Windows.Forms.Panel
-    Friend WithEvents btn_back As System.Windows.Forms.PictureBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents dg_users As System.Windows.Forms.DataGridView
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn

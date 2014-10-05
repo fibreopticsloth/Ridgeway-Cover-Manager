@@ -24,7 +24,7 @@ Partial Class frm_home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_home))
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_roomchange = New System.Windows.Forms.Button()
         Me.btn_facultyarea = New System.Windows.Forms.Button()
@@ -54,6 +54,7 @@ Partial Class frm_home
         Me.btn_accountdetails = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.panel_start = New System.Windows.Forms.Panel()
+        Me.lbl_connectionstate = New System.Windows.Forms.Label()
         Me.txt_logout = New System.Windows.Forms.LinkLabel()
         Me.lbl_currentuser = New System.Windows.Forms.Label()
         Me.lbl_welcome = New System.Windows.Forms.Label()
@@ -122,11 +123,11 @@ Partial Class frm_home
         Me.lbl_start = New System.Windows.Forms.Label()
         Me.btn_notifications = New System.Windows.Forms.Button()
         Me.panel_notifications = New System.Windows.Forms.Panel()
-        Me.lbl_notifications = New System.Windows.Forms.Label()
-        Me.lbl_connectionstate = New System.Windows.Forms.Label()
-        Me.timer_checkconn = New System.Windows.Forms.Timer(Me.components)
-        Me.lbl_notify = New System.Windows.Forms.Label()
+        Me.lbl_notify = New System.Windows.Forms.TextBox()
         Me.panel_notifications_clearnotifications = New System.Windows.Forms.Button()
+        Me.lbl_notifications = New System.Windows.Forms.Label()
+        Me.BackgroundWorker = New System.ComponentModel.BackgroundWorker()
+        Me.data_timer = New System.Windows.Forms.Timer(Me.components)
         Me.panel_requestcover.SuspendLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_start.SuspendLayout()
@@ -167,7 +168,7 @@ Partial Class frm_home
         Me.btn_roomchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_roomchange.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_roomchange.ForeColor = System.Drawing.Color.White
-        Me.btn_roomchange.Image = CType(resources.GetObject("btn_roomchange.Image"), System.Drawing.Image)
+        Me.btn_roomchange.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.roomchange
         Me.btn_roomchange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_roomchange.Location = New System.Drawing.Point(6, 157)
         Me.btn_roomchange.Name = "btn_roomchange"
@@ -188,7 +189,7 @@ Partial Class frm_home
         Me.btn_facultyarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_facultyarea.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_facultyarea.ForeColor = System.Drawing.Color.White
-        Me.btn_facultyarea.Image = CType(resources.GetObject("btn_facultyarea.Image"), System.Drawing.Image)
+        Me.btn_facultyarea.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.facultyarea
         Me.btn_facultyarea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_facultyarea.Location = New System.Drawing.Point(6, 290)
         Me.btn_facultyarea.Name = "btn_facultyarea"
@@ -209,7 +210,7 @@ Partial Class frm_home
         Me.btn_myrequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_myrequests.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_myrequests.ForeColor = System.Drawing.Color.White
-        Me.btn_myrequests.Image = CType(resources.GetObject("btn_myrequests.Image"), System.Drawing.Image)
+        Me.btn_myrequests.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.myrequests
         Me.btn_myrequests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_myrequests.Location = New System.Drawing.Point(6, 256)
         Me.btn_myrequests.Name = "btn_myrequests"
@@ -433,7 +434,7 @@ Partial Class frm_home
         Me.btn_requestcover.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_requestcover.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_requestcover.ForeColor = System.Drawing.Color.White
-        Me.btn_requestcover.Image = CType(resources.GetObject("btn_requestcover.Image"), System.Drawing.Image)
+        Me.btn_requestcover.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.coverrequest
         Me.btn_requestcover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_requestcover.Location = New System.Drawing.Point(6, 123)
         Me.btn_requestcover.Name = "btn_requestcover"
@@ -458,7 +459,7 @@ Partial Class frm_home
         'pic_logo
         '
         Me.pic_logo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pic_logo.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.schoollogo
+        Me.pic_logo.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
         Me.pic_logo.Location = New System.Drawing.Point(27, 39)
         Me.pic_logo.Name = "pic_logo"
         Me.pic_logo.Size = New System.Drawing.Size(76, 52)
@@ -487,7 +488,7 @@ Partial Class frm_home
         Me.btn_userinterface.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_userinterface.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_userinterface.ForeColor = System.Drawing.Color.White
-        Me.btn_userinterface.Image = CType(resources.GetObject("btn_userinterface.Image"), System.Drawing.Image)
+        Me.btn_userinterface.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.userinterface
         Me.btn_userinterface.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_userinterface.Location = New System.Drawing.Point(6, 391)
         Me.btn_userinterface.Name = "btn_userinterface"
@@ -508,7 +509,7 @@ Partial Class frm_home
         Me.btn_accountdetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_accountdetails.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_accountdetails.ForeColor = System.Drawing.Color.White
-        Me.btn_accountdetails.Image = CType(resources.GetObject("btn_accountdetails.Image"), System.Drawing.Image)
+        Me.btn_accountdetails.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.userdetails
         Me.btn_accountdetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_accountdetails.Location = New System.Drawing.Point(6, 357)
         Me.btn_accountdetails.Name = "btn_accountdetails"
@@ -544,6 +545,17 @@ Partial Class frm_home
         Me.panel_start.Name = "panel_start"
         Me.panel_start.Size = New System.Drawing.Size(499, 382)
         Me.panel_start.TabIndex = 59
+        '
+        'lbl_connectionstate
+        '
+        Me.lbl_connectionstate.Font = New System.Drawing.Font("Open Sans Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_connectionstate.ForeColor = System.Drawing.Color.LimeGreen
+        Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
+        Me.lbl_connectionstate.Name = "lbl_connectionstate"
+        Me.lbl_connectionstate.Size = New System.Drawing.Size(499, 37)
+        Me.lbl_connectionstate.TabIndex = 4
+        Me.lbl_connectionstate.Text = "Connected"
+        Me.lbl_connectionstate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txt_logout
         '
@@ -851,14 +863,14 @@ Partial Class frm_home
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_mycovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_mycovers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dg_mycovers.Location = New System.Drawing.Point(3, 3)
@@ -902,7 +914,7 @@ Partial Class frm_home
         'btn_sync
         '
         Me.btn_sync.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_sync.Image = CType(resources.GetObject("btn_sync.Image"), System.Drawing.Image)
+        Me.btn_sync.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.sync
         Me.btn_sync.Location = New System.Drawing.Point(587, 34)
         Me.btn_sync.Name = "btn_sync"
         Me.btn_sync.Size = New System.Drawing.Size(43, 21)
@@ -1153,13 +1165,13 @@ Partial Class frm_home
         'LogOutToolStripMenuItem
         '
         Me.LogOutToolStripMenuItem.Name = "LogOutToolStripMenuItem"
-        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LogOutToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.LogOutToolStripMenuItem.Text = "Log Out"
         '
         'QuitToolStripMenuItem
         '
         Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(117, 22)
         Me.QuitToolStripMenuItem.Text = "Exit"
         '
         'AdminToolStripMenuItem
@@ -1299,7 +1311,7 @@ Partial Class frm_home
         Me.btn_notifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_notifications.Font = New System.Drawing.Font("Open Sans Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_notifications.ForeColor = System.Drawing.Color.White
-        Me.btn_notifications.Image = CType(resources.GetObject("btn_notifications.Image"), System.Drawing.Image)
+        Me.btn_notifications.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.notifications
         Me.btn_notifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_notifications.Location = New System.Drawing.Point(6, 222)
         Me.btn_notifications.Name = "btn_notifications"
@@ -1313,8 +1325,8 @@ Partial Class frm_home
         'panel_notifications
         '
         Me.panel_notifications.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
-        Me.panel_notifications.Controls.Add(Me.panel_notifications_clearnotifications)
         Me.panel_notifications.Controls.Add(Me.lbl_notify)
+        Me.panel_notifications.Controls.Add(Me.panel_notifications_clearnotifications)
         Me.panel_notifications.Font = New System.Drawing.Font("Open Sans Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel_notifications.ForeColor = System.Drawing.Color.White
         Me.panel_notifications.Location = New System.Drawing.Point(131, 65)
@@ -1324,40 +1336,19 @@ Partial Class frm_home
         Me.panel_notifications.TabIndex = 60
         Me.panel_notifications.Visible = False
         '
-        'lbl_notifications
-        '
-        Me.lbl_notifications.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_notifications.ForeColor = System.Drawing.Color.White
-        Me.lbl_notifications.Location = New System.Drawing.Point(127, 34)
-        Me.lbl_notifications.Name = "lbl_notifications"
-        Me.lbl_notifications.Size = New System.Drawing.Size(499, 23)
-        Me.lbl_notifications.TabIndex = 66
-        Me.lbl_notifications.Text = "Notifications"
-        Me.lbl_notifications.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lbl_notifications.Visible = False
-        '
-        'lbl_connectionstate
-        '
-        Me.lbl_connectionstate.Font = New System.Drawing.Font("Open Sans Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_connectionstate.ForeColor = System.Drawing.Color.LimeGreen
-        Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
-        Me.lbl_connectionstate.Name = "lbl_connectionstate"
-        Me.lbl_connectionstate.Size = New System.Drawing.Size(499, 37)
-        Me.lbl_connectionstate.TabIndex = 4
-        Me.lbl_connectionstate.Text = "Connected"
-        Me.lbl_connectionstate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'timer_checkconn
-        '
-        Me.timer_checkconn.Interval = 5000
-        '
         'lbl_notify
         '
+        Me.lbl_notify.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.lbl_notify.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lbl_notify.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_notify.Location = New System.Drawing.Point(24, 19)
+        Me.lbl_notify.ForeColor = System.Drawing.Color.White
+        Me.lbl_notify.Location = New System.Drawing.Point(13, 14)
+        Me.lbl_notify.Multiline = True
         Me.lbl_notify.Name = "lbl_notify"
-        Me.lbl_notify.Size = New System.Drawing.Size(450, 295)
-        Me.lbl_notify.TabIndex = 0
+        Me.lbl_notify.ReadOnly = True
+        Me.lbl_notify.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.lbl_notify.Size = New System.Drawing.Size(472, 297)
+        Me.lbl_notify.TabIndex = 56
         Me.lbl_notify.Text = "No notifications to show!"
         '
         'panel_notifications_clearnotifications
@@ -1375,6 +1366,26 @@ Partial Class frm_home
         Me.panel_notifications_clearnotifications.TabIndex = 55
         Me.panel_notifications_clearnotifications.Text = "Clear Notifications"
         Me.panel_notifications_clearnotifications.UseVisualStyleBackColor = False
+        '
+        'lbl_notifications
+        '
+        Me.lbl_notifications.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_notifications.ForeColor = System.Drawing.Color.White
+        Me.lbl_notifications.Location = New System.Drawing.Point(127, 34)
+        Me.lbl_notifications.Name = "lbl_notifications"
+        Me.lbl_notifications.Size = New System.Drawing.Size(499, 23)
+        Me.lbl_notifications.TabIndex = 66
+        Me.lbl_notifications.Text = "Notifications"
+        Me.lbl_notifications.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lbl_notifications.Visible = False
+        '
+        'BackgroundWorker
+        '
+        '
+        'data_timer
+        '
+        Me.data_timer.Enabled = True
+        Me.data_timer.Interval = 5000
         '
         'frm_home
         '
@@ -1438,6 +1449,7 @@ Partial Class frm_home
         Me.MenuStrip.PerformLayout()
         Me.nfimenu.ResumeLayout(False)
         Me.panel_notifications.ResumeLayout(False)
+        Me.panel_notifications.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1541,7 +1553,8 @@ Partial Class frm_home
     Friend WithEvents panel_notifications As System.Windows.Forms.Panel
     Friend WithEvents lbl_notifications As System.Windows.Forms.Label
     Friend WithEvents lbl_connectionstate As System.Windows.Forms.Label
-    Friend WithEvents timer_checkconn As System.Windows.Forms.Timer
-    Friend WithEvents lbl_notify As System.Windows.Forms.Label
     Friend WithEvents panel_notifications_clearnotifications As System.Windows.Forms.Button
+    Friend WithEvents lbl_notify As System.Windows.Forms.TextBox
+    Friend WithEvents BackgroundWorker As System.ComponentModel.BackgroundWorker
+    Friend WithEvents data_timer As System.Windows.Forms.Timer
 End Class

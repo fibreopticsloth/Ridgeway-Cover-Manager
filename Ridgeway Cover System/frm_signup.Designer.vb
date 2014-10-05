@@ -132,7 +132,7 @@ Partial Class frm_signup
         '
         Me.btn_back.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_back.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btn_back.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.back_v1
+        Me.btn_back.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.back_v1
         Me.btn_back.Location = New System.Drawing.Point(7, 7)
         Me.btn_back.Name = "btn_back"
         Me.btn_back.Size = New System.Drawing.Size(28, 49)
@@ -144,7 +144,7 @@ Partial Class frm_signup
         'PictureBox2
         '
         Me.PictureBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox2.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.schoollogo
+        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
         Me.PictureBox2.Location = New System.Drawing.Point(7, 7)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(230, 49)

@@ -15,10 +15,8 @@ Public Class frm_home
 
     'FORM LOAD
     Private Sub frm_new_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        frm_background.Location = New Point(-100, -100)
-        frm_background.Show()
         lbl_notify.Text = My.Settings.usernotifications
-        frm_background.updatecount = My.Settings.usernotificationcount
+        getdata.updatecount = My.Settings.usernotificationcount
         lbl_currentuser.Text += My.Settings.currentuser
         setdates()
         connect()
@@ -26,10 +24,9 @@ Public Class frm_home
         hidecolumns()
         facultyheads()
         viewrequest()
-        timer_checkconn.Start()
         nfi.Visible = True
-        updateconnectionstate()
-        frm_background.checknotifications()
+        data_timer.Start()
+        getalldata()
     End Sub
 
     '--------REQUEST COVER PANEL--------
@@ -102,7 +99,7 @@ Public Class frm_home
         My.Settings.Save()
         lbl_notify.Text = ""
         btn_notifications.Text = "      Notifications" + " (0)"
-        frm_background.updatecount = 0
+        getdata.updatecount = 0
     End Sub
 
     '--------MY REQUESTS PANEL--------
@@ -351,30 +348,19 @@ Public Class frm_home
         lbl_start.Hide()
     End Sub
 
-    'CONNECTION STATE TEXT
-    Public Sub updateconnectionstate()
-        If checkconn() Then
-            lbl_connectionstate.Text = "Connected"
-            lbl_connectionstate.ForeColor = Color.LimeGreen
-        Else
-            lbl_connectionstate.Text = "Could not connect"
-            lbl_connectionstate.ForeColor = Color.OrangeRed
-        End If
-    End Sub
-
     'LOGOUT
     Public Sub logout()
         Me.Visible = False
         My.Settings.currentuser = ""
         frm_login.Show()
         frm_login.BringToFront()
-        frm_background.Close()
     End Sub
 
     '--------PANEL BUTTONS--------
 
     'REQUEST COVER
     Private Sub btn_requestcover_Click(sender As Object, e As EventArgs) Handles btn_requestcover.Click
+        getalldata()
         setdates()
         hidestart()
         lbl_requestcover.Show()
@@ -384,6 +370,7 @@ Public Class frm_home
 
     'ROOM CHANGE
     Private Sub btn_roomchange_Click(sender As Object, e As EventArgs) Handles btn_roomchange.Click
+        getalldata()
         setdates()
         hidestart()
         lbl_roomchange.Show()
@@ -393,6 +380,7 @@ Public Class frm_home
 
     'NOTIFICATIONS
     Private Sub btn_notifications_Click(sender As Object, e As EventArgs) Handles btn_notifications.Click
+        getalldata()
         hidestart()
         lbl_notifications.Show()
         btn_notifications.BackColor = activebutton
@@ -401,6 +389,7 @@ Public Class frm_home
 
     'MY REQUESTS
     Private Sub btn_myrequests_Click(sender As Object, e As EventArgs) Handles btn_myrequests.Click
+        getalldata()
         hidestart()
         lbl_myrequests.Show()
         btn_myrequests.BackColor = activebutton
@@ -409,6 +398,7 @@ Public Class frm_home
 
     'FACULTY AREA
     Private Sub btn_facultyarea_Click(sender As Object, e As EventArgs) Handles btn_facultyarea.Click
+        getalldata()
         hidestart()
         lbl_facultyarea.Show()
         btn_facultyarea.BackColor = activebutton
@@ -419,6 +409,7 @@ Public Class frm_home
 
     'LOGO
     Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
+        getalldata()
         resetall()
     End Sub
 
@@ -483,12 +474,6 @@ Public Class frm_home
         Application.Exit()
     End Sub
 
-    '--------CONNECTION TIMER--------
-
-    Private Sub timer_checkconn_Tick(sender As Object, e As EventArgs) Handles timer_checkconn.Tick
-        updateconnectionstate()
-    End Sub
-
     '--------MENU BAR--------
 
     'QUIT
@@ -510,7 +495,6 @@ Public Class frm_home
 
     'COVER MANAGEMENT
     Private Sub LaunchCoverManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchCoverManagementToolStripMenuItem.Click
-        Me.Hide()
         frm_covermanagement.Show()
     End Sub
 
@@ -543,4 +527,22 @@ Public Class frm_home
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
+
+
+
+
+
+    Private Sub BackgroundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker.DoWork
+        If checkconn() Then
+            MsgBox("Test")
+            getalldata()
+        End If
+    End Sub
+
+    Private Sub data_timer_Tick(sender As Object, e As EventArgs) Handles data_timer.Tick
+        If checkconn() Then
+            getalldata()
+        End If
+    End Sub
+
 End Class

@@ -32,7 +32,6 @@ Partial Class frm_covermanagement
         Me.btn_booked = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.tt_back = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btn_back = New System.Windows.Forms.PictureBox()
         Me.tt_update = New System.Windows.Forms.ToolTip(Me.components)
         Me.btn_update = New System.Windows.Forms.PictureBox()
         Me.panel_sidebar = New System.Windows.Forms.Panel()
@@ -42,7 +41,6 @@ Partial Class frm_covermanagement
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.btn_back, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_update, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_sidebar.SuspendLayout()
         Me.SuspendLayout()
@@ -81,7 +79,7 @@ Partial Class frm_covermanagement
         Me.dg_rooms.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dg_rooms.RowHeadersVisible = False
         Me.dg_rooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_rooms.Size = New System.Drawing.Size(370, 325)
+        Me.dg_rooms.Size = New System.Drawing.Size(370, 322)
         Me.dg_rooms.TabIndex = 1
         '
         'TabControl1
@@ -113,7 +111,7 @@ Partial Class frm_covermanagement
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(376, 331)
+        Me.TabPage2.Size = New System.Drawing.Size(376, 328)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Room Changes"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -139,26 +137,15 @@ Partial Class frm_covermanagement
         '
         Me.tt_back.ToolTipTitle = "Back"
         '
-        'btn_back
-        '
-        Me.btn_back.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_back.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.back_v1
-        Me.btn_back.Location = New System.Drawing.Point(11, 16)
-        Me.btn_back.Name = "btn_back"
-        Me.btn_back.Size = New System.Drawing.Size(55, 30)
-        Me.btn_back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btn_back.TabIndex = 56
-        Me.btn_back.TabStop = False
-        Me.tt_back.SetToolTip(Me.btn_back, "Go back to the main menu")
-        '
         'tt_update
         '
         Me.tt_update.ToolTipTitle = "Update"
         '
         'btn_update
         '
+        Me.btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_update.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_update.Image = Global.Ridgeway_Cover_System.My.Resources.Resources.update
+        Me.btn_update.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.update
         Me.btn_update.Location = New System.Drawing.Point(331, 7)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(35, 49)
@@ -170,9 +157,8 @@ Partial Class frm_covermanagement
         'panel_sidebar
         '
         Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.panel_sidebar.Controls.Add(Me.btn_back)
-        Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Controls.Add(Me.btn_update)
+        Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel_sidebar.Location = New System.Drawing.Point(0, 0)
         Me.panel_sidebar.Margin = New System.Windows.Forms.Padding(0)
@@ -183,13 +169,12 @@ Partial Class frm_covermanagement
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(76, 18)
+        Me.Label3.Location = New System.Drawing.Point(0, 18)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(233, 26)
+        Me.Label3.Size = New System.Drawing.Size(384, 26)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "Cover Management Area"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -213,10 +198,8 @@ Partial Class frm_covermanagement
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.btn_back, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_update, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel_sidebar.ResumeLayout(False)
-        Me.panel_sidebar.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -230,7 +213,6 @@ Partial Class frm_covermanagement
     Friend WithEvents tt_back As System.Windows.Forms.ToolTip
     Friend WithEvents tt_update As System.Windows.Forms.ToolTip
     Friend WithEvents panel_sidebar As System.Windows.Forms.Panel
-    Friend WithEvents btn_back As System.Windows.Forms.PictureBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btn_update As System.Windows.Forms.PictureBox
 End Class
