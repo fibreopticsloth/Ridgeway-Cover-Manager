@@ -24,7 +24,7 @@ Partial Class frm_home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_home))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_roomchange = New System.Windows.Forms.Button()
         Me.btn_facultyarea = New System.Windows.Forms.Button()
@@ -536,8 +536,8 @@ Partial Class frm_home
         '
         Me.panel_start.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.panel_start.Controls.Add(Me.txt_logout)
-        Me.panel_start.Controls.Add(Me.lbl_currentuser)
         Me.panel_start.Controls.Add(Me.lbl_welcome)
+        Me.panel_start.Controls.Add(Me.lbl_currentuser)
         Me.panel_start.Controls.Add(Me.lbl_connectionstate)
         Me.panel_start.Location = New System.Drawing.Point(131, 65)
         Me.panel_start.Margin = New System.Windows.Forms.Padding(0)
@@ -547,7 +547,7 @@ Partial Class frm_home
         '
         'lbl_connectionstate
         '
-        Me.lbl_connectionstate.Font = New System.Drawing.Font("Open Sans Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_connectionstate.Font = New System.Drawing.Font("Microsoft MHei", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_connectionstate.ForeColor = System.Drawing.Color.LimeGreen
         Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
         Me.lbl_connectionstate.Name = "lbl_connectionstate"
@@ -560,18 +560,18 @@ Partial Class frm_home
         '
         Me.txt_logout.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.txt_logout.AutoSize = True
-        Me.txt_logout.Font = New System.Drawing.Font("Microsoft JhengHei UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_logout.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_logout.LinkColor = System.Drawing.Color.White
-        Me.txt_logout.Location = New System.Drawing.Point(213, 201)
+        Me.txt_logout.Location = New System.Drawing.Point(215, 201)
         Me.txt_logout.Name = "txt_logout"
-        Me.txt_logout.Size = New System.Drawing.Size(72, 19)
+        Me.txt_logout.Size = New System.Drawing.Size(69, 19)
         Me.txt_logout.TabIndex = 3
         Me.txt_logout.TabStop = True
         Me.txt_logout.Text = "Not you?"
         '
         'lbl_currentuser
         '
-        Me.lbl_currentuser.Font = New System.Drawing.Font("Microsoft JhengHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_currentuser.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_currentuser.ForeColor = System.Drawing.Color.White
         Me.lbl_currentuser.Location = New System.Drawing.Point(0, 169)
         Me.lbl_currentuser.Name = "lbl_currentuser"
@@ -583,11 +583,11 @@ Partial Class frm_home
         'lbl_welcome
         '
         Me.lbl_welcome.AutoSize = True
-        Me.lbl_welcome.Font = New System.Drawing.Font("Microsoft JhengHei UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_welcome.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_welcome.ForeColor = System.Drawing.Color.White
-        Me.lbl_welcome.Location = New System.Drawing.Point(202, 150)
+        Me.lbl_welcome.Location = New System.Drawing.Point(202, 139)
         Me.lbl_welcome.Name = "lbl_welcome"
-        Me.lbl_welcome.Size = New System.Drawing.Size(95, 24)
+        Me.lbl_welcome.Size = New System.Drawing.Size(95, 26)
         Me.lbl_welcome.TabIndex = 0
         Me.lbl_welcome.Text = "Welcome"
         Me.lbl_welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -862,14 +862,14 @@ Partial Class frm_home
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dg_mycovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_mycovers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dg_mycovers.Location = New System.Drawing.Point(3, 3)
