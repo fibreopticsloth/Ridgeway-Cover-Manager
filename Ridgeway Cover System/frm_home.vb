@@ -26,6 +26,7 @@ Public Class frm_home
         viewrequest()
         nfi.Visible = True
         data_timer.Start()
+        customfont()
         getalldata()
     End Sub
 
@@ -304,6 +305,7 @@ Public Class frm_home
         panel_notifications.Hide()
         panel_myrequests.Hide()
         panel_facultyarea.Hide()
+        customfont()
     End Sub
 
     'RESET REQUEST COVER PANEL
@@ -346,6 +348,13 @@ Public Class frm_home
         resetall()
         panel_start.Hide()
         lbl_start.Hide()
+    End Sub
+
+    'GET DATA
+    Private Sub data_timer_Tick(sender As Object, e As EventArgs) Handles data_timer.Tick
+        If checkconn() Then
+            getalldata()
+        End If
     End Sub
 
     'LOGOUT
@@ -527,22 +536,4 @@ Public Class frm_home
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
-
-
-
-
-
-    Private Sub BackgroundWorker_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorker.DoWork
-        If checkconn() Then
-            MsgBox("Test")
-            getalldata()
-        End If
-    End Sub
-
-    Private Sub data_timer_Tick(sender As Object, e As EventArgs) Handles data_timer.Tick
-        If checkconn() Then
-            getalldata()
-        End If
-    End Sub
-
 End Class

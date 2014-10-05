@@ -38,14 +38,8 @@ Module getdata
 
 
     Public Sub getalldata()
-
-
         Try
-
-
-        
-        connect()
-
+            connect()
         'MY REQUESTS - LESSONS
         newqry("select ID, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked from lessons where teacher='" & My.Settings.currentuser & "'", frm_home.dg_mycovers)
         'MY REQUESTS - ROOMS
@@ -59,7 +53,6 @@ Module getdata
         'ADMIN - USERS
         newqry("select ID, username, type from users", frm_admin.dg_users)
         frm_home.hidecolumns()
-
 
         If updatecmd("SELECT id, startdate, startperiod, enddate, endperiod from lessons where push='1' and booked = 'booked'") Then
             frm_home.lbl_notify.Text += "Cover from " + rd.Item(1).ToString + " to " + rd.Item(3).ToString + " has been booked." + vbNewLine + vbNewLine
@@ -89,19 +82,12 @@ Module getdata
             cmd.ExecuteNonQuery()
             updatecount += 1
         End If
-
         frm_home.btn_notifications.Text = "      Notifications" + " (" + updatecount.ToString + ")"
-
         My.Settings.usernotifications = frm_home.lbl_notify.Text
         My.Settings.usernotificationcount = updatecount.ToString
         My.Settings.Save()
         frm_home.hidecolumns()
-
-
         Catch ex As Exception
-
         End Try
-
-        frm_home.BackgroundWorker.Dispose()
     End Sub
 End Module

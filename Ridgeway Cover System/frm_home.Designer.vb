@@ -126,7 +126,6 @@ Partial Class frm_home
         Me.lbl_notify = New System.Windows.Forms.TextBox()
         Me.panel_notifications_clearnotifications = New System.Windows.Forms.Button()
         Me.lbl_notifications = New System.Windows.Forms.Label()
-        Me.BackgroundWorker = New System.ComponentModel.BackgroundWorker()
         Me.data_timer = New System.Windows.Forms.Timer(Me.components)
         Me.panel_requestcover.SuspendLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1252,7 +1251,6 @@ Partial Class frm_home
         Me.lbl_facultyarea.TabIndex = 63
         Me.lbl_facultyarea.Text = "Faculty Area"
         Me.lbl_facultyarea.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lbl_facultyarea.Visible = False
         '
         'lbl_myrequests
         '
@@ -1264,7 +1262,6 @@ Partial Class frm_home
         Me.lbl_myrequests.TabIndex = 61
         Me.lbl_myrequests.Text = "My Requests"
         Me.lbl_myrequests.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lbl_myrequests.Visible = False
         '
         'lbl_requestcover
         '
@@ -1276,7 +1273,6 @@ Partial Class frm_home
         Me.lbl_requestcover.TabIndex = 59
         Me.lbl_requestcover.Text = "New Cover Request"
         Me.lbl_requestcover.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lbl_requestcover.Visible = False
         '
         'lbl_roomchange
         '
@@ -1288,7 +1284,6 @@ Partial Class frm_home
         Me.lbl_roomchange.TabIndex = 60
         Me.lbl_roomchange.Text = "New Room Change"
         Me.lbl_roomchange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lbl_roomchange.Visible = False
         '
         'lbl_start
         '
@@ -1377,10 +1372,6 @@ Partial Class frm_home
         Me.lbl_notifications.TabIndex = 66
         Me.lbl_notifications.Text = "Notifications"
         Me.lbl_notifications.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.lbl_notifications.Visible = False
-        '
-        'BackgroundWorker
-        '
         '
         'data_timer
         '
@@ -1393,12 +1384,12 @@ Partial Class frm_home
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 451)
+        Me.Controls.Add(Me.lbl_start)
         Me.Controls.Add(Me.panel_start)
         Me.Controls.Add(Me.panel_notifications)
         Me.Controls.Add(Me.panel_roomchange)
         Me.Controls.Add(Me.btn_notifications)
         Me.Controls.Add(Me.btn_sync)
-        Me.Controls.Add(Me.lbl_start)
         Me.Controls.Add(Me.lbl_requestcover)
         Me.Controls.Add(Me.lbl_roomchange)
         Me.Controls.Add(Me.lbl_myrequests)
@@ -1555,6 +1546,5 @@ Partial Class frm_home
     Friend WithEvents lbl_connectionstate As System.Windows.Forms.Label
     Friend WithEvents panel_notifications_clearnotifications As System.Windows.Forms.Button
     Friend WithEvents lbl_notify As System.Windows.Forms.TextBox
-    Friend WithEvents BackgroundWorker As System.ComponentModel.BackgroundWorker
     Friend WithEvents data_timer As System.Windows.Forms.Timer
 End Class

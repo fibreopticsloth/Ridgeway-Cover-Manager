@@ -14,8 +14,8 @@ Module db
     Public Sub connect()
         Try
             conn = New MySqlConnection
-            'conn.ConnectionString = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem"
-            conn.ConnectionString = "server=localhost;userid=root;password=admin;database=coversystem"
+            conn.ConnectionString = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem"
+            'conn.ConnectionString = "server=localhost;userid=root;password=admin;database=coversystem"
             conn.Open()
         Catch ex As Exception
         End Try
@@ -43,11 +43,4 @@ Module db
         cmd.Connection = conn
         cmd.CommandText = cmdtext
     End Sub
-
-    
-
-    'GET ALL SOFTWARE DATA
-    'Public Sub getalldata()
-   
-    'End Sub
 End Module

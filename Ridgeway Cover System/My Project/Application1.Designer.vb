@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Ridgeway_Cover_Manager.frm_splash
+            Me.MainForm = Global.Ridgeway_Cover_Manager.frm_login
         End Sub
     End Class
 End Namespace
