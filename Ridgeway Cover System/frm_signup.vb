@@ -33,18 +33,18 @@ Public Class frm_signup
             Try
                 newcmd("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
                 cmd.ExecuteNonQuery()
+                MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
+                         & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
+                Me.Hide()
+                frm_login.Show()
+                With frm_login
+                    .txt_username.Text = username
+                    .txt_password.Text = ""
+                    .txt_password.Focus()
+                End With
             Catch ex As Exception
                 MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
             End Try
-            MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
-                            & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
-            Me.Hide()
-            frm_login.Show()
-            With frm_login
-                .txt_username.Text = username
-                .txt_password.Text = ""
-                .txt_password.Focus()
-            End With
         Else
                 MsgBox("Your passwords do not match!")
         End If
