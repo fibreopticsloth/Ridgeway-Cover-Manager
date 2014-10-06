@@ -36,7 +36,7 @@ Public Class frm_home
 
     'SUBMIT REQUEST
     Private Sub roomchange_btn_submit_Click(sender As Object, e As EventArgs) Handles roomchange_btn_submit.Click
-        If submit("room", My.Settings.currentuser, My.Settings.currentuser, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text) = 1 Then
+        If submit("room", My.Settings.currentuser, roomchange_txt_room.Text, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text) = 1 Then
             MsgBox("Request submitted")
             resetroomchange()
             getalldata()
@@ -73,7 +73,7 @@ Public Class frm_home
     '--------ROOM CHANGE PANEL--------
 
     'SUBMIT REQUEST
-    Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
+    Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles requestcover_btn_submit.Click
         If submit("lesson", My.Settings.currentuser, requestcover_txt_facultyhead.Text, requestcover_dp_startdate, requestcover_txt_startperiod.Text, requestcover_dp_enddate, requestcover_txt_endperiod.Text, requestcover_txt_reason.Text) = 1 Then
             MsgBox("Request submitted")
             resetrequestcover()

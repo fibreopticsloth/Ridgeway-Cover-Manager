@@ -24,7 +24,7 @@ Partial Class frm_home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_home))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_roomchange = New System.Windows.Forms.Button()
         Me.btn_facultyarea = New System.Windows.Forms.Button()
@@ -42,7 +42,7 @@ Partial Class frm_home
         Me.requestcover_dp_enddate = New System.Windows.Forms.DateTimePicker()
         Me.requestcover_txt_endperiod = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btn_submit = New System.Windows.Forms.Button()
+        Me.requestcover_btn_submit = New System.Windows.Forms.Button()
         Me.requestcover_chk_thislessononly = New System.Windows.Forms.CheckBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.requestcover_txt_startperiod = New System.Windows.Forms.ComboBox()
@@ -54,10 +54,10 @@ Partial Class frm_home
         Me.btn_accountdetails = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.panel_start = New System.Windows.Forms.Panel()
-        Me.lbl_connectionstate = New System.Windows.Forms.Label()
         Me.txt_logout = New System.Windows.Forms.LinkLabel()
-        Me.lbl_currentuser = New System.Windows.Forms.Label()
         Me.lbl_welcome = New System.Windows.Forms.Label()
+        Me.lbl_currentuser = New System.Windows.Forms.Label()
+        Me.lbl_connectionstate = New System.Windows.Forms.Label()
         Me.panel_roomchange = New System.Windows.Forms.Panel()
         Me.roomchange_txt_room = New System.Windows.Forms.TextBox()
         Me.roomchange_txt_reason = New System.Windows.Forms.TextBox()
@@ -235,7 +235,7 @@ Partial Class frm_home
         Me.panel_requestcover.Controls.Add(Me.requestcover_dp_enddate)
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_endperiod)
         Me.panel_requestcover.Controls.Add(Me.Label6)
-        Me.panel_requestcover.Controls.Add(Me.btn_submit)
+        Me.panel_requestcover.Controls.Add(Me.requestcover_btn_submit)
         Me.panel_requestcover.Controls.Add(Me.requestcover_chk_thislessononly)
         Me.panel_requestcover.Controls.Add(Me.Label40)
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_startperiod)
@@ -375,20 +375,20 @@ Partial Class frm_home
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Date:"
         '
-        'btn_submit
+        'requestcover_btn_submit
         '
-        Me.btn_submit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btn_submit.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.btn_submit.FlatAppearance.BorderSize = 0
-        Me.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_submit.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_submit.ForeColor = System.Drawing.Color.White
-        Me.btn_submit.Location = New System.Drawing.Point(155, 301)
-        Me.btn_submit.Name = "btn_submit"
-        Me.btn_submit.Size = New System.Drawing.Size(200, 35)
-        Me.btn_submit.TabIndex = 54
-        Me.btn_submit.Text = "Submit"
-        Me.btn_submit.UseVisualStyleBackColor = False
+        Me.requestcover_btn_submit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.requestcover_btn_submit.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.requestcover_btn_submit.FlatAppearance.BorderSize = 0
+        Me.requestcover_btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.requestcover_btn_submit.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_btn_submit.ForeColor = System.Drawing.Color.White
+        Me.requestcover_btn_submit.Location = New System.Drawing.Point(155, 301)
+        Me.requestcover_btn_submit.Name = "requestcover_btn_submit"
+        Me.requestcover_btn_submit.Size = New System.Drawing.Size(200, 35)
+        Me.requestcover_btn_submit.TabIndex = 54
+        Me.requestcover_btn_submit.Text = "Submit"
+        Me.requestcover_btn_submit.UseVisualStyleBackColor = False
         '
         'requestcover_chk_thislessononly
         '
@@ -545,17 +545,6 @@ Partial Class frm_home
         Me.panel_start.Size = New System.Drawing.Size(499, 382)
         Me.panel_start.TabIndex = 59
         '
-        'lbl_connectionstate
-        '
-        Me.lbl_connectionstate.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_connectionstate.ForeColor = System.Drawing.Color.LimeGreen
-        Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
-        Me.lbl_connectionstate.Name = "lbl_connectionstate"
-        Me.lbl_connectionstate.Size = New System.Drawing.Size(499, 37)
-        Me.lbl_connectionstate.TabIndex = 4
-        Me.lbl_connectionstate.Text = "Connected"
-        Me.lbl_connectionstate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'txt_logout
         '
         Me.txt_logout.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -569,17 +558,6 @@ Partial Class frm_home
         Me.txt_logout.TabStop = True
         Me.txt_logout.Text = "Not you?"
         '
-        'lbl_currentuser
-        '
-        Me.lbl_currentuser.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_currentuser.ForeColor = System.Drawing.Color.White
-        Me.lbl_currentuser.Location = New System.Drawing.Point(0, 166)
-        Me.lbl_currentuser.Name = "lbl_currentuser"
-        Me.lbl_currentuser.Size = New System.Drawing.Size(499, 37)
-        Me.lbl_currentuser.TabIndex = 1
-        Me.lbl_currentuser.Text = "Logged in as "
-        Me.lbl_currentuser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'lbl_welcome
         '
         Me.lbl_welcome.AutoSize = True
@@ -591,6 +569,28 @@ Partial Class frm_home
         Me.lbl_welcome.TabIndex = 0
         Me.lbl_welcome.Text = "Welcome"
         Me.lbl_welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbl_currentuser
+        '
+        Me.lbl_currentuser.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_currentuser.ForeColor = System.Drawing.Color.White
+        Me.lbl_currentuser.Location = New System.Drawing.Point(0, 166)
+        Me.lbl_currentuser.Name = "lbl_currentuser"
+        Me.lbl_currentuser.Size = New System.Drawing.Size(499, 37)
+        Me.lbl_currentuser.TabIndex = 1
+        Me.lbl_currentuser.Text = "Logged in as "
+        Me.lbl_currentuser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbl_connectionstate
+        '
+        Me.lbl_connectionstate.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_connectionstate.ForeColor = System.Drawing.Color.LimeGreen
+        Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
+        Me.lbl_connectionstate.Name = "lbl_connectionstate"
+        Me.lbl_connectionstate.Size = New System.Drawing.Size(499, 37)
+        Me.lbl_connectionstate.TabIndex = 4
+        Me.lbl_connectionstate.Text = "Connected"
+        Me.lbl_connectionstate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'panel_roomchange
         '
@@ -846,10 +846,10 @@ Partial Class frm_home
         '
         Me.TabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer), CType(CType(230, Byte), Integer))
         Me.TabPage1.Controls.Add(Me.dg_mycovers)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(478, 314)
+        Me.TabPage1.Size = New System.Drawing.Size(478, 316)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Cover Requests"
         '
@@ -862,14 +862,14 @@ Partial Class frm_home
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dg_mycovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_mycovers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dg_mycovers.Location = New System.Drawing.Point(3, 3)
@@ -877,7 +877,7 @@ Partial Class frm_home
         Me.dg_mycovers.ReadOnly = True
         Me.dg_mycovers.RowHeadersVisible = False
         Me.dg_mycovers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_mycovers.Size = New System.Drawing.Size(472, 308)
+        Me.dg_mycovers.Size = New System.Drawing.Size(472, 310)
         Me.dg_mycovers.TabIndex = 0
         '
         'TabPage2
@@ -1472,7 +1472,7 @@ Partial Class frm_home
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents btn_submit As System.Windows.Forms.Button
+    Friend WithEvents requestcover_btn_submit As System.Windows.Forms.Button
     Friend WithEvents panel_start As System.Windows.Forms.Panel
     Friend WithEvents panel_roomchange As System.Windows.Forms.Panel
     Friend WithEvents roomchange_txt_room As System.Windows.Forms.TextBox
