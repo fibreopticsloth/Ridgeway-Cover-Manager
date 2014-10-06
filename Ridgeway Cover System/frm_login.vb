@@ -27,7 +27,8 @@ Public Class frm_login
                 rd = cmd.ExecuteReader
                 'IF PASSWORD CORRECT
                 If rd.HasRows Then
-                    rememberlogin()
+                rememberlogin()
+        
                 My.Settings.currentuser = txt_username.Text
                 My.Settings.Save()
                     While rd.Read
@@ -55,6 +56,8 @@ Public Class frm_login
             My.Settings.rememberpassword = txt_password.Text
             My.Settings.Save()
         Else
+            txt_username.ResetText()
+            txt_password.ResetText()
             My.Settings.rememberusername = ""
             My.Settings.rememberpassword = ""
             My.Settings.Save()
