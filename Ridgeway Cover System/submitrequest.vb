@@ -125,7 +125,7 @@ Module submitrequest
     'CHECK THERE IS NO OVERLAP WITH EXISTING REQUESTS
     Public Function checkoverlap()
         If type = "lesson" Then
-            newcmd("select * from lessons where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate where teacher = '" & My.Settings.currentuser & "'")
+            newcmd("select * from lessons where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'")
             rd = cmd.ExecuteReader
             If rd.HasRows Then
                 rd.Dispose()
@@ -136,7 +136,7 @@ Module submitrequest
                 Return 1
             End If
         ElseIf type = "room" Then
-            newcmd("select * from roomchange where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate where teacher = '" & My.Settings.currentuser & "'")
+            newcmd("select * from roomchange where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'")
             rd = cmd.ExecuteReader
             If rd.HasRows Then
                 rd.Dispose()
