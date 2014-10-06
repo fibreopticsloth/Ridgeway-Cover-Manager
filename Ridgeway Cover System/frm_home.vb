@@ -16,7 +16,9 @@ Public Class frm_home
     'FORM LOAD
     Private Sub frm_new_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_notify.Text = My.Settings.usernotifications
-        getdata.updatecount = My.Settings.usernotificationcount
+        If Not My.Settings.usernotificationcount = "" Then
+            getdata.updatecount = My.Settings.usernotificationcount
+        End If
         lbl_currentuser.Text += My.Settings.currentuser
         setdates()
         connect()
