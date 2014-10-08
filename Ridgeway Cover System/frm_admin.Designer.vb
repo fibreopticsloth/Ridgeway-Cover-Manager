@@ -22,6 +22,7 @@ Partial Class frm_admin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_admin))
         Me.panel_sidebar = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dg_users = New System.Windows.Forms.DataGridView()
@@ -304,7 +305,7 @@ Partial Class frm_admin
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(503, 266)
+        Me.TabPage1.Size = New System.Drawing.Size(503, 279)
         Me.TabPage1.TabIndex = 4
         Me.TabPage1.Text = "Add User/Admin"
         '
@@ -421,6 +422,7 @@ Partial Class frm_admin
         Me.ClientSize = New System.Drawing.Size(511, 358)
         Me.Controls.Add(Me.panel_sidebar)
         Me.Controls.Add(Me.dg_admins)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

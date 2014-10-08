@@ -65,8 +65,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>rcm_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>EDE8F126C0F655DCD66B93BEA143706909FF277B</ManifestCertificateThumbprint>
@@ -285,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="rcm_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

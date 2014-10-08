@@ -41,22 +41,22 @@ Partial Class frm_splash
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Open Sans Light", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(149, 50)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(285, 33)
+        Me.Label1.Size = New System.Drawing.Size(280, 32)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Ridgeway Cover Manager"
         '
         'lbl_loading
         '
         Me.lbl_loading.AutoSize = True
-        Me.lbl_loading.Font = New System.Drawing.Font("Open Sans Light", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_loading.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_loading.ForeColor = System.Drawing.Color.White
         Me.lbl_loading.Location = New System.Drawing.Point(248, 99)
         Me.lbl_loading.Name = "lbl_loading"
-        Me.lbl_loading.Size = New System.Drawing.Size(79, 26)
+        Me.lbl_loading.Size = New System.Drawing.Size(78, 25)
         Me.lbl_loading.TabIndex = 2
         Me.lbl_loading.Text = "Loading"
         Me.lbl_loading.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -70,6 +70,7 @@ Partial Class frm_splash
         '
         Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
         Me.PictureBox2.Location = New System.Drawing.Point(40, 50)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(91, 75)
