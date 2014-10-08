@@ -10,7 +10,7 @@ Public Class frm_home
     Dim id As Integer
     Dim row As Integer = 0
     Dim buttoncolour As Color = Color.FromArgb(28, 28, 28)
-    Dim activebutton As Color = Color.FromArgb(63, 63, 70)
+    Dim activebutton As Color = My.Settings.accentcolour
     Dim mouseoverbutton As Color = Color.FromArgb(0, 122, 204)
 
     'FORM LOAD
@@ -19,6 +19,8 @@ Public Class frm_home
         If Not My.Settings.usernotificationcount = "" Then
             getdata.updatecount = My.Settings.usernotificationcount
         End If
+        nfi.Visible = True
+        updateaccentcolour()
         setdates()
         connect()
         getalldata()
@@ -268,6 +270,51 @@ Public Class frm_home
         facultyarea_txt_endperiod.SelectedIndex = -1
     End Sub
 
+    '--------USER INTERFACE PANEL--------
+
+    'SET NEW COLOUR
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        If ColorDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
+            My.Settings.accentcolour = ColorDialog.Color
+            My.Settings.Save()
+            pnl_colour.BackColor = My.Settings.accentcolour
+            btn_userinterface.BackColor = My.Settings.accentcolour
+            updateaccentcolour()
+        End If
+    End Sub
+
+    'PREVIEW COLOUR
+    Private Sub pnl_colour_Paint(sender As Object, e As PaintEventArgs) Handles pnl_colour.Paint
+        pnl_colour.BackColor = My.Settings.accentcolour
+    End Sub
+
+    'DEFAULT COLOUR
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        My.Settings.accentcolour = Color.FromArgb(0, 122, 204)
+        My.Settings.Save()
+        pnl_colour.BackColor = My.Settings.accentcolour
+        btn_userinterface.BackColor = My.Settings.accentcolour
+        updateaccentcolour()
+    End Sub
+
+    'CHANGE BUTTONSTO NEW COLOUE
+    Public Sub updateaccentcolour()
+        btn_requestcover.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
+        btn_requestcover.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+        btn_roomchange.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
+        btn_roomchange.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+        btn_notifications.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
+        btn_notifications.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+        btn_facultyarea.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
+        btn_facultyarea.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+        btn_myrequests.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
+        btn_myrequests.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+        btn_accountdetails.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
+        btn_accountdetails.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+        btn_userinterface.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
+        btn_userinterface.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+    End Sub
+
     '--------MISC--------
 
     'SET DATES
@@ -305,6 +352,7 @@ Public Class frm_home
         panel_notifications.Hide()
         panel_myrequests.Hide()
         panel_facultyarea.Hide()
+        panel_userinterface.Hide()
     End Sub
 
     'RESET REQUEST COVER PANEL
@@ -377,7 +425,7 @@ Public Class frm_home
         setdates()
         hidestart()
         lbl_requestcover.Show()
-        btn_requestcover.BackColor = activebutton
+        btn_requestcover.BackColor = My.Settings.accentcolour
         panel_requestcover.Show()
     End Sub
 
@@ -387,7 +435,7 @@ Public Class frm_home
         setdates()
         hidestart()
         lbl_roomchange.Show()
-        btn_roomchange.BackColor = activebutton
+        btn_roomchange.BackColor = My.Settings.accentcolour
         panel_roomchange.Show()
     End Sub
 
@@ -396,7 +444,7 @@ Public Class frm_home
         getalldata()
         hidestart()
         lbl_notifications.Show()
-        btn_notifications.BackColor = activebutton
+        btn_notifications.BackColor = My.Settings.accentcolour
         panel_notifications.Show()
     End Sub
 
@@ -405,7 +453,7 @@ Public Class frm_home
         getalldata()
         hidestart()
         lbl_myrequests.Show()
-        btn_myrequests.BackColor = activebutton
+        btn_myrequests.BackColor = My.Settings.accentcolour
         panel_myrequests.Show()
     End Sub
 
@@ -414,8 +462,15 @@ Public Class frm_home
         getalldata()
         hidestart()
         lbl_facultyarea.Show()
-        btn_facultyarea.BackColor = activebutton
+        btn_facultyarea.BackColor = My.Settings.accentcolour
         panel_facultyarea.Show()
+    End Sub
+
+    'USER INTERFACE OPTIONS
+    Private Sub btn_userinterface_Click(sender As Object, e As EventArgs) Handles btn_userinterface.Click
+        hidestart()
+        btn_userinterface.BackColor = My.Settings.accentcolour
+        panel_userinterface.Show()
     End Sub
 
     '--------BUTTONS--------
@@ -483,6 +538,7 @@ Public Class frm_home
 
     'EXIT OPTION
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        nfi.Visible = False
         My.Settings.currentuser = ""
         Application.Exit()
     End Sub
@@ -491,6 +547,7 @@ Public Class frm_home
 
     'QUIT
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
+        nfi.Visible = False
         My.Settings.currentuser = ""
         Application.Exit()
     End Sub
@@ -543,6 +600,4 @@ Public Class frm_home
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
-
-    
 End Class
