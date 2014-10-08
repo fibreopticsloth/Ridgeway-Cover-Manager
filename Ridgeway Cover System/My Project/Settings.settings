@@ -31,5 +31,8 @@
     <Setting Name="usernotificationcount" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="accentcolour" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 122, 204</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

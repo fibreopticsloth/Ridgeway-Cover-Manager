@@ -147,6 +147,18 @@ Namespace My
                 Me("usernotificationcount") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0, 122, 204")>  _
+        Public Property accentcolour() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("accentcolour"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("accentcolour") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

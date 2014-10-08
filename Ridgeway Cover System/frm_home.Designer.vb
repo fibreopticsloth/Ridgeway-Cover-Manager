@@ -24,7 +24,7 @@ Partial Class frm_home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_home))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_roomchange = New System.Windows.Forms.Button()
         Me.btn_facultyarea = New System.Windows.Forms.Button()
@@ -126,6 +126,12 @@ Partial Class frm_home
         Me.panel_notifications_clearnotifications = New System.Windows.Forms.Button()
         Me.lbl_notifications = New System.Windows.Forms.Label()
         Me.data_timer = New System.Windows.Forms.Timer(Me.components)
+        Me.panel_userinterface = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.pnl_colour = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ColorDialog = New System.Windows.Forms.ColorDialog()
         Me.panel_requestcover.SuspendLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_start.SuspendLayout()
@@ -143,6 +149,7 @@ Partial Class frm_home
         Me.MenuStrip.SuspendLayout()
         Me.nfimenu.SuspendLayout()
         Me.panel_notifications.SuspendLayout()
+        Me.panel_userinterface.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -850,14 +857,14 @@ Partial Class frm_home
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dg_mycovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_mycovers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dg_mycovers.Location = New System.Drawing.Point(3, 3)
@@ -1366,12 +1373,80 @@ Partial Class frm_home
         Me.data_timer.Enabled = True
         Me.data_timer.Interval = 5000
         '
+        'panel_userinterface
+        '
+        Me.panel_userinterface.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.panel_userinterface.Controls.Add(Me.Button2)
+        Me.panel_userinterface.Controls.Add(Me.Label28)
+        Me.panel_userinterface.Controls.Add(Me.pnl_colour)
+        Me.panel_userinterface.Controls.Add(Me.Button1)
+        Me.panel_userinterface.Location = New System.Drawing.Point(131, 65)
+        Me.panel_userinterface.Margin = New System.Windows.Forms.Padding(0)
+        Me.panel_userinterface.Name = "panel_userinterface"
+        Me.panel_userinterface.Size = New System.Drawing.Size(499, 382)
+        Me.panel_userinterface.TabIndex = 60
+        Me.panel_userinterface.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(155, 158)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(150, 25)
+        Me.Button2.TabIndex = 59
+        Me.Button2.Text = "Set to Default"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(38, 31)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(111, 21)
+        Me.Label28.TabIndex = 58
+        Me.Label28.Text = "Accent Colour:"
+        '
+        'pnl_colour
+        '
+        Me.pnl_colour.Location = New System.Drawing.Point(155, 33)
+        Me.pnl_colour.Name = "pnl_colour"
+        Me.pnl_colour.Size = New System.Drawing.Size(150, 75)
+        Me.pnl_colour.TabIndex = 57
+        '
+        'Button1
+        '
+        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(155, 117)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(150, 35)
+        Me.Button1.TabIndex = 56
+        Me.Button1.Text = "Choose New Colour"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'ColorDialog
+        '
+        Me.ColorDialog.AnyColor = True
+        '
         'frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 451)
+        Me.Controls.Add(Me.panel_userinterface)
         Me.Controls.Add(Me.lbl_start)
         Me.Controls.Add(Me.panel_start)
         Me.Controls.Add(Me.panel_notifications)
@@ -1429,6 +1504,8 @@ Partial Class frm_home
         Me.nfimenu.ResumeLayout(False)
         Me.panel_notifications.ResumeLayout(False)
         Me.panel_notifications.PerformLayout()
+        Me.panel_userinterface.ResumeLayout(False)
+        Me.panel_userinterface.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1534,4 +1611,10 @@ Partial Class frm_home
     Friend WithEvents panel_notifications_clearnotifications As System.Windows.Forms.Button
     Friend WithEvents lbl_notify As System.Windows.Forms.TextBox
     Friend WithEvents data_timer As System.Windows.Forms.Timer
+    Friend WithEvents panel_userinterface As System.Windows.Forms.Panel
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents ColorDialog As System.Windows.Forms.ColorDialog
+    Friend WithEvents pnl_colour As System.Windows.Forms.Panel
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class
