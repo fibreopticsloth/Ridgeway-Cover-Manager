@@ -60,7 +60,7 @@ Partial Class frm_covermanagement
         Me.dg_covers.ReadOnly = True
         Me.dg_covers.RowHeadersVisible = False
         Me.dg_covers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_covers.Size = New System.Drawing.Size(370, 322)
+        Me.dg_covers.Size = New System.Drawing.Size(370, 335)
         Me.dg_covers.TabIndex = 0
         '
         'dg_rooms
@@ -79,7 +79,7 @@ Partial Class frm_covermanagement
         Me.dg_rooms.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dg_rooms.RowHeadersVisible = False
         Me.dg_rooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_rooms.Size = New System.Drawing.Size(370, 322)
+        Me.dg_rooms.Size = New System.Drawing.Size(370, 335)
         Me.dg_rooms.TabIndex = 1
         '
         'TabControl1
@@ -88,10 +88,10 @@ Partial Class frm_covermanagement
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 66)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 53)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(384, 354)
+        Me.TabControl1.Size = New System.Drawing.Size(384, 367)
         Me.TabControl1.TabIndex = 2
         '
         'TabPage1
@@ -100,7 +100,7 @@ Partial Class frm_covermanagement
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(376, 328)
+        Me.TabPage1.Size = New System.Drawing.Size(376, 341)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Cover Requests"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -111,7 +111,7 @@ Partial Class frm_covermanagement
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(376, 328)
+        Me.TabPage2.Size = New System.Drawing.Size(376, 341)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Room Changes"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -119,12 +119,12 @@ Partial Class frm_covermanagement
         'btn_booked
         '
         Me.btn_booked.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_booked.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.btn_booked.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.btn_booked.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_booked.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText
         Me.btn_booked.FlatAppearance.BorderSize = 0
         Me.btn_booked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_booked.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_booked.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_booked.ForeColor = System.Drawing.Color.White
         Me.btn_booked.Location = New System.Drawing.Point(132, 427)
         Me.btn_booked.Name = "btn_booked"
@@ -146,9 +146,9 @@ Partial Class frm_covermanagement
         Me.btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_update.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_update.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.update
-        Me.btn_update.Location = New System.Drawing.Point(331, 7)
+        Me.btn_update.Location = New System.Drawing.Point(345, 7)
         Me.btn_update.Name = "btn_update"
-        Me.btn_update.Size = New System.Drawing.Size(35, 49)
+        Me.btn_update.Size = New System.Drawing.Size(35, 35)
         Me.btn_update.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_update.TabIndex = 53
         Me.btn_update.TabStop = False
@@ -156,7 +156,7 @@ Partial Class frm_covermanagement
         '
         'panel_sidebar
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.panel_sidebar.Controls.Add(Me.btn_update)
         Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
@@ -164,15 +164,15 @@ Partial Class frm_covermanagement
         Me.panel_sidebar.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_sidebar.Name = "panel_sidebar"
         Me.panel_sidebar.Padding = New System.Windows.Forms.Padding(7)
-        Me.panel_sidebar.Size = New System.Drawing.Size(384, 63)
+        Me.panel_sidebar.Size = New System.Drawing.Size(384, 50)
         Me.panel_sidebar.TabIndex = 60
         '
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Candara", 14.25!)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(0, 18)
+        Me.Label3.Location = New System.Drawing.Point(0, 12)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(384, 26)
         Me.Label3.TabIndex = 52

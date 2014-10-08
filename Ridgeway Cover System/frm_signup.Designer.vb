@@ -61,10 +61,11 @@ Partial Class frm_signup
         'lbl_username
         '
         Me.lbl_username.AutoSize = True
-        Me.lbl_username.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_username.Location = New System.Drawing.Point(43, 140)
+        Me.lbl_username.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.lbl_username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.lbl_username.Location = New System.Drawing.Point(45, 140)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(158, 54)
+        Me.lbl_username.Size = New System.Drawing.Size(155, 51)
         Me.lbl_username.TabIndex = 5
         Me.lbl_username.Text = "Your username has been" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "automatically detected as:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "username"
         Me.lbl_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -72,29 +73,29 @@ Partial Class frm_signup
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.Label3.Location = New System.Drawing.Point(43, 268)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(118, 18)
+        Me.Label3.Size = New System.Drawing.Size(110, 17)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Confirm Password:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.Label4.Location = New System.Drawing.Point(43, 212)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 18)
+        Me.Label4.Size = New System.Drawing.Size(62, 17)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Password:"
         '
         'btn_signup
         '
-        Me.btn_signup.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.btn_signup.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.btn_signup.FlatAppearance.BorderSize = 0
         Me.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_signup.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_signup.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
         Me.btn_signup.ForeColor = System.Drawing.Color.White
         Me.btn_signup.Location = New System.Drawing.Point(46, 337)
         Me.btn_signup.Name = "btn_signup"
@@ -106,18 +107,18 @@ Partial Class frm_signup
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Open Sans Light", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(22, 82)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(28, 82)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(200, 44)
+        Me.Label1.Size = New System.Drawing.Size(189, 42)
         Me.Label1.TabIndex = 45
         Me.Label1.Text = "Sign Up for" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ridgeway Cover Scheduler"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'panel_sidebar
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.panel_sidebar.Controls.Add(Me.btn_back)
         Me.panel_sidebar.Controls.Add(Me.PictureBox2)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top

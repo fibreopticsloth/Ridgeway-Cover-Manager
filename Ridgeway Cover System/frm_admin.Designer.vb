@@ -67,25 +67,25 @@ Partial Class frm_admin
         '
         'panel_sidebar
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel_sidebar.Location = New System.Drawing.Point(0, 0)
         Me.panel_sidebar.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_sidebar.Name = "panel_sidebar"
         Me.panel_sidebar.Padding = New System.Windows.Forms.Padding(7)
-        Me.panel_sidebar.Size = New System.Drawing.Size(511, 63)
+        Me.panel_sidebar.Size = New System.Drawing.Size(511, 50)
         Me.panel_sidebar.TabIndex = 60
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Candara", 14.25!)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(197, 18)
+        Me.Label3.Location = New System.Drawing.Point(203, 14)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(116, 26)
+        Me.Label3.Size = New System.Drawing.Size(104, 23)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "Admin Area"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -104,7 +104,7 @@ Partial Class frm_admin
         Me.dg_users.RowHeadersVisible = False
         Me.dg_users.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dg_users.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_users.Size = New System.Drawing.Size(181, 261)
+        Me.dg_users.Size = New System.Drawing.Size(181, 276)
         Me.dg_users.TabIndex = 64
         '
         'id
@@ -197,7 +197,7 @@ Partial Class frm_admin
         Me.GroupBox1.Controls.Add(Me.txt_newusername)
         Me.GroupBox1.Controls.Add(Me.txt_newtype)
         Me.GroupBox1.Controls.Add(Me.btn_update)
-        Me.GroupBox1.Location = New System.Drawing.Point(187, 77)
+        Me.GroupBox1.Location = New System.Drawing.Point(187, 80)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(150, 135)
         Me.GroupBox1.TabIndex = 76
@@ -225,7 +225,7 @@ Partial Class frm_admin
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.txt_search)
-        Me.GroupBox2.Location = New System.Drawing.Point(187, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(187, 15)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(306, 49)
         Me.GroupBox2.TabIndex = 77
@@ -238,7 +238,7 @@ Partial Class frm_admin
         Me.GroupBox3.Controls.Add(Me.txt_pw1)
         Me.GroupBox3.Controls.Add(Me.txt_pw2)
         Me.GroupBox3.Controls.Add(Me.btn_changepw)
-        Me.GroupBox3.Location = New System.Drawing.Point(343, 77)
+        Me.GroupBox3.Location = New System.Drawing.Point(343, 80)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(150, 118)
         Me.GroupBox3.TabIndex = 78
@@ -262,7 +262,7 @@ Partial Class frm_admin
         Me.btn_deleteuser.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_deleteuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_deleteuser.ForeColor = System.Drawing.Color.White
-        Me.btn_deleteuser.Location = New System.Drawing.Point(187, 223)
+        Me.btn_deleteuser.Location = New System.Drawing.Point(187, 226)
         Me.btn_deleteuser.Name = "btn_deleteuser"
         Me.btn_deleteuser.Size = New System.Drawing.Size(306, 37)
         Me.btn_deleteuser.TabIndex = 79
@@ -273,11 +273,11 @@ Partial Class frm_admin
         '
         Me.dg_admins.Controls.Add(Me.TabPage3)
         Me.dg_admins.Controls.Add(Me.TabPage1)
-        Me.dg_admins.Location = New System.Drawing.Point(0, 66)
+        Me.dg_admins.Location = New System.Drawing.Point(0, 53)
         Me.dg_admins.Multiline = True
         Me.dg_admins.Name = "dg_admins"
         Me.dg_admins.SelectedIndex = 0
-        Me.dg_admins.Size = New System.Drawing.Size(511, 292)
+        Me.dg_admins.Size = New System.Drawing.Size(511, 305)
         Me.dg_admins.TabIndex = 81
         '
         'TabPage3
@@ -291,7 +291,7 @@ Partial Class frm_admin
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(503, 266)
+        Me.TabPage3.Size = New System.Drawing.Size(503, 279)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Manage Users"
         '

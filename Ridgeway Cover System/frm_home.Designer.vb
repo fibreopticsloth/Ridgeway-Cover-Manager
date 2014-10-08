@@ -55,7 +55,6 @@ Partial Class frm_home
         Me.Label3 = New System.Windows.Forms.Label()
         Me.panel_start = New System.Windows.Forms.Panel()
         Me.txt_logout = New System.Windows.Forms.LinkLabel()
-        Me.lbl_welcome = New System.Windows.Forms.Label()
         Me.lbl_currentuser = New System.Windows.Forms.Label()
         Me.lbl_connectionstate = New System.Windows.Forms.Label()
         Me.panel_roomchange = New System.Windows.Forms.Panel()
@@ -149,11 +148,11 @@ Partial Class frm_home
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(7, 105)
+        Me.Label1.Location = New System.Drawing.Point(3, 107)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 14)
+        Me.Label1.Size = New System.Drawing.Size(32, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "NEW"
         '
@@ -165,13 +164,13 @@ Partial Class frm_home
         Me.btn_roomchange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_roomchange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_roomchange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_roomchange.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_roomchange.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.btn_roomchange.ForeColor = System.Drawing.Color.White
         Me.btn_roomchange.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.roomchange
         Me.btn_roomchange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_roomchange.Location = New System.Drawing.Point(6, 157)
+        Me.btn_roomchange.Location = New System.Drawing.Point(3, 157)
         Me.btn_roomchange.Name = "btn_roomchange"
-        Me.btn_roomchange.Size = New System.Drawing.Size(125, 35)
+        Me.btn_roomchange.Size = New System.Drawing.Size(130, 35)
         Me.btn_roomchange.TabIndex = 4
         Me.btn_roomchange.TabStop = False
         Me.btn_roomchange.Text = "       Room Change"
@@ -186,13 +185,13 @@ Partial Class frm_home
         Me.btn_facultyarea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_facultyarea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_facultyarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_facultyarea.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_facultyarea.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.btn_facultyarea.ForeColor = System.Drawing.Color.White
         Me.btn_facultyarea.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.facultyarea
         Me.btn_facultyarea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_facultyarea.Location = New System.Drawing.Point(6, 290)
+        Me.btn_facultyarea.Location = New System.Drawing.Point(3, 288)
         Me.btn_facultyarea.Name = "btn_facultyarea"
-        Me.btn_facultyarea.Size = New System.Drawing.Size(125, 35)
+        Me.btn_facultyarea.Size = New System.Drawing.Size(130, 35)
         Me.btn_facultyarea.TabIndex = 10
         Me.btn_facultyarea.TabStop = False
         Me.btn_facultyarea.Text = "       Faculty Area"
@@ -207,13 +206,13 @@ Partial Class frm_home
         Me.btn_myrequests.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_myrequests.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_myrequests.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_myrequests.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_myrequests.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.btn_myrequests.ForeColor = System.Drawing.Color.White
         Me.btn_myrequests.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.myrequests
         Me.btn_myrequests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_myrequests.Location = New System.Drawing.Point(6, 256)
+        Me.btn_myrequests.Location = New System.Drawing.Point(3, 254)
         Me.btn_myrequests.Name = "btn_myrequests"
-        Me.btn_myrequests.Size = New System.Drawing.Size(125, 35)
+        Me.btn_myrequests.Size = New System.Drawing.Size(130, 35)
         Me.btn_myrequests.TabIndex = 9
         Me.btn_myrequests.TabStop = False
         Me.btn_myrequests.Text = "       My Requests"
@@ -222,7 +221,7 @@ Partial Class frm_home
         '
         'panel_requestcover
         '
-        Me.panel_requestcover.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.panel_requestcover.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_reason)
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_facultyhead)
         Me.panel_requestcover.Controls.Add(Me.Label11)
@@ -248,7 +247,7 @@ Partial Class frm_home
         '
         'requestcover_txt_reason
         '
-        Me.requestcover_txt_reason.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_reason.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_txt_reason.Location = New System.Drawing.Point(249, 142)
         Me.requestcover_txt_reason.Margin = New System.Windows.Forms.Padding(6)
         Me.requestcover_txt_reason.Multiline = True
@@ -259,7 +258,7 @@ Partial Class frm_home
         '
         'requestcover_txt_facultyhead
         '
-        Me.requestcover_txt_facultyhead.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_facultyhead.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_txt_facultyhead.FormattingEnabled = True
         Me.requestcover_txt_facultyhead.Location = New System.Drawing.Point(249, 84)
         Me.requestcover_txt_facultyhead.Name = "requestcover_txt_facultyhead"
@@ -269,41 +268,41 @@ Partial Class frm_home
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label11.Location = New System.Drawing.Point(311, 119)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(47, 15)
+        Me.Label11.Size = New System.Drawing.Size(45, 15)
         Me.Label11.TabIndex = 58
         Me.Label11.Text = "Reason"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label10.Location = New System.Drawing.Point(292, 60)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(87, 15)
+        Me.Label10.Size = New System.Drawing.Size(82, 15)
         Me.Label10.TabIndex = 57
         Me.Label10.Text = "Faculty Leader"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label9.Location = New System.Drawing.Point(126, 174)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(57, 15)
+        Me.Label9.Size = New System.Drawing.Size(54, 15)
         Me.Label9.TabIndex = 56
         Me.Label9.Text = "End Date"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(75, 202)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(34, 15)
@@ -313,19 +312,19 @@ Partial Class frm_home
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label8.Location = New System.Drawing.Point(125, 60)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 15)
+        Me.Label8.Size = New System.Drawing.Size(58, 15)
         Me.Label8.TabIndex = 55
         Me.Label8.Text = "Start Date"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label7.Location = New System.Drawing.Point(65, 228)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(44, 15)
@@ -335,7 +334,7 @@ Partial Class frm_home
         'requestcover_dp_startdate
         '
         Me.requestcover_dp_startdate.CustomFormat = "dd'-'MM'-'yy"
-        Me.requestcover_dp_startdate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_dp_startdate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_dp_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.requestcover_dp_startdate.Location = New System.Drawing.Point(115, 84)
         Me.requestcover_dp_startdate.Name = "requestcover_dp_startdate"
@@ -346,7 +345,7 @@ Partial Class frm_home
         'requestcover_dp_enddate
         '
         Me.requestcover_dp_enddate.CustomFormat = "dd'-'MM'-'yy"
-        Me.requestcover_dp_enddate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_dp_enddate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_dp_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.requestcover_dp_enddate.Location = New System.Drawing.Point(115, 196)
         Me.requestcover_dp_enddate.Name = "requestcover_dp_enddate"
@@ -356,7 +355,7 @@ Partial Class frm_home
         '
         'requestcover_txt_endperiod
         '
-        Me.requestcover_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_txt_endperiod.FormattingEnabled = True
         Me.requestcover_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.requestcover_txt_endperiod.Location = New System.Drawing.Point(115, 225)
@@ -367,8 +366,8 @@ Partial Class frm_home
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label6.Location = New System.Drawing.Point(75, 90)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(34, 15)
@@ -381,7 +380,7 @@ Partial Class frm_home
         Me.requestcover_btn_submit.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.requestcover_btn_submit.FlatAppearance.BorderSize = 0
         Me.requestcover_btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.requestcover_btn_submit.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_btn_submit.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_btn_submit.ForeColor = System.Drawing.Color.White
         Me.requestcover_btn_submit.Location = New System.Drawing.Point(155, 301)
         Me.requestcover_btn_submit.Name = "requestcover_btn_submit"
@@ -394,7 +393,7 @@ Partial Class frm_home
         '
         Me.requestcover_chk_thislessononly.AutoSize = True
         Me.requestcover_chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.requestcover_chk_thislessononly.ForeColor = System.Drawing.Color.White
+        Me.requestcover_chk_thislessononly.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.requestcover_chk_thislessononly.Location = New System.Drawing.Point(115, 142)
         Me.requestcover_chk_thislessononly.Name = "requestcover_chk_thislessononly"
         Me.requestcover_chk_thislessononly.Size = New System.Drawing.Size(97, 17)
@@ -405,8 +404,8 @@ Partial Class frm_home
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.ForeColor = System.Drawing.Color.White
+        Me.Label40.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label40.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label40.Location = New System.Drawing.Point(65, 119)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(44, 15)
@@ -415,7 +414,7 @@ Partial Class frm_home
         '
         'requestcover_txt_startperiod
         '
-        Me.requestcover_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.requestcover_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_txt_startperiod.FormattingEnabled = True
         Me.requestcover_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.requestcover_txt_startperiod.Location = New System.Drawing.Point(115, 113)
@@ -431,13 +430,13 @@ Partial Class frm_home
         Me.btn_requestcover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_requestcover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_requestcover.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_requestcover.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_requestcover.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_requestcover.ForeColor = System.Drawing.Color.White
         Me.btn_requestcover.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.coverrequest
         Me.btn_requestcover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_requestcover.Location = New System.Drawing.Point(6, 123)
+        Me.btn_requestcover.Location = New System.Drawing.Point(3, 123)
         Me.btn_requestcover.Name = "btn_requestcover"
-        Me.btn_requestcover.Size = New System.Drawing.Size(125, 35)
+        Me.btn_requestcover.Size = New System.Drawing.Size(130, 35)
         Me.btn_requestcover.TabIndex = 12
         Me.btn_requestcover.TabStop = False
         Me.btn_requestcover.Text = "       Cover Request"
@@ -447,11 +446,11 @@ Partial Class frm_home
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(7, 203)
+        Me.Label5.Location = New System.Drawing.Point(3, 204)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(110, 14)
+        Me.Label5.Size = New System.Drawing.Size(109, 13)
         Me.Label5.TabIndex = 13
         Me.Label5.Text = "MANAGE REQUESTS"
         '
@@ -469,11 +468,11 @@ Partial Class frm_home
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(7, 339)
+        Me.Label2.Location = New System.Drawing.Point(3, 335)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 14)
+        Me.Label2.Size = New System.Drawing.Size(52, 13)
         Me.Label2.TabIndex = 16
         Me.Label2.Text = "OPTIONS"
         '
@@ -485,13 +484,13 @@ Partial Class frm_home
         Me.btn_userinterface.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_userinterface.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_userinterface.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_userinterface.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_userinterface.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.btn_userinterface.ForeColor = System.Drawing.Color.White
         Me.btn_userinterface.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.userinterface
         Me.btn_userinterface.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_userinterface.Location = New System.Drawing.Point(6, 391)
+        Me.btn_userinterface.Location = New System.Drawing.Point(3, 385)
         Me.btn_userinterface.Name = "btn_userinterface"
-        Me.btn_userinterface.Size = New System.Drawing.Size(125, 35)
+        Me.btn_userinterface.Size = New System.Drawing.Size(130, 35)
         Me.btn_userinterface.TabIndex = 15
         Me.btn_userinterface.TabStop = False
         Me.btn_userinterface.Text = "       User Interface"
@@ -506,13 +505,13 @@ Partial Class frm_home
         Me.btn_accountdetails.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_accountdetails.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_accountdetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_accountdetails.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_accountdetails.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.btn_accountdetails.ForeColor = System.Drawing.Color.White
         Me.btn_accountdetails.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.userdetails
         Me.btn_accountdetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_accountdetails.Location = New System.Drawing.Point(6, 357)
+        Me.btn_accountdetails.Location = New System.Drawing.Point(3, 351)
         Me.btn_accountdetails.Name = "btn_accountdetails"
-        Me.btn_accountdetails.Size = New System.Drawing.Size(125, 35)
+        Me.btn_accountdetails.Size = New System.Drawing.Size(130, 35)
         Me.btn_accountdetails.TabIndex = 14
         Me.btn_accountdetails.TabStop = False
         Me.btn_accountdetails.Text = "       Account Details"
@@ -525,7 +524,7 @@ Partial Class frm_home
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label3.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(30, 428)
+        Me.Label3.Location = New System.Drawing.Point(32, 426)
         Me.Label3.Margin = New System.Windows.Forms.Padding(0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(65, 15)
@@ -534,9 +533,8 @@ Partial Class frm_home
         '
         'panel_start
         '
-        Me.panel_start.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.panel_start.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.panel_start.Controls.Add(Me.txt_logout)
-        Me.panel_start.Controls.Add(Me.lbl_welcome)
         Me.panel_start.Controls.Add(Me.lbl_currentuser)
         Me.panel_start.Controls.Add(Me.lbl_connectionstate)
         Me.panel_start.Location = New System.Drawing.Point(131, 65)
@@ -549,42 +547,32 @@ Partial Class frm_home
         '
         Me.txt_logout.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.txt_logout.AutoSize = True
-        Me.txt_logout.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_logout.LinkColor = System.Drawing.Color.White
-        Me.txt_logout.Location = New System.Drawing.Point(215, 198)
+        Me.txt_logout.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_logout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.txt_logout.LinkColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.txt_logout.Location = New System.Drawing.Point(220, 192)
         Me.txt_logout.Name = "txt_logout"
-        Me.txt_logout.Size = New System.Drawing.Size(69, 19)
+        Me.txt_logout.Size = New System.Drawing.Size(58, 17)
         Me.txt_logout.TabIndex = 3
         Me.txt_logout.TabStop = True
         Me.txt_logout.Text = "Not you?"
-        '
-        'lbl_welcome
-        '
-        Me.lbl_welcome.AutoSize = True
-        Me.lbl_welcome.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_welcome.ForeColor = System.Drawing.Color.White
-        Me.lbl_welcome.Location = New System.Drawing.Point(202, 146)
-        Me.lbl_welcome.Name = "lbl_welcome"
-        Me.lbl_welcome.Size = New System.Drawing.Size(95, 26)
-        Me.lbl_welcome.TabIndex = 0
-        Me.lbl_welcome.Text = "Welcome"
-        Me.lbl_welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txt_logout.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         '
         'lbl_currentuser
         '
-        Me.lbl_currentuser.Font = New System.Drawing.Font("Candara", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_currentuser.ForeColor = System.Drawing.Color.White
-        Me.lbl_currentuser.Location = New System.Drawing.Point(0, 166)
+        Me.lbl_currentuser.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_currentuser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.lbl_currentuser.Location = New System.Drawing.Point(3, 161)
         Me.lbl_currentuser.Name = "lbl_currentuser"
-        Me.lbl_currentuser.Size = New System.Drawing.Size(499, 37)
+        Me.lbl_currentuser.Size = New System.Drawing.Size(493, 37)
         Me.lbl_currentuser.TabIndex = 1
         Me.lbl_currentuser.Text = "Logged in as "
         Me.lbl_currentuser.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbl_connectionstate
         '
-        Me.lbl_connectionstate.Font = New System.Drawing.Font("Segoe UI Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_connectionstate.ForeColor = System.Drawing.Color.LimeGreen
+        Me.lbl_connectionstate.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_connectionstate.ForeColor = System.Drawing.Color.Green
         Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
         Me.lbl_connectionstate.Name = "lbl_connectionstate"
         Me.lbl_connectionstate.Size = New System.Drawing.Size(499, 37)
@@ -594,7 +582,7 @@ Partial Class frm_home
         '
         'panel_roomchange
         '
-        Me.panel_roomchange.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.panel_roomchange.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_room)
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_reason)
         Me.panel_roomchange.Controls.Add(Me.Label12)
@@ -620,7 +608,7 @@ Partial Class frm_home
         '
         'roomchange_txt_room
         '
-        Me.roomchange_txt_room.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_txt_room.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_txt_room.Location = New System.Drawing.Point(284, 84)
         Me.roomchange_txt_room.Name = "roomchange_txt_room"
         Me.roomchange_txt_room.Size = New System.Drawing.Size(100, 23)
@@ -628,7 +616,7 @@ Partial Class frm_home
         '
         'roomchange_txt_reason
         '
-        Me.roomchange_txt_reason.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_txt_reason.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_txt_reason.Location = New System.Drawing.Point(249, 142)
         Me.roomchange_txt_reason.Margin = New System.Windows.Forms.Padding(6)
         Me.roomchange_txt_reason.Multiline = True
@@ -640,33 +628,33 @@ Partial Class frm_home
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(311, 119)
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label12.Location = New System.Drawing.Point(312, 119)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(47, 15)
+        Me.Label12.Size = New System.Drawing.Size(45, 15)
         Me.Label12.TabIndex = 58
         Me.Label12.Text = "Reason"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(311, 60)
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(314, 60)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(40, 15)
+        Me.Label13.Size = New System.Drawing.Size(38, 15)
         Me.Label13.TabIndex = 57
         Me.Label13.Text = "Room"
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(126, 174)
+        Me.Label14.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label14.Location = New System.Drawing.Point(127, 174)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(57, 15)
+        Me.Label14.Size = New System.Drawing.Size(54, 15)
         Me.Label14.TabIndex = 56
         Me.Label14.Text = "End Date"
         '
@@ -674,7 +662,7 @@ Partial Class frm_home
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label15.Location = New System.Drawing.Point(75, 202)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(34, 15)
@@ -684,11 +672,11 @@ Partial Class frm_home
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.White
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label16.Location = New System.Drawing.Point(125, 60)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(64, 15)
+        Me.Label16.Size = New System.Drawing.Size(58, 15)
         Me.Label16.TabIndex = 55
         Me.Label16.Text = "Start Date"
         '
@@ -696,7 +684,7 @@ Partial Class frm_home
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label17.Location = New System.Drawing.Point(65, 228)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(44, 15)
@@ -706,7 +694,7 @@ Partial Class frm_home
         'roomchange_dp_startdate
         '
         Me.roomchange_dp_startdate.CustomFormat = "dd'-'MM'-'yy"
-        Me.roomchange_dp_startdate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_dp_startdate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_dp_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.roomchange_dp_startdate.Location = New System.Drawing.Point(115, 84)
         Me.roomchange_dp_startdate.Name = "roomchange_dp_startdate"
@@ -717,7 +705,7 @@ Partial Class frm_home
         'roomchange_dp_enddate
         '
         Me.roomchange_dp_enddate.CustomFormat = "dd'-'MM'-'yy"
-        Me.roomchange_dp_enddate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_dp_enddate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_dp_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.roomchange_dp_enddate.Location = New System.Drawing.Point(115, 196)
         Me.roomchange_dp_enddate.Name = "roomchange_dp_enddate"
@@ -727,7 +715,7 @@ Partial Class frm_home
         '
         'roomchange_txt_endperiod
         '
-        Me.roomchange_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_txt_endperiod.FormattingEnabled = True
         Me.roomchange_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.roomchange_txt_endperiod.Location = New System.Drawing.Point(115, 225)
@@ -739,7 +727,7 @@ Partial Class frm_home
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
+        Me.Label18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label18.Location = New System.Drawing.Point(75, 90)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(34, 15)
@@ -752,7 +740,7 @@ Partial Class frm_home
         Me.roomchange_btn_submit.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.roomchange_btn_submit.FlatAppearance.BorderSize = 0
         Me.roomchange_btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.roomchange_btn_submit.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_btn_submit.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_btn_submit.ForeColor = System.Drawing.Color.White
         Me.roomchange_btn_submit.Location = New System.Drawing.Point(155, 301)
         Me.roomchange_btn_submit.Name = "roomchange_btn_submit"
@@ -765,7 +753,7 @@ Partial Class frm_home
         '
         Me.roomchange_chk_thislessononly.AutoSize = True
         Me.roomchange_chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.roomchange_chk_thislessononly.ForeColor = System.Drawing.Color.White
+        Me.roomchange_chk_thislessononly.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.roomchange_chk_thislessononly.Location = New System.Drawing.Point(115, 142)
         Me.roomchange_chk_thislessononly.Name = "roomchange_chk_thislessononly"
         Me.roomchange_chk_thislessononly.Size = New System.Drawing.Size(97, 17)
@@ -777,7 +765,7 @@ Partial Class frm_home
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.White
+        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label19.Location = New System.Drawing.Point(65, 119)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(44, 15)
@@ -786,7 +774,7 @@ Partial Class frm_home
         '
         'roomchange_txt_startperiod
         '
-        Me.roomchange_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.roomchange_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_txt_startperiod.FormattingEnabled = True
         Me.roomchange_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.roomchange_txt_startperiod.Location = New System.Drawing.Point(115, 113)
@@ -796,7 +784,7 @@ Partial Class frm_home
         '
         'panel_myrequests
         '
-        Me.panel_myrequests.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.panel_myrequests.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.panel_myrequests.Controls.Add(Me.Label20)
         Me.panel_myrequests.Controls.Add(Me.myrequests_btn_cancel)
         Me.panel_myrequests.Controls.Add(Me.myrequests_tc_myrequests)
@@ -810,11 +798,11 @@ Partial Class frm_home
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(297, 20)
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label20.Location = New System.Drawing.Point(311, 22)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(153, 17)
+        Me.Label20.Size = New System.Drawing.Size(141, 15)
         Me.Label20.TabIndex = 64
         Me.Label20.Text = "Cancel selected request(s)"
         '
@@ -833,7 +821,7 @@ Partial Class frm_home
         '
         Me.myrequests_tc_myrequests.Controls.Add(Me.TabPage1)
         Me.myrequests_tc_myrequests.Controls.Add(Me.TabPage2)
-        Me.myrequests_tc_myrequests.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.myrequests_tc_myrequests.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
         Me.myrequests_tc_myrequests.HotTrack = True
         Me.myrequests_tc_myrequests.Location = New System.Drawing.Point(6, 33)
         Me.myrequests_tc_myrequests.Multiline = True
@@ -864,7 +852,7 @@ Partial Class frm_home
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
         DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -923,7 +911,7 @@ Partial Class frm_home
         '
         'panel_facultyarea
         '
-        Me.panel_facultyarea.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.panel_facultyarea.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_btn_reject)
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_btn_approve)
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_txt_reason)
@@ -952,7 +940,7 @@ Partial Class frm_home
         Me.facultyarea_btn_reject.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.facultyarea_btn_reject.FlatAppearance.BorderSize = 0
         Me.facultyarea_btn_reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.facultyarea_btn_reject.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_btn_reject.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_btn_reject.ForeColor = System.Drawing.Color.White
         Me.facultyarea_btn_reject.Location = New System.Drawing.Point(265, 317)
         Me.facultyarea_btn_reject.Name = "facultyarea_btn_reject"
@@ -967,7 +955,7 @@ Partial Class frm_home
         Me.facultyarea_btn_approve.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.facultyarea_btn_approve.FlatAppearance.BorderSize = 0
         Me.facultyarea_btn_approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.facultyarea_btn_approve.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_btn_approve.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_btn_approve.ForeColor = System.Drawing.Color.White
         Me.facultyarea_btn_approve.Location = New System.Drawing.Point(59, 317)
         Me.facultyarea_btn_approve.Name = "facultyarea_btn_approve"
@@ -979,7 +967,7 @@ Partial Class frm_home
         'facultyarea_txt_reason
         '
         Me.facultyarea_txt_reason.BackColor = System.Drawing.Color.White
-        Me.facultyarea_txt_reason.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_txt_reason.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_txt_reason.Location = New System.Drawing.Point(362, 84)
         Me.facultyarea_txt_reason.Margin = New System.Windows.Forms.Padding(6)
         Me.facultyarea_txt_reason.Multiline = True
@@ -992,22 +980,22 @@ Partial Class frm_home
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.Color.White
-        Me.Label27.Location = New System.Drawing.Point(399, 62)
+        Me.Label27.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label27.Location = New System.Drawing.Point(400, 62)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(47, 15)
+        Me.Label27.Size = New System.Drawing.Size(45, 15)
         Me.Label27.TabIndex = 58
         Me.Label27.Text = "Reason"
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(263, 173)
+        Me.Label26.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label26.Location = New System.Drawing.Point(265, 173)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(57, 15)
+        Me.Label26.Size = New System.Drawing.Size(54, 15)
         Me.Label26.TabIndex = 57
         Me.Label26.Text = "End Date"
         '
@@ -1015,8 +1003,8 @@ Partial Class frm_home
         '
         Me.Label21.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Open Sans Light", 8.25!)
-        Me.Label21.ForeColor = System.Drawing.Color.White
+        Me.Label21.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label21.Location = New System.Drawing.Point(211, 201)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(34, 15)
@@ -1026,18 +1014,18 @@ Partial Class frm_home
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.ForeColor = System.Drawing.Color.White
-        Me.Label25.Location = New System.Drawing.Point(260, 62)
+        Me.Label25.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label25.Location = New System.Drawing.Point(261, 62)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(64, 15)
+        Me.Label25.Size = New System.Drawing.Size(58, 15)
         Me.Label25.TabIndex = 56
         Me.Label25.Text = "Start Date"
         '
         'facultyarea_dp_enddate
         '
         Me.facultyarea_dp_enddate.CustomFormat = "dd'-'MM'-'yy"
-        Me.facultyarea_dp_enddate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_dp_enddate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_dp_enddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.facultyarea_dp_enddate.Location = New System.Drawing.Point(251, 195)
         Me.facultyarea_dp_enddate.Name = "facultyarea_dp_enddate"
@@ -1048,7 +1036,7 @@ Partial Class frm_home
         'facultyarea_txt_endperiod
         '
         Me.facultyarea_txt_endperiod.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.facultyarea_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_txt_endperiod.FormattingEnabled = True
         Me.facultyarea_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.facultyarea_txt_endperiod.Location = New System.Drawing.Point(251, 224)
@@ -1059,7 +1047,7 @@ Partial Class frm_home
         'facultyarea_dp_startdate
         '
         Me.facultyarea_dp_startdate.CustomFormat = "dd'-'MM'-'yy"
-        Me.facultyarea_dp_startdate.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_dp_startdate.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_dp_startdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.facultyarea_dp_startdate.Location = New System.Drawing.Point(251, 84)
         Me.facultyarea_dp_startdate.Name = "facultyarea_dp_startdate"
@@ -1071,11 +1059,11 @@ Partial Class frm_home
         '
         Me.Label22.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Open Sans Light", 8.25!)
-        Me.Label22.ForeColor = System.Drawing.Color.White
+        Me.Label22.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label22.Location = New System.Drawing.Point(205, 227)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(41, 15)
+        Me.Label22.Size = New System.Drawing.Size(44, 15)
         Me.Label22.TabIndex = 14
         Me.Label22.Text = "Period:"
         '
@@ -1083,7 +1071,7 @@ Partial Class frm_home
         '
         Me.chk_thislessononly.AutoSize = True
         Me.chk_thislessononly.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_thislessononly.ForeColor = System.Drawing.Color.White
+        Me.chk_thislessononly.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.chk_thislessononly.Location = New System.Drawing.Point(251, 142)
         Me.chk_thislessononly.Name = "chk_thislessononly"
         Me.chk_thislessononly.Size = New System.Drawing.Size(97, 17)
@@ -1095,8 +1083,8 @@ Partial Class frm_home
         '
         Me.Label23.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Open Sans Light", 8.25!)
-        Me.Label23.ForeColor = System.Drawing.Color.White
+        Me.Label23.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label23.Location = New System.Drawing.Point(211, 90)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(34, 15)
@@ -1107,18 +1095,18 @@ Partial Class frm_home
         '
         Me.Label24.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label24.AutoSize = True
-        Me.Label24.Font = New System.Drawing.Font("Open Sans Light", 8.25!)
-        Me.Label24.ForeColor = System.Drawing.Color.White
+        Me.Label24.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Label24.Location = New System.Drawing.Point(205, 116)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(41, 15)
+        Me.Label24.Size = New System.Drawing.Size(44, 15)
         Me.Label24.TabIndex = 11
         Me.Label24.Text = "Period:"
         '
         'facultyarea_txt_startperiod
         '
         Me.facultyarea_txt_startperiod.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.facultyarea_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facultyarea_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_txt_startperiod.FormattingEnabled = True
         Me.facultyarea_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
         Me.facultyarea_txt_startperiod.Location = New System.Drawing.Point(251, 113)
@@ -1304,13 +1292,13 @@ Partial Class frm_home
         Me.btn_notifications.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_notifications.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.btn_notifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_notifications.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_notifications.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.btn_notifications.ForeColor = System.Drawing.Color.White
         Me.btn_notifications.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.notifications
         Me.btn_notifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_notifications.Location = New System.Drawing.Point(6, 222)
+        Me.btn_notifications.Location = New System.Drawing.Point(3, 220)
         Me.btn_notifications.Name = "btn_notifications"
-        Me.btn_notifications.Size = New System.Drawing.Size(125, 35)
+        Me.btn_notifications.Size = New System.Drawing.Size(130, 35)
         Me.btn_notifications.TabIndex = 65
         Me.btn_notifications.TabStop = False
         Me.btn_notifications.Text = "       Notifications"
@@ -1319,7 +1307,7 @@ Partial Class frm_home
         '
         'panel_notifications
         '
-        Me.panel_notifications.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.panel_notifications.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.panel_notifications.Controls.Add(Me.lbl_notify)
         Me.panel_notifications.Controls.Add(Me.panel_notifications_clearnotifications)
         Me.panel_notifications.Font = New System.Drawing.Font("Open Sans Light", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1333,10 +1321,10 @@ Partial Class frm_home
         '
         'lbl_notify
         '
-        Me.lbl_notify.BackColor = System.Drawing.Color.FromArgb(CType(CType(63, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(70, Byte), Integer))
+        Me.lbl_notify.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.lbl_notify.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lbl_notify.Font = New System.Drawing.Font("Segoe UI Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_notify.ForeColor = System.Drawing.Color.White
+        Me.lbl_notify.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_notify.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.lbl_notify.Location = New System.Drawing.Point(13, 14)
         Me.lbl_notify.Multiline = True
         Me.lbl_notify.Name = "lbl_notify"
@@ -1353,7 +1341,7 @@ Partial Class frm_home
         Me.panel_notifications_clearnotifications.Cursor = System.Windows.Forms.Cursors.Hand
         Me.panel_notifications_clearnotifications.FlatAppearance.BorderSize = 0
         Me.panel_notifications_clearnotifications.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.panel_notifications_clearnotifications.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.panel_notifications_clearnotifications.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.panel_notifications_clearnotifications.ForeColor = System.Drawing.Color.White
         Me.panel_notifications_clearnotifications.Location = New System.Drawing.Point(149, 332)
         Me.panel_notifications_clearnotifications.Name = "panel_notifications_clearnotifications"
@@ -1388,7 +1376,6 @@ Partial Class frm_home
         Me.Controls.Add(Me.panel_start)
         Me.Controls.Add(Me.panel_notifications)
         Me.Controls.Add(Me.panel_roomchange)
-        Me.Controls.Add(Me.btn_notifications)
         Me.Controls.Add(Me.btn_sync)
         Me.Controls.Add(Me.lbl_requestcover)
         Me.Controls.Add(Me.lbl_roomchange)
@@ -1410,6 +1397,7 @@ Partial Class frm_home
         Me.Controls.Add(Me.panel_requestcover)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.lbl_notifications)
+        Me.Controls.Add(Me.btn_notifications)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -1491,7 +1479,6 @@ Partial Class frm_home
     Friend WithEvents roomchange_chk_thislessononly As System.Windows.Forms.CheckBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents roomchange_txt_startperiod As System.Windows.Forms.ComboBox
-    Friend WithEvents lbl_welcome As System.Windows.Forms.Label
     Friend WithEvents lbl_currentuser As System.Windows.Forms.Label
     Friend WithEvents txt_logout As System.Windows.Forms.LinkLabel
     Friend WithEvents panel_myrequests As System.Windows.Forms.Panel

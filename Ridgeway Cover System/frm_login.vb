@@ -28,12 +28,12 @@ Public Class frm_login
                 'IF PASSWORD CORRECT
                 If rd.HasRows Then
                 rememberlogin()
-        
                 My.Settings.currentuser = txt_username.Text
+                While rd.Read
+                    My.Settings.usertype = rd.GetString(2)
+                End While
                 My.Settings.Save()
-                    While rd.Read
-                        My.Settings.usertype = rd.GetString(2)
-                    End While
+                frm_home.lbl_currentuser.Text += My.Settings.currentuser
                     Me.Hide()
                     frm_home.Show()
                     'IF PASSWORD INCORRECT
@@ -56,13 +56,9 @@ Public Class frm_login
             My.Settings.rememberpassword = txt_password.Text
             My.Settings.Save()
         Else
-            txt_username.ResetText()
-            txt_password.ResetText()
             My.Settings.rememberusername = ""
             My.Settings.rememberpassword = ""
             My.Settings.Save()
-            txt_username.Text = ""
-            txt_password.Text = ""
         End If
     End Sub
 

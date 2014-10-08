@@ -82,7 +82,7 @@ Module getdata
             cmd.ExecuteNonQuery()
             updatecount += 1
         End If
-        frm_home.btn_notifications.Text = "      Notifications" + " (" + updatecount.ToString + ")"
+            frm_home.btn_notifications.Text = "       Notifications" + " (" + updatecount.ToString + ")"
         My.Settings.usernotifications = frm_home.lbl_notify.Text
         My.Settings.usernotificationcount = updatecount.ToString
         My.Settings.Save()

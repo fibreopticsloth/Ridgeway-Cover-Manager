@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="Ridgeway_Cover_Manager.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <connectionStrings>
+        <add name="Ridgeway_Cover_Manager.My.MySettings.coversystemConnectionString"
+            connectionString="server=localhost;user id=root;password=admin;database=coversystem"
+            providerName="MySql.Data.MySqlClient" />
+    </connectionStrings>
+    <startup>
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+    </startup>
+    <userSettings>
+        <Ridgeway_Cover_Manager.My.MySettings>
+            <setting name="rememberusername" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="rememberpassword" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="currentuser" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="colourscheme" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="usertype" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="usernotifications" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="usernotificationcount" serializeAs="String">
+                <value />
+            </setting>
+        </Ridgeway_Cover_Manager.My.MySettings>
+    </userSettings>
+</configuration>

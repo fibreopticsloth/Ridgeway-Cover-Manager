@@ -15,41 +15,36 @@ Public Class frm_signup
     'CHECK DETAILS AND SIGNUP
     Public Sub signup()
         Dim username As String = Environment.UserName
-        Try
+        If checkconn() Then
             newcmd("select username from users where username = '" & username & "'")
             rd = cmd.ExecuteReader
-        Catch ex As Exception
-            MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
-        End Try
-        If rd.Read = True Then
-            MsgBox("This user account already exists!")
-        ElseIf txt_password.Text = "" Or txt_confirmpassword.Text = "" Then
-            MsgBox("You must fill in both fields!")
-        ElseIf txt_password.TextLength < 8 Then
-            MsgBox("Your password must be at least 8 characters")
-        ElseIf txt_password.Text = txt_confirmpassword.Text Then
-            findstafftype()
-            rd.Close()
-            Try
-                newcmd("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
-                cmd.ExecuteNonQuery()
-                MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
-                         & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
-                Me.Hide()
-                frm_login.Show()
-                With frm_login
-                    .txt_username.Text = username
-                    .txt_password.Text = ""
-                    .txt_password.Focus()
-                End With
-            Catch ex As Exception
-                MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
-            End Try
-        Else
+            If rd.Read = True Then
+                MsgBox("This user account already exists!")
+            ElseIf txt_password.Text = "" Or txt_confirmpassword.Text = "" Then
+                MsgBox("You must fill in both fields!")
+            ElseIf txt_password.TextLength < 8 Then
+                MsgBox("Your password must be at least 8 characters")
+            ElseIf txt_password.Text = txt_confirmpassword.Text Then
+                findstafftype()
+                rd.Close()
+                    newcmd("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
+                    cmd.ExecuteNonQuery()
+                    MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
+                             & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
+                    Me.Hide()
+                    frm_login.Show()
+                    With frm_login
+                        .txt_username.Text = username
+                        .txt_password.Text = ""
+                        .txt_password.Focus()
+                    End With
+            Else
                 MsgBox("Your passwords do not match!")
+            End If
+            rd.Close()
+            resetsignup()
+        Else : MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
         End If
-        rd.Close()
-        resetsignup()
     End Sub
 
     'RESET SIGNUP FORM

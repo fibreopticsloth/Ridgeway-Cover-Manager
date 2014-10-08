@@ -27,12 +27,12 @@ Module db
         If conn.State = ConnectionState.Open Then
             frm_home.Text = "Ridgeway Cover Manager"
             frm_home.lbl_connectionstate.Text = "Connected"
-            frm_home.lbl_connectionstate.ForeColor = Color.LimeGreen
+            frm_home.lbl_connectionstate.ForeColor = Color.Green
             Return 1
         Else
             frm_home.Text = "Ridgeway Cover Manager - NOT CONNECTED TO SERVER"
             frm_home.lbl_connectionstate.Text = "Could not connect"
-            frm_home.lbl_connectionstate.ForeColor = Color.OrangeRed
+            frm_home.lbl_connectionstate.ForeColor = Color.Red
             Return 0
         End If
     End Function

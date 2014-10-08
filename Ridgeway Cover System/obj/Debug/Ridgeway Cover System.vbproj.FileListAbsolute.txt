@@ -87,3 +87,7 @@ C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Co
 C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.xml
 C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.pdb
 C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\obj\Debug\Ridgeway Cover System.vbprojResolveAssemblyReference.cache
+C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.exe.manifest
+C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.application
+C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.exe.manifest
+C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.application

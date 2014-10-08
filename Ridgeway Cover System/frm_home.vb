@@ -19,7 +19,6 @@ Public Class frm_home
         If Not My.Settings.usernotificationcount = "" Then
             getdata.updatecount = My.Settings.usernotificationcount
         End If
-        lbl_currentuser.Text += My.Settings.currentuser
         setdates()
         connect()
         getalldata()
@@ -28,7 +27,6 @@ Public Class frm_home
         viewrequest()
         nfi.Visible = True
         data_timer.Start()
-        customfont()
         getalldata()
     End Sub
 
@@ -307,7 +305,6 @@ Public Class frm_home
         panel_notifications.Hide()
         panel_myrequests.Hide()
         panel_facultyarea.Hide()
-        customfont()
     End Sub
 
     'RESET REQUEST COVER PANEL
@@ -361,6 +358,11 @@ Public Class frm_home
 
     'LOGOUT
     Public Sub logout()
+        If My.Settings.rememberusername = "" Then
+            frm_login.txt_username.ResetText()
+            frm_login.txt_password.ResetText()
+        End If
+        nfi.Visible = False
         Me.Visible = False
         My.Settings.currentuser = ""
         frm_login.Show()
@@ -538,4 +540,9 @@ Public Class frm_home
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
+    End Sub
+
+    
 End Class
