@@ -70,7 +70,6 @@ Partial Class frm_splash
         '
         Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
         Me.PictureBox2.Location = New System.Drawing.Point(40, 50)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(91, 75)

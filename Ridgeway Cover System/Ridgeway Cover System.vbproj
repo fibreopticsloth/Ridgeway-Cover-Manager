@@ -202,9 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_signup.resx">
       <DependentUpon>frm_signup.vb</DependentUpon>
@@ -228,26 +228,7 @@
   <ItemGroup>
     <None Include="OpenSans-Light.ttf" />
     <None Include="OpenSans-Semibold.ttf" />
-    <None Include="Resources\OpenSans-Bold.ttf" />
-    <None Include="Resources\OpenSans-BoldItalic.ttf" />
-    <None Include="Resources\OpenSans-ExtraBold.ttf" />
-    <None Include="Resources\OpenSans-ExtraBoldItalic.ttf" />
-    <None Include="Resources\OpenSans-Italic.ttf" />
-    <None Include="Resources\OpenSans-Light.ttf" />
-    <None Include="Resources\OpenSans-LightItalic.ttf" />
-    <None Include="Resources\OpenSans-Regular.ttf" />
-    <None Include="Resources\OpenSans-Semibold.ttf" />
-    <None Include="Resources\OpenSans-SemiboldItalic.ttf" />
     <None Include="Resources\schoollogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\schoollogoicon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\trayicon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\power.png" />
@@ -256,22 +237,10 @@
     <None Include="Resources\back_v1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\back_v2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\back_v3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\exit_v1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\reload.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\update.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

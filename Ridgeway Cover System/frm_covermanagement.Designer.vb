@@ -145,7 +145,6 @@ Partial Class frm_covermanagement
         '
         Me.btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_update.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_update.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.update
         Me.btn_update.Location = New System.Drawing.Point(345, 7)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(35, 35)
