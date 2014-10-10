@@ -29,8 +29,11 @@ Partial Class frm_splash
         Me.lbl_loading = New System.Windows.Forms.Label()
         Me.timerfade = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbl_version = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'timersplash
@@ -40,26 +43,25 @@ Partial Class frm_splash
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(149, 50)
+        Me.Label1.Location = New System.Drawing.Point(108, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(280, 32)
+        Me.Label1.Size = New System.Drawing.Size(385, 32)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Ridgeway Cover Manager"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lbl_loading
         '
-        Me.lbl_loading.AutoSize = True
-        Me.lbl_loading.Font = New System.Drawing.Font("Segoe UI Semilight", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_loading.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.lbl_loading.ForeColor = System.Drawing.Color.White
-        Me.lbl_loading.Location = New System.Drawing.Point(248, 99)
+        Me.lbl_loading.Location = New System.Drawing.Point(107, 126)
         Me.lbl_loading.Name = "lbl_loading"
-        Me.lbl_loading.Size = New System.Drawing.Size(78, 25)
+        Me.lbl_loading.Size = New System.Drawing.Size(387, 15)
         Me.lbl_loading.TabIndex = 2
         Me.lbl_loading.Text = "Loading"
-        Me.lbl_loading.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lbl_loading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'timerfade
         '
@@ -68,38 +70,56 @@ Partial Class frm_splash
         '
         'PictureBox2
         '
-        Me.PictureBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
-        Me.PictureBox2.Location = New System.Drawing.Point(40, 50)
+        Me.PictureBox2.Location = New System.Drawing.Point(13, 35)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(91, 75)
+        Me.PictureBox2.Size = New System.Drawing.Size(75, 81)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 6
         Me.PictureBox2.TabStop = False
         '
-        'Label2
+        'lbl_version
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Open Sans Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(385, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 15)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Alpha 0.4"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lbl_version.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_version.ForeColor = System.Drawing.Color.White
+        Me.lbl_version.Location = New System.Drawing.Point(109, 83)
+        Me.lbl_version.Name = "lbl_version"
+        Me.lbl_version.Size = New System.Drawing.Size(382, 17)
+        Me.lbl_version.TabIndex = 7
+        Me.lbl_version.Text = "Version "
+        Me.lbl_version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox2)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(100, 200)
+        Me.Panel1.TabIndex = 8
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(106, 101)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(387, 15)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "© 2014 The Ridgeway School"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frm_splash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(48, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(450, 175)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.lbl_loading)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(500, 150)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.lbl_loading)
+        Me.Controls.Add(Me.lbl_version)
         Me.Cursor = System.Windows.Forms.Cursors.AppStarting
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -108,8 +128,8 @@ Partial Class frm_splash
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_splash"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents timersplash As System.Windows.Forms.Timer
@@ -117,5 +137,7 @@ Partial Class frm_splash
     Friend WithEvents lbl_loading As System.Windows.Forms.Label
     Friend WithEvents timerfade As System.Windows.Forms.Timer
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lbl_version As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

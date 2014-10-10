@@ -1446,7 +1446,6 @@ Partial Class frm_home
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 451)
-        Me.Controls.Add(Me.panel_userinterface)
         Me.Controls.Add(Me.lbl_start)
         Me.Controls.Add(Me.panel_start)
         Me.Controls.Add(Me.panel_notifications)
@@ -1473,6 +1472,7 @@ Partial Class frm_home
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.lbl_notifications)
         Me.Controls.Add(Me.btn_notifications)
+        Me.Controls.Add(Me.panel_userinterface)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False

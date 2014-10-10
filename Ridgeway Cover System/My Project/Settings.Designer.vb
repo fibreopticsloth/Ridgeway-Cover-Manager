@@ -159,6 +159,15 @@ Namespace My
                 Me("accentcolour") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Alpha 0.6.0.1")>  _
+        Public ReadOnly Property version() As String
+            Get
+                Return CType(Me("version"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
