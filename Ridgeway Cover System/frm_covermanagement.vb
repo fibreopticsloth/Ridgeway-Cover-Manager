@@ -7,7 +7,6 @@ Public Class frm_covermanagement
 
     'FORM LOAD
     Private Sub frm_admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connect()
         hidecolumns()
     End Sub
 
@@ -41,16 +40,14 @@ Public Class frm_covermanagement
                     id.Add(i.Cells(0).Value)
                 Next i
                 For j As Integer = 0 To id.Count - 1
-                    newcmd("update lessons set approved = 'Approved', booked = 'Booked', push ='1' where id='" & id(j) & "'")
-                    cmd.ExecuteNonQuery()
+                        NewCommand("update lessons set approved = 'Approved', booked = 'Booked', push ='1' where id='" & id(j) & "'")
                 Next j
             Case 2
                 For Each i As DataGridViewRow In dg_rooms.SelectedRows
                     id.Add(i.Cells(0).Value)
                 Next i
                 For j As Integer = 0 To id.Count - 1
-                    newcmd("update roomchange set booked = 'Booked', push ='1' where id='" & id(j) & "'")
-                    cmd.ExecuteNonQuery()
+                        NewCommand("update roomchange set booked = 'Booked', push ='1' where id='" & id(j) & "'")
                 Next j
             End Select
         Catch ex As Exception

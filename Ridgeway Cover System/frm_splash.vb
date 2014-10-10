@@ -8,7 +8,6 @@
         timersplash.Start()
         timerfade.Start()
         Me.Opacity = 0
-        checkconn()
     End Sub
 
     'FORM FADE IN

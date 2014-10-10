@@ -18,8 +18,7 @@
         If pw1 = pw2 Then
             password = pw1
             Try
-                newcmd("update users set password = '" & hash(password) & "' where id = '" & dg_users.Item(0, row).Value & "'")
-                cmd.ExecuteNonQuery()
+                NewCommand("update users set password = '" & hash(password) & "' where id = '" & dg_users.Item(0, row).Value & "'")
             Catch ex As Exception
                 MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
             End Try
@@ -36,10 +35,9 @@
     'DELETE USER
     Public Sub deleteuser()
         Try
-            newcmd("delete from users where id = '" & dg_users.Item(0, row).Value & "'")
-            cmd.ExecuteNonQuery()
+            NewCommand("delete from users where id = '" & dg_users.Item(0, row).Value & "'")
             getalldata()
-            newqry("select ID, username, type from users where username like '%" & txt_search.Text & "%'", dg_users)
+            NewQuery("select ID, username, type from users where username like '%" & txt_search.Text & "%'", dg_users)
         Catch ex As Exception
             MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
         End Try
@@ -48,10 +46,9 @@
     'UPDATE USER
     Public Sub updateuser()
         Try
-            newcmd("update users set username = '" & txt_newusername.Text & "', type = '" & txt_newtype.Text & "' where id = '" & dg_users.Item(0, row).Value & "'")
-            cmd.ExecuteNonQuery()
+            NewCommand("update users set username = '" & txt_newusername.Text & "', type = '" & txt_newtype.Text & "' where id = '" & dg_users.Item(0, row).Value & "'")
             getalldata()
-            newqry("select ID, username, type from users where username like '%" & txt_search.Text & "%'", dg_users)
+            NewQuery("select ID, username, type from users where username like '%" & txt_search.Text & "%'", dg_users)
         Catch ex As Exception
             MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
         End Try
@@ -73,11 +70,8 @@
     Public Sub newuser()
         If txt_password1.Text = txt_password2.Text Then
             Try
-                newcmd("insert into users (username, password, type) values (@username, @password, @type)")
-                cmd.Parameters.AddWithValue("@username", txt_username.Text)
-                cmd.Parameters.AddWithValue("@password", hash(txt_password1.Text))
-                cmd.Parameters.AddWithValue("@type", txt_type.Text)
-                cmd.ExecuteNonQuery()
+                NewCommand("insert into users (username, password, type) values ('" & txt_username.Text & "', '" & hash(txt_password1.Text) & "', '" & txt_type.Text & "')")
+
                 txt_username.ResetText()
                 txt_type.SelectedIndex = -1
                 txt_password1.ResetText()
@@ -106,7 +100,7 @@
     'SEARCH USERS
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txt_search.TextChanged
         Try
-            newqry("select ID, username, type from users where username like '%" & txt_search.Text & "%'", dg_users)
+            NewQuery("select ID, username, type from users where username like '%" & txt_search.Text & "%'", dg_users)
         Catch ex As Exception
             MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
         End Try

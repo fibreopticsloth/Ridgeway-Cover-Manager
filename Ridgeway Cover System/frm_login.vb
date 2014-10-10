@@ -20,33 +20,25 @@ Public Class frm_login
         End If
     End Sub
 
-    'CHECK INFO AND LOGIN
-    Public Sub login()
-        If checkconn() Then
-                newcmd("SELECT username, password, type from users where username='" & txt_username.Text & "' and password='" & hash(txt_password.Text) & "'")
-                rd = cmd.ExecuteReader
-                'IF PASSWORD CORRECT
-                If rd.HasRows Then
-                rememberlogin()
-                My.Settings.currentuser = txt_username.Text
-                While rd.Read
-                    My.Settings.usertype = rd.GetString(2)
-                End While
-                My.Settings.Save()
-                frm_home.lbl_currentuser.Text += My.Settings.currentuser
-                    Me.Hide()
-                    frm_home.Show()
-                    'IF PASSWORD INCORRECT
-                Else
-                    MessageBox.Show("Incorrect username or password!", "Log In Error")
-                    txt_password.ResetText()
-                    txt_password.Focus()
-                End If
-                rd.Dispose()
+    'CHECK USER
+    Public Sub CheckUser()
+
+        If CheckData("SELECT * FROM users WHERE username = '" & txt_username.Text & "' AND password = '" & hash(txt_password.Text) & "'") Then
+            login()
         Else
-            Dim response = MsgBox("Ridgeway Cover Manager could not connect to the database." + vbNewLine + _
-                                      "Please ensure you are connected to the internet.", MsgBoxStyle.OkOnly)
+            MsgBox("Incorrect username or password.")
         End If
+
+    End Sub
+
+    'LOGIN
+    Public Sub login()
+        rememberlogin()
+        My.Settings.currentuser = txt_username.Text
+        My.Settings.Save()
+        frm_home.lbl_currentuser.Text += My.Settings.currentuser
+        Me.Hide()
+        frm_home.Show()
     End Sub
 
     'SAVE USER LOGIN DETAILS
@@ -66,7 +58,7 @@ Public Class frm_login
 
     'LOGIN BUTTON
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        login()
+        checkuser()
     End Sub
 
     'SIGNUP BUTTON

@@ -22,12 +22,10 @@ Public Class frm_home
         nfi.Visible = True
         updateaccentcolour()
         setdates()
-        connect()
         getalldata()
         hidecolumns()
         facultyheads()
         viewrequest()
-        nfi.Visible = True
         data_timer.Start()
         getalldata()
     End Sub
@@ -45,17 +43,22 @@ Public Class frm_home
 
     'GET LIST OF FACULTY LEADERS
     Public Sub facultyheads()
-        If checkconn() Then
-            Dim da As New MySqlDataAdapter("select username from users where type = 'faculty' or type = 'covermanager'", conn)
-            Dim ds As New DataSet
-            da.Fill(ds, "users")
-            Dim dt As DataTable = ds.Tables(0)
-            For Each DataRow In dt.Rows
-                requestcover_txt_facultyhead.Items.Add(DataRow(0))
-            Next
-            ds.Dispose()
-            da.Dispose()
-        End If
+
+        Using Connection As New MySqlConnection(ConnectionString)
+
+            Using da As New MySqlDataAdapter("select username from users where type = 'faculty' or type = 'covermanager'", Connection)
+                Dim ds As New DataSet
+                da.Fill(ds, "users")
+                Dim dt As DataTable = ds.Tables(0)
+                For Each DataRow In dt.Rows
+                    requestcover_txt_facultyhead.Items.Add(DataRow(0))
+                Next
+                ds.Dispose()
+                da.Dispose()
+            End Using
+
+        End Using
+
     End Sub
 
     'ENABLE/DISABLE END DATE
@@ -120,18 +123,21 @@ Public Class frm_home
 
     'CHECK IF SELECTED REQUEST(S) IS BOOKED
     Public Function checkifbooked(id As Integer)
-        If checkconn() Then
-            If selected = 1 Then
-                newcmd("select booked from lessons where id = '" & id & "' and booked = 'booked'")
-            ElseIf selected = 2 Then
-                newcmd("select booked from roomchange where id = '" & id & "' and booked = 'booked'")
+        If selected = 1 Then
+            If CheckData("select booked from lessons where id = '" & id & "' and booked = 'booked'") Then
+                Return 1
+            ElseIf CheckData("select booked from roomchange where id = '" & id & "' and booked = 'booked'") Then
+                Return 1
+            Else
+                Return 0
             End If
-            rd = cmd.ExecuteReader
-        End If
-        If rd.Read = True Then
-            rd.Dispose()
-            Return 1
-        Else : rd.Dispose()
+        ElseIf selected = 2 Then
+            If CheckData("select booked from roomchange where id = '" & id & "' and booked = 'booked'") Then
+                Return 1
+            Else
+                Return 0
+            End If
+        Else
             Return 0
         End If
     End Function
@@ -140,7 +146,6 @@ Public Class frm_home
     Public Sub cancelrequest()
         Dim id As New ArrayList
         Dim cancellationerror As Boolean = False
-        If checkconn() Then
             Select Case selected
                 Case 1
                     For Each i As DataGridViewRow In dg_mycovers.SelectedRows
@@ -148,8 +153,7 @@ Public Class frm_home
                     Next i
                     For j As Integer = 0 To id.Count - 1
                         If checkifbooked(id(j)) = 0 Then
-                            newcmd("delete from lessons where id ='" & id(j) & "'")
-                            cmd.ExecuteNonQuery()
+                        NewCommand("delete from lessons where id ='" & id(j) & "'")
                         Else
                             cancellationerror = True
                         End If
@@ -160,14 +164,12 @@ Public Class frm_home
                     Next i
                     For j As Integer = 0 To id.Count - 1
                         If checkifbooked(id(j)) = 0 Then
-                            newcmd("delete from roomchange where id ='" & id(j) & "'")
-                            cmd.ExecuteNonQuery()
+                        NewCommand("delete from roomchange where id ='" & id(j) & "'")
                         Else
                             cancellationerror = True
                         End If
                     Next j
             End Select
-        End If
         If cancellationerror = True Then
             MsgBox("One or more of your selected cancellations has already been booked." + vbNewLine + _
                    "These cannot be cancelled, and have been skipped from the cancellation process.")
@@ -230,31 +232,25 @@ Public Class frm_home
     'APPROVE REQUEST
     Public Sub approverequest()
         If confirm("approve") = 1 Then
-            If checkconn() Then
                 Dim id As Integer = dg_viewrequests.Item(0, dg_viewrequests.CurrentCell.RowIndex).Value
-                newcmd("update lessons set approved = 'Approved', booked = 'Pending', push ='1' where id='" & id & "'")
-                cmd.ExecuteNonQuery()
+            NewCommand("update lessons set approved = 'Approved', booked = 'Pending', push ='1' where id='" & id & "'")
                 resetstart()
                 resetend()
                 getalldata()
                 viewrequest()
-            End If
         End If
     End Sub
 
     'REJECT REQUEST
     Public Sub rejectrequest()
         If confirm("reject") = 1 Then
-            If checkconn() Then
                 Dim id As Integer = dg_viewrequests.Item(0, dg_viewrequests.CurrentCell.RowIndex).Value
-                newcmd("update lessons set approved = 'Rejected', booked = 'N/A', push = '1' where id='" & id & "'")
-                cmd.ExecuteNonQuery()
+            NewCommand("update lessons set approved = 'Rejected', booked = 'N/A', push = '1' where id='" & id & "'")
                 resetstart()
                 resetend()
                 getalldata()
                 viewrequest()
             End If
-        End If
     End Sub
 
     'RESET START DATE/PERIOD
@@ -399,9 +395,9 @@ Public Class frm_home
 
     'GET DATA
     Private Sub data_timer_Tick(sender As Object, e As EventArgs) Handles data_timer.Tick
-        If checkconn() Then
-            getalldata()
-        End If
+        'If checkconn() Then
+        '    getalldata()
+        'End If
     End Sub
 
     'LOGOUT

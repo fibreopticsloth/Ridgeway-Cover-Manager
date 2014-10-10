@@ -13,7 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\George\Google Drive\</PublishUrl>
+    <PublishUrl>E:\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -112,7 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="db.vb" />
+    <Compile Include="MySQL_Connection.vb" />
     <Compile Include="frm_admin.Designer.vb">
       <DependentUpon>frm_admin.vb</DependentUpon>
     </Compile>
@@ -131,12 +131,6 @@
     <Compile Include="frm_home.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_notify.Designer.vb">
-      <DependentUpon>frm_notify.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_notify.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frm_splash.Designer.vb">
       <DependentUpon>frm_splash.vb</DependentUpon>
     </Compile>
@@ -151,7 +145,7 @@
       <DependentUpon>frm_login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="getdata.vb" />
+    <Compile Include="GetData.vb" />
     <Compile Include="My Project\Application1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
@@ -189,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_home.resx">
       <DependentUpon>frm_home.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_notify.resx">
-      <DependentUpon>frm_notify.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_splash.resx">
       <DependentUpon>frm_splash.vb</DependentUpon>

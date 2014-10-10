@@ -125,29 +125,20 @@ Module submitrequest
     'CHECK THERE IS NO OVERLAP WITH EXISTING REQUESTS
     Public Function checkoverlap()
         If type = "lesson" Then
-            newcmd("select * from lessons where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'")
-            rd = cmd.ExecuteReader
-            If rd.HasRows Then
-                rd.Dispose()
+            If CheckData("select * from lessons where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'") Then
                 MsgBox("This overlaps an existing request.")
                 Return 0
             Else
-                rd.Dispose()
                 Return 1
             End If
         ElseIf type = "room" Then
-            newcmd("select * from roomchange where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'")
-            rd = cmd.ExecuteReader
-            If rd.HasRows Then
-                rd.Dispose()
+            If CheckData("select * from roomchange where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'") Then
                 MsgBox("This overlaps an existing request.")
                 Return 0
             Else
-                rd.Dispose()
                 Return 1
             End If
         Else
-            rd.Dispose()
             Return 0
         End If
     End Function
@@ -155,24 +146,9 @@ Module submitrequest
     'INSERT THE DATA TO THE DATABASE
     Public Sub sqlinsert()
         If type = "lesson" Then
-            newcmd("INSERT into LESSONS(teacher, facultyhead, startdate, enddate, startperiod, endperiod, reason) VALUES(@teacher, @facultyhead, @startdate, @enddate, @startperiod, @endperiod, @reason)")
-            cmd.Parameters.AddWithValue("@teacher", teacher)
-            cmd.Parameters.AddWithValue("@facultyhead", facultyhead)
-            cmd.Parameters.AddWithValue("@startdate", startdate)
-            cmd.Parameters.AddWithValue("@enddate", enddate)
-            cmd.Parameters.AddWithValue("@startperiod", startperiod)
-            cmd.Parameters.AddWithValue("@endperiod", endperiod)
-            cmd.Parameters.AddWithValue("@reason", reason)
-            cmd.ExecuteNonQuery()
+            NewCommand("INSERT into LESSONS(teacher, facultyhead, startdate, enddate, startperiod, endperiod, reason) VALUES('" & teacher & "', '" & facultyhead & "', '" & startdate & "', '" & enddate & "', '" & startperiod & "', '" & endperiod & "', '" & reason & "')")
         ElseIf type = "room" Then
-            newcmd("INSERT into ROOMCHANGE(teacher, startdate, enddate, startperiod, endperiod, reason) VALUES(@teacher, @startdate, @enddate, @startperiod, @endperiod, @reason)")
-                cmd.Parameters.AddWithValue("@teacher", teacher)
-                cmd.Parameters.AddWithValue("@startdate", startdate)
-                cmd.Parameters.AddWithValue("@enddate", enddate)
-                cmd.Parameters.AddWithValue("@startperiod", startperiod)
-                cmd.Parameters.AddWithValue("@endperiod", endperiod)
-                cmd.Parameters.AddWithValue("@reason", reason)
-                cmd.ExecuteNonQuery()
+            NewCommand("INSERT into ROOMCHANGE(teacher, startdate, enddate, startperiod, endperiod, reason) VALUES('" & teacher & "', '" & startdate & "', '" & enddate & "', '" & startperiod & "', '" & endperiod & "', '" & reason & "')")
         Else
         End If
     End Sub
