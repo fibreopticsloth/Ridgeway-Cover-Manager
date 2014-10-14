@@ -5,6 +5,7 @@ Module MySQL_Connection
     'DECLARATIONS
     Public conn As MySqlConnection
     Public ConnectionString As String = "server=localhost;userid=root;password=admin;database=coversystem;pooling = false"
+    'Public ConnectionString As String = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem"
     Public cmd As MySqlCommand
     Public ds As DataSet
     Public bs As BindingSource
@@ -16,7 +17,12 @@ Module MySQL_Connection
 
         Using Connection As New MySqlConnection(ConnectionString)
 
-            Connection.Open()
+            Try
+                Connection.Open()
+            Catch ex As Exception
+                WriteError()
+            End Try
+
             If Connection.State = ConnectionState.Open Then
                 frm_home.Text = "Ridgeway Cover Manager"
                 frm_home.lbl_connectionstate.Text = "Connected"
@@ -39,125 +45,127 @@ Module MySQL_Connection
     'NEW COMMAND
     Public Sub NewCommand(ByVal CmdText As String)
 
-        Using Connection As New MySqlConnection(ConnectionString)
+        If CheckConnection() Then
 
-            With Connection.CreateCommand
+            Using Connection As New MySqlConnection(ConnectionString)
 
-                .Connection.Open()
-                .CommandText = CmdText
-                .CommandType = CommandType.Text
-                .ExecuteNonQuery()
+                With Connection.CreateCommand
 
-                Connection.Close()
-                Connection.Dispose()
-                .Dispose()
+                    .Connection.Open()
+                    .CommandText = CmdText
+                    .CommandType = CommandType.Text
+                    .ExecuteNonQuery()
 
-            End With
+                    Connection.Close()
+                    Connection.Dispose()
+                    .Dispose()
 
-        End Using
+                End With
+
+            End Using
+
+        End If
 
     End Sub
 
     'NEW UPDATE COMMAND
     Public Function NewDataCommand(ByVal CmdText As String)
 
-        Using Connection As New MySqlConnection(ConnectionString)
+        If CheckConnection() Then
 
-            With Connection.CreateCommand
+            Using Connection As New MySqlConnection(ConnectionString)
 
-                .Connection.Open()
-                .CommandText = CmdText
-                .CommandType = CommandType.Text
+                Connection.Open()
+                Dim da As New MySqlDataAdapter(CmdText, Connection)
+                Dim ds As New DataSet("Data")
+                da.Fill(ds, "Data")
+                Return ds
 
-                Dim rd As MySqlDataReader
-                rd = .ExecuteReader
-
-                Return rd
-
+                ds.Reset()
+                da.Dispose()
                 Connection.Close()
                 Connection.Dispose()
-                .Dispose()
-                rd.Dispose()
 
-            End With
+            End Using
 
-        End Using
+        End If
 
     End Function
 
     'NEW DATA COMMAND
     Public Function CheckData(ByVal CmdText As String)
 
-        Using Connection As New MySqlConnection(ConnectionString)
+        If CheckConnection Then
 
-            With Connection.CreateCommand
+            Using Connection As New MySqlConnection(ConnectionString)
 
-                .Connection.Open()
-                .CommandText = CmdText
-                .CommandType = CommandType.Text
+                With Connection.CreateCommand
 
-                Dim rd As MySqlDataReader
-                rd = .ExecuteReader
+                    .Connection.Open()
+                    .CommandText = CmdText
+                    .CommandType = CommandType.Text
 
-                While rd.Read
-                    If rd.HasRows Then
-                        Return 1
-                    Else
-                        Return 0
-                    End If
-                End While
+                    Dim rd As MySqlDataReader
+                    rd = .ExecuteReader
 
-                Connection.Close()
-                Connection.Dispose()
-                .Dispose()
-                rd.Dispose()
+                    While rd.Read
+                        If rd.HasRows Then
+                            Return 1
+                        Else
+                            Return 0
+                        End If
+                    End While
 
-            End With
+                    Connection.Close()
+                    Connection.Dispose()
+                    .Dispose()
+                    rd.Dispose()
 
-        End Using
+                End With
+
+            End Using
+
+        End If
 
     End Function
 
     'NEW QUERY
     Public Sub NewQuery(ByVal CmdText As String, ByVal Table As DataGridView)
 
-        Using Connection As New MySqlConnection(ConnectionString)
+        If CheckConnection Then
 
-            Using da As New MySqlDataAdapter(CmdText, Connection)
-                Dim ds As New DataSet
-                da.Fill(ds, "Data")
-                Table.DataSource = ds
-                Table.DataMember = "Data"
-                da.Dispose()
-                ds.Dispose()
+            Using Connection As New MySqlConnection(ConnectionString)
+
+                Using da As New MySqlDataAdapter(CmdText, Connection)
+                    Dim ds As New DataSet
+                    da.Fill(ds, "Data")
+                    Table.DataSource = ds
+                    Table.DataMember = "Data"
+                    da.Dispose()
+                    ds.Dispose()
+                End Using
+
             End Using
 
-        End Using
+        End If
 
     End Sub
 
     'CONNECT TO DB
-    'Public Sub connect()
-    '    Try
-    '        conn = New MySqlConnection
-    '        'conn.ConnectionString = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem"
-    '        conn.ConnectionString = "server=localhost;userid=root;password=admin;database=coversystem"
-    '        conn.Open()
-    '    Catch ex As Exception
-    '        Dim path As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-    '        Dim FILE_NAME As String = path & "\SET\errorlog.txt"
-    '        If System.IO.File.Exists(FILE_NAME) = True Then
-    '            Dim objWriter As New System.IO.StreamWriter(FILE_NAME, IO.FileMode.Append)
-    '            objWriter.WriteLine(DateTime.Now.ToString + " | " + ErrorToString())
-    '            objWriter.Close()
-    '        Else
-    '            My.Computer.FileSystem.CreateDirectory(path & "\SET")
-    '            Dim objWriter As IO.StreamWriter
-    '            objWriter = IO.File.CreateText(FILE_NAME)
-    '            objWriter.WriteLine(DateTime.Now.ToString + " | " + ErrorToString())
-    '            objWriter.Close()
-    '        End If
-    '    End Try
-    'End Sub
+    Public Sub WriteError()
+        Dim path As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        Dim FILE_NAME As String = path & "\SET\errorlog.txt"
+        If System.IO.File.Exists(FILE_NAME) = True Then
+            Dim objWriter As New System.IO.StreamWriter(FILE_NAME, IO.FileMode.Append)
+            objWriter.WriteLine(DateTime.Now.ToString + " | " + ErrorToString())
+            objWriter.Close()
+        Else
+            My.Computer.FileSystem.CreateDirectory(path & "\SET")
+            Dim objWriter As IO.StreamWriter
+            objWriter = IO.File.CreateText(FILE_NAME)
+            objWriter.WriteLine(DateTime.Now.ToString + " | " + ErrorToString())
+            objWriter.Close()
+        End If
+    End Sub
     
 End Module

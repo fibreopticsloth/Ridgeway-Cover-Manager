@@ -10,23 +10,28 @@ Public Class frm_home
     Dim id As Integer
     Dim row As Integer = 0
     Dim buttoncolour As Color = Color.FromArgb(28, 28, 28)
-    Dim activebutton As Color = My.Settings.accentcolour
+    Dim activebutton As Color = My.Settings.AccentColour
     Dim mouseoverbutton As Color = Color.FromArgb(0, 122, 204)
 
     'FORM LOAD
     Private Sub frm_new_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_notify.Text = My.Settings.usernotifications
-        If Not My.Settings.usernotificationcount = "" Then
-            getdata.updatecount = My.Settings.usernotificationcount
+        lbl_notify.Text = My.Settings.UserNotificationsText
+        If Not My.Settings.UserNotificationsCount = "" Then
+            getdata.updatecount = My.Settings.UserNotificationsCount
+        End If
+        If Not My.Settings.FacultyNotificationsCount = "" Then
+            getdata.facultycount = My.Settings.FacultyNotificationsCount
         End If
         nfi.Visible = True
         updateaccentcolour()
         setdates()
         getalldata()
-        hidecolumns()
+        getalldata()
         facultyheads()
         viewrequest()
+        data_timer.Enabled = True
         data_timer.Start()
+        resetall()
         getalldata()
     End Sub
 
@@ -34,7 +39,7 @@ Public Class frm_home
 
     'SUBMIT REQUEST
     Private Sub roomchange_btn_submit_Click(sender As Object, e As EventArgs) Handles roomchange_btn_submit.Click
-        If submit("room", My.Settings.currentuser, roomchange_txt_room.Text, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text) = 1 Then
+        If submit("room", My.Settings.CurrentUsername, roomchange_txt_room.Text, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text) = 1 Then
             MsgBox("Request submitted")
             resetroomchange()
             getalldata()
@@ -77,7 +82,7 @@ Public Class frm_home
 
     'SUBMIT REQUEST
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles requestcover_btn_submit.Click
-        If submit("lesson", My.Settings.currentuser, requestcover_txt_facultyhead.Text, requestcover_dp_startdate, requestcover_txt_startperiod.Text, requestcover_dp_enddate, requestcover_txt_endperiod.Text, requestcover_txt_reason.Text) = 1 Then
+        If submit("lesson", My.Settings.CurrentUsername, requestcover_txt_facultyhead.Text, requestcover_dp_startdate, requestcover_txt_startperiod.Text, requestcover_dp_enddate, requestcover_txt_endperiod.Text, requestcover_txt_reason.Text) = 1 Then
             MsgBox("Request submitted")
             resetrequestcover()
             getalldata()
@@ -100,8 +105,8 @@ Public Class frm_home
 
     'CLEAR NOTIFICATIONS BUTTON
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles panel_notifications_clearnotifications.Click
-        My.Settings.usernotifications = ""
-        My.Settings.usernotificationcount = ""
+        My.Settings.UserNotificationsText = ""
+        My.Settings.UserNotificationsCount = ""
         My.Settings.Save()
         lbl_notify.Text = ""
         btn_notifications.Text = "      Notifications" + " (0)"
@@ -146,30 +151,30 @@ Public Class frm_home
     Public Sub cancelrequest()
         Dim id As New ArrayList
         Dim cancellationerror As Boolean = False
-            Select Case selected
-                Case 1
-                    For Each i As DataGridViewRow In dg_mycovers.SelectedRows
-                        id.Add(i.Cells(0).Value)
-                    Next i
-                    For j As Integer = 0 To id.Count - 1
-                        If checkifbooked(id(j)) = 0 Then
+        Select Case selected
+            Case 1
+                For Each i As DataGridViewRow In dg_mycovers.SelectedRows
+                    id.Add(i.Cells(0).Value)
+                Next i
+                For j As Integer = 0 To id.Count - 1
+                    If checkifbooked(id(j)) = 0 Then
                         NewCommand("delete from lessons where id ='" & id(j) & "'")
-                        Else
-                            cancellationerror = True
-                        End If
-                    Next j
-                Case 2
-                    For Each i As DataGridViewRow In dg_myroomchanges.SelectedRows()
-                        id.Add(i.Cells(0).Value)
-                    Next i
-                    For j As Integer = 0 To id.Count - 1
-                        If checkifbooked(id(j)) = 0 Then
+                    Else
+                        cancellationerror = True
+                    End If
+                Next j
+            Case 2
+                For Each i As DataGridViewRow In dg_myroomchanges.SelectedRows()
+                    id.Add(i.Cells(0).Value)
+                Next i
+                For j As Integer = 0 To id.Count - 1
+                    If checkifbooked(id(j)) = 0 Then
                         NewCommand("delete from roomchange where id ='" & id(j) & "'")
-                        Else
-                            cancellationerror = True
-                        End If
-                    Next j
-            End Select
+                    Else
+                        cancellationerror = True
+                    End If
+                Next j
+        End Select
         If cancellationerror = True Then
             MsgBox("One or more of your selected cancellations has already been booked." + vbNewLine + _
                    "These cannot be cancelled, and have been skipped from the cancellation process.")
@@ -232,25 +237,25 @@ Public Class frm_home
     'APPROVE REQUEST
     Public Sub approverequest()
         If confirm("approve") = 1 Then
-                Dim id As Integer = dg_viewrequests.Item(0, dg_viewrequests.CurrentCell.RowIndex).Value
+            Dim id As Integer = dg_viewrequests.Item(0, dg_viewrequests.CurrentCell.RowIndex).Value
             NewCommand("update lessons set approved = 'Approved', booked = 'Pending', push ='1' where id='" & id & "'")
-                resetstart()
-                resetend()
-                getalldata()
-                viewrequest()
+            resetstart()
+            resetend()
+            getalldata()
+            viewrequest()
         End If
     End Sub
 
     'REJECT REQUEST
     Public Sub rejectrequest()
         If confirm("reject") = 1 Then
-                Dim id As Integer = dg_viewrequests.Item(0, dg_viewrequests.CurrentCell.RowIndex).Value
+            Dim id As Integer = dg_viewrequests.Item(0, dg_viewrequests.CurrentCell.RowIndex).Value
             NewCommand("update lessons set approved = 'Rejected', booked = 'N/A', push = '1' where id='" & id & "'")
-                resetstart()
-                resetend()
-                getalldata()
-                viewrequest()
-            End If
+            resetstart()
+            resetend()
+            getalldata()
+            viewrequest()
+        End If
     End Sub
 
     'RESET START DATE/PERIOD
@@ -271,44 +276,79 @@ Public Class frm_home
     'SET NEW COLOUR
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         If ColorDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
-            My.Settings.accentcolour = ColorDialog.Color
+            My.Settings.AccentColour = ColorDialog.Color
             My.Settings.Save()
-            pnl_colour.BackColor = My.Settings.accentcolour
-            btn_userinterface.BackColor = My.Settings.accentcolour
+            pnl_colour.BackColor = My.Settings.AccentColour
+            btn_userinterface.BackColor = My.Settings.AccentColour
             updateaccentcolour()
         End If
     End Sub
 
     'PREVIEW COLOUR
     Private Sub pnl_colour_Paint(sender As Object, e As PaintEventArgs) Handles pnl_colour.Paint
-        pnl_colour.BackColor = My.Settings.accentcolour
+        pnl_colour.BackColor = My.Settings.AccentColour
     End Sub
 
     'DEFAULT COLOUR
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        My.Settings.accentcolour = Color.FromArgb(0, 122, 204)
+        My.Settings.AccentColour = Color.FromArgb(0, 122, 204)
         My.Settings.Save()
-        pnl_colour.BackColor = My.Settings.accentcolour
-        btn_userinterface.BackColor = My.Settings.accentcolour
+        pnl_colour.BackColor = My.Settings.AccentColour
+        btn_userinterface.BackColor = My.Settings.AccentColour
         updateaccentcolour()
     End Sub
 
     'CHANGE BUTTONSTO NEW COLOUE
     Public Sub updateaccentcolour()
-        btn_requestcover.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
-        btn_requestcover.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
-        btn_roomchange.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
-        btn_roomchange.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
-        btn_notifications.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
-        btn_notifications.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
-        btn_facultyarea.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
-        btn_facultyarea.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
-        btn_myrequests.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
-        btn_myrequests.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
-        btn_accountdetails.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
-        btn_accountdetails.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
-        btn_userinterface.FlatAppearance.MouseOverBackColor = My.Settings.accentcolour
-        btn_userinterface.FlatAppearance.MouseDownBackColor = My.Settings.accentcolour
+        Me.BackColor = My.Settings.BackColour
+        btn_requestcover.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
+        btn_requestcover.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
+        btn_requestcover.BackColor = My.Settings.BackColour
+        btn_roomchange.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
+        btn_roomchange.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
+        btn_roomchange.BackColor = My.Settings.BackColour
+        btn_notifications.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
+        btn_notifications.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
+        btn_notifications.BackColor = My.Settings.BackColour
+        btn_facultyarea.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
+        btn_facultyarea.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
+        btn_facultyarea.BackColor = My.Settings.BackColour
+        btn_myrequests.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
+        btn_myrequests.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
+        btn_myrequests.BackColor = My.Settings.BackColour
+        btn_accountdetails.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
+        btn_accountdetails.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
+        btn_accountdetails.BackColor = My.Settings.BackColour
+        btn_userinterface.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
+        btn_userinterface.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
+        btn_userinterface.BackColor = My.Settings.BackColour
+        If My.Settings.BackColour = Color.FromArgb(28, 28, 28) Then
+            Button4.Text = "Dark (selected)"
+            Button3.Text = "Classic"
+        ElseIf My.Settings.BackColour = Color.FromArgb(41, 85, 152) Then
+            Button4.Text = "Dark"
+            Button3.Text = "Classic (selected)"
+        End If
+    End Sub
+
+    'SET TO DARK THEME
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Button4.Text = "Dark (selected)"
+        Button3.Text = "Classic"
+        My.Settings.BackColour = Color.FromArgb(28, 28, 28)
+        My.Settings.Save()
+        Me.BackColor = My.Settings.BackColour
+        updateaccentcolour()
+    End Sub
+
+    'SET TO CLASSIC THEME
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Button4.Text = "Dark"
+        Button3.Text = "Classic (selected)"
+        My.Settings.BackColour = Color.FromArgb(41, 85, 152)
+        My.Settings.Save()
+        Me.BackColor = My.Settings.BackColour
+        updateaccentcolour()
     End Sub
 
     '--------MISC--------
@@ -354,8 +394,8 @@ Public Class frm_home
     'RESET REQUEST COVER PANEL
     Public Sub resetrequestcover()
         setdates()
-        requestcover_txt_startperiod.SelectedIndex = -1
-        requestcover_txt_endperiod.SelectedIndex = -1
+        requestcover_txt_startperiod.SelectedIndex = 0
+        requestcover_txt_endperiod.SelectedIndex = 0
         requestcover_txt_facultyhead.ResetText()
         requestcover_txt_reason.ResetText()
         panel_requestcover.BringToFront()
@@ -364,8 +404,8 @@ Public Class frm_home
     'RESET ROOM CHANGE PANEL
     Public Sub resetroomchange()
         setdates()
-        roomchange_txt_startperiod.SelectedIndex = -1
-        roomchange_txt_endperiod.SelectedIndex = -1
+        roomchange_txt_startperiod.SelectedIndex = 0
+        roomchange_txt_endperiod.SelectedIndex = 0
         roomchange_txt_room.ResetText()
         roomchange_txt_reason.ResetText()
         panel_roomchange.BringToFront()
@@ -395,20 +435,15 @@ Public Class frm_home
 
     'GET DATA
     Private Sub data_timer_Tick(sender As Object, e As EventArgs) Handles data_timer.Tick
-        'If checkconn() Then
-        '    getalldata()
-        'End If
+        getalldata()
     End Sub
 
     'LOGOUT
     Public Sub logout()
-        My.Settings.rememberusername = ""
-        My.Settings.rememberpassword = ""
-        My.Settings.currentuser = ""
+        My.Settings.CurrentUsername = ""
+        My.Settings.CurrentUserType = ""
         My.Settings.Save()
         lbl_currentuser.Text = "Logged in as "
-        frm_login.txt_username.ResetText()
-        frm_login.txt_password.ResetText()
         nfi.Visible = False
         Me.Visible = False
         frm_login.Show()
@@ -423,7 +458,7 @@ Public Class frm_home
         setdates()
         hidestart()
         lbl_requestcover.Show()
-        btn_requestcover.BackColor = My.Settings.accentcolour
+        btn_requestcover.BackColor = My.Settings.AccentColour
         panel_requestcover.Show()
     End Sub
 
@@ -433,7 +468,7 @@ Public Class frm_home
         setdates()
         hidestart()
         lbl_roomchange.Show()
-        btn_roomchange.BackColor = My.Settings.accentcolour
+        btn_roomchange.BackColor = My.Settings.AccentColour
         panel_roomchange.Show()
     End Sub
 
@@ -442,7 +477,7 @@ Public Class frm_home
         getalldata()
         hidestart()
         lbl_notifications.Show()
-        btn_notifications.BackColor = My.Settings.accentcolour
+        btn_notifications.BackColor = My.Settings.AccentColour
         panel_notifications.Show()
     End Sub
 
@@ -451,23 +486,28 @@ Public Class frm_home
         getalldata()
         hidestart()
         lbl_myrequests.Show()
-        btn_myrequests.BackColor = My.Settings.accentcolour
+        btn_myrequests.BackColor = My.Settings.AccentColour
         panel_myrequests.Show()
     End Sub
 
     'FACULTY AREA
     Private Sub btn_facultyarea_Click(sender As Object, e As EventArgs) Handles btn_facultyarea.Click
-        getalldata()
-        hidestart()
-        lbl_facultyarea.Show()
-        btn_facultyarea.BackColor = My.Settings.accentcolour
-        panel_facultyarea.Show()
+        If My.Settings.CurrentUserType = "faculty" Or My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
+            getalldata()
+            hidestart()
+            viewrequest()
+            lbl_facultyarea.Show()
+            btn_facultyarea.BackColor = My.Settings.AccentColour
+            panel_facultyarea.Show()
+        Else
+            MsgBox("You are not granted permission to access this area.")
+        End If
     End Sub
 
     'USER INTERFACE OPTIONS
     Private Sub btn_userinterface_Click(sender As Object, e As EventArgs) Handles btn_userinterface.Click
         hidestart()
-        btn_userinterface.BackColor = My.Settings.accentcolour
+        btn_userinterface.BackColor = My.Settings.AccentColour
         panel_userinterface.Show()
     End Sub
 
@@ -537,7 +577,7 @@ Public Class frm_home
     'EXIT OPTION
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         nfi.Visible = False
-        My.Settings.currentuser = ""
+        My.Settings.CurrentUsername = ""
         Application.Exit()
     End Sub
 
@@ -546,7 +586,7 @@ Public Class frm_home
     'QUIT
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
         nfi.Visible = False
-        My.Settings.currentuser = ""
+        My.Settings.CurrentUsername = ""
         Application.Exit()
     End Sub
 
@@ -593,7 +633,7 @@ Public Class frm_home
 
     'ABOUT
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
+        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")

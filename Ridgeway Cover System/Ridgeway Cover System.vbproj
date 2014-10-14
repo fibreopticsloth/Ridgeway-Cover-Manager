@@ -201,7 +201,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Candara.ttf" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -216,8 +215,6 @@
     <None Include="Ridgeway Cover System_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="OpenSans-Light.ttf" />
-    <None Include="OpenSans-Semibold.ttf" />
     <None Include="Resources\schoollogo.png" />
   </ItemGroup>
   <ItemGroup>

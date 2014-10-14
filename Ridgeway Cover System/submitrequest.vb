@@ -107,7 +107,6 @@ Module submitrequest
                 Else : Return 1
                 End If
         End Select
-
     End Function
 
     'ENSURE THE START DATE IS BEFORE THE END DATE
@@ -125,14 +124,14 @@ Module submitrequest
     'CHECK THERE IS NO OVERLAP WITH EXISTING REQUESTS
     Public Function checkoverlap()
         If type = "lesson" Then
-            If CheckData("select * from lessons where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'") Then
+            If CheckData("select * from lessons where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.CurrentUsername & "'") Then
                 MsgBox("This overlaps an existing request.")
                 Return 0
             Else
                 Return 1
             End If
         ElseIf type = "room" Then
-            If CheckData("select * from roomchange where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.currentuser & "'") Then
+            If CheckData("select * from roomchange where startdate <= '" & enddate & "' and '" & startdate & "' <= enddate and teacher = '" & My.Settings.CurrentUsername & "'") Then
                 MsgBox("This overlaps an existing request.")
                 Return 0
             Else

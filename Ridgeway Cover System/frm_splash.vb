@@ -7,7 +7,7 @@
     Private Sub frm_splash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         timersplash.Start()
         timerfade.Start()
-        lbl_version.Text = "Version " + My.Settings.version
+        lbl_version.Text = "Version " + My.Settings.Version
         Me.Opacity = 0
     End Sub
 

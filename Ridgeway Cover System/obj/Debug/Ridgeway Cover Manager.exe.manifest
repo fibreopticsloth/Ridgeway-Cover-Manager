@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ridgeway Cover Manager.exe" size="716800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ridgeway Cover Manager.exe" size="721408">
       <assemblyIdentity name="Ridgeway Cover Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xLJZ4k309LDylx19pw71OtjRd/iD8KahXAUiHBx7cy8=</dsig:DigestValue>
+        <dsig:DigestValue>wp6dIyCm3fJox219AyDGhPkctuUvryI7juNKDB3KZzY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -75,13 +75,13 @@
       <dsig:DigestValue>Csy6TEPzcpBqZ7EC3IFXym1Q/5XQODsWLraljDNyzfw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Ridgeway Cover Manager.exe.config" size="2769">
+  <file name="Ridgeway Cover Manager.exe.config" size="2665">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4LoMvL0ijZOfja4o3rEsdaHawC9DVtXdaQwHTNbMKC8=</dsig:DigestValue>
+      <dsig:DigestValue>fIg4TKF0ITOiI7jIpsuwlELM6M3heKxMupyOqWhOfvw=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

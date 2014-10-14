@@ -127,11 +127,15 @@ Partial Class frm_home
         Me.lbl_notifications = New System.Windows.Forms.Label()
         Me.data_timer = New System.Windows.Forms.Timer(Me.components)
         Me.panel_userinterface = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label28 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.pnl_colour = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ColorDialog = New System.Windows.Forms.ColorDialog()
+        Me.tt_notify = New System.Windows.Forms.ToolTip(Me.components)
         Me.panel_requestcover.SuspendLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_start.SuspendLayout()
@@ -150,6 +154,8 @@ Partial Class frm_home
         Me.nfimenu.SuspendLayout()
         Me.panel_notifications.SuspendLayout()
         Me.panel_userinterface.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -196,7 +202,7 @@ Partial Class frm_home
         Me.btn_facultyarea.ForeColor = System.Drawing.Color.White
         Me.btn_facultyarea.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.facultyarea
         Me.btn_facultyarea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_facultyarea.Location = New System.Drawing.Point(3, 288)
+        Me.btn_facultyarea.Location = New System.Drawing.Point(3, 254)
         Me.btn_facultyarea.Name = "btn_facultyarea"
         Me.btn_facultyarea.Size = New System.Drawing.Size(130, 35)
         Me.btn_facultyarea.TabIndex = 10
@@ -217,7 +223,7 @@ Partial Class frm_home
         Me.btn_myrequests.ForeColor = System.Drawing.Color.White
         Me.btn_myrequests.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.myrequests
         Me.btn_myrequests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_myrequests.Location = New System.Drawing.Point(3, 254)
+        Me.btn_myrequests.Location = New System.Drawing.Point(3, 220)
         Me.btn_myrequests.Name = "btn_myrequests"
         Me.btn_myrequests.Size = New System.Drawing.Size(130, 35)
         Me.btn_myrequests.TabIndex = 9
@@ -362,6 +368,7 @@ Partial Class frm_home
         '
         'requestcover_txt_endperiod
         '
+        Me.requestcover_txt_endperiod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.requestcover_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_txt_endperiod.FormattingEnabled = True
         Me.requestcover_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
@@ -421,6 +428,7 @@ Partial Class frm_home
         '
         'requestcover_txt_startperiod
         '
+        Me.requestcover_txt_startperiod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.requestcover_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.requestcover_txt_startperiod.FormattingEnabled = True
         Me.requestcover_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
@@ -722,6 +730,7 @@ Partial Class frm_home
         '
         'roomchange_txt_endperiod
         '
+        Me.roomchange_txt_endperiod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.roomchange_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_txt_endperiod.FormattingEnabled = True
         Me.roomchange_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
@@ -781,6 +790,7 @@ Partial Class frm_home
         '
         'roomchange_txt_startperiod
         '
+        Me.roomchange_txt_startperiod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.roomchange_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.roomchange_txt_startperiod.FormattingEnabled = True
         Me.roomchange_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
@@ -909,12 +919,13 @@ Partial Class frm_home
         '
         Me.btn_sync.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_sync.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.sync
-        Me.btn_sync.Location = New System.Drawing.Point(587, 34)
+        Me.btn_sync.Location = New System.Drawing.Point(587, 36)
         Me.btn_sync.Name = "btn_sync"
         Me.btn_sync.Size = New System.Drawing.Size(43, 21)
         Me.btn_sync.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_sync.TabIndex = 62
         Me.btn_sync.TabStop = False
+        Me.tt_notify.SetToolTip(Me.btn_sync, "Update data in Ridgeway Cover Scheduler")
         '
         'panel_facultyarea
         '
@@ -1043,6 +1054,7 @@ Partial Class frm_home
         'facultyarea_txt_endperiod
         '
         Me.facultyarea_txt_endperiod.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.facultyarea_txt_endperiod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.facultyarea_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_txt_endperiod.FormattingEnabled = True
         Me.facultyarea_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
@@ -1113,6 +1125,7 @@ Partial Class frm_home
         'facultyarea_txt_startperiod
         '
         Me.facultyarea_txt_startperiod.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.facultyarea_txt_startperiod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.facultyarea_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_txt_startperiod.FormattingEnabled = True
         Me.facultyarea_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
@@ -1303,7 +1316,7 @@ Partial Class frm_home
         Me.btn_notifications.ForeColor = System.Drawing.Color.White
         Me.btn_notifications.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.notifications
         Me.btn_notifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_notifications.Location = New System.Drawing.Point(3, 220)
+        Me.btn_notifications.Location = New System.Drawing.Point(3, 288)
         Me.btn_notifications.Name = "btn_notifications"
         Me.btn_notifications.Size = New System.Drawing.Size(130, 35)
         Me.btn_notifications.TabIndex = 65
@@ -1370,22 +1383,81 @@ Partial Class frm_home
         '
         'data_timer
         '
-        Me.data_timer.Enabled = True
-        Me.data_timer.Interval = 5000
+        Me.data_timer.Interval = 60000
         '
         'panel_userinterface
         '
         Me.panel_userinterface.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.panel_userinterface.Controls.Add(Me.Button2)
-        Me.panel_userinterface.Controls.Add(Me.Label28)
-        Me.panel_userinterface.Controls.Add(Me.pnl_colour)
-        Me.panel_userinterface.Controls.Add(Me.Button1)
+        Me.panel_userinterface.Controls.Add(Me.GroupBox2)
+        Me.panel_userinterface.Controls.Add(Me.GroupBox1)
         Me.panel_userinterface.Location = New System.Drawing.Point(131, 65)
         Me.panel_userinterface.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_userinterface.Name = "panel_userinterface"
         Me.panel_userinterface.Size = New System.Drawing.Size(499, 382)
         Me.panel_userinterface.TabIndex = 60
         Me.panel_userinterface.Visible = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Button3)
+        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Location = New System.Drawing.Point(165, 44)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(169, 101)
+        Me.GroupBox2.TabIndex = 61
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Colour Scheme"
+        '
+        'Button3
+        '
+        Me.Button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(10, 60)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(150, 35)
+        Me.Button3.TabIndex = 57
+        Me.Button3.Text = "Classic"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(10, 19)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(150, 35)
+        Me.Button4.TabIndex = 56
+        Me.Button4.Text = "Dark (selected)"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.pnl_colour)
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Location = New System.Drawing.Point(165, 156)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(169, 182)
+        Me.GroupBox1.TabIndex = 60
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Accent Colour"
+        '
+        'pnl_colour
+        '
+        Me.pnl_colour.Location = New System.Drawing.Point(10, 21)
+        Me.pnl_colour.Name = "pnl_colour"
+        Me.pnl_colour.Size = New System.Drawing.Size(150, 75)
+        Me.pnl_colour.TabIndex = 57
         '
         'Button2
         '
@@ -1396,29 +1468,12 @@ Partial Class frm_home
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(155, 158)
+        Me.Button2.Location = New System.Drawing.Point(10, 146)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(150, 25)
         Me.Button2.TabIndex = 59
         Me.Button2.Text = "Set to Default"
         Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.Location = New System.Drawing.Point(38, 31)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(111, 21)
-        Me.Label28.TabIndex = 58
-        Me.Label28.Text = "Accent Colour:"
-        '
-        'pnl_colour
-        '
-        Me.pnl_colour.Location = New System.Drawing.Point(155, 33)
-        Me.pnl_colour.Name = "pnl_colour"
-        Me.pnl_colour.Size = New System.Drawing.Size(150, 75)
-        Me.pnl_colour.TabIndex = 57
         '
         'Button1
         '
@@ -1429,7 +1484,7 @@ Partial Class frm_home
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(155, 117)
+        Me.Button1.Location = New System.Drawing.Point(10, 105)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(150, 35)
         Me.Button1.TabIndex = 56
@@ -1440,39 +1495,44 @@ Partial Class frm_home
         '
         Me.ColorDialog.AnyColor = True
         '
+        'tt_notify
+        '
+        Me.tt_notify.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.tt_notify.ToolTipTitle = "Update"
+        '
         'frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(634, 451)
-        Me.Controls.Add(Me.lbl_start)
+        Me.Controls.Add(Me.btn_sync)
         Me.Controls.Add(Me.panel_start)
         Me.Controls.Add(Me.panel_notifications)
         Me.Controls.Add(Me.panel_roomchange)
-        Me.Controls.Add(Me.btn_sync)
-        Me.Controls.Add(Me.lbl_requestcover)
-        Me.Controls.Add(Me.lbl_roomchange)
-        Me.Controls.Add(Me.lbl_myrequests)
         Me.Controls.Add(Me.panel_facultyarea)
-        Me.Controls.Add(Me.lbl_facultyarea)
         Me.Controls.Add(Me.panel_myrequests)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.pic_logo)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.btn_requestcover)
-        Me.Controls.Add(Me.btn_roomchange)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.btn_facultyarea)
-        Me.Controls.Add(Me.btn_myrequests)
-        Me.Controls.Add(Me.btn_userinterface)
-        Me.Controls.Add(Me.btn_accountdetails)
         Me.Controls.Add(Me.panel_requestcover)
         Me.Controls.Add(Me.MenuStrip)
-        Me.Controls.Add(Me.lbl_notifications)
-        Me.Controls.Add(Me.btn_notifications)
         Me.Controls.Add(Me.panel_userinterface)
+        Me.Controls.Add(Me.lbl_start)
+        Me.Controls.Add(Me.lbl_requestcover)
+        Me.Controls.Add(Me.lbl_roomchange)
+        Me.Controls.Add(Me.lbl_myrequests)
+        Me.Controls.Add(Me.lbl_facultyarea)
+        Me.Controls.Add(Me.lbl_notifications)
+        Me.Controls.Add(Me.btn_requestcover)
+        Me.Controls.Add(Me.btn_roomchange)
+        Me.Controls.Add(Me.btn_facultyarea)
+        Me.Controls.Add(Me.btn_userinterface)
+        Me.Controls.Add(Me.btn_accountdetails)
+        Me.Controls.Add(Me.btn_notifications)
+        Me.Controls.Add(Me.btn_myrequests)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -1505,7 +1565,8 @@ Partial Class frm_home
         Me.panel_notifications.ResumeLayout(False)
         Me.panel_notifications.PerformLayout()
         Me.panel_userinterface.ResumeLayout(False)
-        Me.panel_userinterface.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1615,6 +1676,10 @@ Partial Class frm_home
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ColorDialog As System.Windows.Forms.ColorDialog
     Friend WithEvents pnl_colour As System.Windows.Forms.Panel
-    Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents tt_notify As System.Windows.Forms.ToolTip
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
 End Class
