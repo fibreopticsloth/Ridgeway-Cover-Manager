@@ -36,14 +36,15 @@ Public Class frm_login
 
     'LOGIN
     Public Sub login()
+        btn_login.Text = "Please wait"
         rememberlogin()
         checktype()
         My.Settings.CurrentUsername = txt_username.Text
         My.Settings.Save()
         frm_home.lbl_currentuser.Text += My.Settings.CurrentUsername
 
-        Me.Hide()
         frm_home.Show()
+        Me.Dispose()
     End Sub
 
     'CHECK USER TYPE
@@ -92,7 +93,7 @@ Public Class frm_login
     'SIGNUP BUTTON
     Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_signup.Click
         MsgBox("Ridgeway Cover Manager automatically detects your username from your Windows user account. Please ensure you are logged into your personal user account when signing up.")
-        Me.Hide()
         frm_signup.Show()
+        Me.Dispose()
     End Sub
 End Class

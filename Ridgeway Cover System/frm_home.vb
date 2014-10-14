@@ -32,7 +32,6 @@ Public Class frm_home
         data_timer.Enabled = True
         data_timer.Start()
         resetall()
-        getalldata()
     End Sub
 
     '--------REQUEST COVER PANEL--------
@@ -298,7 +297,7 @@ Public Class frm_home
         updateaccentcolour()
     End Sub
 
-    'CHANGE BUTTONSTO NEW COLOUE
+    'CHANGE BUTTONSTO NEW COLOUR
     Public Sub updateaccentcolour()
         Me.BackColor = My.Settings.BackColour
         btn_requestcover.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
@@ -321,7 +320,7 @@ Public Class frm_home
         btn_accountdetails.BackColor = My.Settings.BackColour
         btn_userinterface.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
         btn_userinterface.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_userinterface.BackColor = My.Settings.BackColour
+        btn_userinterface.BackColor = My.Settings.AccentColour
         If My.Settings.BackColour = Color.FromArgb(28, 28, 28) Then
             Button4.Text = "Dark (selected)"
             Button3.Text = "Classic"
@@ -444,10 +443,10 @@ Public Class frm_home
         My.Settings.CurrentUserType = ""
         My.Settings.Save()
         lbl_currentuser.Text = "Logged in as "
+        data_timer.Stop()
         nfi.Visible = False
-        Me.Visible = False
         frm_login.Show()
-        frm_login.BringToFront()
+        Me.Dispose()
     End Sub
 
     '--------PANEL BUTTONS--------
@@ -597,13 +596,21 @@ Public Class frm_home
 
     'ADMIN CENTRE
     Private Sub LaunchAdminCentreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchAdminCentreToolStripMenuItem.Click
-        Me.hidecolumns()
-        frm_admin.Show()
+        If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
+            Me.hidecolumns()
+            frm_admin.Show()
+        Else
+            MsgBox("You are not granted permission to access this area.")
+        End If
     End Sub
 
     'COVER MANAGEMENT
     Private Sub LaunchCoverManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchCoverManagementToolStripMenuItem.Click
-        frm_covermanagement.Show()
+        If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
+            frm_covermanagement.Show()
+        Else
+            MsgBox("You are not granted permission to access this area.")
+        End If
     End Sub
 
     'BUG REPORT

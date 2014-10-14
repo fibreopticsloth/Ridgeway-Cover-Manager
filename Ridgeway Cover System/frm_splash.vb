@@ -21,9 +21,8 @@
         loadvalue += 1
         lbl_loading.Text = lbl_loading.Text + "."
         If loadvalue = 4 Then
-            Me.Hide()
             frm_login.Show()
-            frm_login.BringToFront()
+            Me.Dispose()
         End If
     End Sub
 End Class

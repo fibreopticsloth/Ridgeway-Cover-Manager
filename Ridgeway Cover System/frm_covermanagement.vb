@@ -76,8 +76,8 @@ Public Class frm_covermanagement
 
     'BACK BUTTON
     Private Sub btn_back_Click(sender As Object, e As EventArgs)
-        Me.Hide()
         frm_admin.Show()
+        Me.Dispose()
     End Sub
 
     'UPDATE BUTTON

@@ -119,19 +119,10 @@
 
     '---BUTTON CLICK ACTIONS---
 
-    'SHOW COVER MANAGEMENT
-    Private Sub dg_admins_SelectedIndexChanged(sender As Object, e As EventArgs) Handles dg_admins.SelectedIndexChanged
-        If dg_admins.SelectedIndex = 2 Then
-            Me.Hide()
-            frm_covermanagement.Show()
-        End If
-    End Sub
-
     'BACK BUTTON
     Private Sub btn_back_Click(sender As Object, e As EventArgs)
-        Me.Hide()
         frm_home.Show()
-        frm_home.BringToFront()
+        Me.Dispose()
     End Sub
 
     'CHANGE PASSWORD BUTTON
