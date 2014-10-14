@@ -159,6 +159,7 @@ Partial Class frm_signup
         '
         'frm_signup
         '
+        Me.AcceptButton = Me.btn_signup
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke

@@ -26,17 +26,16 @@ Public Class frm_signup
             NewCommand("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
             MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
                      & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
+            frm_login.Show()
             With frm_login
                 .txt_username.Text = username
                 .txt_password.Text = ""
                 .txt_password.Focus()
             End With
-            frm_login.Show()
             Me.Dispose()
         Else
             MsgBox("Your passwords do not match!")
         End If
-        rd.Close()
         resetsignup()
     End Sub
 
