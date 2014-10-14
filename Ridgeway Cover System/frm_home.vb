@@ -435,6 +435,7 @@ Public Class frm_home
     'GET DATA
     Private Sub data_timer_Tick(sender As Object, e As EventArgs) Handles data_timer.Tick
         getalldata()
+        facultyheads()
     End Sub
 
     'LOGOUT
