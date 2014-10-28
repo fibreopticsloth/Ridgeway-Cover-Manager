@@ -22,19 +22,17 @@ Partial Class frm_login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_login))
         Me.btn_signup = New System.Windows.Forms.Button()
-        Me.btn_login = New System.Windows.Forms.Button()
         Me.txt_username = New System.Windows.Forms.TextBox()
         Me.txt_password = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.remember = New System.Windows.Forms.CheckBox()
-        Me.panel_sidebar = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.panel_sidebar.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btn_login = New System.Windows.Forms.Button()
+        Me.timer_fadeout = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'btn_signup
@@ -45,7 +43,7 @@ Partial Class frm_login
         Me.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_signup.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_signup.ForeColor = System.Drawing.Color.White
-        Me.btn_signup.Location = New System.Drawing.Point(44, 329)
+        Me.btn_signup.Location = New System.Drawing.Point(243, 326)
         Me.btn_signup.Name = "btn_signup"
         Me.btn_signup.Size = New System.Drawing.Size(157, 30)
         Me.btn_signup.TabIndex = 3
@@ -53,47 +51,31 @@ Partial Class frm_login
         Me.btn_signup.Text = "Sign Up"
         Me.btn_signup.UseVisualStyleBackColor = False
         '
-        'btn_login
-        '
-        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btn_login.FlatAppearance.BorderSize = 0
-        Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_login.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_login.ForeColor = System.Drawing.Color.White
-        Me.btn_login.Location = New System.Drawing.Point(44, 293)
-        Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(157, 30)
-        Me.btn_login.TabIndex = 2
-        Me.btn_login.TabStop = False
-        Me.btn_login.Text = "Log In"
-        Me.btn_login.UseVisualStyleBackColor = False
-        '
         'txt_username
         '
-        Me.txt_username.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_username.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txt_username.Location = New System.Drawing.Point(44, 166)
+        Me.txt_username.Location = New System.Drawing.Point(243, 163)
         Me.txt_username.Name = "txt_username"
-        Me.txt_username.Size = New System.Drawing.Size(157, 25)
+        Me.txt_username.Size = New System.Drawing.Size(157, 22)
         Me.txt_username.TabIndex = 0
         '
         'txt_password
         '
-        Me.txt_password.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txt_password.Location = New System.Drawing.Point(44, 222)
+        Me.txt_password.Location = New System.Drawing.Point(243, 219)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_password.Size = New System.Drawing.Size(157, 25)
+        Me.txt_password.Size = New System.Drawing.Size(157, 22)
         Me.txt_password.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(41, 145)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(240, 143)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 17)
         Me.Label1.TabIndex = 4
@@ -103,8 +85,8 @@ Partial Class frm_login
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(41, 201)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(240, 199)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(62, 17)
         Me.Label2.TabIndex = 5
@@ -113,11 +95,11 @@ Partial Class frm_login
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!)
-        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(31, 85)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(233, 82)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(183, 42)
+        Me.Label3.Size = New System.Drawing.Size(177, 40)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Log In to" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ridgeway Cover Manager"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -126,74 +108,68 @@ Partial Class frm_login
         '
         Me.remember.AutoSize = True
         Me.remember.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.remember.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.remember.Location = New System.Drawing.Point(44, 259)
+        Me.remember.ForeColor = System.Drawing.Color.White
+        Me.remember.Location = New System.Drawing.Point(243, 256)
         Me.remember.Name = "remember"
         Me.remember.Size = New System.Drawing.Size(110, 21)
         Me.remember.TabIndex = 4
         Me.remember.Text = "Remember me"
         Me.remember.UseVisualStyleBackColor = True
         '
-        'panel_sidebar
+        'btn_login
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.panel_sidebar.Controls.Add(Me.PictureBox1)
-        Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panel_sidebar.Location = New System.Drawing.Point(0, 0)
-        Me.panel_sidebar.Margin = New System.Windows.Forms.Padding(0)
-        Me.panel_sidebar.Name = "panel_sidebar"
-        Me.panel_sidebar.Padding = New System.Windows.Forms.Padding(7)
-        Me.panel_sidebar.Size = New System.Drawing.Size(244, 63)
-        Me.panel_sidebar.TabIndex = 46
+        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btn_login.FlatAppearance.BorderSize = 0
+        Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_login.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.ForeColor = System.Drawing.Color.White
+        Me.btn_login.Location = New System.Drawing.Point(243, 290)
+        Me.btn_login.Name = "btn_login"
+        Me.btn_login.Size = New System.Drawing.Size(157, 30)
+        Me.btn_login.TabIndex = 7
+        Me.btn_login.TabStop = False
+        Me.btn_login.Text = "Log In"
+        Me.btn_login.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'timer_fadeout
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo
-        Me.PictureBox1.Location = New System.Drawing.Point(7, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(230, 49)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.timer_fadeout.Interval = 40
         '
         'frm_login
         '
         Me.AcceptButton = Me.btn_login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(244, 382)
-        Me.Controls.Add(Me.panel_sidebar)
+        Me.BackColor = System.Drawing.Color.Black
+        Me.ClientSize = New System.Drawing.Size(642, 451)
+        Me.Controls.Add(Me.btn_login)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txt_username)
         Me.Controls.Add(Me.txt_password)
-        Me.Controls.Add(Me.btn_login)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btn_signup)
         Me.Controls.Add(Me.remember)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_login"
+        Me.Opacity = 0.95R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log In"
-        Me.panel_sidebar.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents btn_signup As System.Windows.Forms.Button
-    Friend WithEvents btn_login As System.Windows.Forms.Button
     Friend WithEvents txt_username As System.Windows.Forms.TextBox
     Friend WithEvents txt_password As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents remember As System.Windows.Forms.CheckBox
-    Friend WithEvents panel_sidebar As System.Windows.Forms.Panel
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents btn_login As System.Windows.Forms.Button
+    Friend WithEvents timer_fadeout As System.Windows.Forms.Timer
 
 End Class

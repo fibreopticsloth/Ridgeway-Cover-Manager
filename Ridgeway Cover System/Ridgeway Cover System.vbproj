@@ -281,6 +281,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="rcm_icon.ico" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\schoollogogrey.png" />
+    <None Include="Resources\schoollogoblack.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

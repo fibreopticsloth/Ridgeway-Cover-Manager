@@ -63,8 +63,8 @@ Module getdata
 
         facultycount = frm_home.dg_viewrequests.RowCount
 
-        frm_home.btn_notifications.Text = "       Notifications" + " (" + updatecount.ToString + ")"
-        frm_home.btn_facultyarea.Text = "       Faculty Area" + " (" + facultycount.ToString + ")"
+        frm_home.btn_notifications.Text = "Notifications" + " (" + updatecount.ToString + ")"
+        frm_home.btn_facultyarea.Text = "Faculty Area" + " (" + facultycount.ToString + ")"
         My.Settings.FacultyNotificationsCount = facultycount.ToString
         My.Settings.UserNotificationsText = frm_home.lbl_notify.Text
         My.Settings.UserNotificationsCount = updatecount.ToString
@@ -73,7 +73,7 @@ Module getdata
 
     End Sub
 
-    'CHECK IF NOTIFICATION ARE EMPTY
+    'CHECK IF NOTIFICATION AREA EMPTY
     Public Sub CheckEmpty()
 
         If frm_home.lbl_notify.Text = "No notifications to show!" Then

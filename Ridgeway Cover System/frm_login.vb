@@ -1,6 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class frm_login
 
+    'DECLARATIONS
+    Dim drag As Boolean
+    Dim mousex As Integer
+    Dim mousey As Integer
+
     'FORM LOAD
     Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         retrievelogin()
@@ -41,10 +46,14 @@ Public Class frm_login
         checktype()
         My.Settings.CurrentUsername = txt_username.Text
         My.Settings.Save()
-        frm_home.lbl_currentuser.Text += My.Settings.CurrentUsername
+        frm_home.lbl_currentuser.Text = "Logged in as " + My.Settings.CurrentUsername
 
-        frm_home.Show()
-        Me.Dispose()
+        frm_home.load_home()
+        timer_fadeout.Enabled = True
+        timer_fadeout.Start()
+        'frm_home.BringToFront()
+        'frm_home.ShowInTaskbar = True
+        'Me.Dispose()
     End Sub
 
     'CHECK USER TYPE
@@ -87,13 +96,41 @@ Public Class frm_login
 
     'LOGIN BUTTON
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        checkuser()
+        CheckUser()
     End Sub
 
     'SIGNUP BUTTON
     Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_signup.Click
         MsgBox("Ridgeway Cover Manager automatically detects your username from your Windows user account. Please ensure you are logged into your personal user account when signing up.")
         frm_signup.Show()
-        Me.Dispose()
+    End Sub
+
+    Private Sub Button8_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
+        drag = True
+        mousex = Windows.Forms.Cursor.Position.X - Me.Left
+        mousey = Windows.Forms.Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub Button8_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
+        If drag Then
+            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
+            Me.Left = Windows.Forms.Cursor.Position.X - mousex
+            frm_home.Top = Windows.Forms.Cursor.Position.Y - mousey
+            frm_home.Left = Windows.Forms.Cursor.Position.X - mousex
+        End If
+    End Sub
+
+    Private Sub Button8_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+        drag = False
+    End Sub
+
+    Private Sub timer_fadeout_Tick(sender As Object, e As EventArgs) Handles timer_fadeout.Tick
+        If Me.Opacity > 0 Then
+            Me.Opacity -= 0.1
+        Else
+            timer_fadeout.Stop()
+            timer_fadeout.Enabled = False
+            Me.Dispose()
+        End If
     End Sub
 End Class

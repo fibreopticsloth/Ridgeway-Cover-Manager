@@ -9,21 +9,37 @@ Public Class frm_home
     Dim rd As MySqlDataReader
     Dim id As Integer
     Dim row As Integer = 0
-    Dim buttoncolour As Color = Color.FromArgb(28, 28, 28)
-    Dim activebutton As Color = My.Settings.AccentColour
-    Dim mouseoverbutton As Color = Color.FromArgb(0, 122, 204)
+    Dim accentcolour As Color = Color.FromArgb(227, 227, 227)
+
+    Dim drag As Boolean
+    Dim mousex As Integer
+    Dim mousey As Integer
 
     'FORM LOAD
     Private Sub frm_new_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_notify.Text = My.Settings.UserNotificationsText
-        If Not My.Settings.UserNotificationsCount = "" Then
-            getdata.updatecount = My.Settings.UserNotificationsCount
+    End Sub
+
+    'PUBLIC SUB LOAD FORM
+    Public Sub load_home()
+        If My.Settings.CurrentUsername = My.Settings.PreviousUser Then
+            lbl_notify.Text = My.Settings.UserNotificationsText
+            If Not My.Settings.UserNotificationsCount = "" Then
+                getdata.updatecount = My.Settings.UserNotificationsCount
+            End If
+            If Not My.Settings.FacultyNotificationsCount = "" Then
+                getdata.facultycount = My.Settings.FacultyNotificationsCount
+            End If
+        Else
+            My.Settings.UserNotificationsCount = Nothing
+            My.Settings.UserNotificationsText = ""
+            My.Settings.FacultyNotificationsCount = Nothing
         End If
-        If Not My.Settings.FacultyNotificationsCount = "" Then
-            getdata.facultycount = My.Settings.FacultyNotificationsCount
-        End If
+
+        My.Settings.PreviousUser = My.Settings.CurrentUsername
+        My.Settings.Save()
+
+        Me.ShowInTaskbar = True
         nfi.Visible = True
-        updateaccentcolour()
         setdates()
         getalldata()
         getalldata()
@@ -32,6 +48,7 @@ Public Class frm_home
         data_timer.Enabled = True
         data_timer.Start()
         resetall()
+        frm_login.Dispose()
     End Sub
 
     '--------REQUEST COVER PANEL--------
@@ -270,86 +287,6 @@ Public Class frm_home
         facultyarea_txt_endperiod.SelectedIndex = -1
     End Sub
 
-    '--------USER INTERFACE PANEL--------
-
-    'SET NEW COLOUR
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        If ColorDialog.ShowDialog = Windows.Forms.DialogResult.OK Then
-            My.Settings.AccentColour = ColorDialog.Color
-            My.Settings.Save()
-            pnl_colour.BackColor = My.Settings.AccentColour
-            btn_userinterface.BackColor = My.Settings.AccentColour
-            updateaccentcolour()
-        End If
-    End Sub
-
-    'PREVIEW COLOUR
-    Private Sub pnl_colour_Paint(sender As Object, e As PaintEventArgs) Handles pnl_colour.Paint
-        pnl_colour.BackColor = My.Settings.AccentColour
-    End Sub
-
-    'DEFAULT COLOUR
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        My.Settings.AccentColour = Color.FromArgb(0, 122, 204)
-        My.Settings.Save()
-        pnl_colour.BackColor = My.Settings.AccentColour
-        btn_userinterface.BackColor = My.Settings.AccentColour
-        updateaccentcolour()
-    End Sub
-
-    'CHANGE BUTTONSTO NEW COLOUR
-    Public Sub updateaccentcolour()
-        Me.BackColor = My.Settings.BackColour
-        btn_requestcover.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
-        btn_requestcover.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_requestcover.BackColor = My.Settings.BackColour
-        btn_roomchange.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
-        btn_roomchange.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_roomchange.BackColor = My.Settings.BackColour
-        btn_notifications.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
-        btn_notifications.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_notifications.BackColor = My.Settings.BackColour
-        btn_facultyarea.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
-        btn_facultyarea.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_facultyarea.BackColor = My.Settings.BackColour
-        btn_myrequests.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
-        btn_myrequests.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_myrequests.BackColor = My.Settings.BackColour
-        btn_accountdetails.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
-        btn_accountdetails.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_accountdetails.BackColor = My.Settings.BackColour
-        btn_userinterface.FlatAppearance.MouseOverBackColor = My.Settings.AccentColour
-        btn_userinterface.FlatAppearance.MouseDownBackColor = My.Settings.AccentColour
-        btn_userinterface.BackColor = My.Settings.AccentColour
-        If My.Settings.BackColour = Color.FromArgb(28, 28, 28) Then
-            Button4.Text = "Dark (selected)"
-            Button3.Text = "Classic"
-        ElseIf My.Settings.BackColour = Color.FromArgb(41, 85, 152) Then
-            Button4.Text = "Dark"
-            Button3.Text = "Classic (selected)"
-        End If
-    End Sub
-
-    'SET TO DARK THEME
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Button4.Text = "Dark (selected)"
-        Button3.Text = "Classic"
-        My.Settings.BackColour = Color.FromArgb(28, 28, 28)
-        My.Settings.Save()
-        Me.BackColor = My.Settings.BackColour
-        updateaccentcolour()
-    End Sub
-
-    'SET TO CLASSIC THEME
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Button4.Text = "Dark"
-        Button3.Text = "Classic (selected)"
-        My.Settings.BackColour = Color.FromArgb(41, 85, 152)
-        My.Settings.Save()
-        Me.BackColor = My.Settings.BackColour
-        updateaccentcolour()
-    End Sub
-
     '--------MISC--------
 
     'SET DATES
@@ -368,26 +305,18 @@ Public Class frm_home
     Public Sub resetall()
         resetrequestcover()
         resetroomchange()
-        btn_requestcover.BackColor = Me.BackColor
-        btn_roomchange.BackColor = Me.BackColor
-        btn_notifications.BackColor = Me.BackColor
-        btn_myrequests.BackColor = Me.BackColor
-        btn_facultyarea.BackColor = Me.BackColor
-        btn_accountdetails.BackColor = Me.BackColor
-        btn_userinterface.BackColor = Me.BackColor
-        lbl_start.Show()
+        btn_requestcover.BackColor = Color.White
+        btn_roomchange.BackColor = Color.White
+        btn_notifications.BackColor = Color.White
+        btn_myrequests.BackColor = Color.White
+        btn_facultyarea.BackColor = Color.White
+        btn_accountdetails.BackColor = Color.White
         panel_start.Show()
-        lbl_requestcover.Hide()
-        lbl_roomchange.Hide()
-        lbl_notifications.Hide()
-        lbl_myrequests.Hide()
-        lbl_facultyarea.Hide()
         panel_requestcover.Hide()
         panel_roomchange.Hide()
         panel_notifications.Hide()
         panel_myrequests.Hide()
         panel_facultyarea.Hide()
-        panel_userinterface.Hide()
     End Sub
 
     'RESET REQUEST COVER PANEL
@@ -429,7 +358,6 @@ Public Class frm_home
     Public Sub hidestart()
         resetall()
         panel_start.Hide()
-        lbl_start.Hide()
     End Sub
 
     'GET DATA
@@ -443,11 +371,10 @@ Public Class frm_home
         My.Settings.CurrentUsername = ""
         My.Settings.CurrentUserType = ""
         My.Settings.Save()
-        lbl_currentuser.Text = "Logged in as "
+        lbl_currentuser.Text = "Not Logged In"
         data_timer.Stop()
         nfi.Visible = False
         frm_login.Show()
-        Me.Dispose()
     End Sub
 
     '--------PANEL BUTTONS--------
@@ -457,8 +384,7 @@ Public Class frm_home
         getalldata()
         setdates()
         hidestart()
-        lbl_requestcover.Show()
-        btn_requestcover.BackColor = My.Settings.AccentColour
+        btn_requestcover.BackColor = Accentcolour
         panel_requestcover.Show()
     End Sub
 
@@ -467,8 +393,7 @@ Public Class frm_home
         getalldata()
         setdates()
         hidestart()
-        lbl_roomchange.Show()
-        btn_roomchange.BackColor = My.Settings.AccentColour
+        btn_roomchange.BackColor = Accentcolour
         panel_roomchange.Show()
     End Sub
 
@@ -476,8 +401,7 @@ Public Class frm_home
     Private Sub btn_notifications_Click(sender As Object, e As EventArgs) Handles btn_notifications.Click
         getalldata()
         hidestart()
-        lbl_notifications.Show()
-        btn_notifications.BackColor = My.Settings.AccentColour
+        btn_notifications.BackColor = Accentcolour
         panel_notifications.Show()
     End Sub
 
@@ -485,8 +409,7 @@ Public Class frm_home
     Private Sub btn_myrequests_Click(sender As Object, e As EventArgs) Handles btn_myrequests.Click
         getalldata()
         hidestart()
-        lbl_myrequests.Show()
-        btn_myrequests.BackColor = My.Settings.AccentColour
+        btn_myrequests.BackColor = Accentcolour
         panel_myrequests.Show()
     End Sub
 
@@ -496,19 +419,18 @@ Public Class frm_home
             getalldata()
             hidestart()
             viewrequest()
-            lbl_facultyarea.Show()
-            btn_facultyarea.BackColor = My.Settings.AccentColour
+            btn_facultyarea.BackColor = Accentcolour
             panel_facultyarea.Show()
         Else
             MsgBox("You are not granted permission to access this area.")
         End If
     End Sub
 
-    'USER INTERFACE OPTIONS
-    Private Sub btn_userinterface_Click(sender As Object, e As EventArgs) Handles btn_userinterface.Click
+    'ACCOUNT DETAILS
+    Private Sub btn_accountdetails_Click(sender As Object, e As EventArgs) Handles btn_accountdetails.Click
         hidestart()
-        btn_userinterface.BackColor = My.Settings.AccentColour
-        panel_userinterface.Show()
+        btn_accountdetails.BackColor = Accentcolour
+
     End Sub
 
     '--------BUTTONS--------
@@ -584,19 +506,19 @@ Public Class frm_home
     '--------MENU BAR--------
 
     'QUIT
-    Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
+    Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs)
         nfi.Visible = False
         My.Settings.CurrentUsername = ""
         Application.Exit()
     End Sub
 
     'LOGOUT
-    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOutToolStripMenuItem.Click
+    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         logout()
     End Sub
 
     'ADMIN CENTRE
-    Private Sub LaunchAdminCentreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchAdminCentreToolStripMenuItem.Click
+    Private Sub LaunchAdminCentreToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
             Me.hidecolumns()
             frm_admin.Show()
@@ -606,7 +528,7 @@ Public Class frm_home
     End Sub
 
     'COVER MANAGEMENT
-    Private Sub LaunchCoverManagementToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaunchCoverManagementToolStripMenuItem.Click
+    Private Sub LaunchCoverManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
             frm_covermanagement.Show()
         Else
@@ -615,7 +537,7 @@ Public Class frm_home
     End Sub
 
     'BUG REPORT
-    Private Sub SubmitABugReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubmitABugReportToolStripMenuItem.Click
+    Private Sub SubmitABugReportToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Try
             Dim bugreport As String
             bugreport = InputBox("Please detail the bug:", "New Bug Report")
@@ -640,10 +562,73 @@ Public Class frm_home
     End Sub
 
     'ABOUT
-    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs)
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+    Private Sub Label3_Click(sender As Object, e As EventArgs)
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
+    End Sub
+
+    Private Sub Button8_MouseDown(sender As Object, e As MouseEventArgs) Handles Button8.MouseDown
+        drag = True
+        mousex = Windows.Forms.Cursor.Position.X - Me.Left
+        mousey = Windows.Forms.Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub Button8_MouseMove(sender As Object, e As MouseEventArgs) Handles Button8.MouseMove
+        If drag Then
+            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
+            Me.Left = Windows.Forms.Cursor.Position.X - mousex
+        End If
+    End Sub
+
+    Private Sub Button8_MouseUp(sender As Object, e As MouseEventArgs) Handles Button8.MouseUp
+        drag = False
+    End Sub
+
+    Private Sub lbl_main_MouseDown(sender As Object, e As MouseEventArgs) Handles lbl_main.MouseDown
+        drag = True
+        mousex = Windows.Forms.Cursor.Position.X - Me.Left
+        mousey = Windows.Forms.Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub lbl_main_MouseMove(sender As Object, e As MouseEventArgs) Handles lbl_main.MouseMove
+        If drag Then
+            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
+            Me.Left = Windows.Forms.Cursor.Position.X - mousex
+        End If
+    End Sub
+
+    Private Sub lbl_main_MouseUp(sender As Object, e As MouseEventArgs) Handles lbl_main.MouseUp
+        drag = False
+    End Sub
+
+    Protected Overrides Sub OnPaintBackground(ByVal e As PaintEventArgs)
+        MyBase.OnPaintBackground(e)
+
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+
+        e.Graphics.DrawRectangle(Pens.Black, rect)
+    End Sub
+
+    Private Sub ToolStripDropDownButton1_Click(sender As Object, e As EventArgs) Handles ToolStripDropDownButton1.Click
+
+    End Sub
+
+    Private Sub ManageUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageUserToolStripMenuItem.Click
+        If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
+            frm_admin.Show()
+        Else
+            MsgBox("You are not authorised to access this area.")
+        End If
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.WindowState = FormWindowState.Minimized
+        Me.ShowInTaskbar = False
     End Sub
 End Class

@@ -68,7 +68,7 @@ Partial Class frm_admin
         '
         'panel_sidebar
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
         Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel_sidebar.Location = New System.Drawing.Point(0, 0)
@@ -82,11 +82,11 @@ Partial Class frm_admin
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Candara", 14.25!)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(203, 14)
+        Me.Label3.Location = New System.Drawing.Point(210, 15)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(104, 23)
+        Me.Label3.Size = New System.Drawing.Size(90, 21)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "Admin Area"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -127,7 +127,7 @@ Partial Class frm_admin
         Me.btn_changepw.Location = New System.Drawing.Point(6, 87)
         Me.btn_changepw.Name = "btn_changepw"
         Me.btn_changepw.Size = New System.Drawing.Size(138, 23)
-        Me.btn_changepw.TabIndex = 65
+        Me.btn_changepw.TabIndex = 6
         Me.btn_changepw.Text = "Change Password"
         Me.btn_changepw.UseVisualStyleBackColor = False
         '
@@ -138,7 +138,7 @@ Partial Class frm_admin
         Me.txt_pw1.Name = "txt_pw1"
         Me.txt_pw1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_pw1.Size = New System.Drawing.Size(138, 20)
-        Me.txt_pw1.TabIndex = 68
+        Me.txt_pw1.TabIndex = 4
         '
         'txt_pw2
         '
@@ -147,17 +147,17 @@ Partial Class frm_admin
         Me.txt_pw2.Name = "txt_pw2"
         Me.txt_pw2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_pw2.Size = New System.Drawing.Size(138, 20)
-        Me.txt_pw2.TabIndex = 69
+        Me.txt_pw2.TabIndex = 5
         '
         'txt_newtype
         '
         Me.txt_newtype.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_newtype.FormattingEnabled = True
-        Me.txt_newtype.Items.AddRange(New Object() {"teacher", "faculty", "admin"})
+        Me.txt_newtype.Items.AddRange(New Object() {"teacher", "faculty", "covermanager", "admin"})
         Me.txt_newtype.Location = New System.Drawing.Point(6, 77)
         Me.txt_newtype.Name = "txt_newtype"
         Me.txt_newtype.Size = New System.Drawing.Size(138, 21)
-        Me.txt_newtype.TabIndex = 70
+        Me.txt_newtype.TabIndex = 2
         '
         'txt_newusername
         '
@@ -165,7 +165,7 @@ Partial Class frm_admin
         Me.txt_newusername.Location = New System.Drawing.Point(6, 38)
         Me.txt_newusername.Name = "txt_newusername"
         Me.txt_newusername.Size = New System.Drawing.Size(138, 20)
-        Me.txt_newusername.TabIndex = 71
+        Me.txt_newusername.TabIndex = 1
         Me.txt_newusername.Tag = ""
         '
         'txt_search
@@ -174,7 +174,7 @@ Partial Class frm_admin
         Me.txt_search.Location = New System.Drawing.Point(6, 19)
         Me.txt_search.Name = "txt_search"
         Me.txt_search.Size = New System.Drawing.Size(294, 20)
-        Me.txt_search.TabIndex = 72
+        Me.txt_search.TabIndex = 0
         '
         'btn_update
         '
@@ -187,7 +187,7 @@ Partial Class frm_admin
         Me.btn_update.Location = New System.Drawing.Point(9, 104)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(135, 23)
-        Me.btn_update.TabIndex = 73
+        Me.btn_update.TabIndex = 3
         Me.btn_update.Text = "Update"
         Me.btn_update.UseVisualStyleBackColor = False
         '
@@ -266,7 +266,7 @@ Partial Class frm_admin
         Me.btn_deleteuser.Location = New System.Drawing.Point(187, 226)
         Me.btn_deleteuser.Name = "btn_deleteuser"
         Me.btn_deleteuser.Size = New System.Drawing.Size(306, 37)
-        Me.btn_deleteuser.TabIndex = 79
+        Me.btn_deleteuser.TabIndex = 7
         Me.btn_deleteuser.Text = "Delete User"
         Me.btn_deleteuser.UseVisualStyleBackColor = False
         '
@@ -353,7 +353,7 @@ Partial Class frm_admin
         '
         Me.txt_type.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_type.FormattingEnabled = True
-        Me.txt_type.Items.AddRange(New Object() {"teacher", "faculty", "admin"})
+        Me.txt_type.Items.AddRange(New Object() {"teacher", "faculty", "covermanager", "admin"})
         Me.txt_type.Location = New System.Drawing.Point(6, 77)
         Me.txt_type.Name = "txt_type"
         Me.txt_type.Size = New System.Drawing.Size(138, 21)
@@ -400,13 +400,12 @@ Partial Class frm_admin
         '
         'btn_submit
         '
-        Me.btn_submit.BackColor = System.Drawing.Color.FromArgb(CType(CType(41, Byte), Integer), CType(CType(84, Byte), Integer), CType(CType(150, Byte), Integer))
+        Me.btn_submit.BackColor = System.Drawing.Color.WhiteSmoke
         Me.btn_submit.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_submit.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText
         Me.btn_submit.FlatAppearance.BorderSize = 0
-        Me.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_submit.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_submit.ForeColor = System.Drawing.Color.White
+        Me.btn_submit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btn_submit.ForeColor = System.Drawing.Color.Black
         Me.btn_submit.Location = New System.Drawing.Point(170, 180)
         Me.btn_submit.Name = "btn_submit"
         Me.btn_submit.Size = New System.Drawing.Size(150, 30)
@@ -422,11 +421,12 @@ Partial Class frm_admin
         Me.ClientSize = New System.Drawing.Size(511, 358)
         Me.Controls.Add(Me.panel_sidebar)
         Me.Controls.Add(Me.dg_admins)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_admin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_admin"
+        Me.Text = "Admin Area"
         Me.panel_sidebar.ResumeLayout(False)
         Me.panel_sidebar.PerformLayout()
         CType(Me.dg_users, System.ComponentModel.ISupportInitialize).EndInit()

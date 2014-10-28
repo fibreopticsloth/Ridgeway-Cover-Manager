@@ -90,3 +90,23 @@ C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Co
 C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.application
 C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.exe.manifest
 C:\Users\George\Google Drive\Computing\Project\Ridgeway Cover System\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.application
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.exe.config
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.exe
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.xml
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.pdb
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.exe.manifest
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.application
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.exe
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.pdb
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Debug\Ridgeway Cover Manager.xml
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway Cover System.vbprojResolveAssemblyReference.cache
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway_Cover_Manager.frm_admin.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway_Cover_Manager.frm_covermanagement.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway_Cover_Manager.frm_home.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway_Cover_Manager.frm_splash.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway_Cover_Manager.frm_login.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway_Cover_Manager.Resources.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway_Cover_Manager.frm_signup.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway Cover System.vbproj.GenerateResource.Cache
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.exe.manifest
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Debug\Ridgeway Cover Manager.application

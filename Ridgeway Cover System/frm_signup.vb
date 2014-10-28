@@ -26,7 +26,6 @@ Public Class frm_signup
             NewCommand("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
             MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
                      & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
-            frm_login.Show()
             With frm_login
                 .txt_username.Text = username
                 .txt_password.Text = ""
@@ -75,7 +74,6 @@ Public Class frm_signup
 
     'BACK BUTTON
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
-        frm_login.Show()
         Me.Dispose()
     End Sub
 End Class

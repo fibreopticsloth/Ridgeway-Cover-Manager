@@ -119,13 +119,12 @@ Partial Class frm_covermanagement
         'btn_booked
         '
         Me.btn_booked.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_booked.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.btn_booked.BackColor = System.Drawing.Color.WhiteSmoke
         Me.btn_booked.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_booked.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText
         Me.btn_booked.FlatAppearance.BorderSize = 0
-        Me.btn_booked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_booked.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_booked.ForeColor = System.Drawing.Color.White
+        Me.btn_booked.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btn_booked.ForeColor = System.Drawing.Color.Black
         Me.btn_booked.Location = New System.Drawing.Point(132, 427)
         Me.btn_booked.Name = "btn_booked"
         Me.btn_booked.Size = New System.Drawing.Size(120, 35)
@@ -145,6 +144,7 @@ Partial Class frm_covermanagement
         '
         Me.btn_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_update.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_update.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.update
         Me.btn_update.Location = New System.Drawing.Point(345, 7)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(35, 35)
@@ -155,7 +155,7 @@ Partial Class frm_covermanagement
         '
         'panel_sidebar
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
         Me.panel_sidebar.Controls.Add(Me.btn_update)
         Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
@@ -169,7 +169,7 @@ Partial Class frm_covermanagement
         'Label3
         '
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Candara", 14.25!)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!)
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(0, 12)
         Me.Label3.Name = "Label3"
@@ -187,6 +187,7 @@ Partial Class frm_covermanagement
         Me.Controls.Add(Me.panel_sidebar)
         Me.Controls.Add(Me.btn_booked)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(290, 225)
         Me.Name = "frm_covermanagement"

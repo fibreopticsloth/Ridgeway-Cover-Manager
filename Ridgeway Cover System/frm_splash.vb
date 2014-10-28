@@ -21,7 +21,11 @@
         loadvalue += 1
         lbl_loading.Text = lbl_loading.Text + "."
         If loadvalue = 4 Then
+            frm_home.Show()
+            frm_home.ShowInTaskbar = False
             frm_login.Show()
+            frm_login.Location = frm_home.Location
+            frm_login.BringToFront()
             Me.Dispose()
         End If
     End Sub

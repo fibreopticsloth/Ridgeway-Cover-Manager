@@ -42,20 +42,20 @@ Partial Class frm_signup
         '
         'txt_confirmpassword
         '
-        Me.txt_confirmpassword.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_confirmpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_confirmpassword.Location = New System.Drawing.Point(46, 289)
         Me.txt_confirmpassword.Name = "txt_confirmpassword"
         Me.txt_confirmpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_confirmpassword.Size = New System.Drawing.Size(157, 25)
+        Me.txt_confirmpassword.Size = New System.Drawing.Size(157, 22)
         Me.txt_confirmpassword.TabIndex = 1
         '
         'txt_password
         '
-        Me.txt_password.Font = New System.Drawing.Font("Open Sans Light", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.Location = New System.Drawing.Point(46, 233)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_password.Size = New System.Drawing.Size(157, 25)
+        Me.txt_password.Size = New System.Drawing.Size(157, 22)
         Me.txt_password.TabIndex = 0
         '
         'lbl_username
@@ -92,11 +92,10 @@ Partial Class frm_signup
         '
         'btn_signup
         '
-        Me.btn_signup.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.btn_signup.BackColor = System.Drawing.Color.WhiteSmoke
         Me.btn_signup.FlatAppearance.BorderSize = 0
-        Me.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_signup.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
-        Me.btn_signup.ForeColor = System.Drawing.Color.White
+        Me.btn_signup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btn_signup.ForeColor = System.Drawing.Color.Black
         Me.btn_signup.Location = New System.Drawing.Point(46, 337)
         Me.btn_signup.Name = "btn_signup"
         Me.btn_signup.Size = New System.Drawing.Size(157, 30)
@@ -118,7 +117,7 @@ Partial Class frm_signup
         '
         'panel_sidebar
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
         Me.panel_sidebar.Controls.Add(Me.btn_back)
         Me.panel_sidebar.Controls.Add(Me.PictureBox2)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
@@ -172,7 +171,7 @@ Partial Class frm_signup
         Me.Controls.Add(Me.lbl_username)
         Me.Controls.Add(Me.txt_password)
         Me.Controls.Add(Me.txt_confirmpassword)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_signup"

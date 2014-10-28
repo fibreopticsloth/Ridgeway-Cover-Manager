@@ -20,17 +20,14 @@
     <Setting Name="UserNotificationsCount" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AccentColour" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">0, 122, 204</Value>
-    </Setting>
     <Setting Name="Version" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Alpha 0.6.0.1</Value>
     </Setting>
     <Setting Name="FacultyNotificationsCount" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="BackColour" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">28, 28, 28</Value>
+    <Setting Name="PreviousUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

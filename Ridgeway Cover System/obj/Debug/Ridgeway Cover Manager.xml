@@ -19,11 +19,19 @@ RidgewayCoverManager
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.close">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.coverrequest">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.facultyarea">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.minimize">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -48,6 +56,14 @@ RidgewayCoverManager
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.schoollogo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.schoollogoblack">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.schoollogogrey">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

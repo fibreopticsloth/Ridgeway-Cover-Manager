@@ -102,72 +102,60 @@ Namespace My
             End Set
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("")> _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property UserNotificationsText() As String
             Get
-                Return CType(Me("UserNotificationsText"), String)
+                Return CType(Me("UserNotificationsText"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("UserNotificationsText") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property UserNotificationsCount() As String
             Get
-                Return CType(Me("UserNotificationsCount"), String)
+                Return CType(Me("UserNotificationsCount"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("UserNotificationsCount") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("0, 122, 204")> _
-        Public Property AccentColour() As Global.System.Drawing.Color
-            Get
-                Return CType(Me("AccentColour"), Global.System.Drawing.Color)
-            End Get
-            Set(value As Global.System.Drawing.Color)
-                Me("AccentColour") = value
-            End Set
-        End Property
-
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("Alpha 0.6.0.1")> _
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Alpha 0.6.0.1")>  _
         Public ReadOnly Property Version() As String
             Get
-                Return CType(Me("Version"), String)
+                Return CType(Me("Version"),String)
             End Get
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property FacultyNotificationsCount() As String
             Get
-                Return CType(Me("FacultyNotificationsCount"), String)
+                Return CType(Me("FacultyNotificationsCount"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("FacultyNotificationsCount") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("28, 28, 28")> _
-        Public Property BackColour() As Global.System.Drawing.Color
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property PreviousUser() As String
             Get
-                Return CType(Me("BackColour"), Global.System.Drawing.Color)
+                Return CType(Me("PreviousUser"),String)
             End Get
-            Set(value As Global.System.Drawing.Color)
-                Me("BackColour") = value
+            Set
+                Me("PreviousUser") = value
             End Set
         End Property
     End Class
