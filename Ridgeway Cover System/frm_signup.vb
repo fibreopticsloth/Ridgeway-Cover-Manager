@@ -18,8 +18,8 @@ Public Class frm_signup
         Dim username As String = Environment.UserName
         If CheckData("select username from users where username = '" & username & "'") Then
             MsgBox("This user account already exists!")
-        ElseIf txt_password.Text = "" Or txt_confirmpassword.Text = "" Then
-            MsgBox("You must fill in both fields!")
+        ElseIf txt_password.Text = "" Or txt_confirmpassword.Text = "" Or txt_type.Text = "" Then
+            MsgBox("You must fill all fields!")
         ElseIf txt_password.TextLength < 8 Then
             MsgBox("Your password must be at least 8 characters")
         ElseIf txt_password.Text = txt_confirmpassword.Text Then

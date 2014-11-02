@@ -469,6 +469,7 @@ Public Class frm_home
     'SHOW OPTION
     Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
         resetall()
+        panel_start.Show()
         Me.WindowState = FormWindowState.Normal
         Me.Show()
         Me.ShowInTaskbar = True
@@ -554,6 +555,7 @@ Public Class frm_home
 
     Private Sub ManageUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageUserToolStripMenuItem.Click
         If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
+            getalldata()
             frm_admin.Show()
         Else
             MsgBox("You are not authorised to access this area.")

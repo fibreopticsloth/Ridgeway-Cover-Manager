@@ -346,7 +346,7 @@ Partial Class frm_admin
         Me.txt_username.Location = New System.Drawing.Point(6, 38)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Size = New System.Drawing.Size(138, 20)
-        Me.txt_username.TabIndex = 71
+        Me.txt_username.TabIndex = 0
         Me.txt_username.Tag = ""
         '
         'txt_type
@@ -357,7 +357,7 @@ Partial Class frm_admin
         Me.txt_type.Location = New System.Drawing.Point(6, 77)
         Me.txt_type.Name = "txt_type"
         Me.txt_type.Size = New System.Drawing.Size(138, 21)
-        Me.txt_type.TabIndex = 70
+        Me.txt_type.TabIndex = 1
         '
         'GroupBox5
         '
@@ -387,7 +387,7 @@ Partial Class frm_admin
         Me.txt_password1.Name = "txt_password1"
         Me.txt_password1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_password1.Size = New System.Drawing.Size(138, 20)
-        Me.txt_password1.TabIndex = 68
+        Me.txt_password1.TabIndex = 2
         '
         'txt_password2
         '
@@ -396,7 +396,7 @@ Partial Class frm_admin
         Me.txt_password2.Name = "txt_password2"
         Me.txt_password2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_password2.Size = New System.Drawing.Size(138, 20)
-        Me.txt_password2.TabIndex = 69
+        Me.txt_password2.TabIndex = 3
         '
         'btn_submit
         '
@@ -409,7 +409,7 @@ Partial Class frm_admin
         Me.btn_submit.Location = New System.Drawing.Point(170, 180)
         Me.btn_submit.Name = "btn_submit"
         Me.btn_submit.Size = New System.Drawing.Size(150, 30)
-        Me.btn_submit.TabIndex = 81
+        Me.btn_submit.TabIndex = 4
         Me.btn_submit.Text = "Add User"
         Me.btn_submit.UseVisualStyleBackColor = False
         '

@@ -68,22 +68,25 @@
 
     'ADD USER
     Public Sub newuser()
-        If txt_password1.Text = txt_password2.Text Then
-            Try
-                NewCommand("insert into users (username, password, type) values ('" & txt_username.Text & "', '" & hash(txt_password1.Text) & "', '" & txt_type.Text & "')")
 
-                txt_username.ResetText()
-                txt_type.SelectedIndex = -1
-                txt_password1.ResetText()
-                txt_password2.ResetText()
-                MsgBox("User added")
-                getalldata()
-            Catch ex As Exception
-                MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
-            End Try
+        If CheckData("select username from users where username = '" & txt_username.Text & "'") Then
+            MsgBox("This user account already exists!")
+        ElseIf txt_password1.Text = "" Or txt_password2.Text = "" Or txt_username.Text = "" Or txt_type.Text = "" Then
+            MsgBox("You must fill all fields!")
+        ElseIf txt_password1.TextLength < 8 Then
+            MsgBox("The password must be at least 8 characters")
+        ElseIf txt_password1.Text = txt_password2.Text Then
+            NewCommand("INSERT INTO users(username, password, type) values('" & txt_username.Text & "', '" & hash(txt_password1.Text) & "', '" & txt_type.Text & "')")
+            txt_username.ResetText()
+            txt_type.ResetText()
+            txt_password1.ResetText()
+            txt_password2.ResetText()
+            getalldata()
+            MsgBox("New user added.")
         Else
-            MsgBox("These passwords do not match")
+            MsgBox("These passwords do not match!")
         End If
+
     End Sub
 
     'CHANGE NEW USER BUTTON
