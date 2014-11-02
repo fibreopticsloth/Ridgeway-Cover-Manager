@@ -13,22 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\George\Desktop\Install\</PublishUrl>
+    <PublishUrl>C:\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <InstallUrl>\\c\myapplication\</InstallUrl>
     <ProductName>Ridgeway Cover Manager</ProductName>
     <PublisherName>The Ridgway School</PublisherName>
     <SuiteName>Ridgeway Cover Manager</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>0.6.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -281,6 +280,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="rcm_icon.ico" />
+    <None Include="Resources\schoollogogrey1.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\close_dark.png" />
+    <None Include="Resources\logout.png" />
     <None Include="Resources\minimize.png" />
     <None Include="Resources\close.png" />
     <None Include="Resources\schoollogogrey.png" />

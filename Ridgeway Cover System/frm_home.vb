@@ -17,10 +17,15 @@ Public Class frm_home
 
     'FORM LOAD
     Private Sub frm_new_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        load_home()
     End Sub
 
     'PUBLIC SUB LOAD FORM
     Public Sub load_home()
+
+        resetall()
+        panel_start.Show()
+
         If My.Settings.CurrentUsername = My.Settings.PreviousUser Then
             lbl_notify.Text = My.Settings.UserNotificationsText
             If Not My.Settings.UserNotificationsCount = "" Then
@@ -42,13 +47,10 @@ Public Class frm_home
         nfi.Visible = True
         setdates()
         getalldata()
-        getalldata()
-        facultyheads()
         viewrequest()
         data_timer.Enabled = True
         data_timer.Start()
-        resetall()
-        frm_login.Dispose()
+
     End Sub
 
     '--------REQUEST COVER PANEL--------
@@ -60,26 +62,6 @@ Public Class frm_home
             resetroomchange()
             getalldata()
         End If
-    End Sub
-
-    'GET LIST OF FACULTY LEADERS
-    Public Sub facultyheads()
-
-        Using Connection As New MySqlConnection(ConnectionString)
-
-            Using da As New MySqlDataAdapter("select username from users where type = 'faculty' or type = 'covermanager'", Connection)
-                Dim ds As New DataSet
-                da.Fill(ds, "users")
-                Dim dt As DataTable = ds.Tables(0)
-                For Each DataRow In dt.Rows
-                    requestcover_txt_facultyhead.Items.Add(DataRow(0))
-                Next
-                ds.Dispose()
-                da.Dispose()
-            End Using
-
-        End Using
-
     End Sub
 
     'ENABLE/DISABLE END DATE
@@ -124,8 +106,8 @@ Public Class frm_home
         My.Settings.UserNotificationsText = ""
         My.Settings.UserNotificationsCount = ""
         My.Settings.Save()
-        lbl_notify.Text = ""
-        btn_notifications.Text = "      Notifications" + " (0)"
+        lbl_notify.Text = "No notifications to show!"
+        btn_notifications.Text = "Notifications" + " (0)"
         getdata.updatecount = 0
     End Sub
 
@@ -311,7 +293,7 @@ Public Class frm_home
         btn_myrequests.BackColor = Color.White
         btn_facultyarea.BackColor = Color.White
         btn_accountdetails.BackColor = Color.White
-        panel_start.Show()
+        panel_start.Hide()
         panel_requestcover.Hide()
         panel_roomchange.Hide()
         panel_notifications.Hide()
@@ -354,73 +336,67 @@ Public Class frm_home
         End With
     End Sub
 
-    'HIDE START PANEL
-    Public Sub hidestart()
-        resetall()
-        panel_start.Hide()
-    End Sub
-
     'GET DATA
     Private Sub data_timer_Tick(sender As Object, e As EventArgs) Handles data_timer.Tick
         getalldata()
-        facultyheads()
     End Sub
 
     'LOGOUT
     Public Sub logout()
+        frm_login.Show()
+        Me.Location = frm_login.Location
         My.Settings.CurrentUsername = ""
         My.Settings.CurrentUserType = ""
         My.Settings.Save()
         lbl_currentuser.Text = "Not Logged In"
         data_timer.Stop()
         nfi.Visible = False
-        frm_login.Show()
+        Me.Dispose()
     End Sub
 
     '--------PANEL BUTTONS--------
 
     'REQUEST COVER
     Private Sub btn_requestcover_Click(sender As Object, e As EventArgs) Handles btn_requestcover.Click
-        getalldata()
         setdates()
-        hidestart()
+        resetall()
         btn_requestcover.BackColor = Accentcolour
         panel_requestcover.Show()
+        getalldata()
     End Sub
 
     'ROOM CHANGE
     Private Sub btn_roomchange_Click(sender As Object, e As EventArgs) Handles btn_roomchange.Click
-        getalldata()
         setdates()
-        hidestart()
+        resetall()
         btn_roomchange.BackColor = Accentcolour
         panel_roomchange.Show()
     End Sub
 
     'NOTIFICATIONS
     Private Sub btn_notifications_Click(sender As Object, e As EventArgs) Handles btn_notifications.Click
-        getalldata()
-        hidestart()
+        resetall()
         btn_notifications.BackColor = Accentcolour
         panel_notifications.Show()
+        getalldata()
     End Sub
 
     'MY REQUESTS
     Private Sub btn_myrequests_Click(sender As Object, e As EventArgs) Handles btn_myrequests.Click
-        getalldata()
-        hidestart()
+        resetall()
         btn_myrequests.BackColor = Accentcolour
         panel_myrequests.Show()
+        getalldata()
     End Sub
 
     'FACULTY AREA
     Private Sub btn_facultyarea_Click(sender As Object, e As EventArgs) Handles btn_facultyarea.Click
-        If My.Settings.CurrentUserType = "faculty" Or My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
-            getalldata()
-            hidestart()
+        If My.Settings.CurrentUserType <> "teacher" Then
+            resetall()
             viewrequest()
-            btn_facultyarea.BackColor = Accentcolour
+            btn_facultyarea.BackColor = accentcolour
             panel_facultyarea.Show()
+            getalldata()
         Else
             MsgBox("You are not granted permission to access this area.")
         End If
@@ -428,7 +404,7 @@ Public Class frm_home
 
     'ACCOUNT DETAILS
     Private Sub btn_accountdetails_Click(sender As Object, e As EventArgs) Handles btn_accountdetails.Click
-        hidestart()
+        resetall()
         btn_accountdetails.BackColor = Accentcolour
 
     End Sub
@@ -437,8 +413,8 @@ Public Class frm_home
 
     'LOGO
     Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
-        getalldata()
         resetall()
+        panel_start.Show()
     End Sub
 
     'START PANEL LOGOUT
@@ -485,14 +461,16 @@ Public Class frm_home
     'MENU ON DOUBLE CLICK
     Private Sub nfi_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles nfi.MouseDoubleClick
         resetall()
-        Me.Visible = True
+        Me.WindowState = FormWindowState.Normal
+        Me.Show()
         Me.ShowInTaskbar = True
     End Sub
 
     'SHOW OPTION
     Private Sub ShowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowToolStripMenuItem.Click
-        Reset()
-        Me.Visible = True
+        resetall()
+        Me.WindowState = FormWindowState.Normal
+        Me.Show()
         Me.ShowInTaskbar = True
     End Sub
 
@@ -536,39 +514,6 @@ Public Class frm_home
         End If
     End Sub
 
-    'BUG REPORT
-    Private Sub SubmitABugReportToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Try
-            Dim bugreport As String
-            bugreport = InputBox("Please detail the bug:", "New Bug Report")
-            Dim Smtp_Server As New SmtpClient
-            Dim e_mail As New MailMessage()
-            Smtp_Server.UseDefaultCredentials = False
-            Smtp_Server.Credentials = New Net.NetworkCredential("rcmbugreport@gmail.com ", "rcmdlop890")
-            Smtp_Server.Port = 587
-            Smtp_Server.EnableSsl = True
-            Smtp_Server.Host = "smtp.gmail.com"
-            e_mail = New MailMessage()
-            e_mail.From = New MailAddress("rcmbugreport@gmail.com ")
-            e_mail.To.Add("gdunkgd@gmail.com")
-            e_mail.Subject = "New Bug Report"
-            e_mail.IsBodyHtml = False
-            e_mail.Body = bugreport
-            Smtp_Server.Send(e_mail)
-            MsgBox("Your bug report has been submitted. Thank you for your feedback.")
-        Catch ex As Exception
-            MsgBox("Could not connect to the internet.")
-        End Try
-    End Sub
-
-    'ABOUT
-    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
-    End Sub
-    Private Sub Label3_Click(sender As Object, e As EventArgs)
-        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: Alpha 0.4" + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
-    End Sub
-
     Private Sub Button8_MouseDown(sender As Object, e As MouseEventArgs) Handles Button8.MouseDown
         drag = True
         mousex = Windows.Forms.Cursor.Position.X - Me.Left
@@ -603,14 +548,6 @@ Public Class frm_home
         drag = False
     End Sub
 
-    Protected Overrides Sub OnPaintBackground(ByVal e As PaintEventArgs)
-        MyBase.OnPaintBackground(e)
-
-        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
-
-        e.Graphics.DrawRectangle(Pens.Black, rect)
-    End Sub
-
     Private Sub ToolStripDropDownButton1_Click(sender As Object, e As EventArgs) Handles ToolStripDropDownButton1.Click
 
     End Sub
@@ -630,5 +567,75 @@ Public Class frm_home
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.WindowState = FormWindowState.Minimized
         Me.ShowInTaskbar = False
+    End Sub
+
+    Private Sub LogoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
+        logout()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem1.Click
+        logout()
+        Application.Exit()
+    End Sub
+
+    Private Sub SubmitBugReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubmitBugReportToolStripMenuItem.Click
+        Try
+            Dim bugreport As String
+            bugreport = InputBox("Please detail the bug:", "New Bug Report")
+            Dim Smtp_Server As New SmtpClient
+            Dim e_mail As New MailMessage()
+            Smtp_Server.UseDefaultCredentials = False
+            Smtp_Server.Credentials = New Net.NetworkCredential("rcmbugreport@gmail.com ", "rcmdlop890")
+            Smtp_Server.Port = 587
+            Smtp_Server.EnableSsl = True
+            Smtp_Server.Host = "smtp.gmail.com"
+            e_mail = New MailMessage()
+            e_mail.From = New MailAddress("rcmbugreport@gmail.com ")
+            e_mail.To.Add("gdunkgd@gmail.com")
+            e_mail.Subject = "New Bug Report"
+            e_mail.IsBodyHtml = False
+            e_mail.Body = bugreport
+            Smtp_Server.Send(e_mail)
+            MsgBox("Your bug report has been submitted. Thank you for your feedback.")
+        Catch ex As Exception
+            MsgBox("Could not connect to the internet.")
+        End Try
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
+    End Sub
+
+    Private Sub CoverManagementAreaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoverManagementAreaToolStripMenuItem.Click
+        If My.Settings.CurrentUserType = "covermanager" Then
+            frm_covermanagement.Show()
+        Else
+            MsgBox("You are not authorised to access this area.")
+        End If
+    End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        logout()
+    End Sub
+
+    Private Sub frm_home_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+
+    End Sub
+
+    Private Sub frm_home_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        MyBase.OnPaintBackground(e)
+
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+
+        e.Graphics.DrawRectangle(Pens.DimGray, rect)
+    End Sub
+
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        resetall()
+        panel_start.Show()
     End Sub
 End Class

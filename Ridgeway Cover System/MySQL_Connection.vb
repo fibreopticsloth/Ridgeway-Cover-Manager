@@ -24,14 +24,12 @@ Module MySQL_Connection
             End Try
 
             If Connection.State = ConnectionState.Open Then
-                frm_home.Text = "Ridgeway Cover Manager"
-                frm_home.lbl_connectionstate.Text = "Connected"
-                frm_home.lbl_connectionstate.ForeColor = Color.Green
+                frm_home.toolstrip_status.Text = "Connected"
+                frm_home.toolstrip_status.ForeColor = Color.Green
                 Return 1
             Else
-                frm_home.Text = "Ridgeway Cover Manager - NOT CONNECTED TO SERVER"
-                frm_home.lbl_connectionstate.Text = "Could not connect"
-                frm_home.lbl_connectionstate.ForeColor = Color.Red
+                frm_home.toolstrip_status.Text = "Connection Error"
+                frm_home.toolstrip_status.ForeColor = Color.Red
                 Return 0
             End If
 
@@ -153,7 +151,7 @@ Module MySQL_Connection
 
     'CONNECT TO DB
     Public Sub WriteError()
-        Dim path As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+        Dim path As String = System.Environment.GetFolderPath(Environment.SpecialFolder.Windows)
         Dim FILE_NAME As String = path & "\SET\errorlog.txt"
         If System.IO.File.Exists(FILE_NAME) = True Then
             Dim objWriter As New System.IO.StreamWriter(FILE_NAME, IO.FileMode.Append)

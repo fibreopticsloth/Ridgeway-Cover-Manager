@@ -33,17 +33,19 @@ Partial Class frm_login
         Me.remember = New System.Windows.Forms.CheckBox()
         Me.btn_login = New System.Windows.Forms.Button()
         Me.timer_fadeout = New System.Windows.Forms.Timer(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_signup
         '
-        Me.btn_signup.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.btn_signup.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.btn_signup.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btn_signup.FlatAppearance.BorderSize = 0
         Me.btn_signup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_signup.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_signup.ForeColor = System.Drawing.Color.White
-        Me.btn_signup.Location = New System.Drawing.Point(243, 326)
+        Me.btn_signup.Location = New System.Drawing.Point(47, 281)
         Me.btn_signup.Name = "btn_signup"
         Me.btn_signup.Size = New System.Drawing.Size(157, 30)
         Me.btn_signup.TabIndex = 3
@@ -55,7 +57,7 @@ Partial Class frm_login
         '
         Me.txt_username.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_username.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txt_username.Location = New System.Drawing.Point(243, 163)
+        Me.txt_username.Location = New System.Drawing.Point(47, 118)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Size = New System.Drawing.Size(157, 22)
         Me.txt_username.TabIndex = 0
@@ -64,7 +66,7 @@ Partial Class frm_login
         '
         Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txt_password.Location = New System.Drawing.Point(243, 219)
+        Me.txt_password.Location = New System.Drawing.Point(47, 174)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_password.Size = New System.Drawing.Size(157, 22)
@@ -74,8 +76,8 @@ Partial Class frm_login
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(240, 143)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(44, 98)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 17)
         Me.Label1.TabIndex = 4
@@ -85,8 +87,8 @@ Partial Class frm_login
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(240, 199)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(44, 154)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(62, 17)
         Me.Label2.TabIndex = 5
@@ -96,8 +98,8 @@ Partial Class frm_login
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(233, 82)
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(37, 37)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(177, 40)
         Me.Label3.TabIndex = 6
@@ -108,8 +110,8 @@ Partial Class frm_login
         '
         Me.remember.AutoSize = True
         Me.remember.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.remember.ForeColor = System.Drawing.Color.White
-        Me.remember.Location = New System.Drawing.Point(243, 256)
+        Me.remember.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.remember.Location = New System.Drawing.Point(47, 211)
         Me.remember.Name = "remember"
         Me.remember.Size = New System.Drawing.Size(110, 21)
         Me.remember.TabIndex = 4
@@ -118,13 +120,13 @@ Partial Class frm_login
         '
         'btn_login
         '
-        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.btn_login.FlatAppearance.BorderSize = 0
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_login.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
-        Me.btn_login.Location = New System.Drawing.Point(243, 290)
+        Me.btn_login.Location = New System.Drawing.Point(47, 245)
         Me.btn_login.Name = "btn_login"
         Me.btn_login.Size = New System.Drawing.Size(157, 30)
         Me.btn_login.TabIndex = 7
@@ -136,13 +138,26 @@ Partial Class frm_login
         '
         Me.timer_fadeout.Interval = 40
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.close_dark
+        Me.PictureBox1.Location = New System.Drawing.Point(225, 5)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 76
+        Me.PictureBox1.TabStop = False
+        '
         'frm_login
         '
         Me.AcceptButton = Me.btn_login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(642, 451)
+        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.ClientSize = New System.Drawing.Size(250, 350)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btn_login)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txt_username)
@@ -155,9 +170,9 @@ Partial Class frm_login
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_login"
-        Me.Opacity = 0.95R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Log In"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,5 +186,6 @@ Partial Class frm_login
     Friend WithEvents remember As System.Windows.Forms.CheckBox
     Friend WithEvents btn_login As System.Windows.Forms.Button
     Friend WithEvents timer_fadeout As System.Windows.Forms.Timer
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 
 End Class

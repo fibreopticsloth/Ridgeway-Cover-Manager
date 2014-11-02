@@ -101,21 +101,30 @@ Partial Class frm_home
         Me.panel_notifications_clearnotifications = New System.Windows.Forms.Button()
         Me.lbl_notify = New System.Windows.Forms.TextBox()
         Me.panel_notifications = New System.Windows.Forms.Panel()
-        Me.lbl_connectionstate = New System.Windows.Forms.Label()
         Me.lbl_currentuser = New System.Windows.Forms.Label()
         Me.txt_logout = New System.Windows.Forms.LinkLabel()
         Me.panel_start = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.lbl_main = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.toolstrip_status = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ManageUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CoverManagementAreaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Help = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.SubmitBugReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.btn_sync = New System.Windows.Forms.PictureBox()
         Me.nfimenu.SuspendLayout()
@@ -132,6 +141,8 @@ Partial Class frm_home
         Me.panel_notifications.SuspendLayout()
         Me.panel_start.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,6 +264,8 @@ Partial Class frm_home
         '
         'nfi
         '
+        Me.nfi.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.nfi.BalloonTipTitle = "Ridgeway Cover Manager"
         Me.nfi.ContextMenuStrip = Me.nfimenu
         Me.nfi.Icon = CType(resources.GetObject("nfi.Icon"), System.Drawing.Icon)
         Me.nfi.Text = "Ridgeway Cover Scheduler"
@@ -279,11 +292,6 @@ Partial Class frm_home
         'data_timer
         '
         Me.data_timer.Interval = 60000
-        '
-        'tt_notify
-        '
-        Me.tt_notify.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.tt_notify.ToolTipTitle = "Update"
         '
         'Button5
         '
@@ -527,7 +535,6 @@ Partial Class frm_home
         'panel_requestcover
         '
         Me.panel_requestcover.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.panel_requestcover.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_reason)
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_facultyhead)
         Me.panel_requestcover.Controls.Add(Me.Label11)
@@ -635,7 +642,6 @@ Partial Class frm_home
         'panel_myrequests
         '
         Me.panel_myrequests.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.panel_myrequests.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_myrequests.Controls.Add(Me.myrequests_btn_cancel)
         Me.panel_myrequests.Controls.Add(Me.myrequests_tc_myrequests)
         Me.panel_myrequests.Location = New System.Drawing.Point(138, 38)
@@ -686,7 +692,7 @@ Partial Class frm_home
         Me.facultyarea_txt_startperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_txt_startperiod.FormattingEnabled = True
         Me.facultyarea_txt_startperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
-        Me.facultyarea_txt_startperiod.Location = New System.Drawing.Point(251, 112)
+        Me.facultyarea_txt_startperiod.Location = New System.Drawing.Point(251, 113)
         Me.facultyarea_txt_startperiod.Name = "facultyarea_txt_startperiod"
         Me.facultyarea_txt_startperiod.Size = New System.Drawing.Size(34, 23)
         Me.facultyarea_txt_startperiod.TabIndex = 6
@@ -697,7 +703,7 @@ Partial Class frm_home
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label24.Location = New System.Drawing.Point(204, 115)
+        Me.Label24.Location = New System.Drawing.Point(206, 116)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(44, 15)
         Me.Label24.TabIndex = 11
@@ -709,7 +715,7 @@ Partial Class frm_home
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label23.Location = New System.Drawing.Point(210, 89)
+        Me.Label23.Location = New System.Drawing.Point(212, 90)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(34, 15)
         Me.Label23.TabIndex = 9
@@ -733,7 +739,7 @@ Partial Class frm_home
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(204, 226)
+        Me.Label22.Location = New System.Drawing.Point(206, 227)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(44, 15)
         Me.Label22.TabIndex = 14
@@ -757,7 +763,7 @@ Partial Class frm_home
         Me.facultyarea_txt_endperiod.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.facultyarea_txt_endperiod.FormattingEnabled = True
         Me.facultyarea_txt_endperiod.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
-        Me.facultyarea_txt_endperiod.Location = New System.Drawing.Point(251, 223)
+        Me.facultyarea_txt_endperiod.Location = New System.Drawing.Point(251, 224)
         Me.facultyarea_txt_endperiod.Name = "facultyarea_txt_endperiod"
         Me.facultyarea_txt_endperiod.Size = New System.Drawing.Size(31, 23)
         Me.facultyarea_txt_endperiod.TabIndex = 15
@@ -790,7 +796,7 @@ Partial Class frm_home
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
         Me.Label21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label21.Location = New System.Drawing.Point(210, 200)
+        Me.Label21.Location = New System.Drawing.Point(212, 201)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(34, 15)
         Me.Label21.TabIndex = 12
@@ -864,7 +870,6 @@ Partial Class frm_home
         'panel_facultyarea
         '
         Me.panel_facultyarea.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.panel_facultyarea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_btn_reject)
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_btn_approve)
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_txt_reason)
@@ -1068,7 +1073,6 @@ Partial Class frm_home
         'panel_roomchange
         '
         Me.panel_roomchange.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.panel_roomchange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_room)
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_reason)
         Me.panel_roomchange.Controls.Add(Me.Label12)
@@ -1126,7 +1130,6 @@ Partial Class frm_home
         'panel_notifications
         '
         Me.panel_notifications.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.panel_notifications.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_notifications.Controls.Add(Me.lbl_notify)
         Me.panel_notifications.Controls.Add(Me.panel_notifications_clearnotifications)
         Me.panel_notifications.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1138,22 +1141,11 @@ Partial Class frm_home
         Me.panel_notifications.TabIndex = 60
         Me.panel_notifications.Visible = False
         '
-        'lbl_connectionstate
-        '
-        Me.lbl_connectionstate.Font = New System.Drawing.Font("Segoe UI Semilight", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_connectionstate.ForeColor = System.Drawing.Color.Green
-        Me.lbl_connectionstate.Location = New System.Drawing.Point(0, 343)
-        Me.lbl_connectionstate.Name = "lbl_connectionstate"
-        Me.lbl_connectionstate.Size = New System.Drawing.Size(499, 37)
-        Me.lbl_connectionstate.TabIndex = 4
-        Me.lbl_connectionstate.Text = "Connected"
-        Me.lbl_connectionstate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'lbl_currentuser
         '
         Me.lbl_currentuser.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_currentuser.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.lbl_currentuser.Location = New System.Drawing.Point(3, 161)
+        Me.lbl_currentuser.Location = New System.Drawing.Point(3, 165)
         Me.lbl_currentuser.Name = "lbl_currentuser"
         Me.lbl_currentuser.Size = New System.Drawing.Size(493, 37)
         Me.lbl_currentuser.TabIndex = 1
@@ -1167,7 +1159,7 @@ Partial Class frm_home
         Me.txt_logout.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_logout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.txt_logout.LinkColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.txt_logout.Location = New System.Drawing.Point(220, 192)
+        Me.txt_logout.Location = New System.Drawing.Point(220, 196)
         Me.txt_logout.Name = "txt_logout"
         Me.txt_logout.Size = New System.Drawing.Size(58, 17)
         Me.txt_logout.TabIndex = 3
@@ -1178,15 +1170,25 @@ Partial Class frm_home
         'panel_start
         '
         Me.panel_start.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.panel_start.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.panel_start.Controls.Add(Me.txt_logout)
         Me.panel_start.Controls.Add(Me.lbl_currentuser)
-        Me.panel_start.Controls.Add(Me.lbl_connectionstate)
         Me.panel_start.Location = New System.Drawing.Point(138, 38)
         Me.panel_start.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_start.Name = "panel_start"
         Me.panel_start.Size = New System.Drawing.Size(500, 383)
         Me.panel_start.TabIndex = 59
+        '
+        'Label2
+        '
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 8.25!)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(5, 394)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(124, 24)
+        Me.Label2.TabIndex = 64
+        Me.Label2.Text = "© TRS 2014"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button8
         '
@@ -1233,7 +1235,7 @@ Partial Class frm_home
         Me.Button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button9.Location = New System.Drawing.Point(1, 315)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(133, 106)
+        Me.Button9.Size = New System.Drawing.Size(133, 114)
         Me.Button9.TabIndex = 72
         Me.Button9.TabStop = False
         Me.Button9.UseVisualStyleBackColor = False
@@ -1250,24 +1252,76 @@ Partial Class frm_home
         '
         Me.StatusStrip1.AutoSize = False
         Me.StatusStrip1.Dock = System.Windows.Forms.DockStyle.None
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton2, Me.ToolStripDropDownButton1, Me.Help, Me.ToolStripStatusLabel1, Me.toolstrip_status})
         Me.StatusStrip1.Location = New System.Drawing.Point(1, 425)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(640, 22)
+        Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 73
-        Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'Label2
+        'ToolStripDropDownButton2
         '
-        Me.Label2.BackColor = System.Drawing.Color.White
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 8.25!)
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(1, 390)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(133, 24)
-        Me.Label2.TabIndex = 64
-        Me.Label2.Text = "© TRS 2014"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ToolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogoutToolStripMenuItem, Me.ExitToolStripMenuItem1})
+        Me.ToolStripDropDownButton2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
+        Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(38, 20)
+        Me.ToolStripDropDownButton2.Text = "File"
+        '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(112, 22)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
+        'ExitToolStripMenuItem1
+        '
+        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(112, 22)
+        Me.ExitToolStripMenuItem1.Text = "Exit"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(425, 17)
+        Me.ToolStripStatusLabel1.Spring = True
+        '
+        'toolstrip_status
+        '
+        Me.toolstrip_status.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.toolstrip_status.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.toolstrip_status.ForeColor = System.Drawing.Color.Green
+        Me.toolstrip_status.Name = "toolstrip_status"
+        Me.toolstrip_status.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.toolstrip_status.Size = New System.Drawing.Size(63, 17)
+        Me.toolstrip_status.Text = "Connected"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.home
+        Me.PictureBox4.Location = New System.Drawing.Point(57, 5)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(29, 21)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 77
+        Me.PictureBox4.TabStop = False
+        Me.tt_notify.SetToolTip(Me.PictureBox4, "Home")
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.logout
+        Me.PictureBox3.Location = New System.Drawing.Point(1, 6)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(29, 21)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 76
+        Me.PictureBox3.TabStop = False
+        Me.tt_notify.SetToolTip(Me.PictureBox3, "Logout")
         '
         'PictureBox2
         '
@@ -1297,58 +1351,84 @@ Partial Class frm_home
         '
         Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageUserToolStripMenuItem, Me.CoverManagementAreaToolStripMenuItem})
+        Me.ToolStripDropDownButton1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(56, 19)
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(55, 19)
         Me.ToolStripDropDownButton1.Text = "Admin"
         '
         'ManageUserToolStripMenuItem
         '
         Me.ManageUserToolStripMenuItem.Name = "ManageUserToolStripMenuItem"
-        Me.ManageUserToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.ManageUserToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.ManageUserToolStripMenuItem.Text = "Manage Users"
         '
         'CoverManagementAreaToolStripMenuItem
         '
         Me.CoverManagementAreaToolStripMenuItem.Name = "CoverManagementAreaToolStripMenuItem"
-        Me.CoverManagementAreaToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.CoverManagementAreaToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
         Me.CoverManagementAreaToolStripMenuItem.Text = "Cover Management Area"
+        '
+        'Help
+        '
+        Me.Help.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.Help.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubmitBugReportToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.Help.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Help.Image = CType(resources.GetObject("Help.Image"), System.Drawing.Image)
+        Me.Help.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Help.Name = "Help"
+        Me.Help.Size = New System.Drawing.Size(44, 19)
+        Me.Help.Text = "Help"
+        '
+        'SubmitBugReportToolStripMenuItem
+        '
+        Me.SubmitBugReportToolStripMenuItem.Name = "SubmitBugReportToolStripMenuItem"
+        Me.SubmitBugReportToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.SubmitBugReportToolStripMenuItem.Text = "Submit Bug Report"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
         '
         'pic_logo
         '
         Me.pic_logo.BackColor = System.Drawing.Color.White
         Me.pic_logo.Cursor = System.Windows.Forms.Cursors.Default
-        Me.pic_logo.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogoblack
-        Me.pic_logo.Location = New System.Drawing.Point(1, 336)
+        Me.pic_logo.Image = CType(resources.GetObject("pic_logo.Image"), System.Drawing.Image)
+        Me.pic_logo.Location = New System.Drawing.Point(5, 330)
         Me.pic_logo.Name = "pic_logo"
-        Me.pic_logo.Size = New System.Drawing.Size(133, 43)
+        Me.pic_logo.Size = New System.Drawing.Size(124, 60)
         Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
         '
         'btn_sync
         '
-        Me.btn_sync.BackColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.btn_sync.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
         Me.btn_sync.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_sync.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.sync
-        Me.btn_sync.Location = New System.Drawing.Point(4, 6)
+        Me.btn_sync.Location = New System.Drawing.Point(29, 6)
         Me.btn_sync.Name = "btn_sync"
         Me.btn_sync.Size = New System.Drawing.Size(29, 21)
         Me.btn_sync.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_sync.TabIndex = 62
         Me.btn_sync.TabStop = False
-        Me.tt_notify.SetToolTip(Me.btn_sync, "Update data in Ridgeway Cover Scheduler")
+        Me.tt_notify.SetToolTip(Me.btn_sync, "Synchronize")
         '
         'frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Gainsboro
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.ClientSize = New System.Drawing.Size(642, 451)
+        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.pic_logo)
@@ -1398,6 +1478,8 @@ Partial Class frm_home
         Me.panel_start.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1482,7 +1564,6 @@ Partial Class frm_home
     Friend WithEvents panel_notifications_clearnotifications As System.Windows.Forms.Button
     Friend WithEvents lbl_notify As System.Windows.Forms.TextBox
     Friend WithEvents panel_notifications As System.Windows.Forms.Panel
-    Friend WithEvents lbl_connectionstate As System.Windows.Forms.Label
     Friend WithEvents lbl_currentuser As System.Windows.Forms.Label
     Friend WithEvents txt_logout As System.Windows.Forms.LinkLabel
     Friend WithEvents panel_start As System.Windows.Forms.Panel
@@ -1498,4 +1579,14 @@ Partial Class frm_home
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents ToolStripDropDownButton2 As System.Windows.Forms.ToolStripDropDownButton
+    Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Help As System.Windows.Forms.ToolStripDropDownButton
+    Friend WithEvents SubmitBugReportToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
+    Friend WithEvents toolstrip_status As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
 End Class

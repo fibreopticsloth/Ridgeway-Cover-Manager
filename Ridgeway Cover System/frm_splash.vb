@@ -21,12 +21,16 @@
         loadvalue += 1
         lbl_loading.Text = lbl_loading.Text + "."
         If loadvalue = 4 Then
-            frm_home.Show()
-            frm_home.ShowInTaskbar = False
             frm_login.Show()
-            frm_login.Location = frm_home.Location
-            frm_login.BringToFront()
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub frm_splash_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        MyBase.OnPaintBackground(e)
+
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+
+        e.Graphics.DrawRectangle(Pens.White, rect)
     End Sub
 End Class

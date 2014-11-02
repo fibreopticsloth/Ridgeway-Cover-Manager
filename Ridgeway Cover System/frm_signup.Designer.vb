@@ -35,6 +35,8 @@ Partial Class frm_signup
         Me.btn_back = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.tt_back = New System.Windows.Forms.ToolTip(Me.components)
+        Me.txt_type = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.panel_sidebar.SuspendLayout()
         CType(Me.btn_back, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,10 +98,10 @@ Partial Class frm_signup
         Me.btn_signup.FlatAppearance.BorderSize = 0
         Me.btn_signup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.btn_signup.ForeColor = System.Drawing.Color.Black
-        Me.btn_signup.Location = New System.Drawing.Point(46, 337)
+        Me.btn_signup.Location = New System.Drawing.Point(43, 384)
         Me.btn_signup.Name = "btn_signup"
         Me.btn_signup.Size = New System.Drawing.Size(157, 30)
-        Me.btn_signup.TabIndex = 2
+        Me.btn_signup.TabIndex = 3
         Me.btn_signup.Text = "Sign Up"
         Me.btn_signup.UseVisualStyleBackColor = False
         '
@@ -156,13 +158,35 @@ Partial Class frm_signup
         '
         Me.tt_back.ToolTipTitle = "Back"
         '
+        'txt_type
+        '
+        Me.txt_type.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.txt_type.FormattingEnabled = True
+        Me.txt_type.Items.AddRange(New Object() {"Teacher", "Faculty Leader", "Cover Manager"})
+        Me.txt_type.Location = New System.Drawing.Point(46, 342)
+        Me.txt_type.Name = "txt_type"
+        Me.txt_type.Size = New System.Drawing.Size(157, 24)
+        Me.txt_type.TabIndex = 2
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Label2.Location = New System.Drawing.Point(43, 322)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(86, 17)
+        Me.Label2.TabIndex = 60
+        Me.Label2.Text = "Account Type:"
+        '
         'frm_signup
         '
         Me.AcceptButton = Me.btn_signup
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(244, 390)
+        Me.ClientSize = New System.Drawing.Size(244, 433)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txt_type)
         Me.Controls.Add(Me.panel_sidebar)
         Me.Controls.Add(Me.btn_signup)
         Me.Controls.Add(Me.Label1)
@@ -195,4 +219,6 @@ Partial Class frm_signup
     Friend WithEvents btn_back As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents tt_back As System.Windows.Forms.ToolTip
+    Friend WithEvents txt_type As System.Windows.Forms.ComboBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

@@ -39,7 +39,7 @@ Partial Class frm_splash
         'timersplash
         '
         Me.timersplash.Enabled = True
-        Me.timersplash.Interval = 1000
+        Me.timersplash.Interval = 500
         '
         'Label1
         '
@@ -93,9 +93,9 @@ Partial Class frm_splash
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.Panel1.Controls.Add(Me.PictureBox2)
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(1, 1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(100, 200)
+        Me.Panel1.Size = New System.Drawing.Size(100, 148)
         Me.Panel1.TabIndex = 8
         '
         'Label3

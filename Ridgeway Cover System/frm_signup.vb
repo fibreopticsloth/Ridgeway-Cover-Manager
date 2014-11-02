@@ -6,6 +6,7 @@ Public Class frm_signup
     Dim rd As MySqlDataReader
     Public username As String
     Dim stafftype As String
+    Dim auth_code As String
 
     'FORM LOAD
     Private Sub frm_signup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -26,6 +27,7 @@ Public Class frm_signup
             NewCommand("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
             MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
                      & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
+            NewCommand("DELETE FROM auth_codes WHERE auth_code = '" & auth_code & "'")
             With frm_login
                 .txt_username.Text = username
                 .txt_password.Text = ""
@@ -47,22 +49,16 @@ Public Class frm_signup
 
     'CHECK TO SEE IF FACULTY HEAD
     Public Sub findstafftype()
-        Dim response = MsgBox("Are you a Faculty Leader?", MsgBoxStyle.YesNo)
-        If response = MsgBoxResult.Yes Then
-            Dim response2 = MsgBox("Please confirm that you are a Faculty Leader", MsgBoxStyle.YesNo)
-            If response2 = MsgBoxResult.Yes Then
-                stafftype = "faculty"
-            Else
-                findstafftype()
-            End If
-        Else
-            Dim response2 = MsgBox("Please confirm that you are not a Faculty Leader", MsgBoxStyle.YesNo)
-            If response2 = MsgBoxResult.Yes Then
+
+        Select Case txt_type.SelectedIndex
+            Case 0
                 stafftype = "teacher"
-            Else
-                findstafftype()
-            End If
-        End If
+            Case 1
+                stafftype = "faculty"
+            Case 2
+                stafftype = "covermanager"
+        End Select
+
     End Sub
 
     '---BUTTON ACTIONS---
@@ -76,4 +72,36 @@ Public Class frm_signup
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
         Me.Dispose()
     End Sub
+
+    Private Sub txt_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_type.SelectedIndexChanged
+        Select Case txt_type.SelectedIndex
+            Case 0
+            Case 1
+                auth_code = InputBox("Please provide your authorisation code, this will have been emailed to you")
+                If CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "' AND type = 'faculty'") Then
+                    MsgBox("Authorisation code accepted.")
+                Else
+                    MsgBox("This is not a valid authorisation code.")
+                    txt_type.SelectedIndex = -1
+                End If
+            Case 2
+                auth_code = InputBox("Please provide your authorisation code, this will have been emailed to you")
+                If CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "' AND type = 'covermanager'") Then
+                    MsgBox("Authorisation code accepted.")
+                Else
+                    MsgBox("This is not a valid authorisation code.")
+                    txt_type.SelectedIndex = -1
+                End If
+        End Select
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+
+        Dim i As Integer = 1
+        Do Until i = 111
+            NewCommand("INSERT INTO auth_codes(auth_code, type) values('" & hash(Rnd) & "', 'faculty')")
+            i += 1
+        Loop
+    End Sub
+
 End Class

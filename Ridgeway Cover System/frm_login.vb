@@ -35,20 +35,22 @@ Public Class frm_login
             Else
                 MsgBox("Cannot connect to the server. Please ensure you are connected to the internet.")
             End If
+            btn_login.Text = "Log In"
         End If
 
     End Sub
 
     'LOGIN
     Public Sub login()
-        btn_login.Text = "Please wait"
         rememberlogin()
         checktype()
         My.Settings.CurrentUsername = txt_username.Text
         My.Settings.Save()
         frm_home.lbl_currentuser.Text = "Logged in as " + My.Settings.CurrentUsername
 
-        frm_home.load_home()
+        frm_home.Show()
+        Me.Dispose()
+
         timer_fadeout.Enabled = True
         timer_fadeout.Start()
         'frm_home.BringToFront()
@@ -96,6 +98,7 @@ Public Class frm_login
 
     'LOGIN BUTTON
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_login.Click
+        btn_login.Text = "Please wait"
         CheckUser()
     End Sub
 
@@ -132,5 +135,41 @@ Public Class frm_login
             timer_fadeout.Enabled = False
             Me.Dispose()
         End If
+    End Sub
+
+    Private Sub frm_login_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        MyBase.OnPaintBackground(e)
+
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+
+        e.Graphics.DrawRectangle(Pens.DimGray, rect)
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
+        frm_home.Visible = False
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub Label3_MouseDown(sender As Object, e As MouseEventArgs) Handles Label3.MouseDown
+        drag = True
+        mousex = Windows.Forms.Cursor.Position.X - Me.Left
+        mousey = Windows.Forms.Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub Label3_MouseMove(sender As Object, e As MouseEventArgs) Handles Label3.MouseMove
+        If drag Then
+            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
+            Me.Left = Windows.Forms.Cursor.Position.X - mousex
+            frm_home.Top = Windows.Forms.Cursor.Position.Y - mousey
+            frm_home.Left = Windows.Forms.Cursor.Position.X - mousex
+        End If
+    End Sub
+
+    Private Sub Label3_MouseUp(sender As Object, e As MouseEventArgs) Handles Label3.MouseUp
+        drag = False
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Application.Exit()
     End Sub
 End Class
