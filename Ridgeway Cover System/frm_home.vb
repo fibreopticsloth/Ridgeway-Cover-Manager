@@ -5,6 +5,7 @@ Public Class frm_home
     'DECLARATIONS
 
     '1 = covers, 2 = rooms
+    Dim auth_code As String
     Dim selected As Integer = 1
     Dim rd As MySqlDataReader
     Dim id As Integer
@@ -173,9 +174,12 @@ Public Class frm_home
                     End If
                 Next j
         End Select
+
         If cancellationerror = True Then
             MsgBox("One or more of your selected cancellations has already been booked." + vbNewLine + _
                    "These cannot be cancelled, and have been skipped from the cancellation process.")
+        Else
+            MsgBox("The selected request(s) have been cancelled.")
         End If
         cancellationerror = False
         getalldata()
@@ -299,6 +303,7 @@ Public Class frm_home
         panel_notifications.Hide()
         panel_myrequests.Hide()
         panel_facultyarea.Hide()
+        panel_accountdetails.Hide()
     End Sub
 
     'RESET REQUEST COVER PANEL
@@ -406,7 +411,7 @@ Public Class frm_home
     Private Sub btn_accountdetails_Click(sender As Object, e As EventArgs) Handles btn_accountdetails.Click
         resetall()
         btn_accountdetails.BackColor = Accentcolour
-
+        panel_accountdetails.Show()
     End Sub
 
     '--------BUTTONS--------
@@ -613,7 +618,7 @@ Public Class frm_home
     End Sub
 
     Private Sub CoverManagementAreaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoverManagementAreaToolStripMenuItem.Click
-        If My.Settings.CurrentUserType = "covermanager" Then
+        If My.Settings.CurrentUserType = "covermanager" Or My.Settings.CurrentUserType = "admin" Then
             frm_covermanagement.Show()
         Else
             MsgBox("You are not authorised to access this area.")
@@ -639,5 +644,91 @@ Public Class frm_home
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         resetall()
         panel_start.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+        Try
+            Dim bugreport As String
+            bugreport = InputBox("Please detail the bug:", "New Bug Report")
+            Dim Smtp_Server As New SmtpClient
+            Dim e_mail As New MailMessage()
+            Smtp_Server.UseDefaultCredentials = False
+            Smtp_Server.Credentials = New Net.NetworkCredential("rcmbugreport@gmail.com ", "rcmdlop890")
+            Smtp_Server.Port = 587
+            Smtp_Server.EnableSsl = True
+            Smtp_Server.Host = "smtp.gmail.com"
+            e_mail = New MailMessage()
+            e_mail.From = New MailAddress("rcmbugreport@gmail.com ")
+            e_mail.To.Add("08dunkg@ridgewayschool.com")
+            e_mail.Subject = "New Bug Report"
+            e_mail.IsBodyHtml = False
+            e_mail.Body = bugreport
+            Smtp_Server.Send(e_mail)
+            MsgBox("Success!")
+        Catch ex As Exception
+            MsgBox("Failed.")
+        End Try
+    End Sub
+
+    Private Sub txt_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_type.SelectedIndexChanged
+        Select Case txt_type.SelectedIndex
+            Case 0
+            Case 1
+                auth_code = InputBox("Please provide your authorisation code, this will have been emailed to you")
+                If CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "' AND type = 'faculty'") Then
+                    MsgBox("Authorisation code accepted, now click 'Submit'.")
+                Else
+                    MsgBox("This is not a valid authorisation code.")
+                    txt_type.SelectedIndex = -1
+                End If
+            Case 2
+                auth_code = InputBox("Please provide your authorisation code, this will have been emailed to you")
+                If CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "' AND type = 'covermanager'") Then
+                    MsgBox("Authorisation code accepted, now click 'Submit'.")
+                Else
+                    MsgBox("This is not a valid authorisation code.")
+                    txt_type.SelectedIndex = -1
+                End If
+        End Select
+    End Sub
+
+    Private Sub btn_submitpassword_Click(sender As Object, e As EventArgs) Handles btn_submitpassword.Click
+        If CheckData("SELECT * FROM users WHERE username = '" & My.Settings.CurrentUsername & "' AND password = '" & hash(txt_oldpassword.Text) & "'") Then
+                Try
+                    If txt_newpassword1.Text = "" Or txt_newpassword2.Text = "" Then
+                        MsgBox("You must fill all fields!")
+                    ElseIf txt_newpassword1.TextLength < 8 Then
+                        MsgBox("Your password must be at least 8 characters")
+                    ElseIf txt_newpassword1.Text = txt_newpassword2.Text Then
+                        NewCommand("update users set password = '" & hash(txt_newpassword1.Text) & "' where username = '" & My.Settings.CurrentUsername & "'")
+                        txt_oldpassword.ResetText()
+                        txt_newpassword1.ResetText()
+                        txt_newpassword2.ResetText()
+                        MsgBox("Your password was changed successfully.")
+                    Else
+                        MsgBox("The new passwords do not match!")
+                    End If
+                Catch ex As Exception
+                    MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
+                End Try
+        Else
+            MsgBox("The password you entered is incorrect.")
+        End If
+    End Sub
+
+    Private Sub btn_submittype_Click(sender As Object, e As EventArgs) Handles btn_submittype.Click
+        Dim stafftype As String
+        Select Case txt_type.SelectedIndex
+            Case 0
+                stafftype = "teacher"
+            Case 1
+                stafftype = "faculty"
+            Case 2
+                stafftype = "covermanager"
+        End Select
+        NewCommand("update users set type = '" & stafftype & "' where username = '" & My.Settings.CurrentUsername & "'")
+        NewCommand("DELETE FROM auth_codes WHERE auth_code = '" & auth_code & "'")
+        MsgBox("Your account type was changed successfully.")
+        txt_type.SelectedIndex = -1
     End Sub
 End Class

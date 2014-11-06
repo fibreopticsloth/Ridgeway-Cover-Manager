@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ridgeway Cover Manager.exe" size="800256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Ridgeway Cover Manager.exe" size="816128">
       <assemblyIdentity name="Ridgeway Cover Manager" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>C7+SAHclcqdwd14QZC6xFNEdzKMFtPWLQBHKf1NwE7U=</dsig:DigestValue>
+        <dsig:DigestValue>w5Oko18F+GifRDa3qxvJJ2TVoJ0kJuF0dfByB0Pe0jU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

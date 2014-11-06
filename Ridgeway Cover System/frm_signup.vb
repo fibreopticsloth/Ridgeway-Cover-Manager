@@ -24,10 +24,14 @@ Public Class frm_signup
             MsgBox("Your password must be at least 8 characters")
         ElseIf txt_password.Text = txt_confirmpassword.Text Then
             findstafftype()
-            NewCommand("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
-            MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
-                     & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
-            NewCommand("DELETE FROM auth_codes WHERE auth_code = '" & auth_code & "'")
+            Try
+                NewCommand("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
+                MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
+                         & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
+                NewCommand("DELETE FROM auth_codes WHERE auth_code = '" & auth_code & "'")
+            Catch ex As Exception
+                MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
+            End Try
             With frm_login
                 .txt_username.Text = username
                 .txt_password.Text = ""
@@ -35,7 +39,7 @@ Public Class frm_signup
             End With
             Me.Dispose()
         Else
-            MsgBox("Your passwords do not match!")
+                MsgBox("Your passwords do not match!")
         End If
         resetsignup()
     End Sub

@@ -24,7 +24,7 @@ Partial Class frm_home
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_home))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btn_roomchange = New System.Windows.Forms.Button()
         Me.btn_facultyarea = New System.Windows.Forms.Button()
         Me.btn_myrequests = New System.Windows.Forms.Button()
@@ -37,6 +37,9 @@ Partial Class frm_home
         Me.btn_notifications = New System.Windows.Forms.Button()
         Me.data_timer = New System.Windows.Forms.Timer(Me.components)
         Me.tt_notify = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.btn_sync = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -113,21 +116,34 @@ Partial Class frm_home
         Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.toolstrip_status = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ManageUserToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CoverManagementAreaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Help = New System.Windows.Forms.ToolStripDropDownButton()
         Me.SubmitBugReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.toolstrip_status = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
-        Me.btn_sync = New System.Windows.Forms.PictureBox()
+        Me.panel_accountdetails = New System.Windows.Forms.Panel()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.btn_submittype = New System.Windows.Forms.Button()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.txt_type = New System.Windows.Forms.ComboBox()
+        Me.btn_submitpassword = New System.Windows.Forms.Button()
+        Me.txt_newpassword2 = New System.Windows.Forms.TextBox()
+        Me.txt_newpassword1 = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_oldpassword = New System.Windows.Forms.TextBox()
         Me.nfimenu.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_sync, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_requestcover.SuspendLayout()
         Me.myrequests_tc_myrequests.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -141,12 +157,10 @@ Partial Class frm_home
         Me.panel_notifications.SuspendLayout()
         Me.panel_start.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_sync, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel_accountdetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_roomchange
@@ -292,6 +306,45 @@ Partial Class frm_home
         'data_timer
         '
         Me.data_timer.Interval = 60000
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox4.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.home
+        Me.PictureBox4.Location = New System.Drawing.Point(57, 5)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(29, 21)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 77
+        Me.PictureBox4.TabStop = False
+        Me.tt_notify.SetToolTip(Me.PictureBox4, "Home")
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox3.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.logout
+        Me.PictureBox3.Location = New System.Drawing.Point(1, 6)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(29, 21)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 76
+        Me.PictureBox3.TabStop = False
+        Me.tt_notify.SetToolTip(Me.PictureBox3, "Logout")
+        '
+        'btn_sync
+        '
+        Me.btn_sync.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.btn_sync.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_sync.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.sync
+        Me.btn_sync.Location = New System.Drawing.Point(29, 6)
+        Me.btn_sync.Name = "btn_sync"
+        Me.btn_sync.Size = New System.Drawing.Size(29, 21)
+        Me.btn_sync.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.btn_sync.TabIndex = 62
+        Me.btn_sync.TabStop = False
+        Me.tt_notify.SetToolTip(Me.btn_sync, "Synchronize")
         '
         'Button5
         '
@@ -591,14 +644,14 @@ Partial Class frm_home
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semilight", 8.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dg_mycovers.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dg_mycovers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_mycovers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dg_mycovers.Location = New System.Drawing.Point(3, 3)
@@ -1281,6 +1334,52 @@ Partial Class frm_home
         Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(112, 22)
         Me.ExitToolStripMenuItem1.Text = "Exit"
         '
+        'ToolStripDropDownButton1
+        '
+        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageUserToolStripMenuItem, Me.CoverManagementAreaToolStripMenuItem})
+        Me.ToolStripDropDownButton1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
+        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(55, 20)
+        Me.ToolStripDropDownButton1.Text = "Admin"
+        '
+        'ManageUserToolStripMenuItem
+        '
+        Me.ManageUserToolStripMenuItem.Name = "ManageUserToolStripMenuItem"
+        Me.ManageUserToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.ManageUserToolStripMenuItem.Text = "Manage Users"
+        '
+        'CoverManagementAreaToolStripMenuItem
+        '
+        Me.CoverManagementAreaToolStripMenuItem.Name = "CoverManagementAreaToolStripMenuItem"
+        Me.CoverManagementAreaToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.CoverManagementAreaToolStripMenuItem.Text = "Cover Management Area"
+        '
+        'Help
+        '
+        Me.Help.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.Help.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubmitBugReportToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.Help.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Help.Image = CType(resources.GetObject("Help.Image"), System.Drawing.Image)
+        Me.Help.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.Help.Name = "Help"
+        Me.Help.Size = New System.Drawing.Size(44, 20)
+        Me.Help.Text = "Help"
+        '
+        'SubmitBugReportToolStripMenuItem
+        '
+        Me.SubmitBugReportToolStripMenuItem.Name = "SubmitBugReportToolStripMenuItem"
+        Me.SubmitBugReportToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.SubmitBugReportToolStripMenuItem.Text = "Submit Bug Report"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.AboutToolStripMenuItem.Text = "About"
+        '
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
@@ -1296,32 +1395,6 @@ Partial Class frm_home
         Me.toolstrip_status.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.toolstrip_status.Size = New System.Drawing.Size(63, 17)
         Me.toolstrip_status.Text = "Connected"
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.home
-        Me.PictureBox4.Location = New System.Drawing.Point(57, 5)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(29, 21)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 77
-        Me.PictureBox4.TabStop = False
-        Me.tt_notify.SetToolTip(Me.PictureBox4, "Home")
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox3.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.logout
-        Me.PictureBox3.Location = New System.Drawing.Point(1, 6)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(29, 21)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 76
-        Me.PictureBox3.TabStop = False
-        Me.tt_notify.SetToolTip(Me.PictureBox3, "Logout")
         '
         'PictureBox2
         '
@@ -1347,52 +1420,6 @@ Partial Class frm_home
         Me.PictureBox1.TabIndex = 74
         Me.PictureBox1.TabStop = False
         '
-        'ToolStripDropDownButton1
-        '
-        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ManageUserToolStripMenuItem, Me.CoverManagementAreaToolStripMenuItem})
-        Me.ToolStripDropDownButton1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
-        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(55, 19)
-        Me.ToolStripDropDownButton1.Text = "Admin"
-        '
-        'ManageUserToolStripMenuItem
-        '
-        Me.ManageUserToolStripMenuItem.Name = "ManageUserToolStripMenuItem"
-        Me.ManageUserToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.ManageUserToolStripMenuItem.Text = "Manage Users"
-        '
-        'CoverManagementAreaToolStripMenuItem
-        '
-        Me.CoverManagementAreaToolStripMenuItem.Name = "CoverManagementAreaToolStripMenuItem"
-        Me.CoverManagementAreaToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
-        Me.CoverManagementAreaToolStripMenuItem.Text = "Cover Management Area"
-        '
-        'Help
-        '
-        Me.Help.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.Help.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubmitBugReportToolStripMenuItem, Me.AboutToolStripMenuItem})
-        Me.Help.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Help.Image = CType(resources.GetObject("Help.Image"), System.Drawing.Image)
-        Me.Help.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.Help.Name = "Help"
-        Me.Help.Size = New System.Drawing.Size(44, 19)
-        Me.Help.Text = "Help"
-        '
-        'SubmitBugReportToolStripMenuItem
-        '
-        Me.SubmitBugReportToolStripMenuItem.Name = "SubmitBugReportToolStripMenuItem"
-        Me.SubmitBugReportToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.SubmitBugReportToolStripMenuItem.Text = "Submit Bug Report"
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.AboutToolStripMenuItem.Text = "About"
-        '
         'pic_logo
         '
         Me.pic_logo.BackColor = System.Drawing.Color.White
@@ -1405,18 +1432,159 @@ Partial Class frm_home
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
         '
-        'btn_sync
+        'panel_accountdetails
         '
-        Me.btn_sync.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.btn_sync.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_sync.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.sync
-        Me.btn_sync.Location = New System.Drawing.Point(29, 6)
-        Me.btn_sync.Name = "btn_sync"
-        Me.btn_sync.Size = New System.Drawing.Size(29, 21)
-        Me.btn_sync.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.btn_sync.TabIndex = 62
-        Me.btn_sync.TabStop = False
-        Me.tt_notify.SetToolTip(Me.btn_sync, "Synchronize")
+        Me.panel_accountdetails.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_accountdetails.Controls.Add(Me.Label29)
+        Me.panel_accountdetails.Controls.Add(Me.btn_submittype)
+        Me.panel_accountdetails.Controls.Add(Me.Label28)
+        Me.panel_accountdetails.Controls.Add(Me.txt_type)
+        Me.panel_accountdetails.Controls.Add(Me.btn_submitpassword)
+        Me.panel_accountdetails.Controls.Add(Me.txt_newpassword2)
+        Me.panel_accountdetails.Controls.Add(Me.txt_newpassword1)
+        Me.panel_accountdetails.Controls.Add(Me.Label20)
+        Me.panel_accountdetails.Controls.Add(Me.Label5)
+        Me.panel_accountdetails.Controls.Add(Me.Label1)
+        Me.panel_accountdetails.Controls.Add(Me.Label3)
+        Me.panel_accountdetails.Controls.Add(Me.txt_oldpassword)
+        Me.panel_accountdetails.Location = New System.Drawing.Point(138, 38)
+        Me.panel_accountdetails.Margin = New System.Windows.Forms.Padding(0)
+        Me.panel_accountdetails.Name = "panel_accountdetails"
+        Me.panel_accountdetails.Size = New System.Drawing.Size(500, 383)
+        Me.panel_accountdetails.TabIndex = 78
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label29.Location = New System.Drawing.Point(117, 272)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(60, 15)
+        Me.Label29.TabIndex = 69
+        Me.Label29.Text = "New Type:"
+        '
+        'btn_submittype
+        '
+        Me.btn_submittype.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_submittype.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.btn_submittype.FlatAppearance.BorderSize = 0
+        Me.btn_submittype.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_submittype.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.btn_submittype.ForeColor = System.Drawing.Color.White
+        Me.btn_submittype.Location = New System.Drawing.Point(183, 306)
+        Me.btn_submittype.Name = "btn_submittype"
+        Me.btn_submittype.Size = New System.Drawing.Size(175, 25)
+        Me.btn_submittype.TabIndex = 68
+        Me.btn_submittype.Text = "Submit"
+        Me.btn_submittype.UseVisualStyleBackColor = False
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label28.Location = New System.Drawing.Point(190, 239)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(158, 17)
+        Me.Label28.TabIndex = 67
+        Me.Label28.Text = "Change your Account Type"
+        '
+        'txt_type
+        '
+        Me.txt_type.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.txt_type.FormattingEnabled = True
+        Me.txt_type.Items.AddRange(New Object() {"Teacher", "Faculty Leader", "Cover Manager"})
+        Me.txt_type.Location = New System.Drawing.Point(183, 268)
+        Me.txt_type.Name = "txt_type"
+        Me.txt_type.Size = New System.Drawing.Size(175, 24)
+        Me.txt_type.TabIndex = 66
+        '
+        'btn_submitpassword
+        '
+        Me.btn_submitpassword.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_submitpassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.btn_submitpassword.FlatAppearance.BorderSize = 0
+        Me.btn_submitpassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_submitpassword.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.btn_submitpassword.ForeColor = System.Drawing.Color.White
+        Me.btn_submitpassword.Location = New System.Drawing.Point(183, 172)
+        Me.btn_submitpassword.Name = "btn_submitpassword"
+        Me.btn_submitpassword.Size = New System.Drawing.Size(175, 25)
+        Me.btn_submitpassword.TabIndex = 60
+        Me.btn_submitpassword.Text = "Submit"
+        Me.btn_submitpassword.UseVisualStyleBackColor = False
+        '
+        'txt_newpassword2
+        '
+        Me.txt_newpassword2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.txt_newpassword2.Location = New System.Drawing.Point(183, 136)
+        Me.txt_newpassword2.Name = "txt_newpassword2"
+        Me.txt_newpassword2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_newpassword2.Size = New System.Drawing.Size(175, 23)
+        Me.txt_newpassword2.TabIndex = 65
+        '
+        'txt_newpassword1
+        '
+        Me.txt_newpassword1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.txt_newpassword1.Location = New System.Drawing.Point(183, 107)
+        Me.txt_newpassword1.Name = "txt_newpassword1"
+        Me.txt_newpassword1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_newpassword1.Size = New System.Drawing.Size(175, 23)
+        Me.txt_newpassword1.TabIndex = 64
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label20.Location = New System.Drawing.Point(92, 110)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(85, 15)
+        Me.Label20.TabIndex = 63
+        Me.Label20.Text = "New Password:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label5.Location = New System.Drawing.Point(125, 139)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 15)
+        Me.Label5.TabIndex = 62
+        Me.Label5.Text = "Confirm:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(96, 81)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(81, 15)
+        Me.Label1.TabIndex = 61
+        Me.Label1.Text = "Old Password:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.Label3.Location = New System.Drawing.Point(203, 48)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(134, 17)
+        Me.Label3.TabIndex = 60
+        Me.Label3.Text = "Change your Password"
+        '
+        'txt_oldpassword
+        '
+        Me.txt_oldpassword.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.txt_oldpassword.Location = New System.Drawing.Point(183, 78)
+        Me.txt_oldpassword.Name = "txt_oldpassword"
+        Me.txt_oldpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_oldpassword.Size = New System.Drawing.Size(175, 23)
+        Me.txt_oldpassword.TabIndex = 60
         '
         'frm_home
         '
@@ -1451,6 +1619,7 @@ Partial Class frm_home
         Me.Controls.Add(Me.panel_facultyarea)
         Me.Controls.Add(Me.panel_myrequests)
         Me.Controls.Add(Me.panel_requestcover)
+        Me.Controls.Add(Me.panel_accountdetails)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -1459,6 +1628,9 @@ Partial Class frm_home
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ridgeway Cover Manager"
         Me.nfimenu.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_sync, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel_requestcover.ResumeLayout(False)
         Me.panel_requestcover.PerformLayout()
         Me.myrequests_tc_myrequests.ResumeLayout(False)
@@ -1478,12 +1650,11 @@ Partial Class frm_home
         Me.panel_start.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_sync, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panel_accountdetails.ResumeLayout(False)
+        Me.panel_accountdetails.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1589,4 +1760,17 @@ Partial Class frm_home
     Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
     Friend WithEvents toolstrip_status As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents panel_accountdetails As System.Windows.Forms.Panel
+    Friend WithEvents btn_submitpassword As System.Windows.Forms.Button
+    Friend WithEvents txt_newpassword2 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_newpassword1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txt_oldpassword As System.Windows.Forms.TextBox
+    Friend WithEvents txt_type As System.Windows.Forms.ComboBox
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents btn_submittype As System.Windows.Forms.Button
+    Friend WithEvents Label28 As System.Windows.Forms.Label
 End Class
