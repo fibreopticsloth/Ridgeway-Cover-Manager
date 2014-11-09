@@ -58,7 +58,13 @@ Public Class frm_home
 
     'SUBMIT REQUEST
     Private Sub roomchange_btn_submit_Click(sender As Object, e As EventArgs) Handles roomchange_btn_submit.Click
-        If submit("room", My.Settings.CurrentUsername, roomchange_txt_room.Text, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text) = 1 Then
+        Dim singlelesson As Boolean
+        If roomchange_chk_thislessononly.CheckState = CheckState.Checked Then
+            singlelesson = True
+        Else
+            singlelesson = False
+        End If
+        If submit("room", My.Settings.CurrentUsername, roomchange_txt_room.Text, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text, Nothing, singlelesson) = 1 Then
             MsgBox("Request submitted")
             resetroomchange()
             getalldata()
@@ -81,7 +87,14 @@ Public Class frm_home
 
     'SUBMIT REQUEST
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles requestcover_btn_submit.Click
-        If submit("lesson", My.Settings.CurrentUsername, requestcover_txt_facultyhead.Text, requestcover_dp_startdate, requestcover_txt_startperiod.Text, requestcover_dp_enddate, requestcover_txt_endperiod.Text, requestcover_txt_reason.Text) = 1 Then
+        Dim singlelesson As Boolean
+        If requestcover_chk_thislessononly.CheckState = CheckState.Checked Then
+            singlelesson = True
+        Else
+            singlelesson = False
+        End If
+        Dim response = MsgBox("Is this cover for an external training course or conference?", MsgBoxStyle.YesNo)
+        If submit("lesson", My.Settings.CurrentUsername, requestcover_txt_facultyhead.Text, requestcover_dp_startdate, requestcover_txt_startperiod.Text, requestcover_dp_enddate, requestcover_txt_endperiod.Text, requestcover_txt_reason.Text, response.ToString, singlelesson) = 1 Then
             MsgBox("Request submitted")
             resetrequestcover()
             getalldata()
@@ -110,6 +123,7 @@ Public Class frm_home
         lbl_notify.Text = "No notifications to show!"
         btn_notifications.Text = "Notifications" + " (0)"
         getdata.updatecount = 0
+        getalldata()
     End Sub
 
     '--------MY REQUESTS PANEL--------
@@ -309,8 +323,8 @@ Public Class frm_home
     'RESET REQUEST COVER PANEL
     Public Sub resetrequestcover()
         setdates()
-        requestcover_txt_startperiod.SelectedIndex = 0
-        requestcover_txt_endperiod.SelectedIndex = 0
+        requestcover_txt_startperiod.SelectedIndex = -1
+        requestcover_txt_endperiod.SelectedIndex = -1
         requestcover_txt_facultyhead.ResetText()
         requestcover_txt_reason.ResetText()
         panel_requestcover.BringToFront()
@@ -319,8 +333,8 @@ Public Class frm_home
     'RESET ROOM CHANGE PANEL
     Public Sub resetroomchange()
         setdates()
-        roomchange_txt_startperiod.SelectedIndex = 0
-        roomchange_txt_endperiod.SelectedIndex = 0
+        roomchange_txt_startperiod.SelectedIndex = -1
+        roomchange_txt_endperiod.SelectedIndex = -1
         roomchange_txt_room.ResetText()
         roomchange_txt_reason.ResetText()
         panel_roomchange.BringToFront()
@@ -696,9 +710,13 @@ Public Class frm_home
         If CheckData("SELECT * FROM users WHERE username = '" & My.Settings.CurrentUsername & "' AND password = '" & hash(txt_oldpassword.Text) & "'") Then
                 Try
                     If txt_newpassword1.Text = "" Or txt_newpassword2.Text = "" Then
-                        MsgBox("You must fill all fields!")
+                    MsgBox("You must fill all fields!")
+                    txt_newpassword1.ResetText()
+                    txt_newpassword2.ResetText()
                     ElseIf txt_newpassword1.TextLength < 8 Then
-                        MsgBox("Your password must be at least 8 characters")
+                    MsgBox("Your password must be at least 8 characters")
+                    txt_newpassword1.ResetText()
+                    txt_newpassword2.ResetText()
                     ElseIf txt_newpassword1.Text = txt_newpassword2.Text Then
                         NewCommand("update users set password = '" & hash(txt_newpassword1.Text) & "' where username = '" & My.Settings.CurrentUsername & "'")
                         txt_oldpassword.ResetText()
@@ -706,13 +724,18 @@ Public Class frm_home
                         txt_newpassword2.ResetText()
                         MsgBox("Your password was changed successfully.")
                     Else
-                        MsgBox("The new passwords do not match!")
+                    MsgBox("The new passwords do not match!")
+                    txt_newpassword1.ResetText()
+                    txt_newpassword2.ResetText()
                     End If
                 Catch ex As Exception
                     MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
                 End Try
         Else
             MsgBox("The password you entered is incorrect.")
+            txt_oldpassword.ResetText()
+            txt_newpassword1.ResetText()
+            txt_newpassword2.ResetText()
         End If
     End Sub
 

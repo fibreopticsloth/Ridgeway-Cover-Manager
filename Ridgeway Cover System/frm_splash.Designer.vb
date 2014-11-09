@@ -43,9 +43,9 @@ Partial Class frm_splash
         '
         'Label1
         '
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(108, 35)
+        Me.Label1.Location = New System.Drawing.Point(109, 36)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(385, 32)
         Me.Label1.TabIndex = 1
@@ -54,7 +54,7 @@ Partial Class frm_splash
         '
         'lbl_loading
         '
-        Me.lbl_loading.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.lbl_loading.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_loading.ForeColor = System.Drawing.Color.White
         Me.lbl_loading.Location = New System.Drawing.Point(107, 126)
         Me.lbl_loading.Name = "lbl_loading"
@@ -80,9 +80,9 @@ Partial Class frm_splash
         '
         'lbl_version
         '
-        Me.lbl_version.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_version.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_version.ForeColor = System.Drawing.Color.White
-        Me.lbl_version.Location = New System.Drawing.Point(109, 83)
+        Me.lbl_version.Location = New System.Drawing.Point(110, 83)
         Me.lbl_version.Name = "lbl_version"
         Me.lbl_version.Size = New System.Drawing.Size(382, 17)
         Me.lbl_version.TabIndex = 7
@@ -100,9 +100,9 @@ Partial Class frm_splash
         '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(106, 101)
+        Me.Label3.Location = New System.Drawing.Point(107, 101)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(387, 15)
         Me.Label3.TabIndex = 9

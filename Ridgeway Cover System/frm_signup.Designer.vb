@@ -44,30 +44,30 @@ Partial Class frm_signup
         '
         'txt_confirmpassword
         '
-        Me.txt_confirmpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_confirmpassword.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_confirmpassword.Location = New System.Drawing.Point(46, 289)
         Me.txt_confirmpassword.Name = "txt_confirmpassword"
         Me.txt_confirmpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_confirmpassword.Size = New System.Drawing.Size(157, 22)
+        Me.txt_confirmpassword.Size = New System.Drawing.Size(157, 25)
         Me.txt_confirmpassword.TabIndex = 1
         '
         'txt_password
         '
-        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_password.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.Location = New System.Drawing.Point(46, 233)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_password.Size = New System.Drawing.Size(157, 22)
+        Me.txt_password.Size = New System.Drawing.Size(157, 25)
         Me.txt_password.TabIndex = 0
         '
         'lbl_username
         '
         Me.lbl_username.AutoSize = True
-        Me.lbl_username.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.lbl_username.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_username.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.lbl_username.Location = New System.Drawing.Point(45, 140)
+        Me.lbl_username.Location = New System.Drawing.Point(43, 140)
         Me.lbl_username.Name = "lbl_username"
-        Me.lbl_username.Size = New System.Drawing.Size(155, 51)
+        Me.lbl_username.Size = New System.Drawing.Size(159, 51)
         Me.lbl_username.TabIndex = 5
         Me.lbl_username.Text = "Your username has been" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "automatically detected as:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "username"
         Me.lbl_username.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -75,20 +75,20 @@ Partial Class frm_signup
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(43, 268)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 17)
+        Me.Label3.Size = New System.Drawing.Size(117, 17)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Confirm Password:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(43, 212)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(62, 17)
+        Me.Label4.Size = New System.Drawing.Size(67, 17)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Password:"
         '
@@ -96,7 +96,7 @@ Partial Class frm_signup
         '
         Me.btn_signup.BackColor = System.Drawing.Color.WhiteSmoke
         Me.btn_signup.FlatAppearance.BorderSize = 0
-        Me.btn_signup.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.btn_signup.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_signup.ForeColor = System.Drawing.Color.Black
         Me.btn_signup.Location = New System.Drawing.Point(43, 384)
         Me.btn_signup.Name = "btn_signup"
@@ -108,11 +108,11 @@ Partial Class frm_signup
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(28, 82)
+        Me.Label1.Location = New System.Drawing.Point(24, 82)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(189, 42)
+        Me.Label1.Size = New System.Drawing.Size(196, 42)
         Me.Label1.TabIndex = 45
         Me.Label1.Text = "Sign Up for" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ridgeway Cover Scheduler"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -160,21 +160,21 @@ Partial Class frm_signup
         '
         'txt_type
         '
-        Me.txt_type.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
+        Me.txt_type.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_type.FormattingEnabled = True
         Me.txt_type.Items.AddRange(New Object() {"Teacher", "Faculty Leader", "Cover Manager"})
         Me.txt_type.Location = New System.Drawing.Point(46, 342)
         Me.txt_type.Name = "txt_type"
-        Me.txt_type.Size = New System.Drawing.Size(157, 24)
+        Me.txt_type.Size = New System.Drawing.Size(157, 25)
         Me.txt_type.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semilight", 9.75!)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(43, 322)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 17)
+        Me.Label2.Size = New System.Drawing.Size(89, 17)
         Me.Label2.TabIndex = 60
         Me.Label2.Text = "Account Type:"
         '

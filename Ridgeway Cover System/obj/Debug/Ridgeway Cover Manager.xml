@@ -79,6 +79,10 @@ RidgewayCoverManager
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.SEGOEUISL">
+	<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
 </member><member name="P:Ridgeway_Cover_Manager.My.Resources.Resources.sync">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -82,11 +82,11 @@ Partial Class frm_admin
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI Semilight", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(210, 15)
+        Me.Label3.Location = New System.Drawing.Point(209, 15)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(90, 21)
+        Me.Label3.Size = New System.Drawing.Size(92, 21)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "Admin Area"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -315,7 +315,7 @@ Partial Class frm_admin
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.txt_username)
         Me.GroupBox4.Controls.Add(Me.txt_type)
-        Me.GroupBox4.Location = New System.Drawing.Point(90, 59)
+        Me.GroupBox4.Location = New System.Drawing.Point(95, 63)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(150, 110)
         Me.GroupBox4.TabIndex = 82
@@ -364,7 +364,7 @@ Partial Class frm_admin
         Me.GroupBox5.Controls.Add(Me.Label7)
         Me.GroupBox5.Controls.Add(Me.txt_password1)
         Me.GroupBox5.Controls.Add(Me.txt_password2)
-        Me.GroupBox5.Location = New System.Drawing.Point(246, 59)
+        Me.GroupBox5.Location = New System.Drawing.Point(251, 63)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(150, 110)
         Me.GroupBox5.TabIndex = 83
@@ -406,7 +406,7 @@ Partial Class frm_admin
         Me.btn_submit.FlatAppearance.BorderSize = 0
         Me.btn_submit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.btn_submit.ForeColor = System.Drawing.Color.Black
-        Me.btn_submit.Location = New System.Drawing.Point(170, 180)
+        Me.btn_submit.Location = New System.Drawing.Point(175, 184)
         Me.btn_submit.Name = "btn_submit"
         Me.btn_submit.Size = New System.Drawing.Size(150, 30)
         Me.btn_submit.TabIndex = 4

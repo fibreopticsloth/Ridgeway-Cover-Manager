@@ -7,6 +7,7 @@ Public Class frm_covermanagement
 
     'FORM LOAD
     Private Sub frm_admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        getalldata()
         hidecolumns()
         getstats()
     End Sub
@@ -19,6 +20,12 @@ Public Class frm_covermanagement
     'HIDE COLUMNS
     Public Sub hidecolumns()
         With dg_covers
+            .Columns(0).Visible = False
+            .Columns(6).Visible = False
+            .Columns(7).Visible = False
+            .Columns(8).Visible = False
+        End With
+        With dg_external
             .Columns(0).Visible = False
             .Columns(6).Visible = False
             .Columns(7).Visible = False
@@ -49,12 +56,20 @@ Public Class frm_covermanagement
                 Next i
                 For j As Integer = 0 To id.Count - 1
                         NewCommand("update roomchange set booked = 'Booked', push ='1' where id='" & id(j) & "'")
-                Next j
+                    Next j
+                Case 3
+                    For Each i As DataGridViewRow In dg_external.SelectedRows
+                        id.Add(i.Cells(0).Value)
+                    Next i
+                    For j As Integer = 0 To id.Count - 1
+                        NewCommand("update lessons set approved = 'Approved', booked = 'Booked', push ='1' where id='" & id(j) & "'")
+                    Next j
             End Select
         Catch ex As Exception
             MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
         End Try
         getalldata()
+        hidecolumns()
     End Sub
 
     'TAB INDEX CHANGED
@@ -63,12 +78,20 @@ Public Class frm_covermanagement
         If TabControl1.SelectedIndex = 0 Then
             selected = 1
             dg_rooms.ClearSelection()
+            dg_external.ClearSelection()
         ElseIf TabControl1.SelectedIndex = 1 Then
             selected = 2
             dg_covers.ClearSelection()
+            dg_external.ClearSelection()
+        ElseIf TabControl1.SelectedIndex = 2 Then
+            selected = 3
+            dg_covers.ClearSelection()
+            dg_rooms.ClearSelection()
         Else
             getstats()
         End If
+        getalldata()
+        hidecolumns()
         Cursor = Cursors.Default
     End Sub
 
@@ -143,5 +166,9 @@ Public Class frm_covermanagement
         DateTimePicker1.Format = DateTimePickerFormat.Long
         txt_custom.Text = ds.Tables(0).Rows.Count.ToString
         DateTimePicker1.Format = DateTimePickerFormat.Short
+    End Sub
+
+    Private Sub btn_booked3_Click(sender As Object, e As EventArgs) Handles btn_booked3.Click
+        markbooked()
     End Sub
 End Class

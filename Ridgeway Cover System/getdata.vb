@@ -9,6 +9,8 @@ Module getdata
 
         If CheckConnection() Then
 
+            frm_home.lbl_main.Text = "Synchronizing"
+
             'MY REQUESTS - LESSONS
             NewQuery("select ID, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked from lessons where teacher='" & My.Settings.CurrentUsername & "'", frm_home.dg_mycovers)
             'MY REQUESTS - ROOMS
@@ -16,14 +18,16 @@ Module getdata
             'FACULTY AREA
             NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Reason from lessons where facultyhead='" & My.Settings.CurrentUsername & "' and approved = 'Pending'", frm_home.dg_viewrequests)
             'COVER MANAGEMENT - LESSONS
-            NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked, Push from lessons where approved = 'approved' and booked = 'pending'", frm_covermanagement.dg_covers)
+            NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked, Push from lessons where approved = 'approved' and booked = 'pending' and external = 0", frm_covermanagement.dg_covers)
             'COVER MANAGEMENT - ROOMS
             NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Booked, Push from roomchange where booked = 'pending'", frm_covermanagement.dg_rooms)
+            NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked, Push from lessons where approved = 'approved' and booked = 'pending' and external = 1", frm_covermanagement.dg_external)
             'ADMIN - USERS
             NewQuery("select ID, username, type from users", frm_admin.dg_users)
             frm_home.hidecolumns()
 
             Dim prv As String = frm_home.lbl_notify.Text
+            Dim prvfaculty As Integer = frm_home.dg_viewrequests.RowCount
 
             Dim ds1 As DataSet = NewDataCommand("SELECT id, startdate, startperiod, enddate, endperiod from lessons where push='1' and booked = 'booked' and teacher = '" & My.Settings.CurrentUsername & "'")
 
@@ -84,6 +88,11 @@ Module getdata
                 frm_home.nfi.ShowBalloonTip(6)
             End If
 
+            Dim queue As Integer = frm_covermanagement.dg_covers.RowCount + frm_covermanagement.dg_external.RowCount + frm_covermanagement.dg_rooms.RowCount
+            frm_home.lbl_pendingbooking.Text = " -- " + queue.ToString + " request(s) in queue -- "
+
+            frm_home.NotificationsToolStripMenuItem.Text = updatecount.ToString + " notification(s)"
+
             If MySQL_Connection.CheckConnection Then
 
                 Using Connection As New MySqlConnection(ConnectionString)
@@ -109,6 +118,8 @@ Module getdata
             End If
 
         End If
+
+        frm_home.lbl_main.Text = "Ridgeway Cover Manager"
 
     End Sub
 

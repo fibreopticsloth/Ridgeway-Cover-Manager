@@ -11,10 +11,12 @@ Module submitrequest
     Dim enddate As String
     Dim endperiod As String
     Dim reason As String
+    Dim external As String
+    Dim singlelesson As Boolean
 
     'RUN THROUGH THIS MODULE, PREPARING DATA FOR SUBMISSION, THEN SUBMIT IT
-    Public Function submit(type_ As String, teacher_ As String, facultyhead_ As String, startdate_ As DateTimePicker, startperiod_ As String, enddate_ As DateTimePicker, endperiod_ As String, reason_ As String)
-        getdata(type_, teacher_, facultyhead_, startdate_, startperiod_, enddate_, endperiod_, reason_)
+    Public Function submit(type_ As String, teacher_ As String, facultyhead_ As String, startdate_ As DateTimePicker, startperiod_ As String, enddate_ As DateTimePicker, endperiod_ As String, reason_ As String, external_ As String, single_ As Boolean)
+        getdata(type_, teacher_, facultyhead_, startdate_, startperiod_, enddate_, endperiod_, reason_, external_, single_)
         appendtime()
         If allfilled() = 1 And startbeforeend() = 1 And checkoverlap() = 1 Then
             sqlinsert()
@@ -24,7 +26,7 @@ Module submitrequest
     End Function
 
     'GET THE DATA FROM THE REQUEST FORMS
-    Public Sub getdata(type_ As String, teacher_ As String, facultyhead_ As String, startdate_ As DateTimePicker, startperiod_ As String, enddate_ As DateTimePicker, endperiod_ As String, reason_ As String)
+    Public Sub getdata(type_ As String, teacher_ As String, facultyhead_ As String, startdate_ As DateTimePicker, startperiod_ As String, enddate_ As DateTimePicker, endperiod_ As String, reason_ As String, external_ As String, single_ As Boolean)
         type = type_
         teacher = teacher_
         facultyhead = facultyhead_
@@ -42,6 +44,16 @@ Module submitrequest
             endperiod = CInt(endperiod_)
         End If
         reason = reason_
+        If external_ = "Yes" Then
+            external = 1
+        Else
+            external = 0
+        End If
+        If single_ = True Then
+            singlelesson = True
+        Else
+            singlelesson = False
+        End If
     End Sub
 
     'CONVERT A PERIOD NUMBER TO A TIME
@@ -87,8 +99,13 @@ Module submitrequest
 
     'APPEND THE PERIOD TIME TO THE DATE TO GET A DATETIME VALUE
     Public Sub appendtime()
-        startdate = startdate + " " + periodtimes(startperiod, "start")
-        enddate = enddate + " " + periodtimes(endperiod, "end")
+        If singlelesson = True Then
+            enddate = startdate + " " + periodtimes(startperiod, "end")
+            startdate = startdate + " " + periodtimes(startperiod, "start")
+        Else
+            startdate = startdate + " " + periodtimes(startperiod, "start")
+            enddate = enddate + " " + periodtimes(endperiod, "end")
+        End If
     End Sub
 
     'ENSURE ALL FIELDS WERE FILLED
@@ -145,7 +162,7 @@ Module submitrequest
     'INSERT THE DATA TO THE DATABASE
     Public Sub sqlinsert()
         If type = "lesson" Then
-            NewCommand("INSERT into LESSONS(teacher, facultyhead, startdate, enddate, startperiod, endperiod, reason) VALUES('" & teacher & "', '" & facultyhead & "', '" & startdate & "', '" & enddate & "', '" & startperiod & "', '" & endperiod & "', '" & reason & "')")
+            NewCommand("INSERT into LESSONS(teacher, facultyhead, startdate, enddate, startperiod, endperiod, reason, external) VALUES('" & teacher & "', '" & facultyhead & "', '" & startdate & "', '" & enddate & "', '" & startperiod & "', '" & endperiod & "', '" & reason & "', '" & external & "')")
         ElseIf type = "room" Then
             NewCommand("INSERT into ROOMCHANGE(teacher, startdate, enddate, startperiod, endperiod, reason) VALUES('" & teacher & "', '" & startdate & "', '" & enddate & "', '" & startperiod & "', '" & endperiod & "', '" & reason & "')")
         Else
