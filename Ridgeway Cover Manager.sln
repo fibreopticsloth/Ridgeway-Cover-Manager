@@ -5,8 +5,6 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Ridgeway Cover Manager", "Ridgeway Cover System\Ridgeway Cover Manager.vbproj", "{F1BC4A42-FCF8-49BE-A8AE-93C8155B1BEF}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Ridgeway Cover Manager Setup", "Ridgeway Cover Manager Setup\Ridgeway Cover Manager Setup.vdproj", "{99B5B0C6-6733-4807-9B8E-14986396C768}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,10 +16,6 @@ Global
 		{F1BC4A42-FCF8-49BE-A8AE-93C8155B1BEF}.Debug|Any CPU.Deploy.0 = Release|Any CPU
 		{F1BC4A42-FCF8-49BE-A8AE-93C8155B1BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1BC4A42-FCF8-49BE-A8AE-93C8155B1BEF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99B5B0C6-6733-4807-9B8E-14986396C768}.Debug|Any CPU.ActiveCfg = Release
-		{99B5B0C6-6733-4807-9B8E-14986396C768}.Debug|Any CPU.Build.0 = Release
-		{99B5B0C6-6733-4807-9B8E-14986396C768}.Debug|Any CPU.Deploy.0 = Release
-		{99B5B0C6-6733-4807-9B8E-14986396C768}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
