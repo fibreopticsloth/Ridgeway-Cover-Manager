@@ -31,6 +31,9 @@ Partial Class frm_covermanagement
         Me.btn_booked = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.btn_booked2 = New System.Windows.Forms.Button()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.btn_booked3 = New System.Windows.Forms.Button()
+        Me.dg_external = New System.Windows.Forms.DataGridView()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_custom = New System.Windows.Forms.TextBox()
@@ -47,21 +50,19 @@ Partial Class frm_covermanagement
         Me.tt_back = New System.Windows.Forms.ToolTip(Me.components)
         Me.tt_update = New System.Windows.Forms.ToolTip(Me.components)
         Me.btn_update = New System.Windows.Forms.PictureBox()
-        Me.panel_sidebar = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.dg_external = New System.Windows.Forms.DataGridView()
-        Me.btn_booked3 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.dg_covers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dg_rooms, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
-        CType(Me.btn_update, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.panel_sidebar.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.dg_external, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.btn_update, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'dg_covers
@@ -81,7 +82,7 @@ Partial Class frm_covermanagement
         Me.dg_covers.ReadOnly = True
         Me.dg_covers.RowHeadersVisible = False
         Me.dg_covers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_covers.Size = New System.Drawing.Size(370, 347)
+        Me.dg_covers.Size = New System.Drawing.Size(526, 277)
         Me.dg_covers.TabIndex = 0
         '
         'dg_rooms
@@ -114,11 +115,11 @@ Partial Class frm_covermanagement
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 34)
+        Me.TabControl1.Location = New System.Drawing.Point(10, 58)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(384, 438)
+        Me.TabControl1.Size = New System.Drawing.Size(540, 368)
         Me.TabControl1.TabIndex = 2
         '
         'TabPage1
@@ -128,7 +129,7 @@ Partial Class frm_covermanagement
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(376, 412)
+        Me.TabPage1.Size = New System.Drawing.Size(532, 342)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Cover Requests"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -144,7 +145,7 @@ Partial Class frm_covermanagement
         Me.btn_booked.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_booked.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_booked.ForeColor = System.Drawing.Color.White
-        Me.btn_booked.Location = New System.Drawing.Point(252, 365)
+        Me.btn_booked.Location = New System.Drawing.Point(408, 295)
         Me.btn_booked.Name = "btn_booked"
         Me.btn_booked.Size = New System.Drawing.Size(120, 35)
         Me.btn_booked.TabIndex = 4
@@ -179,6 +180,53 @@ Partial Class frm_covermanagement
         Me.btn_booked2.TabIndex = 5
         Me.btn_booked2.Text = "Mark as Booked"
         Me.btn_booked2.UseVisualStyleBackColor = False
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.btn_booked3)
+        Me.TabPage4.Controls.Add(Me.dg_external)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(376, 412)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "External"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'btn_booked3
+        '
+        Me.btn_booked3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_booked3.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.btn_booked3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_booked3.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText
+        Me.btn_booked3.FlatAppearance.BorderSize = 0
+        Me.btn_booked3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_booked3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
+        Me.btn_booked3.ForeColor = System.Drawing.Color.White
+        Me.btn_booked3.Location = New System.Drawing.Point(252, 365)
+        Me.btn_booked3.Name = "btn_booked3"
+        Me.btn_booked3.Size = New System.Drawing.Size(120, 35)
+        Me.btn_booked3.TabIndex = 6
+        Me.btn_booked3.Text = "Mark as Booked"
+        Me.btn_booked3.UseVisualStyleBackColor = False
+        '
+        'dg_external
+        '
+        Me.dg_external.AllowUserToAddRows = False
+        Me.dg_external.AllowUserToDeleteRows = False
+        Me.dg_external.AllowUserToResizeColumns = False
+        Me.dg_external.AllowUserToResizeRows = False
+        Me.dg_external.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dg_external.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dg_external.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dg_external.Dock = System.Windows.Forms.DockStyle.Top
+        Me.dg_external.Location = New System.Drawing.Point(3, 3)
+        Me.dg_external.Name = "dg_external"
+        Me.dg_external.ReadOnly = True
+        Me.dg_external.RowHeadersVisible = False
+        Me.dg_external.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dg_external.Size = New System.Drawing.Size(370, 347)
+        Me.dg_external.TabIndex = 1
         '
         'TabPage3
         '
@@ -342,7 +390,7 @@ Partial Class frm_covermanagement
         '
         Me.btn_update.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_update.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.sync
-        Me.btn_update.Location = New System.Drawing.Point(3, 5)
+        Me.btn_update.Location = New System.Drawing.Point(12, 9)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(29, 21)
         Me.btn_update.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -350,87 +398,51 @@ Partial Class frm_covermanagement
         Me.btn_update.TabStop = False
         Me.tt_update.SetToolTip(Me.btn_update, "Update the records in this form")
         '
-        'panel_sidebar
-        '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.panel_sidebar.Controls.Add(Me.btn_update)
-        Me.panel_sidebar.Controls.Add(Me.Label3)
-        Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panel_sidebar.Location = New System.Drawing.Point(0, 0)
-        Me.panel_sidebar.Margin = New System.Windows.Forms.Padding(0)
-        Me.panel_sidebar.Name = "panel_sidebar"
-        Me.panel_sidebar.Padding = New System.Windows.Forms.Padding(7)
-        Me.panel_sidebar.Size = New System.Drawing.Size(384, 31)
-        Me.panel_sidebar.TabIndex = 60
-        '
         'Label3
         '
         Me.Label3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(0, 2)
+        Me.Label3.Location = New System.Drawing.Point(209, 11)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(384, 26)
+        Me.Label3.Size = New System.Drawing.Size(154, 17)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "Cover Management Area"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TabPage4
+        'Panel1
         '
-        Me.TabPage4.Controls.Add(Me.btn_booked3)
-        Me.TabPage4.Controls.Add(Me.dg_external)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(376, 412)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "External"
-        Me.TabPage4.UseVisualStyleBackColor = True
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 40)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(559, 7)
+        Me.Panel1.TabIndex = 84
         '
-        'dg_external
+        'Panel2
         '
-        Me.dg_external.AllowUserToAddRows = False
-        Me.dg_external.AllowUserToDeleteRows = False
-        Me.dg_external.AllowUserToResizeColumns = False
-        Me.dg_external.AllowUserToResizeRows = False
-        Me.dg_external.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dg_external.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dg_external.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dg_external.Dock = System.Windows.Forms.DockStyle.Top
-        Me.dg_external.Location = New System.Drawing.Point(3, 3)
-        Me.dg_external.Name = "dg_external"
-        Me.dg_external.ReadOnly = True
-        Me.dg_external.RowHeadersVisible = False
-        Me.dg_external.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dg_external.Size = New System.Drawing.Size(370, 347)
-        Me.dg_external.TabIndex = 1
-        '
-        'btn_booked3
-        '
-        Me.btn_booked3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_booked3.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
-        Me.btn_booked3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_booked3.FlatAppearance.BorderColor = System.Drawing.SystemColors.GrayText
-        Me.btn_booked3.FlatAppearance.BorderSize = 0
-        Me.btn_booked3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_booked3.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.btn_booked3.ForeColor = System.Drawing.Color.White
-        Me.btn_booked3.Location = New System.Drawing.Point(252, 365)
-        Me.btn_booked3.Name = "btn_booked3"
-        Me.btn_booked3.Size = New System.Drawing.Size(120, 35)
-        Me.btn_booked3.TabIndex = 6
-        Me.btn_booked3.Text = "Mark as Booked"
-        Me.btn_booked3.UseVisualStyleBackColor = False
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.btn_update)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(7)
+        Me.Panel2.Size = New System.Drawing.Size(559, 40)
+        Me.Panel2.TabIndex = 83
         '
         'frm_covermanagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(384, 472)
-        Me.Controls.Add(Me.panel_sidebar)
+        Me.ClientSize = New System.Drawing.Size(559, 436)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -444,12 +456,13 @@ Partial Class frm_covermanagement
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        CType(Me.dg_external, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         CType(Me.btn_update, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.panel_sidebar.ResumeLayout(False)
-        Me.TabPage4.ResumeLayout(False)
-        CType(Me.dg_external, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -462,7 +475,6 @@ Partial Class frm_covermanagement
     Friend WithEvents btn_booked As System.Windows.Forms.Button
     Friend WithEvents tt_back As System.Windows.Forms.ToolTip
     Friend WithEvents tt_update As System.Windows.Forms.ToolTip
-    Friend WithEvents panel_sidebar As System.Windows.Forms.Panel
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btn_update As System.Windows.Forms.PictureBox
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
@@ -481,4 +493,6 @@ Partial Class frm_covermanagement
     Friend WithEvents TabPage4 As System.Windows.Forms.TabPage
     Friend WithEvents dg_external As System.Windows.Forms.DataGridView
     Friend WithEvents btn_booked3 As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
 End Class

@@ -19,3 +19,23 @@ C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\
 C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway Cover System.exe
 C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway Cover System.xml
 C:\Users\George\Desktop\Ridgeway Cover System\Ridgeway Cover System\obj\Release\Ridgeway Cover System.pdb
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Release\Ridgeway Cover Manager.exe.config
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Release\Ridgeway Cover Manager.exe.manifest
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Release\Ridgeway Cover Manager.application
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Release\Ridgeway Cover Manager.exe
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Release\Ridgeway Cover Manager.pdb
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Release\Ridgeway Cover Manager.xml
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\bin\Release\MySql.Data.dll
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway_Cover_Manager.frm_admin.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway_Cover_Manager.frm_covermanagement.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway_Cover_Manager.frm_home.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway_Cover_Manager.frm_splash.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway_Cover_Manager.frm_login.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway_Cover_Manager.Resources.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway_Cover_Manager.frm_signup.resources
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway Cover System.vbproj.GenerateResource.Cache
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway Cover Manager.exe.manifest
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway Cover Manager.application
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway Cover Manager.exe
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway Cover Manager.xml
+C:\Users\George\Google Drive\School\Computing\Project\Ridgeway-Cover-Manager\Ridgeway Cover System\obj\Release\Ridgeway Cover Manager.pdb

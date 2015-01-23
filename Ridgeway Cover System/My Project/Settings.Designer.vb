@@ -158,6 +158,18 @@ Namespace My
                 Me("PreviousUser") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property FirstMinimize() As Boolean
+            Get
+                Return CType(Me("FirstMinimize"),Boolean)
+            End Get
+            Set
+                Me("FirstMinimize") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

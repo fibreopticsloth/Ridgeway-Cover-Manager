@@ -2,9 +2,10 @@
 Public Class frm_login
 
     'DECLARATIONS
-    Dim drag As Boolean
+    Dim drag As Boolean = False
     Dim mousex As Integer
     Dim mousey As Integer
+    Dim loadvalue As Integer = 0
 
     'FORM LOAD
     Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -31,12 +32,16 @@ Public Class frm_login
             login()
         Else
             If CheckConnection() Then
-                MsgBox("Incorrect username or password.")
+                If CheckData("SELECT * FROM users WHERE username = '" & txt_username.Text & "'") Then
+                    MsgBox("Incorrect username or password.")
+                Else
+                    MsgBox("This user account does not exist")
+                End If
             Else
                 MsgBox("Cannot connect to the server. Please ensure you are connected to the internet.")
             End If
-            btn_login.Text = "Log In"
-        End If
+                btn_login.Text = "Log In"
+            End If
 
     End Sub
 
@@ -46,16 +51,14 @@ Public Class frm_login
         checktype()
         My.Settings.CurrentUsername = txt_username.Text
         My.Settings.Save()
-        frm_home.lbl_currentuser.Text = "Logged in as " + My.Settings.CurrentUsername
 
+        frm_home.load_home()
         frm_home.Show()
-        Me.Dispose()
+        frm_home.Location = Me.Location
+        Me.BringToFront()
 
         timer_fadeout.Enabled = True
         timer_fadeout.Start()
-        'frm_home.BringToFront()
-        'frm_home.ShowInTaskbar = True
-        'Me.Dispose()
     End Sub
 
     'CHECK USER TYPE
@@ -103,8 +106,9 @@ Public Class frm_login
     End Sub
 
     'SIGNUP BUTTON
-    Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_signup.Click
-        MsgBox("Ridgeway Cover Manager automatically detects your username from your Windows user account. Please ensure you are logged into your personal user account when signing up.")
+    Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles txt_signup.Click
+        Me.Hide()
+        MsgBox("Ridgeway Cover Manager automatically detects your username from your Windows user account." + vbNewLine + "Please ensure you are logged into your personal user account when signing up.")
         frm_signup.Show()
     End Sub
 
@@ -123,7 +127,26 @@ Public Class frm_login
         End If
     End Sub
 
-    Private Sub Button8_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+    Private Sub pic_logo_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+        drag = False
+    End Sub
+
+    Private Sub pic_logo_MouseDown(sender As Object, e As MouseEventArgs) Handles pic_logo.MouseDown
+        drag = True
+        mousex = Windows.Forms.Cursor.Position.X - Me.Left
+        mousey = Windows.Forms.Cursor.Position.Y - Me.Top
+    End Sub
+
+    Private Sub pic_logo_MouseMove(sender As Object, e As MouseEventArgs) Handles pic_logo.MouseMove
+        If drag Then
+            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
+            Me.Left = Windows.Forms.Cursor.Position.X - mousex
+            frm_home.Top = Windows.Forms.Cursor.Position.Y - mousey
+            frm_home.Left = Windows.Forms.Cursor.Position.X - mousex
+        End If
+    End Sub
+
+    Private Sub Button8_MouseUp(sender As Object, e As MouseEventArgs) Handles pic_logo.MouseUp
         drag = False
     End Sub
 
@@ -131,9 +154,10 @@ Public Class frm_login
         If Me.Opacity > 0 Then
             Me.Opacity -= 0.1
         Else
+            Me.ShowInTaskbar = False
+            Me.Dispose()
             timer_fadeout.Stop()
             timer_fadeout.Enabled = False
-            Me.Dispose()
         End If
     End Sub
 
@@ -150,13 +174,13 @@ Public Class frm_login
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Label3_MouseDown(sender As Object, e As MouseEventArgs) Handles Label3.MouseDown
+    Private Sub Label3_MouseDown(sender As Object, e As MouseEventArgs)
         drag = True
         mousex = Windows.Forms.Cursor.Position.X - Me.Left
         mousey = Windows.Forms.Cursor.Position.Y - Me.Top
     End Sub
 
-    Private Sub Label3_MouseMove(sender As Object, e As MouseEventArgs) Handles Label3.MouseMove
+    Private Sub Label3_MouseMove(sender As Object, e As MouseEventArgs)
         If drag Then
             Me.Top = Windows.Forms.Cursor.Position.Y - mousey
             Me.Left = Windows.Forms.Cursor.Position.X - mousex
@@ -165,7 +189,7 @@ Public Class frm_login
         End If
     End Sub
 
-    Private Sub Label3_MouseUp(sender As Object, e As MouseEventArgs) Handles Label3.MouseUp
+    Private Sub Label3_MouseUp(sender As Object, e As MouseEventArgs)
         drag = False
     End Sub
 
@@ -173,7 +197,8 @@ Public Class frm_login
         Application.Exit()
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         MsgBox("If you have forgotton your password, please contact IT support.")
     End Sub
+
 End Class

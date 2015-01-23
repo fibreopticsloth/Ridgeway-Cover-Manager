@@ -4,8 +4,9 @@ Module MySQL_Connection
 
     'DECLARATIONS
     Public conn As MySqlConnection
-    Public ConnectionString As String = "server=localhost;userid=root;password=admin;database=coversystem;pooling = false"
-    'Public ConnectionString As String = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem"
+    'Public ConnectionString As String = "server=georgedunk.co.uk;userid=rcm;password=dlop890;database=covermanager;pooling = false"
+    'Public ConnectionString As String = "server=localhost;userid=root;password=admin;database=coversystem;pooling = false"
+    Public ConnectionString As String = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem;pooling = false"
     Public cmd As MySqlCommand
     Public ds As DataSet
     Public bs As BindingSource
@@ -20,7 +21,7 @@ Module MySQL_Connection
             Try
                 Connection.Open()
             Catch ex As Exception
-                WriteError()
+
             End Try
 
             If Connection.State = ConnectionState.Open Then
@@ -57,6 +58,8 @@ Module MySQL_Connection
                     Connection.Close()
                     Connection.Dispose()
                     .Dispose()
+
+                    WriteToLog(CmdText)
 
                 End With
 
@@ -149,21 +152,25 @@ Module MySQL_Connection
 
     End Sub
 
-    'CONNECT TO DB
-    Public Sub WriteError()
-        Dim path As String = System.Environment.GetFolderPath(Environment.SpecialFolder.Windows)
-        Dim FILE_NAME As String = path & "\SET\errorlog.txt"
-        If System.IO.File.Exists(FILE_NAME) = True Then
-            Dim objWriter As New System.IO.StreamWriter(FILE_NAME, IO.FileMode.Append)
-            objWriter.WriteLine(DateTime.Now.ToString + " | " + ErrorToString())
-            objWriter.Close()
-        Else
-            My.Computer.FileSystem.CreateDirectory(path & "\SET")
-            Dim objWriter As IO.StreamWriter
-            objWriter = IO.File.CreateText(FILE_NAME)
-            objWriter.WriteLine(DateTime.Now.ToString + " | " + ErrorToString())
-            objWriter.Close()
+    'WRITE TO LOG
+    Public Sub WriteToLog(statement)
+
+        Dim path As String = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\RCM"
+        Dim filename As String = path & "\log.txt"
+
+        If System.IO.Directory.Exists(path) = False Then
+            System.IO.Directory.CreateDirectory(path)
         End If
+
+        If System.IO.File.Exists(filename) = False Then
+            System.IO.File.Create(filename).Dispose()
+        End If
+
+        Dim objWriter As New System.IO.StreamWriter(filename, True)
+        objWriter.WriteLine(DateTime.Now + " - " + My.Settings.CurrentUsername + " - " + statement)
+        objWriter.WriteLine()
+        objWriter.Close()
+
     End Sub
     
 End Module

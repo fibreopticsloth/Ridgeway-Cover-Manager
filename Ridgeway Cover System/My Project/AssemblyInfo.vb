@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Ridgeway Cover System")> 
+<Assembly: AssemblyTitle("Ridgeway Cover Manager")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Ridgeway Cover System")> 
-<Assembly: AssemblyCopyright("Copyright ©  2014")> 
+<Assembly: AssemblyCompany("The Ridgeway School & Sixth Form College")> 
+<Assembly: AssemblyProduct("Ridgeway Cover Manager")> 
+<Assembly: AssemblyCopyright("Copyright © The Ridgeway School 2014")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>

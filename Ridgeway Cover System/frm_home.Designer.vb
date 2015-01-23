@@ -172,9 +172,9 @@ Partial Class frm_home
         Me.btn_roomchange.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_roomchange.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btn_roomchange.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_roomchange.Location = New System.Drawing.Point(1, 93)
+        Me.btn_roomchange.Location = New System.Drawing.Point(9, 117)
         Me.btn_roomchange.Name = "btn_roomchange"
-        Me.btn_roomchange.Size = New System.Drawing.Size(133, 35)
+        Me.btn_roomchange.Size = New System.Drawing.Size(126, 35)
         Me.btn_roomchange.TabIndex = 4
         Me.btn_roomchange.TabStop = False
         Me.btn_roomchange.Text = "Room Change"
@@ -191,9 +191,9 @@ Partial Class frm_home
         Me.btn_facultyarea.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_facultyarea.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btn_facultyarea.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_facultyarea.Location = New System.Drawing.Point(1, 187)
+        Me.btn_facultyarea.Location = New System.Drawing.Point(9, 211)
         Me.btn_facultyarea.Name = "btn_facultyarea"
-        Me.btn_facultyarea.Size = New System.Drawing.Size(133, 35)
+        Me.btn_facultyarea.Size = New System.Drawing.Size(126, 35)
         Me.btn_facultyarea.TabIndex = 10
         Me.btn_facultyarea.TabStop = False
         Me.btn_facultyarea.Text = "Faculty Area"
@@ -210,9 +210,9 @@ Partial Class frm_home
         Me.btn_myrequests.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_myrequests.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btn_myrequests.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_myrequests.Location = New System.Drawing.Point(1, 153)
+        Me.btn_myrequests.Location = New System.Drawing.Point(9, 177)
         Me.btn_myrequests.Name = "btn_myrequests"
-        Me.btn_myrequests.Size = New System.Drawing.Size(133, 35)
+        Me.btn_myrequests.Size = New System.Drawing.Size(126, 35)
         Me.btn_myrequests.TabIndex = 9
         Me.btn_myrequests.TabStop = False
         Me.btn_myrequests.Text = "My Requests"
@@ -229,9 +229,9 @@ Partial Class frm_home
         Me.btn_requestcover.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_requestcover.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btn_requestcover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_requestcover.Location = New System.Drawing.Point(1, 59)
+        Me.btn_requestcover.Location = New System.Drawing.Point(9, 83)
         Me.btn_requestcover.Name = "btn_requestcover"
-        Me.btn_requestcover.Size = New System.Drawing.Size(133, 35)
+        Me.btn_requestcover.Size = New System.Drawing.Size(126, 35)
         Me.btn_requestcover.TabIndex = 12
         Me.btn_requestcover.TabStop = False
         Me.btn_requestcover.Text = "Cover Request"
@@ -248,9 +248,9 @@ Partial Class frm_home
         Me.btn_accountdetails.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_accountdetails.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btn_accountdetails.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_accountdetails.Location = New System.Drawing.Point(1, 281)
+        Me.btn_accountdetails.Location = New System.Drawing.Point(9, 305)
         Me.btn_accountdetails.Name = "btn_accountdetails"
-        Me.btn_accountdetails.Size = New System.Drawing.Size(133, 35)
+        Me.btn_accountdetails.Size = New System.Drawing.Size(126, 35)
         Me.btn_accountdetails.TabIndex = 14
         Me.btn_accountdetails.TabStop = False
         Me.btn_accountdetails.Text = "Account Details"
@@ -299,9 +299,9 @@ Partial Class frm_home
         Me.btn_notifications.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_notifications.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.btn_notifications.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_notifications.Location = New System.Drawing.Point(1, 221)
+        Me.btn_notifications.Location = New System.Drawing.Point(9, 245)
         Me.btn_notifications.Name = "btn_notifications"
-        Me.btn_notifications.Size = New System.Drawing.Size(133, 35)
+        Me.btn_notifications.Size = New System.Drawing.Size(126, 35)
         Me.btn_notifications.TabIndex = 65
         Me.btn_notifications.TabStop = False
         Me.btn_notifications.Text = "Notifications"
@@ -313,12 +313,12 @@ Partial Class frm_home
         '
         'PictureBox4
         '
-        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.home
-        Me.PictureBox4.Location = New System.Drawing.Point(57, 5)
+        Me.PictureBox4.Location = New System.Drawing.Point(57, 13)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(29, 21)
+        Me.PictureBox4.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 77
         Me.PictureBox4.TabStop = False
@@ -326,12 +326,12 @@ Partial Class frm_home
         '
         'PictureBox3
         '
-        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox3.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.logout
-        Me.PictureBox3.Location = New System.Drawing.Point(1, 6)
+        Me.PictureBox3.Location = New System.Drawing.Point(9, 13)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(29, 21)
+        Me.PictureBox3.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 76
         Me.PictureBox3.TabStop = False
@@ -339,12 +339,12 @@ Partial Class frm_home
         '
         'btn_sync
         '
-        Me.btn_sync.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.btn_sync.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.btn_sync.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_sync.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.sync
-        Me.btn_sync.Location = New System.Drawing.Point(29, 6)
+        Me.btn_sync.Location = New System.Drawing.Point(33, 13)
         Me.btn_sync.Name = "btn_sync"
-        Me.btn_sync.Size = New System.Drawing.Size(29, 21)
+        Me.btn_sync.Size = New System.Drawing.Size(18, 18)
         Me.btn_sync.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btn_sync.TabIndex = 62
         Me.btn_sync.TabStop = False
@@ -352,19 +352,19 @@ Partial Class frm_home
         '
         'Button5
         '
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Default
         Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.Button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(1, 34)
+        Me.Button5.Location = New System.Drawing.Point(9, 58)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(133, 25)
+        Me.Button5.Size = New System.Drawing.Size(126, 25)
         Me.Button5.TabIndex = 67
         Me.Button5.TabStop = False
         Me.Button5.Text = "NEW"
@@ -372,19 +372,19 @@ Partial Class frm_home
         '
         'Button6
         '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Button6.Cursor = System.Windows.Forms.Cursors.Default
         Me.Button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.Button6.FlatAppearance.BorderSize = 0
         Me.Button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.Button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button6.Location = New System.Drawing.Point(1, 128)
+        Me.Button6.Location = New System.Drawing.Point(9, 152)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(133, 25)
+        Me.Button6.Size = New System.Drawing.Size(126, 25)
         Me.Button6.TabIndex = 68
         Me.Button6.TabStop = False
         Me.Button6.Text = "MANAGE REQUESTS"
@@ -392,19 +392,19 @@ Partial Class frm_home
         '
         'Button7
         '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
+        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Button7.Cursor = System.Windows.Forms.Cursors.Default
         Me.Button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.Button7.FlatAppearance.BorderSize = 0
         Me.Button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.Button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer))
         Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.White
         Me.Button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button7.Location = New System.Drawing.Point(1, 256)
+        Me.Button7.Location = New System.Drawing.Point(9, 280)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(133, 25)
+        Me.Button7.Size = New System.Drawing.Size(126, 25)
         Me.Button7.TabIndex = 69
         Me.Button7.TabStop = False
         Me.Button7.Text = "OPTIONS"
@@ -576,7 +576,7 @@ Partial Class frm_home
         '
         'panel_requestcover
         '
-        Me.panel_requestcover.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_requestcover.BackColor = System.Drawing.Color.White
         Me.panel_requestcover.Controls.Add(Me.Label6)
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_reason)
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_facultyhead)
@@ -592,7 +592,7 @@ Partial Class frm_home
         Me.panel_requestcover.Controls.Add(Me.requestcover_chk_thislessononly)
         Me.panel_requestcover.Controls.Add(Me.lbl_startperiodcover)
         Me.panel_requestcover.Controls.Add(Me.requestcover_txt_startperiod)
-        Me.panel_requestcover.Location = New System.Drawing.Point(138, 38)
+        Me.panel_requestcover.Location = New System.Drawing.Point(144, 58)
         Me.panel_requestcover.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_requestcover.Name = "panel_requestcover"
         Me.panel_requestcover.Size = New System.Drawing.Size(500, 383)
@@ -641,7 +641,7 @@ Partial Class frm_home
         Me.dg_mycovers.AllowUserToResizeColumns = False
         Me.dg_mycovers.AllowUserToResizeRows = False
         Me.dg_mycovers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dg_mycovers.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dg_mycovers.BackgroundColor = System.Drawing.Color.White
         Me.dg_mycovers.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
@@ -679,7 +679,7 @@ Partial Class frm_home
         Me.dg_myroomchanges.AllowUserToResizeColumns = False
         Me.dg_myroomchanges.AllowUserToResizeRows = False
         Me.dg_myroomchanges.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dg_myroomchanges.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dg_myroomchanges.BackgroundColor = System.Drawing.Color.White
         Me.dg_myroomchanges.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dg_myroomchanges.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_myroomchanges.Dock = System.Windows.Forms.DockStyle.Fill
@@ -693,10 +693,10 @@ Partial Class frm_home
         '
         'panel_myrequests
         '
-        Me.panel_myrequests.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_myrequests.BackColor = System.Drawing.Color.White
         Me.panel_myrequests.Controls.Add(Me.myrequests_btn_cancel)
         Me.panel_myrequests.Controls.Add(Me.myrequests_tc_myrequests)
-        Me.panel_myrequests.Location = New System.Drawing.Point(138, 38)
+        Me.panel_myrequests.Location = New System.Drawing.Point(144, 58)
         Me.panel_myrequests.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_myrequests.Name = "panel_myrequests"
         Me.panel_myrequests.Size = New System.Drawing.Size(500, 383)
@@ -725,7 +725,7 @@ Partial Class frm_home
         Me.dg_viewrequests.AllowUserToResizeColumns = False
         Me.dg_viewrequests.AllowUserToResizeRows = False
         Me.dg_viewrequests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dg_viewrequests.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dg_viewrequests.BackgroundColor = System.Drawing.Color.White
         Me.dg_viewrequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dg_viewrequests.Location = New System.Drawing.Point(18, 17)
         Me.dg_viewrequests.MultiSelect = False
@@ -897,7 +897,7 @@ Partial Class frm_home
         '
         'panel_facultyarea
         '
-        Me.panel_facultyarea.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_facultyarea.BackColor = System.Drawing.Color.White
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_btn_reject)
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_btn_approve)
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_txt_reason)
@@ -912,7 +912,7 @@ Partial Class frm_home
         Me.panel_facultyarea.Controls.Add(Me.Label24)
         Me.panel_facultyarea.Controls.Add(Me.facultyarea_txt_startperiod)
         Me.panel_facultyarea.Controls.Add(Me.dg_viewrequests)
-        Me.panel_facultyarea.Location = New System.Drawing.Point(138, 38)
+        Me.panel_facultyarea.Location = New System.Drawing.Point(144, 58)
         Me.panel_facultyarea.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_facultyarea.Name = "panel_facultyarea"
         Me.panel_facultyarea.Size = New System.Drawing.Size(500, 383)
@@ -1075,7 +1075,7 @@ Partial Class frm_home
         '
         'panel_roomchange
         '
-        Me.panel_roomchange.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_roomchange.BackColor = System.Drawing.Color.White
         Me.panel_roomchange.Controls.Add(Me.Label8)
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_room)
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_reason)
@@ -1092,7 +1092,7 @@ Partial Class frm_home
         Me.panel_roomchange.Controls.Add(Me.Label19)
         Me.panel_roomchange.Controls.Add(Me.roomchange_txt_startperiod)
         Me.panel_roomchange.Font = New System.Drawing.Font("Segoe UI Semilight", 9.0!)
-        Me.panel_roomchange.Location = New System.Drawing.Point(138, 38)
+        Me.panel_roomchange.Location = New System.Drawing.Point(144, 58)
         Me.panel_roomchange.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_roomchange.Name = "panel_roomchange"
         Me.panel_roomchange.Size = New System.Drawing.Size(500, 383)
@@ -1128,7 +1128,7 @@ Partial Class frm_home
         '
         'lbl_notify
         '
-        Me.lbl_notify.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.lbl_notify.BackColor = System.Drawing.Color.White
         Me.lbl_notify.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.lbl_notify.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_notify.ForeColor = System.Drawing.Color.FromArgb(CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer), CType(CType(28, Byte), Integer))
@@ -1143,12 +1143,12 @@ Partial Class frm_home
         '
         'panel_notifications
         '
-        Me.panel_notifications.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_notifications.BackColor = System.Drawing.Color.White
         Me.panel_notifications.Controls.Add(Me.lbl_notify)
         Me.panel_notifications.Controls.Add(Me.panel_notifications_clearnotifications)
         Me.panel_notifications.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.panel_notifications.ForeColor = System.Drawing.Color.White
-        Me.panel_notifications.Location = New System.Drawing.Point(138, 38)
+        Me.panel_notifications.Location = New System.Drawing.Point(144, 58)
         Me.panel_notifications.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_notifications.Name = "panel_notifications"
         Me.panel_notifications.Size = New System.Drawing.Size(500, 383)
@@ -1183,10 +1183,10 @@ Partial Class frm_home
         '
         'panel_start
         '
-        Me.panel_start.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_start.BackColor = System.Drawing.Color.White
         Me.panel_start.Controls.Add(Me.txt_logout)
         Me.panel_start.Controls.Add(Me.lbl_currentuser)
-        Me.panel_start.Location = New System.Drawing.Point(138, 38)
+        Me.panel_start.Location = New System.Drawing.Point(144, 58)
         Me.panel_start.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_start.Name = "panel_start"
         Me.panel_start.Size = New System.Drawing.Size(500, 383)
@@ -1197,28 +1197,28 @@ Partial Class frm_home
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(5, 394)
+        Me.Label2.Location = New System.Drawing.Point(13, 404)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(124, 24)
+        Me.Label2.Size = New System.Drawing.Size(117, 24)
         Me.Label2.TabIndex = 64
         Me.Label2.Text = "© TRS 2014"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button8
         '
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Button8.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(172, Byte), Integer))
+        Me.Button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Button8.FlatAppearance.BorderSize = 0
-        Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.Button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.Button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.White
         Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(1, 1)
+        Me.Button8.Location = New System.Drawing.Point(0, 1)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(640, 31)
+        Me.Button8.Size = New System.Drawing.Size(655, 40)
         Me.Button8.TabIndex = 70
         Me.Button8.TabStop = False
         Me.Button8.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -1226,10 +1226,10 @@ Partial Class frm_home
         '
         'lbl_main
         '
-        Me.lbl_main.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
-        Me.lbl_main.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_main.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.lbl_main.Font = New System.Drawing.Font("Segoe UI", 10.5!)
         Me.lbl_main.ForeColor = System.Drawing.Color.White
-        Me.lbl_main.Location = New System.Drawing.Point(138, 7)
+        Me.lbl_main.Location = New System.Drawing.Point(144, 12)
         Me.lbl_main.Name = "lbl_main"
         Me.lbl_main.Size = New System.Drawing.Size(500, 19)
         Me.lbl_main.TabIndex = 71
@@ -1247,19 +1247,19 @@ Partial Class frm_home
         Me.Button9.Font = New System.Drawing.Font("Segoe UI Semilight", 8.25!)
         Me.Button9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer), CType(CType(80, Byte), Integer))
         Me.Button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button9.Location = New System.Drawing.Point(1, 315)
+        Me.Button9.Location = New System.Drawing.Point(9, 339)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(133, 114)
+        Me.Button9.Size = New System.Drawing.Size(126, 103)
         Me.Button9.TabIndex = 72
         Me.Button9.TabStop = False
         Me.Button9.UseVisualStyleBackColor = False
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(172, Byte), Integer))
-        Me.Panel1.Location = New System.Drawing.Point(1, 32)
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel1.Location = New System.Drawing.Point(0, 41)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(640, 2)
+        Me.Panel1.Size = New System.Drawing.Size(655, 7)
         Me.Panel1.TabIndex = 64
         '
         'StatusStrip1
@@ -1267,9 +1267,9 @@ Partial Class frm_home
         Me.StatusStrip1.AutoSize = False
         Me.StatusStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton2, Me.ToolStripDropDownButton1, Me.Help, Me.lbl_pendingbooking, Me.ToolStripStatusLabel1, Me.toolstrip_status})
-        Me.StatusStrip1.Location = New System.Drawing.Point(1, 425)
+        Me.StatusStrip1.Location = New System.Drawing.Point(1, 451)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(640, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(653, 22)
         Me.StatusStrip1.SizingGrip = False
         Me.StatusStrip1.TabIndex = 73
         '
@@ -1351,7 +1351,7 @@ Partial Class frm_home
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(272, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(285, 17)
         Me.ToolStripStatusLabel1.Spring = True
         '
         'toolstrip_status
@@ -1366,7 +1366,7 @@ Partial Class frm_home
         '
         'panel_accountdetails
         '
-        Me.panel_accountdetails.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.panel_accountdetails.BackColor = System.Drawing.Color.White
         Me.panel_accountdetails.Controls.Add(Me.Label29)
         Me.panel_accountdetails.Controls.Add(Me.btn_submittype)
         Me.panel_accountdetails.Controls.Add(Me.Label28)
@@ -1379,7 +1379,7 @@ Partial Class frm_home
         Me.panel_accountdetails.Controls.Add(Me.Label1)
         Me.panel_accountdetails.Controls.Add(Me.Label3)
         Me.panel_accountdetails.Controls.Add(Me.txt_oldpassword)
-        Me.panel_accountdetails.Location = New System.Drawing.Point(138, 38)
+        Me.panel_accountdetails.Location = New System.Drawing.Point(144, 58)
         Me.panel_accountdetails.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_accountdetails.Name = "panel_accountdetails"
         Me.panel_accountdetails.Size = New System.Drawing.Size(500, 383)
@@ -1520,24 +1520,24 @@ Partial Class frm_home
         '
         'PictureBox2
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.minimize
-        Me.PictureBox2.Location = New System.Drawing.Point(594, 7)
+        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.minimize_2
+        Me.PictureBox2.Location = New System.Drawing.Point(602, 13)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox2.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 75
         Me.PictureBox2.TabStop = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.close
-        Me.PictureBox1.Location = New System.Drawing.Point(617, 7)
+        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.close_2
+        Me.PictureBox1.Location = New System.Drawing.Point(626, 13)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(20, 20)
+        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 74
         Me.PictureBox1.TabStop = False
@@ -1547,9 +1547,9 @@ Partial Class frm_home
         Me.pic_logo.BackColor = System.Drawing.Color.White
         Me.pic_logo.Cursor = System.Windows.Forms.Cursors.Default
         Me.pic_logo.Image = CType(resources.GetObject("pic_logo.Image"), System.Drawing.Image)
-        Me.pic_logo.Location = New System.Drawing.Point(5, 337)
+        Me.pic_logo.Location = New System.Drawing.Point(13, 359)
         Me.pic_logo.Name = "pic_logo"
-        Me.pic_logo.Size = New System.Drawing.Size(124, 44)
+        Me.pic_logo.Size = New System.Drawing.Size(117, 44)
         Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
@@ -1558,8 +1558,8 @@ Partial Class frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(642, 451)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(655, 477)
         Me.Controls.Add(Me.panel_start)
         Me.Controls.Add(Me.panel_notifications)
         Me.Controls.Add(Me.panel_myrequests)

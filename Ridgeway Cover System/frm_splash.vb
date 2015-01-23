@@ -7,7 +7,7 @@
     Private Sub frm_splash_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         timersplash.Start()
         timerfade.Start()
-        lbl_version.Text = "Version " + My.Settings.Version
+        lbl_version.Text = "Version " + My.Application.Deployment.CurrentVersion.ToString
         Me.Opacity = 0
     End Sub
 
@@ -31,6 +31,6 @@
 
         Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
 
-        e.Graphics.DrawRectangle(Pens.White, rect)
+        e.Graphics.DrawRectangle(Pens.DimGray, rect)
     End Sub
 End Class

@@ -10,7 +10,7 @@ Public Class frm_signup
 
     'FORM LOAD
     Private Sub frm_signup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_username.Text = "Your username has been" + vbNewLine + "automatically detected as:" + vbNewLine + Environment.UserName
+        txt_username.Text = Environment.UserName
     End Sub
 
     'CHECK DETAILS AND SIGNUP
@@ -24,14 +24,14 @@ Public Class frm_signup
             MsgBox("Your password must be at least 8 characters")
         ElseIf txt_password.Text = txt_confirmpassword.Text Then
             findstafftype()
-            Try
+            If CheckConnection() Then
                 NewCommand("INSERT INTO users(username, password, type) values('" & username & "', '" & hash(txt_password.Text) & "', '" & stafftype & "')")
                 MessageBox.Show("Please record your username and password in a safe place:" & vbNewLine & vbNewLine & "Username: " _
                          & username & vbNewLine & "Password: " & txt_password.Text, "Log In Details")
                 NewCommand("DELETE FROM auth_codes WHERE auth_code = '" & auth_code & "'")
-            Catch ex As Exception
+            Else
                 MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
-            End Try
+            End If
             With frm_login
                 .txt_username.Text = username
                 .txt_password.Text = ""
@@ -39,7 +39,7 @@ Public Class frm_signup
             End With
             Me.Dispose()
         Else
-                MsgBox("Your passwords do not match!")
+            MsgBox("Your passwords do not match!")
         End If
         resetsignup()
     End Sub
@@ -68,13 +68,15 @@ Public Class frm_signup
     '---BUTTON ACTIONS---
 
     'SIGNUP BUTTON
-    Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_signup.Click
+    Private Sub btn_signup_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         signup()
     End Sub
 
     'BACK BUTTON
     Private Sub btn_back_Click(sender As Object, e As EventArgs) Handles btn_back.Click
         Me.Dispose()
+        frm_login.Show()
+        frm_login.BringToFront()
     End Sub
 
     Private Sub txt_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_type.SelectedIndexChanged
@@ -84,6 +86,9 @@ Public Class frm_signup
                 auth_code = InputBox("Please provide your authorisation code, this will have been emailed to you")
                 If CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "' AND type = 'faculty'") Then
                     MsgBox("Authorisation code accepted.")
+                ElseIf CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "'") Then
+                    MsgBox("This authorisation code is not valid for this account type.")
+                    txt_type.SelectedIndex = -1
                 Else
                     MsgBox("This is not a valid authorisation code.")
                     txt_type.SelectedIndex = -1
@@ -92,6 +97,9 @@ Public Class frm_signup
                 auth_code = InputBox("Please provide your authorisation code, this will have been emailed to you")
                 If CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "' AND type = 'covermanager'") Then
                     MsgBox("Authorisation code accepted.")
+                ElseIf CheckData("SELECT * FROM auth_codes WHERE auth_code = '" & auth_code & "'") Then
+                    MsgBox("This authorisation code is not valid for this account type.")
+                    txt_type.SelectedIndex = -1
                 Else
                     MsgBox("This is not a valid authorisation code.")
                     txt_type.SelectedIndex = -1
@@ -108,4 +116,15 @@ Public Class frm_signup
         Loop
     End Sub
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
+        Application.Exit()
+    End Sub
+
+    Private Sub frm_signup_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        MyBase.OnPaintBackground(e)
+
+        Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
+
+        e.Graphics.DrawRectangle(Pens.DimGray, rect)
+    End Sub
 End Class

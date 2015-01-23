@@ -54,6 +54,7 @@ Partial Class frm_admin
         Me.txt_password1 = New System.Windows.Forms.TextBox()
         Me.txt_password2 = New System.Windows.Forms.TextBox()
         Me.btn_submit = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.panel_sidebar.SuspendLayout()
         CType(Me.dg_users, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -68,25 +69,25 @@ Partial Class frm_admin
         '
         'panel_sidebar
         '
-        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
+        Me.panel_sidebar.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
         Me.panel_sidebar.Controls.Add(Me.Label3)
         Me.panel_sidebar.Dock = System.Windows.Forms.DockStyle.Top
         Me.panel_sidebar.Location = New System.Drawing.Point(0, 0)
         Me.panel_sidebar.Margin = New System.Windows.Forms.Padding(0)
         Me.panel_sidebar.Name = "panel_sidebar"
         Me.panel_sidebar.Padding = New System.Windows.Forms.Padding(7)
-        Me.panel_sidebar.Size = New System.Drawing.Size(511, 50)
+        Me.panel_sidebar.Size = New System.Drawing.Size(529, 40)
         Me.panel_sidebar.TabIndex = 60
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(209, 15)
+        Me.Label3.Location = New System.Drawing.Point(224, 12)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(92, 21)
+        Me.Label3.Size = New System.Drawing.Size(81, 19)
         Me.Label3.TabIndex = 52
         Me.Label3.Text = "Admin Area"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -274,7 +275,7 @@ Partial Class frm_admin
         '
         Me.dg_admins.Controls.Add(Me.TabPage3)
         Me.dg_admins.Controls.Add(Me.TabPage1)
-        Me.dg_admins.Location = New System.Drawing.Point(0, 53)
+        Me.dg_admins.Location = New System.Drawing.Point(10, 58)
         Me.dg_admins.Multiline = True
         Me.dg_admins.Name = "dg_admins"
         Me.dg_admins.SelectedIndex = 0
@@ -413,12 +414,22 @@ Partial Class frm_admin
         Me.btn_submit.Text = "Add User"
         Me.btn_submit.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(56, Byte), Integer))
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 40)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(529, 7)
+        Me.Panel1.TabIndex = 82
+        '
         'frm_admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ClientSize = New System.Drawing.Size(511, 358)
+        Me.ClientSize = New System.Drawing.Size(529, 372)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.panel_sidebar)
         Me.Controls.Add(Me.dg_admins)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -480,4 +491,5 @@ Partial Class frm_admin
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txt_password1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_password2 As System.Windows.Forms.TextBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

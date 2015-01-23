@@ -83,7 +83,7 @@ Module getdata
             My.Settings.Save()
             frm_home.hidecolumns()
 
-            If prv <> frm_home.lbl_notify.Text Then
+            If prv <> frm_home.lbl_notify.Text Or prvfaculty <> frm_home.dg_viewrequests.RowCount Then
                 frm_home.nfi.BalloonTipText = "You have new notifications."
                 frm_home.nfi.ShowBalloonTip(6)
             End If

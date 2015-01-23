@@ -10,7 +10,7 @@ Public Class frm_home
     Dim rd As MySqlDataReader
     Dim id As Integer
     Dim row As Integer = 0
-    Dim accentcolour As Color = Color.FromArgb(227, 227, 227)
+    Dim accentcolour As Color = Color.FromArgb(236, 236, 236)
 
     Dim drag As Boolean
     Dim mousex As Integer
@@ -18,7 +18,7 @@ Public Class frm_home
 
     'FORM LOAD
     Private Sub frm_new_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        load_home()
+
     End Sub
 
     'PUBLIC SUB LOAD FORM
@@ -26,6 +26,8 @@ Public Class frm_home
 
         resetall()
         panel_start.Show()
+
+        lbl_currentuser.Text = "Logged in as " + My.Settings.CurrentUsername
 
         If My.Settings.CurrentUsername = My.Settings.PreviousUser Then
             lbl_notify.Text = My.Settings.UserNotificationsText
@@ -44,7 +46,6 @@ Public Class frm_home
         My.Settings.PreviousUser = My.Settings.CurrentUsername
         My.Settings.Save()
 
-        Me.ShowInTaskbar = True
         nfi.Visible = True
         setdates()
         getalldata()
@@ -480,6 +481,7 @@ Public Class frm_home
     'MENU ON DOUBLE CLICK
     Private Sub nfi_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles nfi.MouseDoubleClick
         resetall()
+        panel_start.Show()
         Me.WindowState = FormWindowState.Normal
         Me.Show()
         Me.ShowInTaskbar = True
@@ -588,6 +590,8 @@ Public Class frm_home
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.WindowState = FormWindowState.Minimized
         Me.ShowInTaskbar = False
+            nfi.BalloonTipText = "Ridgeway Cover Manager has " + vbNewLine + "been closed to the system tray."
+        nfi.ShowBalloonTip(3)
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
@@ -624,7 +628,7 @@ Public Class frm_home
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
-        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
+        MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Application.Deployment.CurrentVersion.ToString + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
