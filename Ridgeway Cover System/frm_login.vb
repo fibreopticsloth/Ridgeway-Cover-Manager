@@ -27,7 +27,6 @@ Public Class frm_login
 
     'CHECK USER
     Public Sub CheckUser()
-
         If CheckData("SELECT * FROM users WHERE username = '" & txt_username.Text & "' AND password = '" & hash(txt_password.Text) & "'") Then
             login()
         Else
@@ -42,7 +41,6 @@ Public Class frm_login
             End If
                 btn_login.Text = "Log In"
             End If
-
     End Sub
 
     'LOGIN
@@ -112,12 +110,12 @@ Public Class frm_login
         frm_signup.Show()
     End Sub
 
+    'MOVE FORM
     Private Sub Button8_MouseDown(sender As Object, e As MouseEventArgs) Handles Me.MouseDown
         drag = True
         mousex = Windows.Forms.Cursor.Position.X - Me.Left
         mousey = Windows.Forms.Cursor.Position.Y - Me.Top
     End Sub
-
     Private Sub Button8_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
         If drag Then
             Me.Top = Windows.Forms.Cursor.Position.Y - mousey
@@ -126,17 +124,14 @@ Public Class frm_login
             frm_home.Left = Windows.Forms.Cursor.Position.X - mousex
         End If
     End Sub
-
     Private Sub pic_logo_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
         drag = False
     End Sub
-
     Private Sub pic_logo_MouseDown(sender As Object, e As MouseEventArgs) Handles pic_logo.MouseDown
         drag = True
         mousex = Windows.Forms.Cursor.Position.X - Me.Left
         mousey = Windows.Forms.Cursor.Position.Y - Me.Top
     End Sub
-
     Private Sub pic_logo_MouseMove(sender As Object, e As MouseEventArgs) Handles pic_logo.MouseMove
         If drag Then
             Me.Top = Windows.Forms.Cursor.Position.Y - mousey
@@ -145,11 +140,11 @@ Public Class frm_login
             frm_home.Left = Windows.Forms.Cursor.Position.X - mousex
         End If
     End Sub
-
     Private Sub Button8_MouseUp(sender As Object, e As MouseEventArgs) Handles pic_logo.MouseUp
         drag = False
     End Sub
 
+    'FADE OUT FORM
     Private Sub timer_fadeout_Tick(sender As Object, e As EventArgs) Handles timer_fadeout.Tick
         If Me.Opacity > 0 Then
             Me.Opacity -= 0.1
@@ -161,6 +156,7 @@ Public Class frm_login
         End If
     End Sub
 
+    'DRAWBORDER
     Private Sub frm_login_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         MyBase.OnPaintBackground(e)
 
@@ -169,36 +165,13 @@ Public Class frm_login
         e.Graphics.DrawRectangle(Pens.DimGray, rect)
     End Sub
 
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs)
-        frm_home.Visible = False
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub Label3_MouseDown(sender As Object, e As MouseEventArgs)
-        drag = True
-        mousex = Windows.Forms.Cursor.Position.X - Me.Left
-        mousey = Windows.Forms.Cursor.Position.Y - Me.Top
-    End Sub
-
-    Private Sub Label3_MouseMove(sender As Object, e As MouseEventArgs)
-        If drag Then
-            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
-            Me.Left = Windows.Forms.Cursor.Position.X - mousex
-            frm_home.Top = Windows.Forms.Cursor.Position.Y - mousey
-            frm_home.Left = Windows.Forms.Cursor.Position.X - mousex
-        End If
-    End Sub
-
-    Private Sub Label3_MouseUp(sender As Object, e As MouseEventArgs)
-        drag = False
-    End Sub
-
+    'EXIT BUTTON
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Application.Exit()
     End Sub
 
+    'FORGOTTON PASSWORD
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         MsgBox("If you have forgotton your password, please contact IT support.")
     End Sub
-
 End Class

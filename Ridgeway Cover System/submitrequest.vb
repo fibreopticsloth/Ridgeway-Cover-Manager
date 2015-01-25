@@ -128,9 +128,7 @@ Module submitrequest
 
     'ENSURE THE START DATE IS BEFORE THE END DATE
     Public Function startbeforeend()
-        Dim start_ As DateTime = startdate
-        Dim end_ As DateTime = enddate
-        If start_ <= end_ Then
+        If startdate.CompareTo(enddate) = -1 Then
             Return 1
         Else
             MsgBox("The start date must be before the end date.")

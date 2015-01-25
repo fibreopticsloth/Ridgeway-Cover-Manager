@@ -147,8 +147,4 @@
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
         newuser()
     End Sub
-
-    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
-
-    End Sub
 End Class

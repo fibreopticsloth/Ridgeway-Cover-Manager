@@ -5,8 +5,8 @@ Module MySQL_Connection
     'DECLARATIONS
     Public conn As MySqlConnection
     'Public ConnectionString As String = "server=georgedunk.co.uk;userid=rcm;password=dlop890;database=covermanager;pooling = false"
-    'Public ConnectionString As String = "server=localhost;userid=root;password=admin;database=coversystem;pooling = false"
-    Public ConnectionString As String = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem;pooling = false"
+    Public ConnectionString As String = "server=localhost;userid=root;password=admin;database=coversystem;pooling = false"
+    'Public ConnectionString As String = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem;pooling = false"
     Public cmd As MySqlCommand
     Public ds As DataSet
     Public bs As BindingSource

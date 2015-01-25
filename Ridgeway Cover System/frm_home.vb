@@ -3,32 +3,21 @@ Imports System.Net.Mail
 Public Class frm_home
 
     'DECLARATIONS
-
-    '1 = covers, 2 = rooms
     Dim auth_code As String
     Dim selected As Integer = 1
     Dim rd As MySqlDataReader
     Dim id As Integer
     Dim row As Integer = 0
     Dim accentcolour As Color = Color.FromArgb(236, 236, 236)
-
     Dim drag As Boolean
     Dim mousex As Integer
     Dim mousey As Integer
 
-    'FORM LOAD
-    Private Sub frm_new_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    'PUBLIC SUB LOAD FORM
+    'LOAD FORM
     Public Sub load_home()
-
         resetall()
         panel_start.Show()
-
         lbl_currentuser.Text = "Logged in as " + My.Settings.CurrentUsername
-
         If My.Settings.CurrentUsername = My.Settings.PreviousUser Then
             lbl_notify.Text = My.Settings.UserNotificationsText
             If Not My.Settings.UserNotificationsCount = "" Then
@@ -42,17 +31,14 @@ Public Class frm_home
             My.Settings.UserNotificationsText = ""
             My.Settings.FacultyNotificationsCount = Nothing
         End If
-
         My.Settings.PreviousUser = My.Settings.CurrentUsername
         My.Settings.Save()
-
         nfi.Visible = True
         setdates()
         getalldata()
         viewrequest()
         data_timer.Enabled = True
         data_timer.Start()
-
     End Sub
 
     '--------REQUEST COVER PANEL--------
@@ -114,7 +100,7 @@ Public Class frm_home
         End If
     End Sub
 
-    '--------NOTIFICATIONS PANEL
+    '--------NOTIFICATIONS PANEL--------
 
     'CLEAR NOTIFICATIONS BUTTON
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles panel_notifications_clearnotifications.Click
@@ -536,44 +522,37 @@ Public Class frm_home
         End If
     End Sub
 
+    'MOVE FORM
     Private Sub Button8_MouseDown(sender As Object, e As MouseEventArgs) Handles Button8.MouseDown
         drag = True
         mousex = Windows.Forms.Cursor.Position.X - Me.Left
         mousey = Windows.Forms.Cursor.Position.Y - Me.Top
     End Sub
-
     Private Sub Button8_MouseMove(sender As Object, e As MouseEventArgs) Handles Button8.MouseMove
         If drag Then
             Me.Top = Windows.Forms.Cursor.Position.Y - mousey
             Me.Left = Windows.Forms.Cursor.Position.X - mousex
         End If
     End Sub
-
     Private Sub Button8_MouseUp(sender As Object, e As MouseEventArgs) Handles Button8.MouseUp
         drag = False
     End Sub
-
     Private Sub lbl_main_MouseDown(sender As Object, e As MouseEventArgs) Handles lbl_main.MouseDown
         drag = True
         mousex = Windows.Forms.Cursor.Position.X - Me.Left
         mousey = Windows.Forms.Cursor.Position.Y - Me.Top
     End Sub
-
     Private Sub lbl_main_MouseMove(sender As Object, e As MouseEventArgs) Handles lbl_main.MouseMove
         If drag Then
             Me.Top = Windows.Forms.Cursor.Position.Y - mousey
             Me.Left = Windows.Forms.Cursor.Position.X - mousex
         End If
     End Sub
-
     Private Sub lbl_main_MouseUp(sender As Object, e As MouseEventArgs) Handles lbl_main.MouseUp
         drag = False
     End Sub
 
-    Private Sub ToolStripDropDownButton1_Click(sender As Object, e As EventArgs) Handles ToolStripDropDownButton1.Click
-
-    End Sub
-
+    'SHOW ADMIN AREA
     Private Sub ManageUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageUserToolStripMenuItem.Click
         If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
             getalldata()
@@ -583,10 +562,12 @@ Public Class frm_home
         End If
     End Sub
 
+    'MINIMIZE
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    'CLOSE TO TRAY
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.WindowState = FormWindowState.Minimized
         Me.ShowInTaskbar = False
@@ -594,15 +575,18 @@ Public Class frm_home
         nfi.ShowBalloonTip(3)
     End Sub
 
+    'LOGOUT
     Private Sub LogoutToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles LogoutToolStripMenuItem.Click
         logout()
     End Sub
 
+    'LOGOUT AND EXIT
     Private Sub ExitToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem1.Click
         logout()
         Application.Exit()
     End Sub
 
+    'BUG REPORT
     Private Sub SubmitBugReportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SubmitBugReportToolStripMenuItem.Click
         Try
             Dim bugreport As String
@@ -627,14 +611,15 @@ Public Class frm_home
         End Try
     End Sub
 
+    'ABOUT
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Application.Deployment.CurrentVersion.ToString + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
-
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
 
+    'OPEN COVER MANAGEMENT
     Private Sub CoverManagementAreaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoverManagementAreaToolStripMenuItem.Click
         If My.Settings.CurrentUserType = "covermanager" Or My.Settings.CurrentUserType = "admin" Then
             frm_covermanagement.Show()
@@ -643,51 +628,25 @@ Public Class frm_home
         End If
     End Sub
 
+    'LOGOUT
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
         logout()
     End Sub
 
-    Private Sub frm_home_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-
-    End Sub
-
+    'DRAW FORM BORDER
     Private Sub frm_home_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         MyBase.OnPaintBackground(e)
-
         Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
-
         e.Graphics.DrawRectangle(Pens.DimGray, rect)
     End Sub
 
+    'HOME BUTTON
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
         resetall()
         panel_start.Show()
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
-        Try
-            Dim bugreport As String
-            bugreport = InputBox("Please detail the bug:", "New Bug Report")
-            Dim Smtp_Server As New SmtpClient
-            Dim e_mail As New MailMessage()
-            Smtp_Server.UseDefaultCredentials = False
-            Smtp_Server.Credentials = New Net.NetworkCredential("rcmbugreport@gmail.com ", "rcmdlop890")
-            Smtp_Server.Port = 587
-            Smtp_Server.EnableSsl = True
-            Smtp_Server.Host = "smtp.gmail.com"
-            e_mail = New MailMessage()
-            e_mail.From = New MailAddress("rcmbugreport@gmail.com ")
-            e_mail.To.Add("08dunkg@ridgewayschool.com")
-            e_mail.Subject = "New Bug Report"
-            e_mail.IsBodyHtml = False
-            e_mail.Body = bugreport
-            Smtp_Server.Send(e_mail)
-            MsgBox("Success!")
-        Catch ex As Exception
-            MsgBox("Failed.")
-        End Try
-    End Sub
-
+    'AUTH CODE ON ACCOUNT TYPE CHANGE
     Private Sub txt_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_type.SelectedIndexChanged
         Select Case txt_type.SelectedIndex
             Case 0
@@ -710,6 +669,7 @@ Public Class frm_home
         End Select
     End Sub
 
+    'CHANGE PASSWORD
     Private Sub btn_submitpassword_Click(sender As Object, e As EventArgs) Handles btn_submitpassword.Click
         If CheckData("SELECT * FROM users WHERE username = '" & My.Settings.CurrentUsername & "' AND password = '" & hash(txt_oldpassword.Text) & "'") Then
                 Try
@@ -743,6 +703,7 @@ Public Class frm_home
         End If
     End Sub
 
+    'NEW ACCOUNT TYPE
     Private Sub btn_submittype_Click(sender As Object, e As EventArgs) Handles btn_submittype.Click
         Dim stafftype As String
         Select Case txt_type.SelectedIndex

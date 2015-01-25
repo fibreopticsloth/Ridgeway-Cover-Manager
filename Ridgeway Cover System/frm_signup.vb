@@ -79,6 +79,7 @@ Public Class frm_signup
         frm_login.BringToFront()
     End Sub
 
+    'AUTH CODES
     Private Sub txt_type_SelectedIndexChanged(sender As Object, e As EventArgs) Handles txt_type.SelectedIndexChanged
         Select Case txt_type.SelectedIndex
             Case 0
@@ -107,8 +108,8 @@ Public Class frm_signup
         End Select
     End Sub
 
+    'USED TO GENERATE AUTH CODES
     Private Sub Button1_Click(sender As Object, e As EventArgs)
-
         Dim i As Integer = 1
         Do Until i = 111
             NewCommand("INSERT INTO auth_codes(auth_code, type) values('" & hash(Rnd) & "', 'faculty')")
@@ -116,15 +117,15 @@ Public Class frm_signup
         Loop
     End Sub
 
+    'EXIT BUTTON
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
         Application.Exit()
     End Sub
 
+    'DRAW BORDER
     Private Sub frm_signup_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         MyBase.OnPaintBackground(e)
-
         Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
-
         e.Graphics.DrawRectangle(Pens.DimGray, rect)
     End Sub
 End Class

@@ -26,11 +26,10 @@
         End If
     End Sub
 
+    'DRAW BORDER
     Private Sub frm_splash_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         MyBase.OnPaintBackground(e)
-
         Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
-
         e.Graphics.DrawRectangle(Pens.DimGray, rect)
     End Sub
 End Class

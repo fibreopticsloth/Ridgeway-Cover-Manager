@@ -11,6 +11,8 @@ Module getdata
 
             frm_home.lbl_main.Text = "Synchronizing"
 
+            'UPDATE ALL DATAGRIDVIEWS
+
             'MY REQUESTS - LESSONS
             NewQuery("select ID, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked from lessons where teacher='" & My.Settings.CurrentUsername & "'", frm_home.dg_mycovers)
             'MY REQUESTS - ROOMS
@@ -20,7 +22,7 @@ Module getdata
             'COVER MANAGEMENT - LESSONS
             NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked, Push from lessons where approved = 'approved' and booked = 'pending' and external = 0", frm_covermanagement.dg_covers)
             'COVER MANAGEMENT - ROOMS
-            NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Booked, Push from roomchange where booked = 'pending'", frm_covermanagement.dg_rooms)
+            NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Booked, Push from roomchange where booked = 'pending'", frm_covermanagement.dg_roomchanges)
             NewQuery("select ID, Teacher, StartDate, StartPeriod, EndDate, EndPeriod, Approved, Booked, Push from lessons where approved = 'approved' and booked = 'pending' and external = 1", frm_covermanagement.dg_external)
             'ADMIN - USERS
             NewQuery("select ID, username, type from users", frm_admin.dg_users)
@@ -31,12 +33,15 @@ Module getdata
 
             Dim ds1 As DataSet = NewDataCommand("SELECT id, startdate, startperiod, enddate, endperiod from lessons where push='1' and booked = 'booked' and teacher = '" & My.Settings.CurrentUsername & "'")
 
+            'CHECK REQUESTS FOR UPDATES
+
             If ds1.Tables(0).Rows.Count > 0 Then
                 CheckEmpty()
-                Dim row As DataRow = ds1.Tables(0).Rows(0)
-                frm_home.lbl_notify.Text += "Cover from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been booked." + vbNewLine + vbNewLine
-                NewCommand("UPDATE lessons SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
-                updatecount += 1
+                For Each row As DataRow In ds1.Tables(0).Rows
+                    frm_home.lbl_notify.Text += "Cover from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been booked." + vbNewLine + vbNewLine
+                    NewCommand("UPDATE lessons SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
+                    updatecount += 1
+                Next
                 ds1.Reset()
             End If
 
@@ -44,10 +49,11 @@ Module getdata
 
             If ds2.Tables(0).Rows.Count > 0 Then
                 CheckEmpty()
-                Dim row As DataRow = ds2.Tables(0).Rows(0)
-                frm_home.lbl_notify.Text += "Cover from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been approved." + vbNewLine + vbNewLine
-                NewCommand("UPDATE lessons SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
-                updatecount += 1
+                For Each row As DataRow In ds2.Tables(0).Rows
+                    frm_home.lbl_notify.Text += "Cover from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been approved." + vbNewLine + vbNewLine
+                    NewCommand("UPDATE lessons SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
+                    updatecount += 1
+                Next
                 ds2.Reset()
             End If
 
@@ -55,10 +61,11 @@ Module getdata
 
             If ds3.Tables(0).Rows.Count > 0 Then
                 CheckEmpty()
-                Dim row As DataRow = ds3.Tables(0).Rows(0)
-                frm_home.lbl_notify.Text += "Cover from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been rejected." + vbNewLine + vbNewLine
-                NewCommand("UPDATE lessons SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
-                updatecount += 1
+                For Each row As DataRow In ds3.Tables(0).Rows
+                    frm_home.lbl_notify.Text += "Cover from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been rejected." + vbNewLine + vbNewLine
+                    NewCommand("UPDATE lessons SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
+                    updatecount += 1
+                Next
                 ds3.Reset()
             End If
 
@@ -66,14 +73,17 @@ Module getdata
 
             If ds4.Tables(0).Rows.Count > 0 Then
                 CheckEmpty()
-                Dim row As DataRow = ds4.Tables(0).Rows(0)
-                frm_home.lbl_notify.Text += "Room change from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been booked." + vbNewLine + vbNewLine
-                NewCommand("UPDATE lessons SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
-                updatecount += 1
+                For Each row As DataRow In ds4.Tables(0).Rows
+                    frm_home.lbl_notify.Text += "Room change from " + row.Item(1).ToString + " to " + row.Item(3).ToString + " has been booked." + vbNewLine + vbNewLine
+                    NewCommand("UPDATE roomchange SET push = '0' WHERE id = '" & row.Item(0).ToString & "'")
+                    updatecount += 1
+                Next
                 ds4.Reset()
             End If
 
             facultycount = frm_home.dg_viewrequests.RowCount
+
+            'ADD UPDATE COUNTERS TO BUTTONS
 
             frm_home.btn_notifications.Text = "Notifications" + " (" + updatecount.ToString + ")"
             frm_home.btn_facultyarea.Text = "Faculty Area" + " (" + facultycount.ToString + ")"
@@ -83,15 +93,19 @@ Module getdata
             My.Settings.Save()
             frm_home.hidecolumns()
 
+            'SHOW NOTIFICATION BALLOON
+
             If prv <> frm_home.lbl_notify.Text Or prvfaculty <> frm_home.dg_viewrequests.RowCount Then
                 frm_home.nfi.BalloonTipText = "You have new notifications."
                 frm_home.nfi.ShowBalloonTip(6)
             End If
 
-            Dim queue As Integer = frm_covermanagement.dg_covers.RowCount + frm_covermanagement.dg_external.RowCount + frm_covermanagement.dg_rooms.RowCount
+            Dim queue As Integer = frm_covermanagement.dg_covers.RowCount + frm_covermanagement.dg_external.RowCount + frm_covermanagement.dg_roomchanges.RowCount
             frm_home.lbl_pendingbooking.Text = " -- " + queue.ToString + " request(s) in queue -- "
 
             frm_home.NotificationsToolStripMenuItem.Text = updatecount.ToString + " notification(s)"
+
+            'GET FACULTY LEADERS
 
             If MySQL_Connection.CheckConnection Then
 
@@ -125,11 +139,8 @@ Module getdata
 
     'CHECK IF NOTIFICATION AREA EMPTY
     Public Sub CheckEmpty()
-
         If frm_home.lbl_notify.Text = "No notifications to show!" Then
             frm_home.lbl_notify.ResetText()
         End If
-
     End Sub
-
 End Module
