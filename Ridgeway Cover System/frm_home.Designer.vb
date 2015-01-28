@@ -41,6 +41,8 @@ Partial Class frm_home
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btn_sync = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
@@ -119,6 +121,8 @@ Partial Class frm_home
         Me.Help = New System.Windows.Forms.ToolStripDropDownButton()
         Me.SubmitBugReportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.lbl_pendingbooking = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.toolstrip_status = New System.Windows.Forms.ToolStripStatusLabel()
@@ -135,13 +139,15 @@ Partial Class frm_home
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_oldpassword = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
+        Me.helpbrowser = New System.Windows.Forms.WebBrowser()
+        Me.panel_help = New System.Windows.Forms.Panel()
         Me.nfimenu.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_sync, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_requestcover.SuspendLayout()
         Me.myrequests_tc_myrequests.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -156,9 +162,8 @@ Partial Class frm_home
         Me.panel_start.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.panel_accountdetails.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panel_help.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_roomchange
@@ -178,6 +183,7 @@ Partial Class frm_home
         Me.btn_roomchange.TabIndex = 4
         Me.btn_roomchange.TabStop = False
         Me.btn_roomchange.Text = "Room Change"
+        Me.tt_notify.SetToolTip(Me.btn_roomchange, "Create a New Request for Room Change")
         Me.btn_roomchange.UseVisualStyleBackColor = False
         '
         'btn_facultyarea
@@ -197,6 +203,7 @@ Partial Class frm_home
         Me.btn_facultyarea.TabIndex = 10
         Me.btn_facultyarea.TabStop = False
         Me.btn_facultyarea.Text = "Faculty Area"
+        Me.tt_notify.SetToolTip(Me.btn_facultyarea, "Manage User Requests (Faculty Leaders Only)")
         Me.btn_facultyarea.UseVisualStyleBackColor = False
         '
         'btn_myrequests
@@ -216,6 +223,7 @@ Partial Class frm_home
         Me.btn_myrequests.TabIndex = 9
         Me.btn_myrequests.TabStop = False
         Me.btn_myrequests.Text = "My Requests"
+        Me.tt_notify.SetToolTip(Me.btn_myrequests, "View the Status of your Requests")
         Me.btn_myrequests.UseVisualStyleBackColor = False
         '
         'btn_requestcover
@@ -235,6 +243,7 @@ Partial Class frm_home
         Me.btn_requestcover.TabIndex = 12
         Me.btn_requestcover.TabStop = False
         Me.btn_requestcover.Text = "Cover Request"
+        Me.tt_notify.SetToolTip(Me.btn_requestcover, "Create a New Request for Cover")
         Me.btn_requestcover.UseVisualStyleBackColor = False
         '
         'btn_accountdetails
@@ -254,6 +263,7 @@ Partial Class frm_home
         Me.btn_accountdetails.TabIndex = 14
         Me.btn_accountdetails.TabStop = False
         Me.btn_accountdetails.Text = "Account Details"
+        Me.tt_notify.SetToolTip(Me.btn_accountdetails, "Change your Password or Account Type")
         Me.btn_accountdetails.UseVisualStyleBackColor = False
         '
         'nfimenu
@@ -305,6 +315,7 @@ Partial Class frm_home
         Me.btn_notifications.TabIndex = 65
         Me.btn_notifications.TabStop = False
         Me.btn_notifications.Text = "Notifications"
+        Me.tt_notify.SetToolTip(Me.btn_notifications, "View Updates to your Requests")
         Me.btn_notifications.UseVisualStyleBackColor = False
         '
         'data_timer
@@ -349,6 +360,32 @@ Partial Class frm_home
         Me.btn_sync.TabIndex = 62
         Me.btn_sync.TabStop = False
         Me.tt_notify.SetToolTip(Me.btn_sync, "Synchronize")
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.minimize_2
+        Me.PictureBox2.Location = New System.Drawing.Point(602, 13)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 75
+        Me.PictureBox2.TabStop = False
+        Me.tt_notify.SetToolTip(Me.PictureBox2, "Minimize to the Taskbar")
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.close_2
+        Me.PictureBox1.Location = New System.Drawing.Point(626, 13)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 74
+        Me.PictureBox1.TabStop = False
+        Me.tt_notify.SetToolTip(Me.PictureBox1, "Minimize to the System Tray")
         '
         'Button5
         '
@@ -1321,7 +1358,7 @@ Partial Class frm_home
         'Help
         '
         Me.Help.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.Help.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SubmitBugReportToolStripMenuItem, Me.AboutToolStripMenuItem})
+        Me.Help.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.SubmitBugReportToolStripMenuItem, Me.ToolStripMenuItem2, Me.AboutToolStripMenuItem})
         Me.Help.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Help.Image = CType(resources.GetObject("Help.Image"), System.Drawing.Image)
         Me.Help.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -1341,6 +1378,18 @@ Partial Class frm_home
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(174, 22)
+        Me.ToolStripMenuItem2.Text = "License"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(174, 22)
+        Me.ToolStripMenuItem1.Text = "View Help"
+        '
         'lbl_pendingbooking
         '
         Me.lbl_pendingbooking.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(246, Byte), Integer))
@@ -1351,7 +1400,7 @@ Partial Class frm_home
         'ToolStripStatusLabel1
         '
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(285, 17)
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(254, 17)
         Me.ToolStripStatusLabel1.Spring = True
         '
         'toolstrip_status
@@ -1518,30 +1567,6 @@ Partial Class frm_home
         Me.txt_oldpassword.Size = New System.Drawing.Size(175, 23)
         Me.txt_oldpassword.TabIndex = 60
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.minimize_2
-        Me.PictureBox2.Location = New System.Drawing.Point(602, 13)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 75
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(72, Byte), Integer))
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.close_2
-        Me.PictureBox1.Location = New System.Drawing.Point(626, 13)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(18, 18)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 74
-        Me.PictureBox1.TabStop = False
-        '
         'pic_logo
         '
         Me.pic_logo.BackColor = System.Drawing.Color.White
@@ -1554,6 +1579,28 @@ Partial Class frm_home
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
         '
+        'helpbrowser
+        '
+        Me.helpbrowser.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.helpbrowser.Location = New System.Drawing.Point(5, 5)
+        Me.helpbrowser.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.helpbrowser.Name = "helpbrowser"
+        Me.helpbrowser.Size = New System.Drawing.Size(490, 373)
+        Me.helpbrowser.TabIndex = 79
+        Me.helpbrowser.Url = New System.Uri("http://georgedunk.co.uk/help.html", System.UriKind.Absolute)
+        '
+        'panel_help
+        '
+        Me.panel_help.BackColor = System.Drawing.Color.White
+        Me.panel_help.Controls.Add(Me.helpbrowser)
+        Me.panel_help.Location = New System.Drawing.Point(144, 58)
+        Me.panel_help.Margin = New System.Windows.Forms.Padding(0)
+        Me.panel_help.Name = "panel_help"
+        Me.panel_help.Padding = New System.Windows.Forms.Padding(5)
+        Me.panel_help.Size = New System.Drawing.Size(500, 383)
+        Me.panel_help.TabIndex = 60
+        Me.panel_help.Visible = False
+        '
         'frm_home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1561,6 +1608,7 @@ Partial Class frm_home
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(236, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(655, 477)
         Me.Controls.Add(Me.panel_start)
+        Me.Controls.Add(Me.panel_help)
         Me.Controls.Add(Me.panel_notifications)
         Me.Controls.Add(Me.panel_myrequests)
         Me.Controls.Add(Me.panel_facultyarea)
@@ -1599,6 +1647,8 @@ Partial Class frm_home
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_sync, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel_requestcover.ResumeLayout(False)
         Me.panel_requestcover.PerformLayout()
         Me.myrequests_tc_myrequests.ResumeLayout(False)
@@ -1620,9 +1670,8 @@ Partial Class frm_home
         Me.StatusStrip1.PerformLayout()
         Me.panel_accountdetails.ResumeLayout(False)
         Me.panel_accountdetails.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panel_help.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1739,4 +1788,8 @@ Partial Class frm_home
     Friend WithEvents lbl_pendingbooking As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents NotificationsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents helpbrowser As System.Windows.Forms.WebBrowser
+    Friend WithEvents panel_help As System.Windows.Forms.Panel
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -4,10 +4,6 @@ Imports System.Text
 Imports System.Security.Cryptography
 Module general
 
-    'DECLARATIONS
-    Public pfc As New PrivateFontCollection
-    Public ff() As FontFamily
-
     'MD5 HASH
     Public Function hash(ByVal password As String) As String
         Dim md5 As New MD5CryptoServiceProvider

@@ -305,6 +305,7 @@ Public Class frm_home
         panel_myrequests.Hide()
         panel_facultyarea.Hide()
         panel_accountdetails.Hide()
+        panel_help.Hide()
     End Sub
 
     'RESET REQUEST COVER PANEL
@@ -619,6 +620,12 @@ Public Class frm_home
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
 
+    'VIEW HELP
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        resetall()
+        panel_help.Show()
+    End Sub
+
     'OPEN COVER MANAGEMENT
     Private Sub CoverManagementAreaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CoverManagementAreaToolStripMenuItem.Click
         If My.Settings.CurrentUserType = "covermanager" Or My.Settings.CurrentUserType = "admin" Then
@@ -718,5 +725,10 @@ Public Class frm_home
         NewCommand("DELETE FROM auth_codes WHERE auth_code = '" & auth_code & "'")
         MsgBox("Your account type was changed successfully.")
         txt_type.SelectedIndex = -1
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        Dim webAddress As String = "http://www.gnu.org/copyleft/gpl.html"
+        Process.Start(webAddress)
     End Sub
 End Class
