@@ -16,7 +16,6 @@ Public Class frm_home
     'LOAD FORM
     Public Sub load_home()
         resetall()
-        panel_start.Show()
         lbl_currentuser.Text = "Logged in as " + My.Settings.CurrentUsername
         If My.Settings.CurrentUsername = My.Settings.PreviousUser Then
             lbl_notify.Text = My.Settings.UserNotificationsText
@@ -40,6 +39,10 @@ Public Class frm_home
         data_timer.Enabled = True
         data_timer.Start()
     End Sub
+    Private Sub frm_home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TabControl.SelectedIndex = -1
+        panel_start.Show()
+    End Sub
 
     '--------REQUEST COVER PANEL--------
 
@@ -51,7 +54,7 @@ Public Class frm_home
         Else
             singlelesson = False
         End If
-        If submit("room", My.Settings.CurrentUsername, roomchange_txt_room.Text, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text, Nothing, singlelesson) = 1 Then
+        If submit("room", My.Settings.CurrentUsername, roomchange_txt_room.SelectedItem.ToString, roomchange_dp_startdate, roomchange_txt_startperiod.Text, roomchange_dp_enddate, roomchange_txt_endperiod.Text, roomchange_txt_reason.Text, Nothing, singlelesson) = 1 Then
             MsgBox("Request submitted")
             resetroomchange()
             getalldata()
@@ -108,7 +111,7 @@ Public Class frm_home
         My.Settings.UserNotificationsCount = ""
         My.Settings.Save()
         lbl_notify.Text = "No notifications to show!"
-        btn_notifications.Text = "Notifications" + " (0)"
+        lbl_notifications.Text = "-- Notifications (0) --"
         getdata.updatecount = 0
         getalldata()
     End Sub
@@ -292,20 +295,6 @@ Public Class frm_home
     Public Sub resetall()
         resetrequestcover()
         resetroomchange()
-        btn_requestcover.BackColor = Color.White
-        btn_roomchange.BackColor = Color.White
-        btn_notifications.BackColor = Color.White
-        btn_myrequests.BackColor = Color.White
-        btn_facultyarea.BackColor = Color.White
-        btn_accountdetails.BackColor = Color.White
-        panel_start.Hide()
-        panel_requestcover.Hide()
-        panel_roomchange.Hide()
-        panel_notifications.Hide()
-        panel_myrequests.Hide()
-        panel_facultyarea.Hide()
-        panel_accountdetails.Hide()
-        panel_help.Hide()
     End Sub
 
     'RESET REQUEST COVER PANEL
@@ -315,7 +304,6 @@ Public Class frm_home
         requestcover_txt_endperiod.SelectedIndex = -1
         requestcover_txt_facultyhead.ResetText()
         requestcover_txt_reason.ResetText()
-        panel_requestcover.BringToFront()
     End Sub
 
     'RESET ROOM CHANGE PANEL
@@ -323,9 +311,8 @@ Public Class frm_home
         setdates()
         roomchange_txt_startperiod.SelectedIndex = -1
         roomchange_txt_endperiod.SelectedIndex = -1
-        roomchange_txt_room.ResetText()
+        roomchange_txt_room.ClearSelected()
         roomchange_txt_reason.ResetText()
-        panel_roomchange.BringToFront()
     End Sub
 
     'HIDE UNWANTED COLUMNS
@@ -363,66 +350,24 @@ Public Class frm_home
 
     '--------PANEL BUTTONS--------
 
-    'REQUEST COVER
-    Private Sub btn_requestcover_Click(sender As Object, e As EventArgs) Handles btn_requestcover.Click
-        setdates()
+    Private Sub TabControl_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl.SelectedIndexChanged
+        panel_start.Hide()
+        panel_help.Hide()
         resetall()
-        btn_requestcover.BackColor = Accentcolour
-        panel_requestcover.Show()
         getalldata()
-    End Sub
-
-    'ROOM CHANGE
-    Private Sub btn_roomchange_Click(sender As Object, e As EventArgs) Handles btn_roomchange.Click
-        setdates()
-        resetall()
-        btn_roomchange.BackColor = Accentcolour
-        panel_roomchange.Show()
-    End Sub
-
-    'NOTIFICATIONS
-    Private Sub btn_notifications_Click(sender As Object, e As EventArgs) Handles btn_notifications.Click
-        resetall()
-        btn_notifications.BackColor = Accentcolour
-        panel_notifications.Show()
-        getalldata()
-    End Sub
-
-    'MY REQUESTS
-    Private Sub btn_myrequests_Click(sender As Object, e As EventArgs) Handles btn_myrequests.Click
-        resetall()
-        btn_myrequests.BackColor = Accentcolour
-        panel_myrequests.Show()
-        getalldata()
-    End Sub
-
-    'FACULTY AREA
-    Private Sub btn_facultyarea_Click(sender As Object, e As EventArgs) Handles btn_facultyarea.Click
-        If My.Settings.CurrentUserType <> "teacher" Then
-            resetall()
-            viewrequest()
-            btn_facultyarea.BackColor = accentcolour
-            panel_facultyarea.Show()
-            getalldata()
-        Else
-            MsgBox("You are not granted permission to access this area.")
-        End If
-    End Sub
-
-    'ACCOUNT DETAILS
-    Private Sub btn_accountdetails_Click(sender As Object, e As EventArgs) Handles btn_accountdetails.Click
-        resetall()
-        btn_accountdetails.BackColor = Accentcolour
-        panel_accountdetails.Show()
+        Select Case TabControl.SelectedIndex
+            Case 3
+                If My.Settings.CurrentUserType <> "teacher" Then
+                    resetall()
+                    viewrequest()
+                    getalldata()
+                Else
+                    MsgBox("You are not granted permission to access this area.")
+                End If
+        End Select
     End Sub
 
     '--------BUTTONS--------
-
-    'LOGO
-    Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
-        resetall()
-        panel_start.Show()
-    End Sub
 
     'START PANEL LOGOUT
     Private Sub txt_logout_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles txt_logout.LinkClicked
@@ -490,40 +435,7 @@ Public Class frm_home
         Application.Exit()
     End Sub
 
-    '--------MENU BAR--------
-
-    'QUIT
-    Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        nfi.Visible = False
-        My.Settings.CurrentUsername = ""
-        Application.Exit()
-    End Sub
-
-    'LOGOUT
-    Private Sub LogOutToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        logout()
-    End Sub
-
-    'ADMIN CENTRE
-    Private Sub LaunchAdminCentreToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
-            Me.hidecolumns()
-            frm_admin.Show()
-        Else
-            MsgBox("You are not granted permission to access this area.")
-        End If
-    End Sub
-
-    'COVER MANAGEMENT
-    Private Sub LaunchCoverManagementToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
-            frm_covermanagement.Show()
-        Else
-            MsgBox("You are not granted permission to access this area.")
-        End If
-    End Sub
-
-    'MOVE FORM
+    '--------MOVE FORM--------
     Private Sub Button8_MouseDown(sender As Object, e As MouseEventArgs) Handles Button8.MouseDown
         drag = True
         mousex = Windows.Forms.Cursor.Position.X - Me.Left
@@ -553,6 +465,7 @@ Public Class frm_home
         drag = False
     End Sub
 
+    '-------BOTTOM BAR-------
     'SHOW ADMIN AREA
     Private Sub ManageUserToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ManageUserToolStripMenuItem.Click
         If My.Settings.CurrentUserType = "admin" Or My.Settings.CurrentUserType = "covermanager" Then
@@ -572,7 +485,7 @@ Public Class frm_home
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         Me.WindowState = FormWindowState.Minimized
         Me.ShowInTaskbar = False
-            nfi.BalloonTipText = "Ridgeway Cover Manager has " + vbNewLine + "been closed to the system tray."
+        nfi.BalloonTipText = "Ridgeway Cover Manager has " + vbNewLine + "been closed to the system tray."
         nfi.ShowBalloonTip(3)
     End Sub
 
@@ -616,7 +529,7 @@ Public Class frm_home
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Application.Deployment.CurrentVersion.ToString + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
         MessageBox.Show("Ridgeway Cover Manager" + vbNewLine + "Version: " + My.Settings.Version + vbNewLine + "Copyright © 2014 The Ridgeway School & Sixth Form College" + vbNewLine + "Created by George Dunk for The Ridgeway School & Sixth Form College", "About Ridgeway Cover Manager")
     End Sub
 
@@ -640,7 +553,7 @@ Public Class frm_home
         logout()
     End Sub
 
-    'DRAW FORM BORDER
+    '--------DRAW FORM BORDER--------
     Private Sub frm_home_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
         MyBase.OnPaintBackground(e)
         Dim rect As New Rectangle(0, 0, Me.ClientSize.Width - 1, Me.ClientSize.Height - 1)
@@ -649,7 +562,10 @@ Public Class frm_home
 
     'HOME BUTTON
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+        Label2.BringToFront()
         resetall()
+        TabControl.SelectedIndex = -1
+        Label2.SendToBack()
         panel_start.Show()
     End Sub
 
@@ -679,29 +595,29 @@ Public Class frm_home
     'CHANGE PASSWORD
     Private Sub btn_submitpassword_Click(sender As Object, e As EventArgs) Handles btn_submitpassword.Click
         If CheckData("SELECT * FROM users WHERE username = '" & My.Settings.CurrentUsername & "' AND password = '" & hash(txt_oldpassword.Text) & "'") Then
-                Try
-                    If txt_newpassword1.Text = "" Or txt_newpassword2.Text = "" Then
+            Try
+                If txt_newpassword1.Text = "" Or txt_newpassword2.Text = "" Then
                     MsgBox("You must fill all fields!")
                     txt_newpassword1.ResetText()
                     txt_newpassword2.ResetText()
-                    ElseIf txt_newpassword1.TextLength < 8 Then
+                ElseIf txt_newpassword1.TextLength < 8 Then
                     MsgBox("Your password must be at least 8 characters")
                     txt_newpassword1.ResetText()
                     txt_newpassword2.ResetText()
-                    ElseIf txt_newpassword1.Text = txt_newpassword2.Text Then
-                        NewCommand("update users set password = '" & hash(txt_newpassword1.Text) & "' where username = '" & My.Settings.CurrentUsername & "'")
-                        txt_oldpassword.ResetText()
-                        txt_newpassword1.ResetText()
-                        txt_newpassword2.ResetText()
-                        MsgBox("Your password was changed successfully.")
-                    Else
+                ElseIf txt_newpassword1.Text = txt_newpassword2.Text Then
+                    NewCommand("update users set password = '" & hash(txt_newpassword1.Text) & "' where username = '" & My.Settings.CurrentUsername & "'")
+                    txt_oldpassword.ResetText()
+                    txt_newpassword1.ResetText()
+                    txt_newpassword2.ResetText()
+                    MsgBox("Your password was changed successfully.")
+                Else
                     MsgBox("The new passwords do not match!")
                     txt_newpassword1.ResetText()
                     txt_newpassword2.ResetText()
-                    End If
-                Catch ex As Exception
-                    MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
-                End Try
+                End If
+            Catch ex As Exception
+                MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
+            End Try
         Else
             MsgBox("The password you entered is incorrect.")
             txt_oldpassword.ResetText()
@@ -731,4 +647,16 @@ Public Class frm_home
         Dim webAddress As String = "http://www.gnu.org/copyleft/gpl.html"
         Process.Start(webAddress)
     End Sub
+
+    Private Sub roomchange_txt_roomsearch_TextChanged(sender As Object, e As EventArgs) Handles roomchange_txt_roomsearch.TextChanged
+        roomchange_txt_room.SelectedIndex = roomchange_txt_room.FindString(roomchange_txt_roomsearch.Text)
+    End Sub
+
+    Private Sub roomchange_txt_room_SelectedIndexChanged(sender As Object, e As EventArgs) Handles roomchange_txt_room.SelectedIndexChanged
+        If roomchange_txt_room.SelectedIndex > -1 Then
+            roomchange_txt_roomconfirm.Text = roomchange_txt_room.SelectedItem.ToString
+        End If
+    End Sub
+
+
 End Class

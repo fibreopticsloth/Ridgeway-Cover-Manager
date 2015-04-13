@@ -36,6 +36,8 @@ Partial Class frm_login
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txt_signup = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbl_hello = New System.Windows.Forms.Label()
+        Me.lbl_loading = New System.Windows.Forms.Label()
         Me.panel_login.SuspendLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,7 +128,7 @@ Partial Class frm_login
         Me.panel_login.Controls.Add(Me.btn_login)
         Me.panel_login.Controls.Add(Me.txt_username)
         Me.panel_login.Controls.Add(Me.remember)
-        Me.panel_login.Location = New System.Drawing.Point(178, 120)
+        Me.panel_login.Location = New System.Drawing.Point(134, 151)
         Me.panel_login.Name = "panel_login"
         Me.panel_login.Size = New System.Drawing.Size(287, 246)
         Me.panel_login.TabIndex = 78
@@ -134,7 +136,7 @@ Partial Class frm_login
         'pic_logo
         '
         Me.pic_logo.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.schoollogoblue
-        Me.pic_logo.Location = New System.Drawing.Point(242, 23)
+        Me.pic_logo.Location = New System.Drawing.Point(198, 54)
         Me.pic_logo.Name = "pic_logo"
         Me.pic_logo.Size = New System.Drawing.Size(158, 79)
         Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -146,7 +148,7 @@ Partial Class frm_login
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Image = Global.Ridgeway_Cover_Manager.My.Resources.Resources.close
-        Me.PictureBox1.Location = New System.Drawing.Point(610, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(523, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(20, 20)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -159,7 +161,7 @@ Partial Class frm_login
         Me.txt_signup.Cursor = System.Windows.Forms.Cursors.Hand
         Me.txt_signup.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_signup.ForeColor = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.txt_signup.Location = New System.Drawing.Point(297, 388)
+        Me.txt_signup.Location = New System.Drawing.Point(250, 419)
         Me.txt_signup.Name = "txt_signup"
         Me.txt_signup.Size = New System.Drawing.Size(54, 17)
         Me.txt_signup.TabIndex = 81
@@ -171,11 +173,33 @@ Partial Class frm_login
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(158, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(158, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(249, 411)
+        Me.Label4.Location = New System.Drawing.Point(196, 442)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(162, 17)
         Me.Label4.TabIndex = 82
         Me.Label4.Text = "Forgotton your Password?"
+        '
+        'lbl_hello
+        '
+        Me.lbl_hello.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_hello.ForeColor = System.Drawing.Color.FromArgb(CType(CType(119, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.lbl_hello.Location = New System.Drawing.Point(109, 253)
+        Me.lbl_hello.Name = "lbl_hello"
+        Me.lbl_hello.Size = New System.Drawing.Size(336, 25)
+        Me.lbl_hello.TabIndex = 8
+        Me.lbl_hello.Text = "Hello, username"
+        Me.lbl_hello.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lbl_loading
+        '
+        Me.lbl_loading.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_loading.ForeColor = System.Drawing.Color.FromArgb(CType(CType(119, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(119, Byte), Integer))
+        Me.lbl_loading.Location = New System.Drawing.Point(108, 280)
+        Me.lbl_loading.Name = "lbl_loading"
+        Me.lbl_loading.Size = New System.Drawing.Size(339, 20)
+        Me.lbl_loading.TabIndex = 83
+        Me.lbl_loading.Text = "loading"
+        Me.lbl_loading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frm_login
         '
@@ -183,14 +207,17 @@ Partial Class frm_login
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(642, 451)
+        Me.ClientSize = New System.Drawing.Size(555, 526)
+        Me.Controls.Add(Me.panel_login)
+        Me.Controls.Add(Me.lbl_loading)
+        Me.Controls.Add(Me.lbl_hello)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txt_signup)
         Me.Controls.Add(Me.pic_logo)
-        Me.Controls.Add(Me.panel_login)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -215,5 +242,7 @@ Partial Class frm_login
     Friend WithEvents pic_logo As System.Windows.Forms.PictureBox
     Friend WithEvents txt_signup As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lbl_hello As System.Windows.Forms.Label
+    Friend WithEvents lbl_loading As System.Windows.Forms.Label
 
 End Class

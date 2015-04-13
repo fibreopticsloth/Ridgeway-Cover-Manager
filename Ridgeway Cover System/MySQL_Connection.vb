@@ -7,7 +7,7 @@ Module MySQL_Connection
 
     'AT VARIOUS POINTS DURING DEVELOPMENT, DIFFERENT SERVERS HAVE BEEN USED - THEIR CONNECTION STRINGS CAN BE SWITCHED FROM HERE
     'Public ConnectionString As String = "server=georgedunk.co.uk;userid=rcm;password=dlop890;database=covermanager;pooling = false"
-    Public ConnectionString As String = "server=localhost;userid=root;password=admin;database=coversystem;pooling = false"
+    Public ConnectionString As String = "server=localhost;port=3307;userid=root;password=admin;database=coversystem;pooling = false"
     'Public ConnectionString As String = "server=dlp.ridgewayschool.com;userid=coversystem;password=dlop890;database=coversystem;pooling = false"
 
     Public cmd As MySqlCommand

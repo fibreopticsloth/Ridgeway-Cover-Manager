@@ -6,12 +6,11 @@ Public Class frm_login
     Dim mousex As Integer
     Dim mousey As Integer
     Dim loadvalue As Integer = 0
+    Public remembered As Boolean
 
     'FORM LOAD
     Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         retrievelogin()
-        txt_username.SelectionStart = txt_username.Text.Length
-        txt_username.SelectionLength = 0
     End Sub
 
     'RETRIEVE LOGIN IF SAVED
@@ -20,8 +19,12 @@ Public Class frm_login
         txt_password.Text = My.Settings.RememberPassword
         If My.Settings.RememberUsername IsNot "" Then
             remember.CheckState = CheckState.Checked
+            remembered = True
+            txt_username.SelectionStart = txt_username.TextLength
+            txt_username.SelectionLength = 0
         Else
             remember.CheckState = CheckState.Unchecked
+            remembered = False
         End If
     End Sub
 
@@ -45,16 +48,18 @@ Public Class frm_login
 
     'LOGIN
     Public Sub login()
+        lbl_hello.Text = "Hello, " + txt_username.Text
+        lbl_loading.Text = "Logging you In..."
+        panel_login.Visible = False
         rememberlogin()
         checktype()
         My.Settings.CurrentUsername = txt_username.Text
         My.Settings.Save()
-
         frm_home.load_home()
         frm_home.Show()
         frm_home.Location = Me.Location
         Me.BringToFront()
-
+        panel_login.Visible = True
         timer_fadeout.Enabled = True
         timer_fadeout.Start()
     End Sub
@@ -173,5 +178,15 @@ Public Class frm_login
     'FORGOTTON PASSWORD
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs)
         MsgBox("If you have forgotton your password, please contact IT support.")
+    End Sub
+
+    'CLEAR FIELDS
+    Private Sub frm_login_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
+        If e.KeyChar = ChrW(Keys.Back) Then
+            If remembered = True Then
+                txt_username.ResetText()
+                txt_password.ResetText()
+            End If
+        End If
     End Sub
 End Class

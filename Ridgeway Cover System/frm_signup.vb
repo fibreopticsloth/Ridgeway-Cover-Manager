@@ -33,10 +33,12 @@ Public Class frm_signup
                 MsgBox("Could not establish a connection to the database" + vbNewLine + "Please ensure you are connected to the internet")
             End If
             With frm_login
+                .remembered = True
                 .txt_username.Text = username
                 .txt_password.Text = ""
                 .txt_password.Focus()
             End With
+            frm_login.Show()
             Me.Dispose()
         Else
             MsgBox("Your passwords do not match!")

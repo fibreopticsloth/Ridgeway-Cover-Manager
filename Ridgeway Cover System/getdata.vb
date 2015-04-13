@@ -84,9 +84,12 @@ Module getdata
             facultycount = frm_home.dg_viewrequests.RowCount
 
             'ADD UPDATE COUNTERS TO BUTTONS
-
-            frm_home.btn_notifications.Text = "Notifications" + " (" + updatecount.ToString + ")"
-            frm_home.btn_facultyarea.Text = "Faculty Area" + " (" + facultycount.ToString + ")"
+            If updatecount > 0 Then
+                frm_home.lbl_notifications.ForeColor = Color.Red
+            Else
+                frm_home.lbl_notifications.ForeColor = Color.Black
+            End If
+            frm_home.lbl_notifications.Text = "-- Notifications (" + updatecount.ToString + ") --"
             My.Settings.FacultyNotificationsCount = facultycount.ToString
             My.Settings.UserNotificationsText = frm_home.lbl_notify.Text
             My.Settings.UserNotificationsCount = updatecount.ToString
@@ -94,7 +97,6 @@ Module getdata
             frm_home.hidecolumns()
 
             'SHOW NOTIFICATION BALLOON
-
             If prv <> frm_home.lbl_notify.Text Or prvfaculty <> frm_home.dg_viewrequests.RowCount Then
                 frm_home.nfi.BalloonTipText = "You have new notifications."
                 frm_home.nfi.ShowBalloonTip(6)
@@ -118,6 +120,18 @@ Module getdata
                         frm_home.requestcover_txt_facultyhead.Items.Clear()
                         For Each DataRow In dt.Rows
                             frm_home.requestcover_txt_facultyhead.Items.Add(DataRow(0))
+                        Next
+                        ds.Dispose()
+                        da.Dispose()
+                    End Using
+
+                    Using da As New MySqlDataAdapter("select name from rooms", Connection)
+                        Dim ds As New DataSet
+                        da.Fill(ds, "rooms")
+                        Dim dt As DataTable = ds.Tables(0)
+                        frm_home.roomchange_txt_room.Items.Clear()
+                        For Each DataRow In dt.Rows
+                            frm_home.roomchange_txt_room.Items.Add(DataRow(0))
                         Next
                         ds.Dispose()
                         da.Dispose()
